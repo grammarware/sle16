@@ -1,3 +1,5 @@
+The benchmarks for the paper have been performed on a MacBook Pro (Retina, 15-inch, Early 2013)
+
 # Build Requirements
 
 * ZeroMQ 4
@@ -16,6 +18,7 @@ $ brew install zeromq
 $ brew install haskell-stack
 $ brew install cloc
 $ brew cask install java
+$ brew tap homebrew/science
 $ brew install r
 $ R
 > install.packages("ggplot2")
