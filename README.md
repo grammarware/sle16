@@ -2,6 +2,7 @@ The benchmarks for the paper have been performed on a MacBook Pro (Retina, 15-in
 
 # Build Requirements
 
+* pkg-config
 * ZeroMQ 4
 * Haskell Stack
 * cloc
@@ -14,6 +15,7 @@ The benchmarks for the paper have been performed on a MacBook Pro (Retina, 15-in
 # Instructions for Mac
 
 ```sh
+$ brew install pkg-config
 $ brew install zeromq
 $ brew install haskell-stack
 $ brew install cloc
@@ -27,7 +29,7 @@ $ R
 # press ctrl-d to leave the R environment
 ```
 
-Please check that all of the executables `java`, `stack`, `cloc` and `Rscript` are in the `PATH` before continuing.
+Please check that all of the executables `pkg-config`, `java`, `stack`, `cloc` and `Rscript` are in the `PATH` before continuing.
 
 # Running of the Benchmarks
 
