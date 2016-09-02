@@ -21,7 +21,13 @@ To make a complete jar with all of the dependencies, do this from the repo main 
 $ mvn clean compile install
 ```
 
-This will leave you with artifact `target/codebuff-1.4.19.jar` or whatever the version number is and put the jar into the usual maven local cache.
+This will leave you with artifact `target/codebuff-1.5.1.jar` or whatever the version number is and put the jar into the usual maven local cache.
+
+Also unzip the corpora in the main directory.
+
+```bash
+$ unzip corpus.zip
+```
 
 ## Formatting files
 
@@ -39,7 +45,7 @@ To use the formatter, you need to use class `org.antlr.codebuff.Tool`.  Commandl
 Output goes to standard out unless you use `-o`.
  
 ```bash
-$ java -jar target/codebuff-1.4.19.jar  \
+$ java -jar target/codebuff-1.5.1.jar  \
        -g org.antlr.codebuff.ANTLRv4 \
        -rule grammarSpec \
        -corpus corpus/antlr4/training \
@@ -50,7 +56,7 @@ $ java -jar target/codebuff-1.4.19.jar  \
 ```
 
 ```bash
-$ java -jar codebuff-1.4.19 \
+$ java -jar codebuff-1.5.1 \
        -g org.antlr.codebuff.Java \
        -rule compilationUnit \
        -corpus corpus/java/training/stringtemplate4 \
@@ -62,7 +68,7 @@ $ java -jar codebuff-1.4.19 \
 These examples work for the grammars specified because they are already inside the complete jar. For parsers compiled outside of the jar, you might need to do something like:
 
 ```bash
-java java -cp target/codebuff-1.4.19.jar:$CLASSPATH \
+java java -cp target/codebuff-1.5.1.jar:$CLASSPATH \
        org.antlr.codebuff.Tool  \
        -g org.antlr.codebuff.ANTLRv4 \
        -rule grammarSpec -corpus corpus/antlr4/training \
@@ -114,7 +120,7 @@ Then you can run the speed tests as shown in following subsections.
 #### ANTLR corpus
 
 ```bash
-$ java -Xmx4G -Xss1M -cp target/codebuff-1.4.19.jar org.antlr.codebuff.validation.Speed -antlr corpus/antlr4/training/Java8.g4
+$ java -Xmx4G -Xss1M -cp target/codebuff-1.5.1.jar org.antlr.codebuff.validation.Speed -antlr corpus/antlr4/training/Java8.g4
 Loaded 12 files in 172ms
 antlr training of /Users/parrt/antlr/code/codebuff/corpus/antlr4/training/Java8.g4 = 353ms formatting = 340ms
 antlr training of /Users/parrt/antlr/code/codebuff/corpus/antlr4/training/Java8.g4 = 188ms formatting = 161ms
@@ -143,7 +149,7 @@ median of [5:19] formatting 70ms
 #### Guava corpus, Java grammar
 
 ```bash
-$ java -Xms4G -Xss1M -cp target/codebuff-1.4.19.jar org.antlr.codebuff.validation.Speed -java_guava corpus/java/training/guava/cache/LocalCache.java
+$ java -Xms4G -Xss1M -cp target/codebuff-1.5.1.jar org.antlr.codebuff.validation.Speed -java_guava corpus/java/training/guava/cache/LocalCache.java
 Loaded 511 files in 1949ms
 java_guava training of /Users/parrt/antlr/code/codebuff/corpus/java/training/guava/cache/LocalCache.java = 1984ms formatting = 2669ms
 java_guava training of /Users/parrt/antlr/code/codebuff/corpus/java/training/guava/cache/LocalCache.java = 1747ms formatting = 3166ms
@@ -174,7 +180,7 @@ median of [5:19] formatting 2733ms
 Load time here is very slow (2.5min) because the Java8 grammar is meant to reflect the language spec. It has not been optimized for performance. Once the corpus is loaded, training and formatting times are about the same as for Java grammar.
 
 ```bash
-$ java -Xms4G -Xss1M -cp target/codebuff-1.4.19.jar \
+$ java -Xms4G -Xss1M -cp target/codebuff-1.5.1.jar \
        org.antlr.codebuff.validation.Speed \
        -java8_guava corpus/java/training/guava/cache/LocalCache.java
 Loaded 511 files in 159947ms
@@ -218,7 +224,7 @@ do this:
 
 ```bash
 $ mvn clean compile install
-$ java -Xms8G -Xss1M -cp target/codebuff-1.4.19.jar org.antlr.codebuff.validation.LeaveOneOutValidator
+$ java -Xms8G -Xss1M -cp target/codebuff-1.5.1.jar org.antlr.codebuff.validation.LeaveOneOutValidator
 ...
 wrote python code to python/src/leave_one_out.py
 $ cd python/src
@@ -235,7 +241,7 @@ do this:
 
 ```bash
 $ mvn clean compile install
-$ java -Xms8G -Xss1M -cp target/codebuff-1.4.19.jar org.antlr.codebuff.validation.SubsetValidator
+$ java -Xms8G -Xss1M -cp target/codebuff-1.5.1.jar org.antlr.codebuff.validation.SubsetValidator
 ...
 wrote python code to python/src/subset_validator.py
 $ cd python/src
@@ -252,7 +258,7 @@ do this:
 
 ```bash
 $ mvn clean compile install
-$ java -Xms8G -Xss1M -cp target/codebuff-1.4.19.jar org.antlr.codebuff.validation.TestK
+$ java -Xms8G -Xss1M -cp target/codebuff-1.5.1.jar org.antlr.codebuff.validation.TestK
 ...
 wrote python code to python/src/vary_k.py
 $ cd python/src
