@@ -20,8 +20,10 @@ popd
 
 if [ -e $1/services-java/benchmarks/build/filelengths.png -a $1/services-java/benchmarks/build/roundtriploc.png ];
 then
-    DIR=$1/services-java/benchmarks/build
-    echo "benchmarks ran successfully. Plots can be found in $DIR/{filelengths.png,roundtriploc.png}"
+    mkdir -p $1/artifact
+    cp $1/services-java/benchmarks/build/{*.csv,*.png} $1/artifact
+    DIR=$1/artifact
+    echo "benchmarks ran successfully. The artifact can be found in $DIR"
 else
     echo "benchmarks failed, please contact s.keidel@tudelft.nl"
 fi

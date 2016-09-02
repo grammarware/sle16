@@ -1,4 +1,10 @@
+# Artifact
+
+The artifact is the plot of the file lengths and the plot of the respond times of Monto.
+
 The benchmarks for the paper have been performed on a MacBook Pro (Retina, 15-inch, Early 2013)
+
+The plotting script can be found at https://github.com/monto-editor/services-java/blob/master/plot.r
 
 # Build Requirements
 
@@ -29,7 +35,7 @@ $ R
 # press ctrl-d to leave the R environment
 ```
 
-Please check that all of the executables `pkg-config`, `java`, `stack`, `cloc` and `Rscript` are in the `PATH` before continuing.
+Please check that all executables (`pkg-config`, `java`, `stack`, `cloc`, `Rscript`) are in the `PATH` before continuing.
 
 # Running of the Benchmarks
 
@@ -39,4 +45,4 @@ $ cd benchmark
 $ ./benchmarks.sh ./monto
 ```
 
-If after the the benchmarks finished, the plots are in `./monto/service-java/benchmarks/build/*.png`.
+After the the benchmarks finished, the artifact can be found in `./monto/artifact/`.
