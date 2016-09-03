@@ -1,0 +1,352 @@
+Abstract
+
+data TVar = TSimpleVar TSymbol
+          | TFieldVar (TVar,TSymbol)
+          | TSubscriptVar (TVar,TExp)
+  deriving (Show, Eq, Read)
+
+data TExp = TVarExp TVar
+          | TNilExp
+          | TIntExp Int
+          | TStringExp String
+          | TCallExp TSymbol [TExp]
+          | TOpExp TExp TOper TExp         -- left : exp, oper : oper, right : exp
+          | TRecordExp [TFieldCre] TSymbol -- fields:[(TSymbol,TExp)], typ:Tsymbol
+          | TSeqExp [TExp]
+          | TAssignExp TVar TExp
+          | TIfExp TExp TExp (Maybe TExp)  -- test:exp, then':exp, else':exp option
+          | TWhileExp TExp TExp
+          | TForExp TSymbol Bool TExp TExp TExp -- var:Tsymbol, escape:bool ref, lo:exp, hi:exp,  body:exp
+          | TBreakExp
+          | TLetExp [TDec] TExp
+          | TArrayExp TSymbol TExp TExp
+  deriving (Show, Eq, Read)
+
+data TDec = TFunctionDec TFundec
+          | TVarDec TSymbol Bool (Maybe TSymbol) TExp -- name:TSymbol, escape:bool ref, typ:Tsymbol option, init:Texp
+          | TTypeDec TTyDec
+  deriving (Show, Eq, Read)
+
+data TTy = TNameTy TSymbol
+         | TRecordTy [TFieldDec]
+         | TArrayTy TSymbol
+  deriving (Show, Eq, Read)
+
+data TOper = TPlusOp | TMinusOp | TTimesOp | TDivideOp | TEqOp | TNeqOp | TLtOp | TLeOp | TGtOp | TGeOp
+  deriving (Show, Eq, Read)
+
+
+data TFieldCre = TFieldCre (TSymbol,TExp)
+  deriving (Show, Eq, Read)
+
+data TFieldDec = TFieldDec TSymbol Bool TSymbol
+  deriving (Show, Eq, Read) -- name: Tsymbol, escape: bool ref, typ: Tsymbol
+
+data TFundec = TFundec TSymbol [TFieldDec] (Maybe TSymbol) TExp
+  deriving (Show, Eq, Read)
+
+data TTyDec = TTyDec (TSymbol,TTy)
+  deriving (Show, Eq, Read)
+
+type TSymbol = String
+
+
+Concrete
+
+%commentLine  '//'       ;
+%commentBlock '/*'  '*/' ;
+
+Program -> Exp ;
+
+Exp -> LetExp  | RecExp     | ArrExp | PrimitiveOpt
+     | ForExp  | WhileExp   | IfThen | IfThenElse
+     | 'break' | Assignment | Guard
+     ;
+
+Decs  -> Dec Decs | Dec ;
+Dec   -> TyDec | VarDec | FunDec ;
+TyDec -> 'type' Name '=' Ty ;
+Ty    -> Name | ArrTy | RecTy ;
+ArrTy -> 'array' 'of' Name ;
+RecTy -> '{' '}'  | '{' FieldDecs '}' ;
+
+FieldDecs -> FieldDec ',' FieldDecs | FieldDec ;
+FieldDec  -> Name ':' Name ;
+
+FunDec -> 'function' Name '(' FieldDecs ')'          '=' Exp
+        | 'function' Name '('           ')'          '=' Exp
+        | 'function' Name '(' FieldDecs ')' ':' Name '=' Exp
+        | 'function' Name '('           ')' ':' Name '=' Exp
+        ;
+
+VarDec -> 'var' Name          ':=' Exp
+        | 'var' Name ':' Name ':=' Exp
+        ;
+
+LValue -> Name | OtherLValue ;
+OtherLValue -> Name '[' Exp ']' | OtherLValue '[' Exp ']' | LValue '.' Name ;
+
+SeqExp -> '(' ')' | '(' ExpSeq ')' ;
+ExpSeq  -> Exp ';' ExpSeq  | Exp;
+ExpList -> Exp ',' ExpList | Exp;
+
+CallExp  -> Name '(' ExpList ')' | Name '(' ')';
+
+ArrExp -> Name '[' Exp ']' 'of' Exp ;
+RecExp -> Name '{' '}'
+        | Name '{' FieldCreates '}' ;
+
+FieldCreates -> FieldCreate ',' FieldCreates | FieldCreate ;
+FieldCreate  -> Name '=' Exp ;
+
+Assignment -> LValue ':=' Exp ;
+
+-- 'end' is used to handle the dangling-else problem
+IfThenElse -> 'if' Exp 'then' Exp 'else' Exp ;
+IfThen     -> 'if' Exp 'then' Exp 'end';
+WhileExp   -> 'while' Exp 'do' Exp ;
+ForExp     -> 'for' Name ':=' Exp 'to' Exp 'do' Exp ;
+LetExp     -> 'let' Decs 'in' ExpSeq 'end' ;
+
+PrimitiveOpt  -> PrimitiveOpt '|'  PrimitiveOpt1
+              |  PrimitiveOpt1 ;
+
+PrimitiveOpt1 -> PrimitiveOpt1 '&' PrimitiveOpt2
+              |  PrimitiveOpt2 ;
+
+PrimitiveOpt2 -> PrimitiveOpt2 '='  PrimitiveOpt3
+              |  PrimitiveOpt2 '<>' PrimitiveOpt3
+              |  PrimitiveOpt2 '>'  PrimitiveOpt3
+              |  PrimitiveOpt2 '<'  PrimitiveOpt3
+              |  PrimitiveOpt2 '>=' PrimitiveOpt3
+              |  PrimitiveOpt2 '<=' PrimitiveOpt3
+              |  PrimitiveOpt3
+              ;
+
+PrimitiveOpt3 -> PrimitiveOpt3 '+'  PrimitiveOpt4
+              |  PrimitiveOpt3 '-'  PrimitiveOpt4
+              |  PrimitiveOpt4
+              ;
+
+PrimitiveOpt4 -> PrimitiveOpt4 '*'  PrimitiveOpt5
+              |  PrimitiveOpt4 '/'  PrimitiveOpt5
+              |  PrimitiveOpt5
+              ;
+
+PrimitiveOpt5 -> '-' PrimitiveOpt5
+              | Int
+              | String
+              | LValue
+              | SeqExp
+              | CallExp
+              | 'nil'
+              ;
+
+Guard  -> 'guard' CaseBs 'end' ;
+CaseBs -> CaseB CaseBs | CaseB ;
+CaseB  -> LValue '=' Int '->' Exp ;
+
+
+-- please put the update part into an additional parenthesis:
+-- legal:   arith  +>  (arith +> Exp);
+-- illegal: arith  +>   arith +> Exp;
+
+-- the syntax is somehow like the one in Haskell. Space (application) have the highest priority.
+-- please do not use redundant parenthesis in Left hand side of an action. we have not handled it properly.
+
+
+Actions
+
+TExp +> Program
+t     +>  (t +> Exp);
+
+TExp +> Exp
+TBreakExp        +> 'break'             ;
+t@(TVarExp _)    +> (t +> PrimitiveOpt) ;
+t@(TIntExp _)    +> (t +> PrimitiveOpt) ;
+t@(TStringExp _) +> (t +> PrimitiveOpt) ;
+t@(TNilExp)      +> (t +> PrimitiveOpt) ;
+t@(TCallExp _ _) +> (t +> PrimitiveOpt) ;
+t@(TSeqExp _)    +> (t +> PrimitiveOpt) ;
+t@(TOpExp _ _ _) +> (t +> PrimitiveOpt) ;
+
+t@(TArrayExp _ _ _)        +> (t +> ArrExp)     ;
+t@(TRecordExp _ _)         +> (t +> RecExp)     ;
+t@(TAssignExp _ _)         +> (t +> Assignment) ;
+t@(TWhileExp _ _)          +> (t +> WhileExp)   ;
+t@(TForExp _ _ _ _ _)      +> (t +> ForExp)     ;
+t@(TLetExp _ (TSeqExp _))  +> (t +> LetExp)     ;
+
+t@(TIfExp _ _ Nothing)             +> (t +> IfThen)     ;
+t@(TIfExp _ _ (Just _))            +> (t +> IfThenElse) ;
+t@(TIfExp _ _ (Just (TIntExp 0)))  +> (t +> (PrimitiveOpt -> Exp '&' Exp) ) ;
+t@(TIfExp _ (TIntExp 1) _)         +> (t +> (PrimitiveOpt -> (PrimitiveOpt1 -> Exp '|' Exp)) ) ;
+t@(TIfExp (TOpExp (TVarExp _) TEqOp (TIntExp _)) _ _)  +> (t +> Guard) ;
+
+-------
+TExp +> SeqExp
+TSeqExp []        +> '(' ')'  ;
+TSeqExp t@(_:_)   +> '(' (t +> ExpSeq) ')' ;
+
+[TExp] +> ExpSeq
+[e]            +> (e +> Exp) ;
+(e: es@(_:_))  +> (e +> Exp) ';' (es +> ExpSeq) ;
+
+TExp +> CallExp
+TCallExp tSym []       +>    (tSym +> Name)   '(' ')' ;
+TCallExp tSym t@(_:_)  +>    (tSym +> Name) '(' (t +> ExpList) ')' ;
+
+[TExp] +> ExpList
+[e]              +>  (e +> Exp) ;
+(e: es@(_:_))    +>  (e +> Exp) ',' (es +> ExpList) ; -- should be at least two elements
+--------
+
+TExp +> ArrExp
+TArrayExp tSym tExp1 tExp2  +>  (tSym +> Name) '[' (tExp1 +> Exp) ']' 'of' (tExp2 +> Exp) ;
+
+TExp +> RecExp
+TRecordExp [] tSym          +>  (tSym +> Name) '{' '}' ;
+TRecordExp tFCs@(_:_) tSym  +>  (tSym +> Name) '{' (tFCs +> FieldCreates) '}' ;
+
+[TFieldCre] +> FieldCreates
+[fc]            +> (fc +> FieldCreate) ;
+(fc: fcs@(_:_)) +> (fc +> FieldCreate) ',' (fcs +> FieldCreates) ;
+
+TFieldCre +> FieldCreate
+TFieldCre (tSym,tExp)  +>   (tSym +> Name) '=' (tExp +> Exp) ;
+--------
+
+TExp +> Assignment
+TAssignExp tVar tExp   +>   (tVar +> LValue) ':=' (tExp +> Exp) ;
+
+TExp +> WhileExp
+TWhileExp tCond tExp   +> 'while' (tCond +> Exp) 'do' (tExp +> Exp) ;
+
+TExp +> ForExp
+TForExp tSym True tLow tHigh tBody  +>
+  'for' (tSym +> Name) ':=' (tLow +> Exp) 'to' (tHigh +> Exp) 'do' (tBody +> Exp) ;
+
+TExp +> IfThen
+TIfExp tCond tExp1 Nothing  +> 'if' (tCond +> Exp) 'then' (tExp1 +> Exp) 'end';
+
+TExp +> IfThenElse
+TIfExp tCond tExp1 (Just tExp2)  +> 'if' (tCond +> Exp) 'then' (tExp1 +> Exp) 'else' (tExp2 +> Exp);
+
+TExp +> LetExp
+TLetExp tDecs (TSeqExp tExps)  +> 'let' (tDecs +> Decs) 'in' (tExps +> ExpSeq) 'end' ;
+--------
+
+TVar +> LValue
+TSimpleVar tSym      +>  (tSym +> Name) ;
+t@(TSubscriptVar _)  +>  (t +> OtherLValue) ;
+t@(TFieldVar _)      +>  (t +> OtherLValue) ;
+
+TVar +> OtherLValue
+TSubscriptVar (TSimpleVar tSym, tExp)  +> (tSym +> Name) '[' (tExp +> Exp) ']' ;
+TSubscriptVar (tVar,tExp)              +> (tVar +> OtherLValue) '[' (tExp +> Exp) ']' ;
+TFieldVar     (tVar,tSym)              +> (tVar +> LValue) '.' (tSym +> Name) ;
+--------
+
+[TDec] +> Decs
+[dec]              +> (dec +> Dec) ;
+(dec: decs@(_:_))  +> (dec +> Dec) (decs +> Decs) ;
+
+TDec +> Dec
+TFunctionDec fdec  +>     (fdec +> FunDec) ;
+TTypeDec tdec      +>     (tdec +> TyDec) ;
+TVarDec tSym True Nothing tExp       +>
+  (VarDec -> 'var' (tSym +> Name)                     ':=' (tExp +> Exp)) ;
+TVarDec tSym True (Just tSym2) tExp  +>
+  (VarDec -> 'var' (tSym +> Name) ':' (tSym2 +> Name) ':=' (tExp +> Exp)) ;
+
+TFundec +> FunDec
+TFundec tSym tf@(_:_) Nothing tExp
+  +> 'function' (tSym +> Name) '(' (tf +> FieldDecs) ')'                     '=' (tExp +> Exp) ;
+TFundec tSym [] Nothing tExp
+  +> 'function' (tSym +> Name) '('                   ')'                     '=' (tExp +> Exp) ;
+TFundec tSym tf@(_:_) (Just tSym2) tExp
+  +> 'function' (tSym +> Name) '(' (tf +> FieldDecs) ')' ':' (tSym2 +> Name) '=' (tExp +> Exp) ;
+TFundec tSym [] (Just tSym2) tExp
+  +> 'function' (tSym +> Name) '('                   ')' ':' (tSym2 +> Name) '=' (tExp +> Exp) ;
+
+TTyDec +> TyDec
+TTyDec (tSym,ty)     +> 'type' (tSym +> Name) '=' (ty +> Ty) ;
+
+
+---------Type---------
+TTy +> Ty
+TNameTy tSym     +> (tSym +> Name) ;
+t@(TRecordTy _)  +> (t +> RecTy);
+t@(TArrayTy _)   +> (t +> ArrTy);
+
+TTy +> RecTy
+TRecordTy []             +> '{' '}' ;
+TRecordTy tFieldDs@(_:_) +> '{' (tFieldDs +> FieldDecs) '}' ;
+
+TTy +> ArrTy
+TArrayTy tSym      +>  'array' 'of' (tSym +> Name) ;
+
+[TFieldDec] +> FieldDecs
+[tf@(TFieldDec _ True _)] +> (tf +> FieldDec) ;
+(tf1: tfs@(_:_))          +> (tf1 +> FieldDec) ',' (tfs +> FieldDecs) ;
+
+TFieldDec +> FieldDec
+TFieldDec tSym1 True tSym2  +>  (tSym1 +> Name) ':' (tSym2 +> Name) ;
+
+-------primitive------
+TExp +> PrimitiveOpt
+TIfExp tCond (TIntExp 1) (Just tExp2)  +>  (tCond +> PrimitiveOpt) '|' (tExp2 +> PrimitiveOpt1) ;
+t                                      +>  (t  +> PrimitiveOpt1) ;
+
+TExp +> PrimitiveOpt1
+TIfExp tCond tExp1 (Just (TIntExp 0))  +>  (tCond +> PrimitiveOpt1) '&' (tExp1 +> PrimitiveOpt2) ;
+t                                      +>  (t  +> PrimitiveOpt2) ;
+
+TExp +> PrimitiveOpt2
+TOpExp  l  TEqOp   r   +>   (l +> PrimitiveOpt2) '='  (r +> PrimitiveOpt3) ;
+TOpExp  l  TNeqOp  r   +>   (l +> PrimitiveOpt2) '<>' (r +> PrimitiveOpt3) ;
+TOpExp  l  TLtOp   r   +>   (l +> PrimitiveOpt2) '<'  (r +> PrimitiveOpt3) ;
+TOpExp  l  TLeOp   r   +>   (l +> PrimitiveOpt2) '<=' (r +> PrimitiveOpt3) ;
+TOpExp  l  TGtOp   r   +>   (l +> PrimitiveOpt2) '>'  (r +> PrimitiveOpt3) ;
+TOpExp  l  TGeOp   r   +>   (l +> PrimitiveOpt2) '>=' (r +> PrimitiveOpt3) ;
+t                      +>   (t +> PrimitiveOpt3) ;
+
+TExp +> PrimitiveOpt3
+TOpExp  l  TPlusOp  r +>  (l +> PrimitiveOpt3) '+'  (r +> PrimitiveOpt4) ;
+TOpExp  l  TMinusOp r +>  (l +> PrimitiveOpt3) '-'  (r +> PrimitiveOpt4) ;
+t                     +>  (t +> PrimitiveOpt4) ;
+
+TExp +> PrimitiveOpt4
+TOpExp  l  TTimesOp  r +>  (l +> PrimitiveOpt4) '*'  (r +> PrimitiveOpt5) ;
+TOpExp  l  TDivideOp r +>  (l +> PrimitiveOpt4) '/'  (r +> PrimitiveOpt5) ;
+t                      +>  (t +> PrimitiveOpt5) ;
+
+TExp +> PrimitiveOpt5
+TOpExp (TIntExp 0) TMinusOp r +> '-' (r +> PrimitiveOpt5) ;
+TVarExp v        +> (v +> LValue)  ;
+TIntExp i        +> (i +> Int)     ;
+TStringExp s     +> (s +> String)  ;
+TNilExp          +> 'nil'          ;
+t@(TCallExp _ _) +> (t +> CallExp) ;
+t@(TSeqExp _)    +> (t +> SeqExp)  ;
+
+
+---------- introduce Guard expression  --------
+TExp +> Guard
+TIfExp (TOpExp (TVarExp lv) TEqOp (TIntExp i)) e1 Nothing
+  +>  'guard' (CaseBs ->
+                (CaseB -> (lv +> LValue) '=' (i +> Int) '->' (e1 +> Exp))
+              ) 'end';
+TIfExp (TOpExp (TVarExp lv) TEqOp (TIntExp i)) e1 (Just if2@(TIfExp _ _ _))
+  +>  'guard' (CaseBs ->
+                (CaseB -> (lv +> LValue) '=' (i +> Int) '->' (e1 +> Exp))
+                (if2 +> CaseBs)
+              ) 'end';
+
+TExp +> CaseBs
+TIfExp (TOpExp (TVarExp lv) TEqOp (TIntExp i)) e1 Nothing
+    +>  (CaseB -> (lv +> LValue) '=' (i +> Int) '->' (e1 +> Exp) ) ;
+TIfExp (TOpExp (TVarExp lv) TEqOp (TIntExp i)) e1 (Just if2@(TIfExp _ _ _))
+    +>  (CaseB -> (lv +> LValue) '=' (i +> Int) '->' (e1 +> Exp))
+        (if2 +> CaseBs) ;
+--------
