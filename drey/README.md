@@ -1,6 +1,6 @@
 # sle2016
 
-Description:
+Description
 ============
   Proof-of-concept Java implementation of the DSL monitoring pattern.
 
@@ -13,14 +13,14 @@ Description:
   (A strict copy of the Java program committed here can be found at
   https://github.com/monitorpattern/sle2016)
 
-Recommended versions of software:
+Recommended versions of software
 =================================
    - Eclipse Version: Mars.2 Release (4.5.2)
    - Configured with JavaSE-1.8
    - Including DSProfile, Version 2.11 (available in the project's zip)
 
    
-How to install the prototype:
+How to install the prototype
 =============================
   
   The easiest way to "install" and test the paper's code is to do it
@@ -51,11 +51,12 @@ How to install the prototype:
     - Build the project if necessary
       (Project > Build Project or Build Automatically)
   
-Walkthrough: run the tests listed in the paper:
+Walkthrough: run the tests listed in the paper
 ===============================================
 
-1. Monitors from scratch A main program is in MainTester in package
-  'examples.lambda.concrete':
+1. Monitors from scratch
+
+  A main program is in MainTester in package 'examples.lambda.concrete':
   Right-click on MainTester.java > Run As > JavaApplication.
   It runs without any argument configuration:
   all available tests are executed sequentially:
@@ -88,9 +89,9 @@ Documentation files
 Note about the dependencies:
 ---------------------------
 
-  The jars are available in the libs directory at the root of the
-  project You can also download the jar of dsprofile, version 2.11
-  Available at: https://bitbucket.org/inkytonik/dsprofile
+  The jars of the dependencies are available in the libs directory at
+  the root of the project You can also download the jar of dsprofile,
+  version 2.11 Available at: https://bitbucket.org/inkytonik/dsprofile
   
 
   
