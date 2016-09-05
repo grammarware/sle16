@@ -1,4 +1,4 @@
 # Coupled Software Transformations-Revisited
-Ralf L„mmel
+Ralf Lämmel
 
 No artefacts corresponding to this paper, have been submitted yet.

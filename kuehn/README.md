@@ -1,4 +1,4 @@
 # Full-fledge Role Modeling Editor (FRaMED)
-Thomas Khn, Kay Bierzynski, Sebastian Richly, Uwe Aámann
+Thomas Kühn, Kay Bierzynski, Sebastian Richly, Uwe Aßmann
 
 No artefacts corresponding to this paper, have been submitted yet.
