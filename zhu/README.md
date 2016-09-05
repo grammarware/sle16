@@ -73,7 +73,7 @@ You can first parse the program text into an AST, and change the subtree `(Add (
 ### Tiger
 This is the test case mentioned in the **Case study** (Section 5) of the paper.
 
-
+r
 In the test cases, select **The tiger language (unambiguous grammar)**. (Of course you can also try Tiger defined in ambiguous grammar + disambiguation rules, but the well-behavedness under certain situation is not guaranteed for certain cases.)
 
 #### Section 5.1: Syntactic sugar
@@ -98,7 +98,7 @@ At the beginning of the Section **Case study** (Section 5) We said that we teste
 
 You can test them in the following way:
 
-(Please firstly make sure you put these test files in a **new folder** not containing any other files, especially Haskell files, text files (*.txt). The files will be **removed** by the `clean.sh` shell after testing.)
+(Please firstly make sure you put these test files in a **new folder** not containing any other files, especially Haskell files, text files (\*.txt). The files will be **removed** by the `clean.sh` shell after testing.)
 
 1. Generate the executable file for the Tiger grammar.  
 In the terminal input `biyacc BiYaccFileName OutputExecutableFile`  
