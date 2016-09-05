@@ -1,0 +1,86 @@
+Program Content 
+--------------------------------------------------------------------------
+Creation date: 2016-09-04
+File: content.txt
+Content: this document describes the structure of the directories for
+this program applying the monitor pattern on a simple lambda-calculus-like
+language.
+--------------------------------------------------------------------------
+
+The program is structured in three main packages : Lambda, Monitoring.framework,
+Monitoring.concrete. Their content is described as follows:
+
+A. Lambda package
+==========================================================================
+
+The standard interpreter of our target functional language,
+organized in three subpackages:
+
+1. Abstract Syntax (ast):
+
+  - The AST elements of the language: abstraction, application,
+  conditional, constant, expression, letrec, variables, and the class
+  "Primitive" to handle simple arithmetic operations (+, *, ...)
+
+  - The interface for visiting the AST: ILambdaVisitor.java
+
+2. Semantic Domains (domain):
+
+  The classes representing the semantic domains for evaluating a
+  program written in the target language:
+
+  - DenotableValue which is inherited by *Value classes (Number, Boolean, Function)
+
+  - Environment which is inherited by EmptyEnvironment and
+    FunctionEnvironment.  The environment of the language is in fact
+    represented as a stack of environments encapsulated in the
+    Configuration class, reflecting the language scope rule.
+
+3. Valuation (valuation):
+
+   The standard interpreter of the target language defined in the form
+   of a visitor in the LambdaValuation class (algorithm sketched in
+   algo.txt)
+
+
+B. Monitoring.framework package
+==========================================================================
+
+The implementation of the monitor pattern layers for the target language
+
+1. Specification (monitoring.framework.specification)
+
+   The abstract classes (or interfaces) for Annotation, MonitorLink,
+   MonitorState, and Monitor in the specification layer of the
+   pattern.  References to the Element of the pattern are instantiated
+   with the Expression node of the target language.
+
+2. Composition (monitoring.framework.composition)
+
+   The abstract classes (or interfaces) for Decorator, IDecoratorVisitor and
+   MonitoringEvaluator in the composition layer of the pattern.
+
+C. Monitoring.concrete package
+==========================================================================
+
+The implementation of the concrete monitors described in the paper
+
+1. A basic profiler (monitoring.concrete.profiler)
+
+2. A basic tracer (monitoring.concrete.tracer)
+
+3. A profiler integrating the DSProfile library (monitoring.concrete.dsprofile)
+
+4. A prototype debugger (monitoring.concrete.debugger)
+
+
+
+
+
+
+
+
+
+
+
+

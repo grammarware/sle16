@@ -1,0 +1,8 @@
+Sketch of the functional language interpreter
+--------------------------------------------------------------------------
+Creation date : 2016-09-04
+File : content.txt
+Content : this document describes the structure of the directories for
+this program applying the monitor pattern on a simple lambda-calculus-like
+language.
+--------------------------------------------------------------------------

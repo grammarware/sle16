@@ -1,0 +1,63 @@
+Sketch of the functional language interpreter
+--------------------------------------------------------------------------
+Creation date: 2016-09-04
+File: content.txt
+Content: this document sketches the algorithm of the interpreter for the
+simple lambda-calculus-like language
+(as implemented in lambda.valuation.LambdaValuation.java).
+--------------------------------------------------------------------------
+
+The paragraph "Visitor-based evaluator implementation."
+========================================================
+This paragraph is copied from the paper and comments the
+sketch of the corresponding algorithm below.
+
+The context of execution is an instance of the \emph{EvaluatorState}
+class encapsulating the environment in the form of a stack of
+\emph{Environment} instances. Variables are accessed in the context
+through a \emph{lookup} method on \emph{EvaluatorState}, and constants
+are directly mapped to values. An abstraction is evaluated to a
+\emph{FunctionValue} instance.  The evaluation of the expression
+inside a function value is delayed to application evaluation.  % In a
+conditional, the guard is evaluated first, conditioning the evaluation
+of the true or false branches. The application of an expression $e_1$
+to an argument $e_2$ is evaluated by evaluating first $e_2$ then
+$e_1$, and applying the value of $e_1$ to the one of $e_2$. In our
+case study, the value of $e_1$ is a \emph{FunctionValue} instance.  %
+A letrec clause binding a variable $x$ with an abstraction $a$ and a
+body expression $e$ is evaluated as follows: a new binding environment
+containing $x$ mapped to the evaluation of its abstraction is pushed,
+reflecting the recursive definition of the environment as would be
+found in a typical functional-based definition; $e$ is then evaluated
+within this environment scope.
+
+Algorithm:
+==========
+
+class LambdaEvaluator implements IVisitor<Value> {
+
+ LambdaEvaluator() {
+  EvaluatorState context = new EvaluatorState(); }
+
+ Value visit(Constant c) {return new Value(c);}
+ Value visit(Variable v) {
+   return context.lookup(v.name);  }
+ Value visit(Abstraction(x,e)) {
+   FunctionValue (FunEnv().update(x, null), e); }
+ Value visit(Application(e$_1$, e$_2$)) {
+   f = $e_1$.accept(this);
+   context.push(f.env.updateArg(e$_2$.accept(this)); 
+   result = f.getExp().accept(this);
+   context.pop(); 
+   return result; }
+ Value visit(Conditional(e$_1$, e$_2$, e$_3$) {
+   cond = e$_1$.accept(this);
+   if cond { return e$_2$.accept(this); }
+   else { return e$_3$.accept(this); }
+ Value visit(Letrec(x, a, e)) { 
+   context.push(Env().update(x, null)); 
+   context.update(x, a.accept(this));
+   result = e.accept(this);
+   context.pop();
+   return result;  }
+}

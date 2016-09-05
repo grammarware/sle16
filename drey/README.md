@@ -28,8 +28,6 @@ How to install the prototype
   technology, so it can be as well run in command line with proper
   classpath configuration. We describe the eclipse way here.
 
-   - Unarchive the monitorLambda.tgz somewhere
-  
    - Run Eclipse
 
    - Import the directory 'monitorLambda' as a Java Project inside
