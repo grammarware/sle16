@@ -1,0 +1,47 @@
+﻿─ section spec2 parents standard_toolkit
+└
+
+─ [ CHANGE ] └
+
+─
+    RESULT ::= success | failure
+ 	STATE == seq CHANGE
+ 	SNAPSHOT == STATE
+ 	DELTA == STATE
+ 	TRANSFORM == STATE → STATE
+ 	PARSER == STATE → seq TRANSFORM
+└
+╷
+	result: STATE → PARSER → RESULT
+	composeTwo == λ s: seq TRANSFORM ⦁ ⟨ s 1 ⨾ s 2 ⟩ ⁀ tail (tail s)
+	reduceN == let composeTwo == λ s: seq TRANSFORM ⦁ ⟨ s(1) ⨾ s(2) ⟩ ⁀ tail (tail s) ⦁
+		 λ n: ℕ ⦁ λ s: seq TRANSFORM ⦁ if n = 0 then id STATE else iter (n−1) composeTwo s 1
+└
+	
+╷
+	snapshot: STATE → SNAPSHOT
+	restore: SNAPSHOT → TRANSFORM
+ 	diff: SNAPSHOT → STATE → DELTA
+ 	merge: DELTA → TRANSFORM
+ 	applyChange: CHANGE → TRANSFORM
+ 	call: PARSER → TRANSFORM
+|
+	snapshot = λ x: STATE ⦁ x
+	
+	restore = λ sn: SNAPSHOT ⦁ λ st: STATE ⦁ sn
+	
+ 	diff = λ sn: SNAPSHOT ⦁ λ st: STATE ⦁ squash (st  ∖ sn)
+	∀ sn: dom diff ⦁ ∀ st: dom (diff sn) ⦁ sn prefix st
+	
+	merge = λ d: DELTA ⦁ λ st: STATE ⦁ st ⁀ d
+	 
+	applyChange = λ c: CHANGE ⦁ λ st: STATE ⦁ st ⁀ ⟨ c ⟩
+	 
+	call = λ p: PARSER ⦁ λ st: STATE ⦁ if result st p = success then reduceN (# p st) (p st) st else st
+	∀ p: PARSER; s: STATE ⦁ s prefix (call p s)
+
+	∀ i: ℕ; t: TRANSFORM ; sn: SNAPSHOT ; p: PARSER ; s: STATE | (i, t) ∈ p s ∧ t = restore sn ∧ s ≠ sn ⦁ 
+		∃ j: ℕ | j < i ⦁
+			sn = reduceN j (p s) s
+			∧ ∀ k: j..i ⦁ sn prefix (reduceN k (p s) s)
+└

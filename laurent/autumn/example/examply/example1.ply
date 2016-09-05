@@ -1,0 +1,18 @@
+class Pair
+    val a: Any
+    val b: Any
+
+    constructor (a: Any, b: Any)
+        this.a = a
+        this.b = b
+
+    fun apply (f: (Any, Any) -> Any): Any
+        return f(a, b)
+
+    fun swap()
+        apply() x, y ->
+            a = y
+            b = x
+
+    fun reversed(): Pair
+        return Pair(b, a)

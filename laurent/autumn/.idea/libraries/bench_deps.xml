@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="bench_deps">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/bench_deps" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/bench_deps" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/bench_deps" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/bench_deps" recursive="false" type="SOURCES" />
+  </library>
+</component>
