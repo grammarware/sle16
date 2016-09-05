@@ -1,5 +1,5 @@
 # Symbolic Execution of High-level Transformations
-Ahmad Salim Al-Sibahi, Aleksandar S. Dimovski, Andrzej Wasowski
+Ahmad Salim Al-Sibahi, Aleksandar S. Dimovski, Andrzej Wąsowski
 
 The development repository of this artifact is <https://github.com/models-team/SymexTRON>.
 
