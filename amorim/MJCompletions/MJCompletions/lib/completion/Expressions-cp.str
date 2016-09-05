@@ -1,0 +1,415 @@
+module completion/Expressions-cp
+
+imports
+  libstratego-gpp
+  runtime/completion/-
+
+
+imports
+  signatures/Expressions-sig
+
+
+imports
+  completion/Lexical-cp
+
+
+rules
+
+  suggest-completions(|completions):
+    Exp-Plhdr() -> <add-completions(|("True", True()))
+                    ; fail> completions
+
+  suggest-completions(|completions):
+    Exp-Plhdr() -> <add-completions(|("False", False()))
+                    ; fail> completions
+
+  suggest-completions(|completions):
+    Exp-Plhdr() -> <add-completions(|("This", This()))
+                    ; fail> completions
+
+  suggest-completions(|completions):
+    VarRef-Plhdr() -> <add-completions(
+                       | ( "VarRef"
+                         , VarRef(
+                             <try(inline-completions(|VarRef-Plhdr()))> ID-Plhdr()
+                           )
+                         )
+                       )
+                       ; fail> completions
+
+  suggest-completions(|completions):
+    Exp-Plhdr() -> <suggest-completions(|completions)> VarRef-Plhdr()
+    where <not(is-expanded)> (Exp-Plhdr(), VarRef-Plhdr())
+          ; rules (
+              is-expanded :
+                (Exp-Plhdr(), VarRef-Plhdr()) -> <id>
+            )
+
+  suggest-completions(|completions):
+    Exp-Plhdr() -> <add-completions(
+                    | ( "IntValue"
+                      , IntValue(
+                          <try(inline-completions(|Exp-Plhdr()))> INT-Plhdr()
+                        )
+                      )
+                    )
+                    ; fail> completions
+
+  suggest-completions(|completions):
+    Exp-Plhdr() -> <add-completions(
+                    | ( "Not"
+                      , Not(
+                          <try(inline-completions(|Exp-Plhdr()))> Exp-Plhdr()
+                        )
+                      )
+                    )
+                    ; fail> completions
+
+  suggest-completions(|completions):
+    Exp-Plhdr() -> <add-completions(
+                    | ( "Add"
+                      , Add(
+                          <try(inline-completions(|Exp-Plhdr()))> Exp-Plhdr()
+                        , <try(inline-completions(|Exp-Plhdr()))> Exp-Plhdr()
+                        )
+                      )
+                    )
+                    ; fail> completions
+
+  suggest-completions(|completions):
+    Exp-Plhdr() -> <add-completions(
+                    | ( "Sub"
+                      , Sub(
+                          <try(inline-completions(|Exp-Plhdr()))> Exp-Plhdr()
+                        , <try(inline-completions(|Exp-Plhdr()))> Exp-Plhdr()
+                        )
+                      )
+                    )
+                    ; fail> completions
+
+  suggest-completions(|completions):
+    Exp-Plhdr() -> <add-completions(
+                    | ( "Mul"
+                      , Mul(
+                          <try(inline-completions(|Exp-Plhdr()))> Exp-Plhdr()
+                        , <try(inline-completions(|Exp-Plhdr()))> Exp-Plhdr()
+                        )
+                      )
+                    )
+                    ; fail> completions
+
+  suggest-completions(|completions):
+    Exp-Plhdr() -> <add-completions(
+                    | ( "Lt"
+                      , Lt(
+                          <try(inline-completions(|Exp-Plhdr()))> Exp-Plhdr()
+                        , <try(inline-completions(|Exp-Plhdr()))> Exp-Plhdr()
+                        )
+                      )
+                    )
+                    ; fail> completions
+
+  suggest-completions(|completions):
+    Exp-Plhdr() -> <add-completions(
+                    | ( "And"
+                      , And(
+                          <try(inline-completions(|Exp-Plhdr()))> Exp-Plhdr()
+                        , <try(inline-completions(|Exp-Plhdr()))> Exp-Plhdr()
+                        )
+                      )
+                    )
+                    ; fail> completions
+
+  suggest-completions(|completions):
+    Exp-Plhdr() -> <add-completions(
+                    | ( "Call"
+                      , Call(
+                          <try(inline-completions(|Exp-Plhdr()))> Exp-Plhdr()
+                        , <try(inline-completions(|Exp-Plhdr()))> ID-Plhdr()
+                        , CURSOR_ELEMENT()
+                        )
+                      )
+                    )
+                    ; fail> completions
+
+  suggest-completions(|completions):
+    Exp-Plhdr() -> <add-completions(
+                    | ( "NewArray"
+                      , NewArray(
+                          <try(inline-completions(|Exp-Plhdr()))> Exp-Plhdr()
+                        )
+                      )
+                    )
+                    ; fail> completions
+
+  suggest-completions(|completions):
+    Exp-Plhdr() -> <add-completions(
+                    | ( "Subscript"
+                      , Subscript(
+                          <try(inline-completions(|Exp-Plhdr()))> Exp-Plhdr()
+                        , <try(inline-completions(|Exp-Plhdr()))> IndexExp-Plhdr()
+                        )
+                      )
+                    )
+                    ; fail> completions
+
+  suggest-completions(|completions):
+    IndexExp-Plhdr() -> <suggest-completions(|completions)> Exp-Plhdr()
+    where <not(is-expanded)> (IndexExp-Plhdr(), Exp-Plhdr())
+          ; rules (
+              is-expanded :
+                (IndexExp-Plhdr(), Exp-Plhdr()) -> <id>
+            )
+
+  suggest-completions(|completions):
+    Exp-Plhdr() -> <add-completions(
+                    | ( "Length"
+                      , Length(
+                          <try(inline-completions(|Exp-Plhdr()))> Exp-Plhdr()
+                        )
+                      )
+                    )
+                    ; fail> completions
+
+  suggest-completions(|completions):
+    Exp-Plhdr() -> <add-completions(
+                    | ( "NewObject"
+                      , NewObject(
+                          <try(inline-completions(|Exp-Plhdr()))> ID-Plhdr()
+                        )
+                      )
+                    )
+                    ; fail> completions
+
+
+rules
+
+  suggest-completions-left-rec(|completions):
+    (sort, orig-term) -> <add-completions(
+                          | ( "Add"
+                            , Add(
+                                orig-term
+                              , <try(inline-completions(|Exp-Plhdr()))> Exp-Plhdr()
+                              )
+                            )
+                          )
+                          ; fail> completions
+    where <is-Exp-completion-sort> sort
+
+  suggest-completions-left-rec(|completions):
+    (sort, orig-term) -> <add-completions(
+                          | ( "Sub"
+                            , Sub(
+                                orig-term
+                              , <try(inline-completions(|Exp-Plhdr()))> Exp-Plhdr()
+                              )
+                            )
+                          )
+                          ; fail> completions
+    where <is-Exp-completion-sort> sort
+
+  suggest-completions-left-rec(|completions):
+    (sort, orig-term) -> <add-completions(
+                          | ( "Mul"
+                            , Mul(
+                                orig-term
+                              , <try(inline-completions(|Exp-Plhdr()))> Exp-Plhdr()
+                              )
+                            )
+                          )
+                          ; fail> completions
+    where <is-Exp-completion-sort> sort
+
+  suggest-completions-left-rec(|completions):
+    (sort, orig-term) -> <add-completions(
+                          | ( "Lt"
+                            , Lt(
+                                orig-term
+                              , <try(inline-completions(|Exp-Plhdr()))> Exp-Plhdr()
+                              )
+                            )
+                          )
+                          ; fail> completions
+    where <is-Exp-completion-sort> sort
+
+  suggest-completions-left-rec(|completions):
+    (sort, orig-term) -> <add-completions(
+                          | ( "And"
+                            , And(
+                                orig-term
+                              , <try(inline-completions(|Exp-Plhdr()))> Exp-Plhdr()
+                              )
+                            )
+                          )
+                          ; fail> completions
+    where <is-Exp-completion-sort> sort
+
+  suggest-completions-left-rec(|completions):
+    (sort, orig-term) -> <add-completions(
+                          | ( "Call"
+                            , Call(
+                                orig-term
+                              , <try(inline-completions(|Exp-Plhdr()))> ID-Plhdr()
+                              , CURSOR_ELEMENT()
+                              )
+                            )
+                          )
+                          ; fail> completions
+    where <is-Exp-completion-sort> sort
+
+  suggest-completions-left-rec(|completions):
+    (sort, orig-term) -> <add-completions(
+                          | ( "Subscript"
+                            , Subscript(
+                                orig-term
+                              , <try(inline-completions(|Exp-Plhdr()))> IndexExp-Plhdr()
+                              )
+                            )
+                          )
+                          ; fail> completions
+    where <is-Exp-completion-sort> sort
+
+  is-left-recursive :
+    "Exp" -> <id>
+
+  suggest-completions-left-rec(|completions):
+    (sort, orig-term) -> <add-completions(
+                          | ("Length", Length(orig-term))
+                          )
+                          ; fail> completions
+    where <is-Exp-completion-sort> sort
+
+  suggest-completions-right-rec(|completions):
+    (sort, orig-term) -> <add-completions(
+                          | ("Not", Not(orig-term))
+                          )
+                          ; fail> completions
+    where <is-Exp-completion-sort> sort
+
+  suggest-completions-right-rec(|completions):
+    (sort, orig-term) -> <add-completions(
+                          | ( "Add"
+                            , Add(
+                                <try(inline-completions(|Exp-Plhdr()))> Exp-Plhdr()
+                              , orig-term
+                              )
+                            )
+                          )
+                          ; fail> completions
+    where <is-Exp-completion-sort> sort
+
+  suggest-completions-right-rec(|completions):
+    (sort, orig-term) -> <add-completions(
+                          | ( "Sub"
+                            , Sub(
+                                <try(inline-completions(|Exp-Plhdr()))> Exp-Plhdr()
+                              , orig-term
+                              )
+                            )
+                          )
+                          ; fail> completions
+    where <is-Exp-completion-sort> sort
+
+  suggest-completions-right-rec(|completions):
+    (sort, orig-term) -> <add-completions(
+                          | ( "Mul"
+                            , Mul(
+                                <try(inline-completions(|Exp-Plhdr()))> Exp-Plhdr()
+                              , orig-term
+                              )
+                            )
+                          )
+                          ; fail> completions
+    where <is-Exp-completion-sort> sort
+
+  suggest-completions-right-rec(|completions):
+    (sort, orig-term) -> <add-completions(
+                          | ( "Lt"
+                            , Lt(
+                                <try(inline-completions(|Exp-Plhdr()))> Exp-Plhdr()
+                              , orig-term
+                              )
+                            )
+                          )
+                          ; fail> completions
+    where <is-Exp-completion-sort> sort
+
+  is-right-recursive :
+    "Exp" -> <id>
+
+  suggest-completions-right-rec(|completions):
+    (sort, orig-term) -> <add-completions(
+                          | ( "And"
+                            , And(
+                                <try(inline-completions(|Exp-Plhdr()))> Exp-Plhdr()
+                              , orig-term
+                              )
+                            )
+                          )
+                          ; fail> completions
+    where <is-Exp-completion-sort> sort
+
+  is-Exp-completion-sort :
+    "Exp" -> <id>
+
+  is-left-recursive :
+    "ID" -> <is-left-recursive> "VarRef"
+    where <not(is-lexical-completion-sort)> "ID"
+
+  is-right-recursive :
+    "ID" -> <is-right-recursive> "VarRef"
+    where <not(is-lexical-completion-sort)> "ID"
+
+  is-VarRef-completion-sort :
+    "ID" -> <id>
+
+  is-left-recursive :
+    "VarRef" -> <is-left-recursive> "Exp"
+    where <not(is-lexical-completion-sort)> "VarRef"
+
+  is-right-recursive :
+    "VarRef" -> <is-right-recursive> "Exp"
+    where <not(is-lexical-completion-sort)> "VarRef"
+
+  is-Exp-completion-sort :
+    "VarRef" -> <id>
+
+  is-left-recursive :
+    "INT" -> <is-left-recursive> "Exp"
+    where <not(is-lexical-completion-sort)> "INT"
+
+  is-right-recursive :
+    "INT" -> <is-right-recursive> "Exp"
+    where <not(is-lexical-completion-sort)> "INT"
+
+  is-Exp-completion-sort :
+    "INT" -> <id>
+
+  is-left-recursive :
+    "Exp" -> <is-left-recursive> "IndexExp"
+    where <not(is-lexical-completion-sort)> "Exp"
+
+  is-right-recursive :
+    "Exp" -> <is-right-recursive> "IndexExp"
+    where <not(is-lexical-completion-sort)> "Exp"
+
+  is-IndexExp-completion-sort :
+    "Exp" -> <id>
+
+
+rules
+
+  is-SDF-placeholder =
+    ?VarRef-Plhdr()
+
+  is-SDF-placeholder =
+    ?INT-Plhdr()
+
+  is-SDF-placeholder =
+    ?IndexExp-Plhdr()
+
+  is-SDF-placeholder =
+    ?ID-Plhdr()
+
+  is-SDF-placeholder =
+    ?Exp-Plhdr()

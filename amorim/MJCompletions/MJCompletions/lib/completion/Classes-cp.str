@@ -1,0 +1,161 @@
+module completion/Classes-cp
+
+imports
+  libstratego-gpp
+  runtime/completion/-
+
+
+imports
+  signatures/Classes-sig
+
+
+imports
+  completion/Statements-cp
+  completion/Lexical-cp
+  completion/Expressions-cp
+
+
+rules
+
+  suggest-completions(|completions):
+    ClassDecl-Plhdr() -> <add-completions(
+                          | ( "Class"
+                            , Class(
+                                <try(inline-completions(|ClassDecl-Plhdr()))> ID-Plhdr()
+                              , CURSOR_ELEMENT()
+                              , CURSOR_ELEMENT()
+                              , []
+                              )
+                            )
+                          )
+                          ; fail> completions
+
+  null-constructor-completion-sort :
+    "ParentDecl" -> None()
+
+  suggest-completions(|completions):
+    ParentDecl-Plhdr() -> <add-completions(
+                           | ( "Parent"
+                             , Parent(
+                                 <try(inline-completions(|ParentDecl-Plhdr()))> ID-Plhdr()
+                               )
+                             )
+                           )
+                           ; fail> completions
+
+  suggest-completions(|completions):
+    FieldDecl-Plhdr() -> <add-completions(
+                          | ( "Field"
+                            , Field(
+                                <try(inline-completions(|FieldDecl-Plhdr()))> Type-Plhdr()
+                              , <try(inline-completions(|FieldDecl-Plhdr()))> ID-Plhdr()
+                              )
+                            )
+                          )
+                          ; fail> completions
+
+  suggest-completions(|completions):
+    MethodDecl-Plhdr() -> <add-completions(
+                           | ( "Method"
+                             , Method(
+                                 <try(inline-completions(|MethodDecl-Plhdr()))> Type-Plhdr()
+                               , <try(inline-completions(|MethodDecl-Plhdr()))> ID-Plhdr()
+                               , CURSOR_ELEMENT()
+                               , CURSOR_ELEMENT()
+                               , []
+                               , <try(inline-completions(|MethodDecl-Plhdr()))> Exp-Plhdr()
+                               )
+                             )
+                           )
+                           ; fail> completions
+
+  suggest-completions(|completions):
+    VarDecl-Plhdr() -> <add-completions(
+                        | ( "Var"
+                          , Var(
+                              <try(inline-completions(|VarDecl-Plhdr()))> Type-Plhdr()
+                            , <try(inline-completions(|VarDecl-Plhdr()))> ID-Plhdr()
+                            )
+                          )
+                        )
+                        ; fail> completions
+
+  suggest-completions(|completions):
+    ParamDecl-Plhdr() -> <add-completions(
+                          | ( "Param"
+                            , Param(
+                                <try(inline-completions(|ParamDecl-Plhdr()))> Type-Plhdr()
+                              , <try(inline-completions(|ParamDecl-Plhdr()))> ID-Plhdr()
+                              )
+                            )
+                          )
+                          ; fail> completions
+
+  suggest-completions(|completions):
+    Type-Plhdr() -> <add-completions(|("Int", Int()))
+                     ; fail> completions
+
+  suggest-completions(|completions):
+    Type-Plhdr() -> <add-completions(|("Bool", Bool()))
+                     ; fail> completions
+
+  suggest-completions(|completions):
+    Type-Plhdr() -> <add-completions(|("IntArray", IntArray()))
+                     ; fail> completions
+
+  suggest-completions(|completions):
+    Type-Plhdr() -> <add-completions(
+                     | ( "ClassType"
+                       , ClassType(
+                           <try(inline-completions(|Type-Plhdr()))> ID-Plhdr()
+                         )
+                       )
+                     )
+                     ; fail> completions
+
+
+rules
+
+  is-left-recursive :
+    "ID" -> <is-left-recursive> "Type"
+    where <not(is-lexical-completion-sort)> "ID"
+
+  is-right-recursive :
+    "ID" -> <is-right-recursive> "Type"
+    where <not(is-lexical-completion-sort)> "ID"
+
+  is-Type-completion-sort :
+    "ID" -> <id>
+
+
+rules
+
+  is-SDF-placeholder =
+    ?ClassDecl-Plhdr()
+
+  is-SDF-placeholder =
+    ?ParentDecl-Plhdr()
+
+  is-SDF-placeholder =
+    ?FieldDecl-Plhdr()
+
+  is-SDF-placeholder =
+    ?MethodDecl-Plhdr()
+
+  is-SDF-placeholder =
+    ?Statement-Plhdr()
+
+  is-SDF-placeholder =
+    ?Exp-Plhdr()
+
+  is-SDF-placeholder =
+    ?VarDecl-Plhdr()
+
+  is-SDF-placeholder =
+    ?ParamDecl-Plhdr()
+
+  is-SDF-placeholder =
+    ?Type-Plhdr()
+
+  is-SDF-placeholder =
+    ?ID-Plhdr()

@@ -1,0 +1,48 @@
+module pp
+
+imports
+
+  libstratego-gpp
+  runtime/refactoring/-
+  pp/IceDustCompletions-parenthesize
+  pp/IceDustCompletions-pp
+
+rules
+
+  editor-format:
+    (node, _, ast, path, project-path) -> (filename, result)
+    with
+      ext      := <get-extension> path
+    ; filename := <guarantee-extension(|$[pp.[ext]])> path
+    ; result   := <pp-debug> node
+
+rules
+  
+  pp-IceDustCompletions-string =
+    parenthesize-IceDustCompletions
+    ; prettyprint-IceDustCompletions-start-symbols
+    ; !V([], <id>)
+    ; box2text-string(|120)
+      
+  pp-partial-IceDustCompletions-string =
+    parenthesize-IceDustCompletions
+    ; prettyprint-IceDustCompletions
+    ; !V([], <id>)
+    ; box2text-string(|120)
+    
+  pp-partial-IceDustCompletions-string(|sort) =
+    parenthesize-IceDustCompletions
+    ; prettyprint-IceDustCompletions(|sort)
+    ; !V([], <id>)
+    ; box2text-string(|120)  
+      
+  pp-debug :
+    ast -> result
+    with
+       result := <pp-IceDustCompletions-string> ast
+    <+ <bottomup(try(not(is-string); not(is-list); not(pp-IceDustCompletions-string); debug(!"cannot pp ")))> ast
+    ;  result := ""
+
+rules
+  
+  construct-textual-change = construct-textual-change(pp-partial-IceDustCompletions-string, parenthesize, override-reconstruction, resugar)

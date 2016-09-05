@@ -1,0 +1,30 @@
+module signatures/MJCompletions-sig
+
+imports
+  signatures/Lexical-sig
+  signatures/Expressions-sig
+  signatures/Statements-sig
+  signatures/Classes-sig
+
+
+signature
+  sorts
+    Program MainClass
+
+  constructors
+                        : Program -> Start
+    Program             : MainClass * List(ClassDecl) -> Program
+    MainClass           : ID * ID * Statement -> MainClass
+    Start-Plhdr         : Start
+    Program-Plhdr       : Program
+    ClassDecl-Plhdr     : ClassDecl
+    MainClass-Plhdr     : MainClass
+    ID-Plhdr            : ID
+    Statement-Plhdr     : Statement
+    Start-Plhdr         : COMPLETION-INSERTION -> Start
+    Program-Plhdr       : COMPLETION-INSERTION -> Program
+    ClassDecl-Plhdr     : COMPLETION-INSERTION -> ClassDecl
+    MainClass-Plhdr     : COMPLETION-INSERTION -> MainClass
+    ID-Plhdr            : COMPLETION-INSERTION -> ID
+    Statement-Plhdr     : COMPLETION-INSERTION -> Statement
+    ClassDecl-Opt-Plhdr : ClassDecl

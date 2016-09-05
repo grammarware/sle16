@@ -1,0 +1,9 @@
+module MJCompletions
+
+context-free start-symbols
+  
+  Start
+
+context-free syntax
+
+  Start.Empty = <>

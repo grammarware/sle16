@@ -1,0 +1,130 @@
+module pp/Lexical-pp
+
+imports
+  libstratego-gpp
+  runtime/tmpl/pp
+  runtime/editor/origins
+  libstratego-sglr
+  signatures/Lexical-sig
+
+
+strategies
+  prettyprint-example =
+    prettyprint-MJCompletions
+
+  prettyprint-MJCompletions =
+    fail
+
+
+strategies
+  prettyprint-SDF-start-symbols =
+    prettyprint-MJCompletions-start-symbols
+
+  prettyprint-MJCompletions-start-symbols =
+    fail
+
+
+strategies
+  prettyprint-MJCompletions =
+    prettyprint-MJCompletions-INT
+
+  prettyprint-MJCompletions =
+    prettyprint-MJCompletions-ID
+
+  prettyprint-MJCompletions =
+    prettyprint-MJCompletions-MainID
+
+  prettyprint-MJCompletions =
+    prettyprint-MJCompletions-EOF
+
+  prettyprint-MJCompletions =
+    prettyprint-MJCompletions-BlockComment
+
+  prettyprint-MJCompletions =
+    prettyprint-MJCompletions-CommPart
+
+  prettyprint-MJCompletions =
+    prettyprint-MJCompletions-Asterisk
+
+  prettyprint-MJCompletions =
+    prettyprint-MJCompletions-Slash
+
+  prettyprint-MJCompletions(|sort):
+    t -> <prettyprint-MJCompletions-INT>
+    where <?"INT"> sort
+
+  prettyprint-MJCompletions(|sort):
+    t -> <prettyprint-MJCompletions-ID>
+    where <?"ID"> sort
+
+  prettyprint-MJCompletions(|sort):
+    t -> <prettyprint-MJCompletions-MainID>
+    where <?"MainID"> sort
+
+  prettyprint-MJCompletions(|sort):
+    t -> <prettyprint-MJCompletions-EOF>
+    where <?"EOF"> sort
+
+  prettyprint-MJCompletions(|sort):
+    t -> <prettyprint-MJCompletions-BlockComment>
+    where <?"BlockComment"> sort
+
+  prettyprint-MJCompletions(|sort):
+    t -> <prettyprint-MJCompletions-CommPart>
+    where <?"CommPart"> sort
+
+  prettyprint-MJCompletions(|sort):
+    t -> <prettyprint-MJCompletions-Asterisk>
+    where <?"Asterisk"> sort
+
+  prettyprint-MJCompletions(|sort):
+    t -> <prettyprint-MJCompletions-Slash>
+    where <?"Slash"> sort
+
+  prettyprint-MJCompletions-INT =
+    ![S(<is-string>)]
+
+  prettyprint-MJCompletions-ID =
+    ![S(<is-string>)]
+
+  prettyprint-MJCompletions-MainID =
+    ![S(<is-string>)]
+
+  prettyprint-MJCompletions-EOF =
+    ![S(<is-string>)]
+
+  prettyprint-MJCompletions-BlockComment =
+    ![S(<is-string>)]
+
+  prettyprint-MJCompletions-CommPart =
+    ![S(<is-string>)]
+
+  prettyprint-MJCompletions-Asterisk =
+    ![S(<is-string>)]
+
+  prettyprint-MJCompletions-Slash =
+    ![S(<is-string>)]
+
+  prettyprint-MJCompletions-INT :
+    amb([h|hs]) -> <prettyprint-MJCompletions-INT> h
+
+  prettyprint-MJCompletions-ID :
+    amb([h|hs]) -> <prettyprint-MJCompletions-ID> h
+
+  prettyprint-MJCompletions-MainID :
+    amb([h|hs]) -> <prettyprint-MJCompletions-MainID> h
+
+  prettyprint-MJCompletions-EOF :
+    amb([h|hs]) -> <prettyprint-MJCompletions-EOF> h
+
+  prettyprint-MJCompletions-BlockComment :
+    amb([h|hs]) -> <prettyprint-MJCompletions-BlockComment> h
+
+  prettyprint-MJCompletions-CommPart :
+    amb([h|hs]) -> <prettyprint-MJCompletions-CommPart> h
+
+  prettyprint-MJCompletions-Asterisk :
+    amb([h|hs]) -> <prettyprint-MJCompletions-Asterisk> h
+
+  prettyprint-MJCompletions-Slash :
+    amb([h|hs]) -> <prettyprint-MJCompletions-Slash> h

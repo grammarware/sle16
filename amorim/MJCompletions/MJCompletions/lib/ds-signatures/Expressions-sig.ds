@@ -1,0 +1,26 @@
+module ds-signatures/Expressions-sig
+
+imports ds-signatures/Lexical-sig
+
+signature
+    sorts
+      VarRef
+      IndexExp
+      Exp
+    constructors
+      True : Exp 
+      False : Exp 
+      This : Exp 
+      VarRef : ID -> VarRef 
+      IntValue : INT -> Exp 
+      Not : Exp -> Exp 
+      Add : Exp * Exp -> Exp 
+      Sub : Exp * Exp -> Exp 
+      Mul : Exp * Exp -> Exp 
+      Lt : Exp * Exp -> Exp 
+      And : Exp * Exp -> Exp 
+      Call : Exp * ID * List(Exp) -> Exp 
+      NewArray : Exp -> Exp 
+      Subscript : Exp * IndexExp -> Exp 
+      Length : Exp -> Exp 
+      NewObject : ID -> Exp 

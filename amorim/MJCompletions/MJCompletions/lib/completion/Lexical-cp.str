@@ -1,0 +1,36 @@
+module completion/Lexical-cp
+
+imports
+  libstratego-gpp
+  runtime/completion/-
+
+
+imports
+  signatures/Lexical-sig
+
+
+rules
+
+  is-lexical-completion-sort :
+    "INT" -> <id>
+
+  is-lexical-completion-sort :
+    "ID" -> <id>
+
+  is-lexical-completion-sort :
+    "MainID" -> <id>
+
+  is-lexical-completion-sort :
+    "EOF" -> <id>
+
+  is-lexical-completion-sort :
+    "BlockComment" -> <id>
+
+  is-lexical-completion-sort :
+    "CommPart" -> <id>
+
+  is-lexical-completion-sort :
+    "Asterisk" -> <id>
+
+  is-lexical-completion-sort :
+    "Slash" -> <id>

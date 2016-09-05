@@ -1,0 +1,15 @@
+module completion/colorer/MJCompletions-cc-esv
+
+imports
+  completion/colorer/Lexical-cc-esv
+  completion/colorer/Expressions-cc-esv
+  completion/colorer/Statements-cc-esv
+  completion/colorer/Classes-cc-esv
+
+colorer
+  _.Start-Plhdr     : gray   
+  _.Program-Plhdr   : gray   
+  _.ClassDecl-Plhdr : gray   
+  _.MainClass-Plhdr : gray   
+  _.ID-Plhdr        : gray   
+  _.Statement-Plhdr : gray   

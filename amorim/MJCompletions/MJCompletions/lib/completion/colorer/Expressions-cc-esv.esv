@@ -1,0 +1,11 @@
+module completion/colorer/Expressions-cc-esv
+
+imports
+  completion/colorer/Lexical-cc-esv
+
+colorer
+  _.VarRef-Plhdr   : gray   
+  _.INT-Plhdr      : gray   
+  _.IndexExp-Plhdr : gray   
+  _.ID-Plhdr       : gray   
+  _.Exp-Plhdr      : gray   

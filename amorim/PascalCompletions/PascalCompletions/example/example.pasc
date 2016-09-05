@@ -1,0 +1,12 @@
+program $Identifier ($Identifier, $Identifier);
+label
+   $Integernumber;
+var
+   $Identifier, $VariableIdentifier, $Identifier : $Type;
+
+
+
+begin
+  $Variable := $Expression
+  
+end.

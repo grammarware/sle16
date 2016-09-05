@@ -1,0 +1,40 @@
+module signatures/Expressions-sig
+
+imports
+  signatures/Lexical-sig
+
+
+signature
+  sorts
+    Exp VarRef
+
+  constructors
+    True           : Exp
+    False          : Exp
+    This           : Exp
+    VarRef         : ID -> VarRef
+                   : VarRef -> Exp
+    IntValue       : INT -> Exp
+    Not            : Exp -> Exp
+    Add            : Exp * Exp -> Exp
+    Sub            : Exp * Exp -> Exp
+    Mul            : Exp * Exp -> Exp
+    Lt             : Exp * Exp -> Exp
+    And            : Exp * Exp -> Exp
+    Call           : Exp * ID * List(Exp) -> Exp
+    NewArray       : Exp -> Exp
+    Subscript      : Exp * IndexExp -> Exp
+                   : Exp -> IndexExp
+    Length         : Exp -> Exp
+    NewObject      : ID -> Exp
+    VarRef-Plhdr   : VarRef
+    INT-Plhdr      : INT
+    IndexExp-Plhdr : IndexExp
+    ID-Plhdr       : ID
+    Exp-Plhdr      : Exp
+    VarRef-Plhdr   : COMPLETION-INSERTION -> VarRef
+    INT-Plhdr      : COMPLETION-INSERTION -> INT
+    IndexExp-Plhdr : COMPLETION-INSERTION -> IndexExp
+    ID-Plhdr       : COMPLETION-INSERTION -> ID
+    Exp-Plhdr      : COMPLETION-INSERTION -> Exp
+    Exp-Opt-Plhdr  : Exp

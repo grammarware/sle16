@@ -1,0 +1,48 @@
+module completion
+
+imports
+  
+  runtime/completion/-
+  completion/PascalCompletions-cp
+  pp/-
+  pp
+ 
+  
+rules
+  
+  get-proposals-empty-program-PascalCompletions                         = ?(sort, _); 
+                                                                 get-proposals-empty-program(pp-partial-PascalCompletions-string(|sort), parenthesize-PascalCompletions, 
+                                                                                             PascalCompletions-get-indent, PascalCompletions-get-leading-ws, 
+                                                                                             PascalCompletions-get-separator)
+  get-proposals-left-recursive-PascalCompletions                        = ?(sort, _); 
+                                                                 get-proposals-left-recursive(pp-partial-PascalCompletions-string, parenthesize-PascalCompletions, 
+                                                                                             PascalCompletions-get-indent, PascalCompletions-get-leading-ws, 
+                                                                                             PascalCompletions-get-separator)
+  get-proposals-right-recursive-PascalCompletions                       = ?(sort, _); 
+                                                                 get-proposals-right-recursive(pp-partial-PascalCompletions-string, parenthesize-PascalCompletions, 
+                                                                                             PascalCompletions-get-indent, PascalCompletions-get-leading-ws, 
+                                                                                             PascalCompletions-get-separator)
+  get-proposals-placeholder-PascalCompletions                           = ?(sort, _, _, _);
+                                                                 get-proposals-placeholder(pp-partial-PascalCompletions-string(|sort), parenthesize-PascalCompletions, 
+                                                                                             PascalCompletions-get-indent, PascalCompletions-get-leading-ws, 
+                                                                                             PascalCompletions-get-separator)
+  get-proposals-optional-PascalCompletions                              = ?(sort, _, _);
+                                                                 get-proposals-optional(pp-partial-PascalCompletions-string(|sort), parenthesize-PascalCompletions, 
+                                                                                             PascalCompletions-get-indent, PascalCompletions-get-leading-ws, 
+                                                                                             PascalCompletions-get-separator)
+  get-proposals-list-PascalCompletions                                  = ?(sort, _, _, _);
+                                                                 get-proposals-list(pp-partial-PascalCompletions-string(|sort), parenthesize-PascalCompletions, 
+                                                                                             PascalCompletions-get-indent, PascalCompletions-get-leading-ws, 
+                                                                                             PascalCompletions-get-separator)
+  get-proposals-incorrect-programs-PascalCompletions                    = ?(sort, _, _, _, _);
+                                                                 get-proposals-incorrect-programs(pp-partial-PascalCompletions-string(|sort), parenthesize-PascalCompletions, 
+                                                                                             PascalCompletions-get-indent, PascalCompletions-get-leading-ws, 
+                                                                                             PascalCompletions-get-separator)
+  get-proposals-incorrect-programs-nested-PascalCompletions             = ?(sort, _, _, _, _, _);
+                                                                 get-proposals-incorrect-programs-nested(pp-partial-PascalCompletions-string(|sort), parenthesize-PascalCompletions, 
+                                                                                             PascalCompletions-get-indent, PascalCompletions-get-leading-ws, 
+                                                                                             PascalCompletions-get-separator)
+  get-proposals-incorrect-programs-single-placeholder-PascalCompletions = ?(sort, _, _, _, _, _, _);
+                                                                 get-proposals-incorrect-programs-single-placeholder(pp-partial-PascalCompletions-string(|sort), parenthesize-PascalCompletions, 
+                                                                                             PascalCompletions-get-indent, PascalCompletions-get-leading-ws, 
+                                                                                             PascalCompletions-get-separator)

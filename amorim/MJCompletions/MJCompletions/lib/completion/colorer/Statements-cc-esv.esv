@@ -1,0 +1,9 @@
+module completion/colorer/Statements-cc-esv
+
+imports
+  completion/colorer/Expressions-cc-esv
+
+colorer
+  _.VarRef-Plhdr    : gray   
+  _.Statement-Plhdr : gray   
+  _.Exp-Plhdr       : gray   

@@ -1,0 +1,124 @@
+module completion/Statements-cp
+
+imports
+  libstratego-gpp
+  runtime/completion/-
+
+
+imports
+  signatures/Statements-sig
+
+
+imports
+  completion/Expressions-cp
+
+
+rules
+
+  suggest-completions(|completions):
+    Statement-Plhdr() -> <add-completions(
+                          | ("Block", Block(CURSOR_ELEMENT()))
+                          )
+                          ; fail> completions
+
+  suggest-completions(|completions):
+    Statement-Plhdr() -> <add-completions(
+                          | ( "Assign"
+                            , Assign(
+                                <try(inline-completions(|Statement-Plhdr()))> VarRef-Plhdr()
+                              , <try(inline-completions(|Statement-Plhdr()))> Exp-Plhdr()
+                              )
+                            )
+                          )
+                          ; fail> completions
+
+  suggest-completions(|completions):
+    Statement-Plhdr() -> <add-completions(
+                          | ( "ArrayAssign"
+                            , ArrayAssign(
+                                <try(inline-completions(|Statement-Plhdr()))> VarRef-Plhdr()
+                              , <try(inline-completions(|Statement-Plhdr()))> Exp-Plhdr()
+                              , <try(inline-completions(|Statement-Plhdr()))> Exp-Plhdr()
+                              )
+                            )
+                          )
+                          ; fail> completions
+
+  suggest-completions(|completions):
+    Statement-Plhdr() -> <add-completions(
+                          | ( "If"
+                            , If(
+                                <try(inline-completions(|Statement-Plhdr()))> Exp-Plhdr()
+                              , <try(inline-completions(|Statement-Plhdr()))> Statement-Plhdr()
+                              , <try(inline-completions(|Statement-Plhdr()))> Statement-Plhdr()
+                              )
+                            )
+                          )
+                          ; fail> completions
+
+  suggest-completions(|completions):
+    Statement-Plhdr() -> <add-completions(
+                          | ( "While"
+                            , While(
+                                <try(inline-completions(|Statement-Plhdr()))> Exp-Plhdr()
+                              , <try(inline-completions(|Statement-Plhdr()))> Statement-Plhdr()
+                              )
+                            )
+                          )
+                          ; fail> completions
+
+  suggest-completions(|completions):
+    Statement-Plhdr() -> <add-completions(
+                          | ( "Print"
+                            , Print(
+                                <try(inline-completions(|Statement-Plhdr()))> Exp-Plhdr()
+                              )
+                            )
+                          )
+                          ; fail> completions
+
+
+rules
+
+  suggest-completions-right-rec(|completions):
+    (sort, orig-term) -> <add-completions(
+                          | ( "If"
+                            , If(
+                                <try(inline-completions(|Statement-Plhdr()))> Exp-Plhdr()
+                              , <try(inline-completions(|Statement-Plhdr()))> Statement-Plhdr()
+                              , orig-term
+                              )
+                            )
+                          )
+                          ; fail> completions
+    where <is-Statement-completion-sort> sort
+
+  is-right-recursive :
+    "Statement" -> <id>
+
+  suggest-completions-right-rec(|completions):
+    (sort, orig-term) -> <add-completions(
+                          | ( "While"
+                            , While(
+                                <try(inline-completions(|Statement-Plhdr()))> Exp-Plhdr()
+                              , orig-term
+                              )
+                            )
+                          )
+                          ; fail> completions
+    where <is-Statement-completion-sort> sort
+
+  is-Statement-completion-sort :
+    "Statement" -> <id>
+
+
+rules
+
+  is-SDF-placeholder =
+    ?VarRef-Plhdr()
+
+  is-SDF-placeholder =
+    ?Statement-Plhdr()
+
+  is-SDF-placeholder =
+    ?Exp-Plhdr()

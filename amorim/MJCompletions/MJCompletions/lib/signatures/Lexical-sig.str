@@ -1,0 +1,15 @@
+module signatures/Lexical-sig
+
+signature
+  sorts
+    INT ID
+
+  constructors
+     : String -> INT
+     : String -> ID
+     : String -> MainID
+     : String -> EOF
+     : String -> BlockComment
+     : String -> CommPart
+     : String -> Asterisk
+     : String -> Slash

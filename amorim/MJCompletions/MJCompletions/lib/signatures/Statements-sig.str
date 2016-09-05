@@ -1,0 +1,24 @@
+module signatures/Statements-sig
+
+imports
+  signatures/Expressions-sig
+
+
+signature
+  sorts
+    Statement
+
+  constructors
+    Block               : List(Statement) -> Statement
+    Assign              : VarRef * Exp -> Statement
+    ArrayAssign         : VarRef * Exp * Exp -> Statement
+    If                  : Exp * Statement * Statement -> Statement
+    While               : Exp * Statement -> Statement
+    Print               : Exp -> Statement
+    VarRef-Plhdr        : VarRef
+    Statement-Plhdr     : Statement
+    Exp-Plhdr           : Exp
+    VarRef-Plhdr        : COMPLETION-INSERTION -> VarRef
+    Statement-Plhdr     : COMPLETION-INSERTION -> Statement
+    Exp-Plhdr           : COMPLETION-INSERTION -> Exp
+    Statement-Opt-Plhdr : Statement

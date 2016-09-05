@@ -1,0 +1,12 @@
+module ds-signatures/MJCompletions-sig
+
+imports ds-signatures/Lexical-sig ds-signatures/Expressions-sig ds-signatures/Statements-sig ds-signatures/Classes-sig
+
+signature
+    sorts
+      Start
+      Program
+      MainClass
+    constructors
+      Program : MainClass * List(ClassDecl) -> Program 
+      MainClass : ID * ID * Statement -> MainClass 

@@ -1,0 +1,48 @@
+module completion
+
+imports
+  
+  runtime/completion/-
+  completion/IceDustCompletions-cp
+  pp/-
+  pp
+ 
+  
+rules
+  
+  get-proposals-empty-program-IceDustCompletions                         = ?(sort, _); 
+                                                                 get-proposals-empty-program(pp-partial-IceDustCompletions-string(|sort), parenthesize-IceDustCompletions, 
+                                                                                             IceDustCompletions-get-indent, IceDustCompletions-get-leading-ws, 
+                                                                                             IceDustCompletions-get-separator)
+  get-proposals-left-recursive-IceDustCompletions                        = ?(sort, _); 
+                                                                 get-proposals-left-recursive(pp-partial-IceDustCompletions-string, parenthesize-IceDustCompletions, 
+                                                                                             IceDustCompletions-get-indent, IceDustCompletions-get-leading-ws, 
+                                                                                             IceDustCompletions-get-separator)
+  get-proposals-right-recursive-IceDustCompletions                       = ?(sort, _); 
+                                                                 get-proposals-right-recursive(pp-partial-IceDustCompletions-string, parenthesize-IceDustCompletions, 
+                                                                                             IceDustCompletions-get-indent, IceDustCompletions-get-leading-ws, 
+                                                                                             IceDustCompletions-get-separator)
+  get-proposals-placeholder-IceDustCompletions                           = ?(sort, _, _, _);
+                                                                 get-proposals-placeholder(pp-partial-IceDustCompletions-string(|sort), parenthesize-IceDustCompletions, 
+                                                                                             IceDustCompletions-get-indent, IceDustCompletions-get-leading-ws, 
+                                                                                             IceDustCompletions-get-separator)
+  get-proposals-optional-IceDustCompletions                              = ?(sort, _, _);
+                                                                 get-proposals-optional(pp-partial-IceDustCompletions-string(|sort), parenthesize-IceDustCompletions, 
+                                                                                             IceDustCompletions-get-indent, IceDustCompletions-get-leading-ws, 
+                                                                                             IceDustCompletions-get-separator)
+  get-proposals-list-IceDustCompletions                                  = ?(sort, _, _, _);
+                                                                 get-proposals-list(pp-partial-IceDustCompletions-string(|sort), parenthesize-IceDustCompletions, 
+                                                                                             IceDustCompletions-get-indent, IceDustCompletions-get-leading-ws, 
+                                                                                             IceDustCompletions-get-separator)
+  get-proposals-incorrect-programs-IceDustCompletions                    = ?(sort, _, _, _, _);
+                                                                 get-proposals-incorrect-programs(pp-partial-IceDustCompletions-string(|sort), parenthesize-IceDustCompletions, 
+                                                                                             IceDustCompletions-get-indent, IceDustCompletions-get-leading-ws, 
+                                                                                             IceDustCompletions-get-separator)
+  get-proposals-incorrect-programs-nested-IceDustCompletions             = ?(sort, _, _, _, _, _);
+                                                                 get-proposals-incorrect-programs-nested(pp-partial-IceDustCompletions-string(|sort), parenthesize-IceDustCompletions, 
+                                                                                             IceDustCompletions-get-indent, IceDustCompletions-get-leading-ws, 
+                                                                                             IceDustCompletions-get-separator)
+  get-proposals-incorrect-programs-single-placeholder-IceDustCompletions = ?(sort, _, _, _, _, _, _);
+                                                                 get-proposals-incorrect-programs-single-placeholder(pp-partial-IceDustCompletions-string(|sort), parenthesize-IceDustCompletions, 
+                                                                                             IceDustCompletions-get-indent, IceDustCompletions-get-leading-ws, 
+                                                                                             IceDustCompletions-get-separator)

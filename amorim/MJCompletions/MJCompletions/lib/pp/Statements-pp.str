@@ -1,0 +1,466 @@
+module pp/Statements-pp
+
+imports
+  libstratego-gpp
+  runtime/tmpl/pp
+  runtime/editor/origins
+  libstratego-sglr
+  signatures/Statements-sig
+
+
+imports
+  signatures/Expressions-sig
+
+
+imports
+  pp/Expressions-pp
+
+
+strategies
+  prettyprint-example =
+    prettyprint-MJCompletions
+
+  prettyprint-MJCompletions =
+    fail
+
+
+strategies
+  prettyprint-SDF-start-symbols =
+    prettyprint-MJCompletions-start-symbols
+
+  prettyprint-MJCompletions-start-symbols =
+    fail
+
+
+strategies
+  prettyprint-MJCompletions =
+    prettyprint-MJCompletions-Statement
+
+  prettyprint-MJCompletions(|sort):
+    t -> <prettyprint-MJCompletions-Statement>
+    where <?"Statement"> sort
+
+  prettyprint-MJCompletions-Statement :
+    Block(t1__) -> [ H(
+                       [SOpt(HS(), "0")]
+                     , [S("{")]
+                     )
+                   , t1__'
+                   , H(
+                       [SOpt(HS(), "0")]
+                     , [S("}")]
+                     )
+                   ]
+    with t1__' := <pp-indent(|"2")> [ <pp-V-list(prettyprint-MJCompletions-Statement) <+ pp-one-Z(prettyprint-completion-aux)> t1__
+                                    ]
+
+  is-MJCompletions-Statement =
+    ?Block(_)
+
+  MJCompletions-get-indent :
+    (t@Block(t1__), index) -> indent
+    where sort := <ia-get-sort> t
+          ; <?"Statement"> sort
+    with switch !index
+           case ?1 :
+             indent := "  "
+           otherwise :
+             indent := ""
+         end
+
+  MJCompletions-get-separator :
+    (t@Block(t1__), index) -> separator
+    where sort := <ia-get-sort> t
+          ; <?"Statement"> sort
+    with switch !index
+           case ?1 :
+             separator := "\n"
+           otherwise :
+             separator := ""
+         end
+
+  MJCompletions-get-leading-ws :
+    (t@Block(t1__), index) -> ws
+    where sort := <ia-get-sort> t
+          ; <?"Statement"> sort
+    with switch !index
+           case ?1 :
+             ws := "\n  "
+           otherwise :
+             ws := ""
+         end
+
+  prettyprint-MJCompletions-Statement :
+    Assign(t1__, t2__) -> [ H(
+                              [SOpt(HS(), "0")]
+                            , [ t1__'
+                              , S(" = ")
+                              , t2__'
+                              , S(";")
+                              ]
+                            )
+                          ]
+    with t1__' := <pp-one-Z(prettyprint-MJCompletions-VarRef) <+ pp-one-Z(prettyprint-completion-aux)> t1__
+    with t2__' := <pp-one-Z(prettyprint-MJCompletions-Exp) <+ pp-one-Z(prettyprint-completion-aux)> t2__
+
+  is-MJCompletions-Statement =
+    ?Assign(_, _)
+
+  MJCompletions-get-indent :
+    (t@Assign(t1__, t2__), index) -> indent
+    where sort := <ia-get-sort> t
+          ; <?"Statement"> sort
+    with switch !index
+           case ?1 :
+             indent := ""
+           case ?2 :
+             indent := ""
+           otherwise :
+             indent := ""
+         end
+
+  MJCompletions-get-separator :
+    (t@Assign(t1__, t2__), index) -> separator
+    where sort := <ia-get-sort> t
+          ; <?"Statement"> sort
+    with switch !index
+           case ?1 :
+             separator := ""
+           case ?2 :
+             separator := ""
+           otherwise :
+             separator := ""
+         end
+
+  MJCompletions-get-leading-ws :
+    (t@Assign(t1__, t2__), index) -> ws
+    where sort := <ia-get-sort> t
+          ; <?"Statement"> sort
+    with switch !index
+           case ?1 :
+             ws := ""
+           case ?2 :
+             ws := " "
+           otherwise :
+             ws := ""
+         end
+
+  prettyprint-MJCompletions-Statement :
+    ArrayAssign(t1__, t2__, t3__) -> [ H(
+                                         [SOpt(HS(), "0")]
+                                       , [ t1__'
+                                         , S("[")
+                                         , t2__'
+                                         , S("] = ")
+                                         , t3__'
+                                         , S(";")
+                                         ]
+                                       )
+                                     ]
+    with t1__' := <pp-one-Z(prettyprint-MJCompletions-VarRef) <+ pp-one-Z(prettyprint-completion-aux)> t1__
+    with t2__' := <pp-one-Z(prettyprint-MJCompletions-Exp) <+ pp-one-Z(prettyprint-completion-aux)> t2__
+    with t3__' := <pp-one-Z(prettyprint-MJCompletions-Exp) <+ pp-one-Z(prettyprint-completion-aux)> t3__
+
+  is-MJCompletions-Statement =
+    ?ArrayAssign(_, _, _)
+
+  MJCompletions-get-indent :
+    ( t@ArrayAssign(t1__, t2__, t3__)
+    , index
+    ) -> indent
+    where sort := <ia-get-sort> t
+          ; <?"Statement"> sort
+    with switch !index
+           case ?1 :
+             indent := ""
+           case ?2 :
+             indent := ""
+           case ?3 :
+             indent := ""
+           otherwise :
+             indent := ""
+         end
+
+  MJCompletions-get-separator :
+    ( t@ArrayAssign(t1__, t2__, t3__)
+    , index
+    ) -> separator
+    where sort := <ia-get-sort> t
+          ; <?"Statement"> sort
+    with switch !index
+           case ?1 :
+             separator := ""
+           case ?2 :
+             separator := ""
+           case ?3 :
+             separator := ""
+           otherwise :
+             separator := ""
+         end
+
+  MJCompletions-get-leading-ws :
+    ( t@ArrayAssign(t1__, t2__, t3__)
+    , index
+    ) -> ws
+    where sort := <ia-get-sort> t
+          ; <?"Statement"> sort
+    with switch !index
+           case ?1 :
+             ws := ""
+           case ?2 :
+             ws := ""
+           case ?3 :
+             ws := " "
+           otherwise :
+             ws := ""
+         end
+
+  prettyprint-MJCompletions-Statement :
+    If(t1__, t2__, t3__) -> [ H(
+                                [SOpt(HS(), "0")]
+                              , [ S("if(")
+                                , t1__'
+                                , S(") ")
+                                , t2__'
+                                ]
+                              )
+                            , H(
+                                [SOpt(HS(), "0")]
+                              , [S("else "), t3__']
+                              )
+                            ]
+    with t1__' := <pp-one-Z(prettyprint-MJCompletions-Exp) <+ pp-one-Z(prettyprint-completion-aux)> t1__
+    with t2__' := <pp-one-Z(prettyprint-MJCompletions-Statement) <+ pp-one-Z(prettyprint-completion-aux)> t2__
+    with t3__' := <pp-one-Z(prettyprint-MJCompletions-Statement) <+ pp-one-Z(prettyprint-completion-aux)> t3__
+
+  is-MJCompletions-Statement =
+    ?If(_, _, _)
+
+  MJCompletions-get-indent :
+    ( t@If(t1__, t2__, t3__)
+    , index
+    ) -> indent
+    where sort := <ia-get-sort> t
+          ; <?"Statement"> sort
+    with switch !index
+           case ?1 :
+             indent := ""
+           case ?2 :
+             indent := ""
+           case ?3 :
+             indent := ""
+           otherwise :
+             indent := ""
+         end
+
+  MJCompletions-get-separator :
+    ( t@If(t1__, t2__, t3__)
+    , index
+    ) -> separator
+    where sort := <ia-get-sort> t
+          ; <?"Statement"> sort
+    with switch !index
+           case ?1 :
+             separator := ""
+           case ?2 :
+             separator := ""
+           case ?3 :
+             separator := ""
+           otherwise :
+             separator := ""
+         end
+
+  MJCompletions-get-leading-ws :
+    ( t@If(t1__, t2__, t3__)
+    , index
+    ) -> ws
+    where sort := <ia-get-sort> t
+          ; <?"Statement"> sort
+    with switch !index
+           case ?1 :
+             ws := ""
+           case ?2 :
+             ws := " "
+           case ?3 :
+             ws := " "
+           otherwise :
+             ws := ""
+         end
+
+  prettyprint-MJCompletions-Statement :
+    While(t1__, t2__) -> [ H(
+                             [SOpt(HS(), "0")]
+                           , [ S("while(")
+                             , t1__'
+                             , S(") ")
+                             , t2__'
+                             ]
+                           )
+                         ]
+    with t1__' := <pp-one-Z(prettyprint-MJCompletions-Exp) <+ pp-one-Z(prettyprint-completion-aux)> t1__
+    with t2__' := <pp-one-Z(prettyprint-MJCompletions-Statement) <+ pp-one-Z(prettyprint-completion-aux)> t2__
+
+  is-MJCompletions-Statement =
+    ?While(_, _)
+
+  MJCompletions-get-indent :
+    (t@While(t1__, t2__), index) -> indent
+    where sort := <ia-get-sort> t
+          ; <?"Statement"> sort
+    with switch !index
+           case ?1 :
+             indent := ""
+           case ?2 :
+             indent := ""
+           otherwise :
+             indent := ""
+         end
+
+  MJCompletions-get-separator :
+    (t@While(t1__, t2__), index) -> separator
+    where sort := <ia-get-sort> t
+          ; <?"Statement"> sort
+    with switch !index
+           case ?1 :
+             separator := ""
+           case ?2 :
+             separator := ""
+           otherwise :
+             separator := ""
+         end
+
+  MJCompletions-get-leading-ws :
+    (t@While(t1__, t2__), index) -> ws
+    where sort := <ia-get-sort> t
+          ; <?"Statement"> sort
+    with switch !index
+           case ?1 :
+             ws := ""
+           case ?2 :
+             ws := " "
+           otherwise :
+             ws := ""
+         end
+
+  prettyprint-MJCompletions-Statement :
+    Print(t1__) -> [ H(
+                       [SOpt(HS(), "0")]
+                     , [ S("System.out.println(")
+                       , t1__'
+                       , S(");")
+                       ]
+                     )
+                   ]
+    with t1__' := <pp-one-Z(prettyprint-MJCompletions-Exp) <+ pp-one-Z(prettyprint-completion-aux)> t1__
+
+  is-MJCompletions-Statement =
+    ?Print(_)
+
+  MJCompletions-get-indent :
+    (t@Print(t1__), index) -> indent
+    where sort := <ia-get-sort> t
+          ; <?"Statement"> sort
+    with switch !index
+           case ?1 :
+             indent := ""
+           otherwise :
+             indent := ""
+         end
+
+  MJCompletions-get-separator :
+    (t@Print(t1__), index) -> separator
+    where sort := <ia-get-sort> t
+          ; <?"Statement"> sort
+    with switch !index
+           case ?1 :
+             separator := ""
+           otherwise :
+             separator := ""
+         end
+
+  MJCompletions-get-leading-ws :
+    (t@Print(t1__), index) -> ws
+    where sort := <ia-get-sort> t
+          ; <?"Statement"> sort
+    with switch !index
+           case ?1 :
+             ws := ""
+           otherwise :
+             ws := ""
+         end
+
+  is-MJCompletions-Statement =
+    fail
+
+  prettyprint-MJCompletions-Statement :
+    amb([h|hs]) -> <prettyprint-MJCompletions-Statement> h
+
+  prettyprint-MJCompletions-VarRef :
+    VarRef-Plhdr() -> [ H(
+                          [SOpt(HS(), "0")]
+                        , [S("$VarRef")]
+                        )
+                      ]
+
+  is-MJCompletions-VarRef =
+    ?VarRef-Plhdr()
+
+  prettyprint-MJCompletions-Statement :
+    Statement-Plhdr() -> [ H(
+                             [SOpt(HS(), "0")]
+                           , [S("$Statement")]
+                           )
+                         ]
+
+  is-MJCompletions-Statement =
+    ?Statement-Plhdr()
+
+  prettyprint-MJCompletions-Exp :
+    Exp-Plhdr() -> [ H(
+                       [SOpt(HS(), "0")]
+                     , [S("$Exp")]
+                     )
+                   ]
+
+  is-MJCompletions-Exp =
+    ?Exp-Plhdr()
+
+  prettyprint-MJCompletions-VarRef :
+    VarRef-Plhdr(_) -> [ H(
+                           [SOpt(HS(), "0")]
+                         , [S("$VarRef")]
+                         )
+                       ]
+
+  is-MJCompletions-VarRef =
+    ?VarRef-Plhdr(_)
+
+  prettyprint-MJCompletions-Statement :
+    Statement-Plhdr(_) -> [ H(
+                              [SOpt(HS(), "0")]
+                            , [S("$Statement")]
+                            )
+                          ]
+
+  is-MJCompletions-Statement =
+    ?Statement-Plhdr(_)
+
+  prettyprint-MJCompletions-Exp :
+    Exp-Plhdr(_) -> [ H(
+                        [SOpt(HS(), "0")]
+                      , [S("$Exp")]
+                      )
+                    ]
+
+  is-MJCompletions-Exp =
+    ?Exp-Plhdr(_)
+
+  prettyprint-MJCompletions-Statement :
+    Statement-Opt-Plhdr() -> [ H(
+                                 []
+                               , [S("")]
+                               )
+                             ]
+
+  is-MJCompletions-Statement =
+    ?Statement-Opt-Plhdr()

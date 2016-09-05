@@ -1,0 +1,13 @@
+module ds-signatures/Lexical-sig
+
+signature
+    sorts
+    sort aliases
+      INT = String
+      ID = String
+      MainID = String
+      EOF = String
+      BlockComment = String
+      CommPart = String
+      Asterisk = String
+      Slash = String

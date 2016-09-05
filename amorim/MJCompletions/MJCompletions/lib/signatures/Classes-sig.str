@@ -1,0 +1,50 @@
+module signatures/Classes-sig
+
+imports
+  signatures/Statements-sig
+  signatures/Lexical-sig
+  signatures/Expressions-sig
+
+
+signature
+  sorts
+    ClassDecl ParentDecl FieldDecl MethodDecl VarDecl ParamDecl Type ID INT
+
+  constructors
+    Class                : ID * ParentDecl * List(FieldDecl) * List(MethodDecl) -> ClassDecl
+    None                 : ParentDecl
+    Parent               : ID -> ParentDecl
+    Field                : Type * ID -> FieldDecl
+    Method               : Type * ID * List(ParamDecl) * List(VarDecl) * List(Statement) * Exp -> MethodDecl
+    Var                  : Type * ID -> VarDecl
+    Param                : Type * ID -> ParamDecl
+    Int                  : Type
+    Bool                 : Type
+    IntArray             : Type
+    ClassType            : ID -> Type
+    ClassDecl-Plhdr      : ClassDecl
+    ParentDecl-Plhdr     : ParentDecl
+    FieldDecl-Plhdr      : FieldDecl
+    MethodDecl-Plhdr     : MethodDecl
+    Statement-Plhdr      : Statement
+    Exp-Plhdr            : Exp
+    VarDecl-Plhdr        : VarDecl
+    ParamDecl-Plhdr      : ParamDecl
+    Type-Plhdr           : Type
+    ID-Plhdr             : ID
+    ClassDecl-Plhdr      : COMPLETION-INSERTION -> ClassDecl
+    ParentDecl-Plhdr     : COMPLETION-INSERTION -> ParentDecl
+    FieldDecl-Plhdr      : COMPLETION-INSERTION -> FieldDecl
+    MethodDecl-Plhdr     : COMPLETION-INSERTION -> MethodDecl
+    Statement-Plhdr      : COMPLETION-INSERTION -> Statement
+    Exp-Plhdr            : COMPLETION-INSERTION -> Exp
+    VarDecl-Plhdr        : COMPLETION-INSERTION -> VarDecl
+    ParamDecl-Plhdr      : COMPLETION-INSERTION -> ParamDecl
+    Type-Plhdr           : COMPLETION-INSERTION -> Type
+    ID-Plhdr             : COMPLETION-INSERTION -> ID
+    FieldDecl-Opt-Plhdr  : FieldDecl
+    MethodDecl-Opt-Plhdr : MethodDecl
+    ParentDecl-Opt-Plhdr : ParentDecl
+    ParamDecl-Opt-Plhdr  : ParamDecl
+    VarDecl-Opt-Plhdr    : VarDecl
+    Statement-Opt-Plhdr  : Statement

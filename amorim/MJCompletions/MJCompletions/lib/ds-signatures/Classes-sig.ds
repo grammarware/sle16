@@ -1,0 +1,25 @@
+module ds-signatures/Classes-sig
+
+imports ds-signatures/Statements-sig ds-signatures/Lexical-sig ds-signatures/Expressions-sig
+
+signature
+    sorts
+      ClassDecl
+      ParentDecl
+      FieldDecl
+      MethodDecl
+      VarDecl
+      ParamDecl
+      Type
+    constructors
+      Class : ID * ParentDecl * List(FieldDecl) * List(MethodDecl) -> ClassDecl 
+      None : ParentDecl 
+      Parent : ID -> ParentDecl 
+      Field : Type * ID -> FieldDecl 
+      Method : Type * ID * List(ParamDecl) * List(VarDecl) * List(Statement) * Exp -> MethodDecl 
+      Var : Type * ID -> VarDecl 
+      Param : Type * ID -> ParamDecl 
+      Int : Type 
+      Bool : Type 
+      IntArray : Type 
+      ClassType : ID -> Type 
