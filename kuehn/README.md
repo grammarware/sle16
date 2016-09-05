@@ -1,7 +1,7 @@
 # Full-fledge Role Modeling Editor (FRaMED)
-[Thomas Kühn](https://github.com/Eden-06), [Kay Bierzynski](https://github.com/leondart), Sebastian Richly, Uwe Aßmann
+[Thomas Kühn](https://github.com/Eden-06), [Kay Bierzynski](https://github.com/leondart), Sebastian Richly, and Uwe Aßmann
 
-This is the artifact submission corresponding to the SLE'16 tool paper with the above title. It features a virtual machine packed with the ready to use modeling editor `FRaMED`. `FRaMED` is a full-fledged role modeling editor allowing the graphical specification of role-based software systems by means of compartments (aka. contexts), objects, roles, and relationships. It is currently maintained and developed as a project on [GitHub](https://github.com/leondart/FRaMED),
+This is the artefact submission corresponding to the SLE'16 tool paper with the above title. It features a virtual machine packed with the ready to use modeling editor `FRaMED`. `FRaMED` is a full-fledged role modeling editor allowing the graphical specification of role-based software systems by means of compartments (aka. contexts), objects, roles, and relationships. It is currently maintained and developed as a project on [GitHub](https://github.com/leondart/FRaMED),
 however, the artefact corresponds to release [v2.0.3](https://github.com/leondart/FRaMED/releases/tag/v2.0.3).
 
 ![Graphical user interface of FRaMED](images/framed-bank-example.png)
@@ -16,15 +16,15 @@ First and foremost, we have prepared a **virtual machine** for the virtualizatio
 that can be installed, as follows:
 
 * Download and install `VirtualBox` for your platform from their [website](https://www.virtualbox.org/)
-* Download the `FRaMED` virtual machine `framed-ubuntu.ova` from [st.inf.tu-dresden.de/intern/framed/framed-ubuntu.ova](http://st.inf.tu-dresden.de/intern/framed/framed-ubuntu.ova) *(1.8\ GB)*
+* Download the `FRaMED` virtual machine `framed-ubuntu.ova` from [st.inf.tu-dresden.de/intern/framed/framed-ubuntu.ova](http://st.inf.tu-dresden.de/intern/framed/framed-ubuntu.ova) *(1.8 GB)*
 * Open your `VirtualBox` and *Import* the downloaded file
-* Startup the added `framed-ubuntu\_1` virtual machine
+* Startup the added `framed-ubuntu_1` virtual machine
 
-Notably, there are alternative methods to install `FRaMED`, such as downloading an [`Eclipse Products`](https://github.com/leondart/FRaMED/releases/tag/v2.0.3) or installation via an [*Update site*](https://github.com/leondart/FRaMED/wiki/Installation-via-Updatesite), however, the virtual machine is the only artifact that is supposed to still work in 10 years from now. Hence, it is the only feasible option for our graphical modeling editor.
+Notably, there are alternative methods to install `FRaMED`, such as downloading an [`Eclipse Product`](https://github.com/leondart/FRaMED/releases/tag/v2.0.3) or installation via an [*Update site*](https://github.com/leondart/FRaMED/wiki/Installation-via-Updatesite), however, the virtual machine is the only artefact that is supposed to still work in 10 years from now. Hence, it is the only feasible option for our graphical modeling editor.
 
 ### First Steps
 
-After, the virtual machine is launched, double click on the `FRaMED` icon on the desktop to startup FRaMED.
+After, the virtual machine is launched, double click on the `FRaMED` icon on the desktop to startup the editor.
 Henceforth, you can explore and use FRaMED to inspect the already opened banking application `Bank.crom_dia`
 of the *FramedExample* Project.
 
@@ -81,5 +81,5 @@ For the latter, we refer the reader to the `SCROLL` documentation available on [
 
 ### More Information
 
-You can find more information on `FRaMED` its development and its use in the corresponding [GitHub Wiki](https://github.com/leondart/FRaMED/wiki), as well as the source code via [GitHub](https://github.com/leondart/FRaMED).
+You can find more information on `FRaMED`'s development and its use in the corresponding [GitHub Wiki](https://github.com/leondart/FRaMED/wiki), as well as the source code via [GitHub](https://github.com/leondart/FRaMED).
 
