@@ -50,13 +50,20 @@ The main interface is `IExecutionEngine.java`, which defines all the services th
 
 Most importantly, the framework provides a generic partial implementation of this interface in the abstract class `AbstractExecutionEngine.java`. It implements all the operations of the interface, so that most of the interface state of an engine and all notifications to addons are already managed. For instance, the `start` operation is implemented to start the execution in a new thread, to notify addons, and to manage exceptions. In addition, operations are provided to help the implementation of concrete engines, such as `beforeExecutionStep` and `afterExecutionStep`, which manage transactions and notifications to addons.
 
-In the AbstractExecutionEngine, an extensive usage is made of the [template method pattern](https://en.wikipedia.org/wiki/Template_method_pattern), using `final` and `abstract` keywords, to forbid concrete engines to override the APU, and so that developpers know directly which operations they must implement without any risk of error. For instance, using this abstract implementation, a concrete engine must implement `performStart` without having to deal with the notifications to engines, since it is already handled in `start`.
+In the *AbstractExecutionEngine*, an extensive usage is made of the [template method pattern](https://en.wikipedia.org/wiki/Template_method_pattern), using `final` and `abstract` keywords, to forbid concrete engines to override the APU, and so that developpers know directly which operations they must implement without any risk of error. For instance, using this abstract implementation, a concrete engine must implement `performStart` without having to deal with the notifications to engines, since it is already handled in `start`.
+
+Lastly, a second abstract class `AbstractSequentialExecutionEngine.java` is provided, in which *AbstractExecutionEngine* is extended to provide helpers for execution engines that do not execute steps concurrently.
+
 
 ## The provided engines
 
 ### Java
 
-TODO
+The Java engine source code can be found in `ModelDebugging/java_execution/java_engine/plugins/org.gemoc.execution.sequential.javaengine/src/org/gemoc/execution/sequential/javaengine`. It consists of one class `PlainK3ExecutionEngine.java` (its name is due to legacy).
+
+To execute operational semantics defined in Java, this engine must first find the `main` operation by analyzing the code, which is done in `prepareEntryPoint`. Once this is done, `executeEntryPoint` only consists in invoking this methos.
+
+This engine then provides facilities to receive "callbacks" from the interpreter in order to send notifications to addons. This is handled in `executeStep`, which is called from the Java code directly. More precisely, a `StepCommand` object is given to the Java engine to execute.
 
 ### Java+Moccml
 
