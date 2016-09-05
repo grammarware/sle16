@@ -5,7 +5,7 @@ The artifact is the plot of the file lengths and the plot of the respond times o
 
 The benchmarks for the paper have been performed on a MacBook Pro (Retina, 15-inch, Early 2013)
 
-The plotting script can be found at https://github.com/monto-editor/services-java/blob/master/plot.r
+The plotting script can be found at https://github.com/monto-editor/services-java/blob/benchmark/plot.r
 
 # Build Requirements
 
