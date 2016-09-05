@@ -71,15 +71,28 @@ The Java+Moccml engine source code can be found in `concurrency/ccsljava_executi
 
 Compared to the Java engine, this engine does not rely on Java for the control flow of the operational semantics, but on a separate Moccml model. The execution of this Moccml model is realized using a solver called [Timesquare](http://timesquare.inria.fr/). Depending on the events computed by the solver, corresponding Java methods are called individually. Therefore, there is no need for callbacks from the Java code to the engine in this case, and there is no need to find the main operation of the semantics. More concretely, the execution in `performStart` consists of a `while` loop that constantly looks for new steps and execute them using `performExecutionStep`.
 
+
+
+### Coordination
+
+The coordination engine source code can be found in `coordination/heterogeneousCoordinationEngine/plugins/org.gemoc.execution.engine.coordinator.commons/src/org/gemoc/execution/engine/coordinator/commons/`, with the class `HeterogeneousEngine.java`.
+
+This engine is a rather complex as it contains a list of coordinated engines (stored in `_coordinatedEngines`), and each step of the coordination engine is a set of steps of the coordinated ones.
+
+
 ### xmof
 
 TODO
 
-### Coordination
-
-TODO
-
 ## The provided addons
+
+### Generated trace addons
+
+### Generic trace addon
+
+### Concurrent omniscient debugger
+
+### Sequential omniscient debugger
 
 TODO
 
@@ -102,6 +115,8 @@ If you prefer to use your own local maven repository (ie. in <HOME>/.m2/reposito
 mvn package -P 'ignore_CI_repositories,!use_CI_repositories'
 ~~~
 
-The resulting GEMOC Studio can be found in TODO
+The resulting GEMOC Studio can be found in 
+
+TODO
 
  
