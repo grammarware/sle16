@@ -3,6 +3,7 @@ DrAST artefact evaluation
 
 These examples use the following libaries:
 
+* DrAST, Copyright (c) 2015-2016, DrAST committers. Modified BSD License.
 * JastAdd2, Copyright (c) 2005-2016, The JastAdd Team. Modified BSD Licence.
 * Beaver 0.9.11. Copyright (c) 2003-2016 Alexander Demenchuk. Modified BSD License.
 * JFlex 1.6.0. Copyright (c) 1998-2016 Gerwin Klein. GNU General Public License.
