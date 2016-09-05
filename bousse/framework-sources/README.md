@@ -41,7 +41,16 @@ In addition to the interface, a class `DefaultEngineAddon` is provided with an e
 
 ### Engine API
 
-The engine API can be found in ...
+The engine API can be found in two places:
+
+- `ModelDebugging/framework/framework_commons/plugins/org.gemoc.xdsmlframework.api/src/org/gemoc/xdsmlframework/api/core` for the interfaces.
+- `ModelDebugging/framework/execution_framework/plugins/org.gemoc.executionframework.engine/src/org/gemoc/executionframework/engine/core` for the partial abstract implementations.
+
+The main interface is `IExecutionEngine.java`, which defines all the services that must be provided by an engine. This includes both operations to control the execution (eg. `start` and `stop`), and operations to retrieve information on the execution (eg. `getCurrentStack` or `getEngineStatus`).
+
+Most importantly, the framework provides a generic partial implementation of this interface in the abstract class `AbstractExecutionEngine.java`. It implements all the operations of the interface, so that most of the interface state of an engine and all notifications to addons are already managed. For instance, the `start` operation is implemented to start the execution in a new thread, to notify addons, and to manage exceptions. In addition, operations are provided to help the implementation of concrete engines, such as `beforeExecutionStep` and `afterExecutionStep`, which manage transactions and notifications to addons.
+
+In the AbstractExecutionEngine, an extensive usage is made of the [template method pattern](https://en.wikipedia.org/wiki/Template_method_pattern), using `final` and `abstract` keywords, to forbid concrete engines to override the APU, and so that developpers know directly which operations they must implement without any risk of error. For instance, using this abstract implementation, a concrete engine must implement `performStart` without having to deal with the notifications to engines, since it is already handled in `start`.
 
 ## The provided engines
 
