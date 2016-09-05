@@ -67,7 +67,9 @@ This engine then provides facilities to receive "callbacks" from the interpreter
 
 ### Java+Moccml
 
-TODO
+The Java+Moccml engine source code can be found in `concurrency/ccsljava_execution/ccsljava_engine/plugins/org.gemoc.execution.concurrent.ccsljavaengine/src/org/gemoc/execution/concurrent/ccsljavaengine/dse`. It mainly consists of the class `ConcurrentExecutionEngine.java`.
+
+Compared to the Java engine, this engine does not rely on Java for the control flow of the operational semantics, but on a separate Moccml model. The execution of this Moccml model is realized using a solver called [Timesquare](http://timesquare.inria.fr/). Depending on the events computed by the solver, corresponding Java methods are called individually. Therefore, there is no need for callbacks from the Java code to the engine in this case, and there is no need to find the main operation of the semantics. More concretely, the execution in `performStart` consists of a `while` loop that constantly looks for new steps and execute them using `performExecutionStep`.
 
 ### xmof
 
@@ -79,7 +81,7 @@ TODO
 
 ## Compiling the studio
 
-TODO
+
 
 ## The provided addons
 
