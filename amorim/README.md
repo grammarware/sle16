@@ -1,5 +1,7 @@
 # Completion-Artifacts-SLE-16
 
+[Eduardo Souza](https://github.com/udesou), Sebastian Erdweg, Guido Wachsmuth, Eelco Visser
+
 Example projects for testing Syntactic Completions in Spoofax as described in the submission for SLE'16 [Principled Syntactic Code Completion using Placeholders](http://conf.researchr.org/event/sle-2016/sle-2016-papers-principled-syntactic-code-completion-using-placeholders).
 
 To test syntactic code completion for each project:
