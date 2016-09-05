@@ -1,4 +1,4 @@
-<img align="right" width="400" src="http://s14.postimg.org/xw2u7q235/open_materials_all.png">
+<img align="right" width="200" src="sle-aec-badge.png">
 
 # SLE 2016 Artefacts Track
 
