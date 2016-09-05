@@ -36,7 +36,7 @@ This file.
 change your directory to the root of biyacc where you can see the file `biyacc.cabal`, and run `cabal configure && cabal install`.  
    Cabal will install BiYacc and generate the executable files somewhere in your computer.
    In mac, the location usually is:  
-   `/Users/AccountName/Library/Haskell/bin/biyacc`
+   `/Users/AccountName/Library/Haskell/bin/biyacc`  
    In ubuntu, the location usually is:  
    `/home/AccountName/.cabal/bin/biyacc`  
    It depends on the system as well as the *version of the cabal and GHC*. You can find the location information in the document of Cabal. Make sure the generated executables can be accessed from your terminal.
@@ -56,10 +56,10 @@ If the argument `"OutputFile(updated code)"` is ommitted when running it as a pr
 
 ----
 
-##Try the examples on our paper##
+##Try the examples in our paper##
 
 ###Arithmetic expressions
-This is the test case mentioned in the **Introduction** and **first look of BiYacc* of* the paper
+This is the test case mentioned in the **Introduction** and **First look of BiYacc** (Section 2) of the paper
 
 Go to
 [http://www.prg.nii.ac.jp/project/biyacc.html](http://www.prg.nii.ac.jp/project/biyacc.html)
@@ -78,14 +78,14 @@ In the test cases, select **The tiger language (unambiguous grammar)**. (Of cour
 
 #### Section 5.1: Syntactic sugar
 Input program text: `e1 | e2`, it will be parsed to  
-`TIfExp (TVarExp (TSimpleVar "e1")) (TIntExp 1) (Just (TVarExp (TSimpleVar "e2")))`
+`TIfExp (TVarExp (TSimpleVar "e1")) (TIntExp 1) (Just (TVarExp (TSimpleVar "e2")))`  
 change the `(TVarExp (TSimpleVar "e2"))` to `TIntExp 3` and print the AST back. You can see the syntactic (`|`) is kept.
 
 #### Section 5.2: Resugaring
 Tiger does not have the `not` operation, instead, we use negation operator (`-`) to show the example. Basically, they are both unary operator and their priorities are higher than those of binary operators.
 Input program text: `-1 | - 0`,  
 it is parsed to  
-`TIfExp (TOpExp (TIntExp 0) TMinusOp (TIntExp 1)) (TIntExp 1) (Just (TOpExp (TIntExp 0) TMinusOp (TIntExp 0)))`
+`TIfExp (TOpExp (TIntExp 0) TMinusOp (TIntExp 1)) (TIntExp 1) (Just (TOpExp (TIntExp 0) TMinusOp (TIntExp 0)))`  
 Then please follow the same instruction shown on the paper Section 5.2 (page  10).
 
 ###Section 5.3: Language evolution
@@ -136,7 +136,7 @@ We test **PutGet** with the AST parsed from the program text. We first print the
 where the first line will generate `test1code.txt`
 
 #####PutGet2
-We use the AST parsed from some other file to test the **PutGet**. eg:
+We use the AST parsed from some other file to test the **PutGet**. eg:  
 `put test1.tig test2AST.txt test1code.txt`  
 `get test1code.txt test1AST.txt`  
 `diff test1AST.txt test2AST.txt`  
