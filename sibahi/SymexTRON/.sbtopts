@@ -1,0 +1,4 @@
+-J-Xms512M
+-J-Xmx4098M
+-J-Xss1M
+-Djava.library.path=lib/solvers/darwin
