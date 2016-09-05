@@ -6,7 +6,13 @@ Since the paper is about a framework, it seemed important to provide the sources
 
 The source folders are the following:
 
-- `ModelDebugging` contains the complete **execution framework** of the GEMOC Studio. In addition, it contains the Java engine, which is the main and reference implementation of the engine API, and a set of dedugging and generic execution trace addons that implement the addon API. Its content is directly taken from https://github.com/SiriusLab/ModelDebugging.
+- `ModelDebugging` contains:
+
+	- the complete **execution framework** of the GEMOC Studio.
+	- the Java engine, which is the main and reference implementation of the engine API.
+	- a set of dedugging and generic execution trace addons that implement the addon API. 
+
+Its content is directly taken from https://github.com/SiriusLab/ModelDebugging.
 - `concurrency` contains the Java+Moccml execution engine, along with some addons that are only relevant for this engine. Its content is directly taken from https://github.com/gemoc/concurrency.
 - `coordination` contains the coordination engine. Its content is directly taken from https://github.com/gemoc/coordination.
 - `xmof`TODO
@@ -17,9 +23,27 @@ Note that the last two projects are only provided so that a complete GEMOC Studi
 
 ## Decription of the execution framework
 
-TODO
+As explained in the paper, the execution framework provides facilities to define two sorts of components:
 
-## The different engines
+	- **addons**, which are components that implement runtime services (eg. debugging) that react to the progress of the execution of models.
+	- **engines**, which are components responsible for starting and controlling the execution of interpreters of xDSMLs, and that must and notify addons of the progress of the execution of models.
+
+All the content of the framework is found in the folder `ModelDebugging`, more precisely in the `framework` subfolder. We present both APIs in the following sections.
+
+### Addon API
+
+The addon API can be found in `ModelDebugging/tree/framework/framework_commons/plugins/org.gemoc.xdsmlframework.api/src/org/gemoc/xdsmlframework/api/engine_addon`.
+
+It mostly consists of the Java interface `IEngineAddon.java`, which defines all the operations that are later used by the engine to notify of the progress of the execution of a model. For instance, `engineAboutToStart` is called when the execution starts, so that the addon can be initialized. Likewise, `aboutToExecuteStep` and `stepExecuted` are called by an engine before and after a step (respectively).
+
+In addition to the interface, a class `DefaultEngineAddon` is provided with an empty default implementation of all operations of `IEngineAddon`. Thereby, addons do not have to implement operations for reacting to events they are not interested in.
+
+
+### Engine API
+
+The engine API can be found in ...
+
+## The provided engines
 
 ### Java
 
@@ -40,3 +64,7 @@ TODO
 ## Compiling the studio
 
 TODO
+
+## The provided addons
+
+TODO 
