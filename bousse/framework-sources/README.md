@@ -79,10 +79,29 @@ TODO
 
 TODO
 
-## Compiling the studio
-
-
-
 ## The provided addons
 
-TODO 
+TODO
+
+## Compiling the studio
+
+To compile the studio, run the following command using maven:
+
+~~~
+mvn package -Dmaven.repo.local=$PWD/localm2 -P 'ignore_CI_repositories,!use_CI_repositories'
+~~~
+
+We use two options:
+
+- `-Dmaven.repo.local=$PWD/localm2`: use a folder called *localm2* to cache all the external dependencies of the studio, instead of using the user local maven repository. Since the GEMOC Studio has around 1GB of dependencies, this avoids using this much space in a hidden folder of the user home dir.
+- `-P 'ignore_CI_repositories,!use_CI_repositories'`: enables the maven profile `ignore_CI_repositories` and disables the profile `use_CI_repositories`, to disable the use of the update sites provided by GEMOC and to make sure that only local content is used.
+
+If you prefer to use your own local maven repository (ie. in <HOME>/.m2/repository), use this command:
+
+~~~
+mvn package -P 'ignore_CI_repositories,!use_CI_repositories'
+~~~
+
+The resulting GEMOC Studio can be found in TODO
+
+ 
