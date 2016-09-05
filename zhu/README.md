@@ -130,15 +130,15 @@ The definition of **PutGet** is:
 We test the **PutGet** property in a similiar way. However, we do not have the slightly modified AST, and the **PutGet** is tested twice in the following way.
 #####PutGet1
 We test **PutGet** with the AST parsed from the program text. We first print the AST back to the program text, and then parse the generated program text back to a new AST and compare the two ASTs. eg:  
-`put test1.tig test1AST.txt test1code.txt`
-`get test1code.txt test1AST2.txt`
+`put test1.tig test1AST.txt test1code.txt`  
+`get test1code.txt test1AST2.txt`  
 `diff test1AST.txt test1AST2.txt`  
 where the first line will generate `test1code.txt`
 
 #####PutGet2
 We use the AST parsed from some other file to test the **PutGet**. eg:
-`put test1.tig test2AST.txt test1code.txt`
-`get test1code.txt test1AST.txt`
+`put test1.tig test2AST.txt test1code.txt`  
+`get test1code.txt test1AST.txt`  
 `diff test1AST.txt test2AST.txt`  
 That is, we use the AST generated from `test2.tig` to update `test1.tig`, and then parse the updated `test1.tig` to an AST and compare the two ASTs. Usually, ASTs parsed from different code snippet are very different, so we believe this could test the stability of the put (print) function.
 We do such test for the 50 files in a circular way.
