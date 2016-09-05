@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CDOBenchmarkClient
+Bundle-SymbolicName: CDOBenchmarkClient
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-Activator: eu.cactosfp7.cdobenchmarkclient.Activator
+Require-Bundle: org.eclipse.osgi,
+ eu.cactosfp7.optimisationplan,
+ org.eclipse.emf.cdo.net4j,
+ eu.cactosfp7.cdosessionclient
+

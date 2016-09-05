@@ -1,0 +1,54 @@
+I) Using the CDOSession Integration
+
+Step 1: Check out the following three eclipse projects to your workspace.
+ - CDOSession: http://svn.fzi.de/svn/cactos/code/integration/trunk/eu.cactosfp7.cdosession/
+ - CDOSessionClient: http://svn.fzi.de/svn/cactos/code/integration/trunk/eu.cactosfp7.cdosessionclient/
+ - configuration: http://svn.fzi.de/svn/cactos/code/integration/trunk/eu.cactosfp7.configuration/
+ 
+Step 2: Add the CDOSession* bundles as dependencies to your project under development.
+ - Open the file in your project /META-INF/MANIFEST.MF
+ - In graphical UI, click on "Dependencies"
+ - Add the following two bundles to the left hand "Required Plugin" list:
+    * eu.cactosfp7.cdosession
+    * eu.cactosfp7.cdosessionclient
+
+Step 3: Add more dependencies for using the ConfigAdminService to your project.
+ - Still in /META-INF/MANIFEST.MF, add more dependencies:
+   * org.apache.felix.fileinstall
+   * org.apache.felix.metatype
+   * org.eclipse.equinox.cm
+ 
+Step 4: Edit the configuration with your credentials for the CDO server.
+ - In the project eu.cactosfp7.configuration, edit the file integration_cdosession.cfg
+ - Enter the correct credentials. This file will be read automatically by "the OSGi environment"
+ - NEVER COMMIT CHANGES HERE TO THE SVN!
+ 
+Step 5: Use the CDOSession in your code
+ - Create a new CDOSession for one CDO User: 
+    CactosCdoSession cdoSession = CdoSessionClient.INSTANCE.getService().getCactosCdoSession(CactosUser.CACTOSCALE);
+ - Use the cdoSession object to access the CDO server.
+ 
+
+II) Example Usage Scenarios of cdoSession
+
+1) Open a new transaction for doing changes!
+CDOTransaction cdoCon = cdoSession.createTransaction();
+// ... do some changes
+cdoCon.commit();
+cdoSession.closeConnection(cdoCon);
+// or use the cdoSession to closeAndCommit:
+cdoSession.commitAndCloseConnection(cdoCon);
+
+2) Load Repository from CDO Server:
+CDOTransaction cdoCon = cdoSession.createTransaction();
+LogicalDCModel logicalDcModel = (LogicalDCModel) cdoSession.getRepository(cdoCon, cdoSession.getLogicalModelPath());
+cdoSession.closeConnection(cdoCon);
+
+3) For Read-only, open a view, not a transaction!
+CDOView view = cdoSession.createView();
+// read sth e.g. use cdoSession.getRepository(view, ...);
+cdoSession.closeConnection(view);
+
+4) Explore the helper methods provided by CdoHelper! Just one example, there are more!
+VirtualMachine vm = CdoHelper.getVirtualMachineById(logicalDcModel, "vm-id");
+

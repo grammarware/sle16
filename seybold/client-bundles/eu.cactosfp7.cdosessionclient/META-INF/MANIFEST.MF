@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CDO Session Client
+Bundle-SymbolicName: eu.cactosfp7.cdosessionclient
+Bundle-Version: 1.0.0
+Bundle-Activator: eu.cactosfp7.cdosessionclient.Activator
+Bundle-Vendor: CACTOS Consortium
+Require-Bundle: eu.cactosfp7.cdosession;bundle-version="1.0.0";visibility:=reexport,
+ org.eclipse.osgi,
+ org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Service-Component: OSGI-INF/cdosession.xml
+Export-Package: eu.cactosfp7.cdosessionclient
+Bundle-ActivationPolicy: lazy

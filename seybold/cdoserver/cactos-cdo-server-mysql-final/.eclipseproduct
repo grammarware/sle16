@@ -1,0 +1,5 @@
+#Eclipse Product File
+#Wed Oct 07 16:01:46 CEST 2015
+version=4.1.300.v20150911-1807
+name=Cactos CDO Server MySQL
+id=org.eclipse.emf.cdo.server.product.tcp_h2

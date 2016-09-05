@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="eu.cactosfp7.runtimemanagement.CdoSessionClient">
+   <implementation class="eu.cactosfp7.cdosessionclient.CdoSessionClient"/>
+   <reference bind="bindService" cardinality="1..1" interface="eu.cactosfp7.cdosession.service.CdoSessionService" name="cdosession" policy="static" unbind="unbindService"/>
+</scr:component>

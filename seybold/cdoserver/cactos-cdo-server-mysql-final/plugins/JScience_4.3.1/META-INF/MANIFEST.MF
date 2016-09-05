@@ -1,0 +1,23 @@
+Manifest-Version: 1.1
+Ant-Version: Apache Ant 1.8.4
+Created-By: 1.7.0_45-b18 (Oracle Corporation)
+Bundle-ManifestVersion: 2
+Bundle-Name: JScience
+Bundle-SymbolicName: JScience
+Bundle-Version: 4.3.1
+Bundle-ClassPath: jscience.jar
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: javax.measure,javax.measure.converter,javax.measure.qu
+ antity,javax.measure.unit,javax.realtime,javolution,javolution.contex
+ t,javolution.io,javolution.lang,javolution.testing,javolution.text,ja
+ volution.util,javolution.xml,javolution.xml.sax,javolution.xml.stream
+ ,javolution.xml.ws,org.jscience,org.jscience.economics.money,org.jsci
+ ence.geography.coordinates,org.jscience.geography.coordinates.crs,org
+ .jscience.mathematics.function,org.jscience.mathematics.number,org.js
+ cience.mathematics.structure,org.jscience.mathematics.vector,org.jsci
+ ence.physics.amount,org.jscience.physics.model,org.opengis.metadata,o
+ rg.opengis.metadata.citation,org.opengis.metadata.extent,org.opengis.
+ referencing,org.opengis.referencing.crs,org.opengis.referencing.cs,or
+ g.opengis.spatialschema.geometry,org.opengis.spatialschema.geometry.g
+ eometry,org.opengis.util
+

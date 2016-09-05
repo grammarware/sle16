@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CDO Session Provider
+Bundle-SymbolicName: eu.cactosfp7.cdosession
+Bundle-Version: 1.0.0.qualifier
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.emf.cdo.net4j,
+ org.eclipse.net4j.tcp,
+ eu.cactosfp7.optimisationplan,
+ org.eclipse.osgi.services,
+ org.apache.log4j
+Export-Package: eu.cactosfp7.cdosession,
+ eu.cactosfp7.cdosession.service,
+ eu.cactosfp7.cdosession.settings,
+ eu.cactosfp7.cdosession.util
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Service-Component: OSGI-INF/cdosession.xml
+Bundle-Activator: eu.cactosfp7.cdosession.Activator
