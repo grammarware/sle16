@@ -1,7 +1,7 @@
 # Efficient Data Partitioning for Distributed Model Tranformations (Class2Relational example)
 
 This is a demo of a distributed transformation of the [Class2Relational](http://www.eclipse.org/atl/atlTransformations/#Class2Relational) example. The artefacte is provided in the form of a Docker cluster, of two images, a **"hadoop-master"** and a **"hadoop-slave"**.
-The Docker images are made public for this convenience. Alongside with the hadoop/Hbase installs, the two images contain [ATL-MR][atlmr] and [NeoEMF/HBase][neoemf] libraries and dependencies. **ATL-MR** is distributed transformation engine for ATL on MapReduce, while  **NeoEMF/HBase** is a distributed persistence engine for EMF models. 
+The Docker images are made public for this convenience. Alongside with the hadoop/Hbase installs, the two images contain [ATL-MR](https://github.com/atlanmod/ATL_MR) and [NeoEMF/HBase](https://github.com/atlanmod/NeoEMF) libraries and dependencies. **ATL-MR** is distributed transformation engine for ATL on MapReduce, while  **NeoEMF/HBase** is a distributed persistence engine for EMF models. 
 
 
 ## Content and description 
@@ -202,8 +202,8 @@ usage: yarn jar <this-file.jar> -f <transformation.emftvm>
  -c,--counters                                              Resource statistics mode. Optional, disabled by default
 ```
 
-- A script example to launch a single transformation can be found under 
-```/root/dist/dist-trans/run-class-single.sh```
+- A script example to launch a single transformation can be found under  ```/root/dist/dist-trans/run-class-single.sh```
+
 
 
 ### Using the cluster in [AWS](https://console.aws.amazon.com)
@@ -214,11 +214,10 @@ Hereafter, we will walk you through the **AWS** instance configuration and the c
 
 #### Making the EBS Volume available for use in Linux
 
+
 Once your *ec2* instance is launched, only the principal partition with limited size is available for use. An unallocated *EBS* volume is there waiting for your intervention to partition it according to your need. This volume is exposed as a block device. You can format it with any file system and then mount it. After you make the EBS volume available for use, you can access it in the same ways that you access any other volume. We recommend you to use the principal partition to install packages, and the EBS one to deploy the cluster.
 - Instructions on how to format and mount an *EBS* volume can be found in this [link](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html).
 
 - After configuring the instance, you can resume from the Docker installation section.
 
-   [atlmr]: <https://github.com/atlanmod/ATL_MR>
-   [neoemf]: <https://github.com/atlanmod/NeoEMF>
                                                       
