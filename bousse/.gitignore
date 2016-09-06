@@ -1,0 +1,6 @@
+localm2
+workspace
+target
+src-gen
+xtend-gen
+*.class
