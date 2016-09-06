@@ -14,7 +14,7 @@ https://github.com/grammarware/sle16/blob/master/laemmel/yas-master.zip
 
 The artefacts are consistently linked from the paper; just click the links in paper.
 
-For instance, the first artefact in the paper is LAL megamodel language in Section 3.1. If one hovers over "language", then this reveals the link https://github.com/softlang/yas/blob/master/languages/LAL/lib/language.lal which directly takes on to the github repo softlang/yas. If one wanted to explore the artefact in the zip-file instead, then one simply strips off the prefix "https://github.com/softlang/yas/blob/master/" and uses the rest as a filename within the zip-file.
+For instance, the first artefact in the paper is "LAL megamodel language" in Section 3.1. If one hovers over "language", then this reveals the link https://github.com/softlang/yas/blob/master/languages/LAL/lib/language.lal which directly takes one to the github repo softlang/yas. If one wanted to explore the artefact in the zip-file instead, then one simply strips off the prefix "https://github.com/softlang/yas/blob/master/" and uses the rest as a filename within the zip-file.
 
 # Prerequisites for running
 
