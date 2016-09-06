@@ -10,42 +10,31 @@ The folder `examples` contains one example per engine. Each example contains one
 
 Thereafter, we present simplified tutorials to play with each execution engine of the GEMOC studio, and with the corresponding relevant addons.
 
-### Java engine
+### Common recipe
 
-1. Import example language
-2. Start modeling workbench
-3. Import model
-4. Execute model in debug mode
-5. Look at XXX and YYY
+1. Start the GEMOC Studio in a fresh workspace.
+1. Import the example xDSML by doing *File, *Import..*, *Existing Projects into Workspace*, and choose the folder `language-workbench` of the considered engine. Select all the projects and click on *Finish*.
+2. Start a modeling workbench for the xDSML by creating a new eclipse run configuration:
+	a. Click on *Run*, *Run Configurations...*.
+	b. Right click on *Eclipse Application* and choose *New*.
+	c. Click on *Run*.
+3. Import the example model of the considered engine by using the same procedure as for importing the language, but by choosing the folder `modeling-workbench`.
+4. Execute the model in debug mode: TODO
+
+### Java engine
 
 TODO
 
 ### Java+MoCCML engine
 
-1. Import example language
-2. Start modeling workbench
-3. Import model
-4. Execute model in debug mode
-5. Look at XXX and YYY
-
 TODO
 
 ### xMOF engine
-
-1. Import example language
-2. Start modeling workbench
-3. Import model
-4. Execute model in debug mode
-5. Look at XXX and YYY
 
 TODO
 
 ### BCOoL engine
 
-1. Import example language
-2. Start modeling workbench
-3. Import model
-4. Execute model in debug mode
-5. Look at XXX and YYY
-
 TODO
+
+
