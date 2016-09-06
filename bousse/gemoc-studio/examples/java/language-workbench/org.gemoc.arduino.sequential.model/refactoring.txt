@@ -1,0 +1,21 @@
+Here are the changes I did to the metamodel and associated tooling
+
+
+renamed:
+  + MathOperator -> MathExpression 
+  + NumericalOperator -> NumericalExpression
+  + BooleanOperator -> BooleanExpression
+  + Status -> ModuleSet
+  + Sensor -> ModuleGet
+  + InputModule -> Sensor
+  + OutputModule -> Actuator
+  
+added:
+  + make Constant abstract and add two specializations: IntegerConstant and BooleanConstant
+
+removed:
+  + Function, Parameter and co have been removed since it was strangely done and named and not very useful. Could be re-introduced if needed (after cleaning).
+  + Level -> I understood that Level was a specific IntegerSetter while Status was a boolean Setter or something like that. I removed them to create a ModuleSet instruction
+modified:
+  + ModuleSet (ex Status) is now pointing to an expression for the value to set and the link to sensor is removed. All this stuff between Status and Sensor was so strange In prefered to remove all.
+  + ModuleGet is now an Expression pointing to a module

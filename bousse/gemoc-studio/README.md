@@ -8,7 +8,7 @@ The folder `examples` contains one example per engine. Each example contains one
 
 ## Playing with the engines
 
-Thereafter, we present simplified tutorials to play with each execution engine of the GEMOC studio, and with the corresponding relevant addons.
+Thereafter, we present simplified tutorials to play with two execution engines of the GEMOC studio, and with the corresponding relevant addons.
 
 ### Common recipe
 
@@ -20,21 +20,3 @@ Thereafter, we present simplified tutorials to play with each execution engine o
 	3. Click on *Run*.
 3. Import the example model of the considered engine by using the same procedure as for importing the language, but by choosing the folder `modeling-workbench`.
 4. Execute the model in debug mode by right clicking on the provided `.launch` file, and choosing *Debug as* and choosing the first choice there. You can then click on *Run* to execute the model.
-
-### Java engine example
-
-TODO
-
-### Java+MoCCML engine example
-
-TODO
-
-### xMOF engine example
-
-TODO
-
-### BCOoL engine example
-
-TODO
-
-

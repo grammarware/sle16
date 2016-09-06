@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.gemoc.execution.concurrent.ccsljavaengine.ui.launcher">
+<booleanAttribute key="MultiBranch Reflective Tracing" value="true"/>
+<stringAttribute key="First Instruction" value="http://www.eclipse.org/emf/2002/Ecore#/"/>
+<intAttribute key="GEMOC_ANIMATE_DELAY" value="0"/>
+<booleanAttribute key="GEMOC_LAUNCH_BREAK_START" value="true"/>
+<stringAttribute key="GEMOC_LAUNCH_INITIALIZATION_ARGUMENTS" value=""/>
+<stringAttribute key="GEMOC_LAUNCH_INITIALIZATION_METHOD" value=""/>
+<stringAttribute key="GEMOC_LAUNCH_SELECTED_DECIDER" value="Step by step user decider"/>
+<stringAttribute key="GEMOC_LAUNCH_SELECTED_LANGUAGE" value="org.modelexecution.operationalsemantics.ad.concurrent.xdsml.ConcurrentActivityDiagram"/>
+<booleanAttribute key="MultiBranch Timeline" value="true"/>
+<booleanAttribute key="MultiDimensional Timeline" value="false"/>
+<stringAttribute key="Resource" value="/org.modelexecution.operationalsemantics.ad.samplemodels/model/test1.ad"/>
+<booleanAttribute key="VCD visualization" value="true"/>
+<stringAttribute key="airdResource" value="/org.modelexecution.operationalsemantics.ad.samplemodels/model/test1.aird"/>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/org.modelexecution.operationalsemantics.ad.samplemodels/model/test1.ad"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<booleanAttribute key="tfsm_plaink3Trace Addon" value="false"/>
+</launchConfiguration>

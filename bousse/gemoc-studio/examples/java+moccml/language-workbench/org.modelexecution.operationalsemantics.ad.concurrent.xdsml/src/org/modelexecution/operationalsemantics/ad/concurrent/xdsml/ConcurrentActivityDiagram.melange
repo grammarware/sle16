@@ -1,0 +1,50 @@
+package org.modelexecution.operationalsemantics.ad.concurrent.xdsml
+
+language ConcurrentActivityDiagram {
+	syntax "platform:/resource//org.modelexecution.operationalsemantics.ad/ad/activitydiagram.ecore"
+	
+	with org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.ActivityAspect
+	with org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.OpaqueActionAspect
+	with org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.IntegerVariableAspect
+	with  org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.BooleanVariableAspect
+	with org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.ActivityNodeAspect
+	with org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.MergeNodeAspect
+	with  org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.ActivityEdgeAspect
+	with  org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.BooleanBinaryExpressionAspect
+	with org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.DecisionNodeAspect
+	with org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.VariableAspect
+	with org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.NamedElementAspect
+	with  org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.IntegerCalculationExpressionAspect
+	with  org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.MergeNodeAspect
+	with org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.BooleanVariableAspect
+	with org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.ActivityFinalNodeAspect
+	with  org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.VariableAspect
+	with  org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.ActivityAspect
+	with  org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.IntegerVariableAspect
+	with org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.ExpressionAspect
+	with  org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.ForkNodeAspect
+	with org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.JoinNodeAspect
+	with  org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.BooleanUnaryExpressionAspect
+	with  org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.InitialNodeAspect
+	with  org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.IntegerComparisonExpressionAspect
+	with  org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.ExpressionAspect
+	with  org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.ActivityFinalNodeAspect
+	with org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.IntegerComparisonExpressionAspect
+	with org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.ActivityEdgeAspect
+	with org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.ForkNodeAspect
+	with  org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.JoinNodeAspect
+	with org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.IntegerCalculationExpressionAspect
+	with org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.BooleanBinaryExpressionAspect
+	with  org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.ControlFlowAspect
+	with org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.ControlFlowAspect
+	with  org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.ActivityNodeAspect
+	with  org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.DecisionNodeAspect
+	with  org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.NamedElementAspect
+	with org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.BooleanUnaryExpressionAspect
+	with org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.InitialNodeAspect
+	with  org.modelexecution.operationalsemantics.ad.concurrent.k3.dynamic.OpaqueActionAspect
+
+	ecl "/org.modelexecution.operationalsemantics.ad.concurrent.ecl/model/ActivitiyDiagramV2.ecl"
+	
+	exactType ConcurrentActivityDiagramMT
+}

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="ASCII"?>
+<arduino:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:arduino="http://execarduino/">
+  <boards xsi:type="arduino:ArduinoBoard" name="DFRduino UNO R3 0">
+    <digitalPins name="0">
+      <module xsi:type="arduino:LED" name="White LED" color="white"/>
+    </digitalPins>
+    <digitalPins name="1">
+      <module xsi:type="arduino:LED" name="Blue LED"/>
+    </digitalPins>
+    <digitalPins name="2">
+      <module xsi:type="arduino:LED" name="Red LED" color="red"/>
+    </digitalPins>
+  </boards>
+  <boards xsi:type="arduino:ArduinoBoard" name="DFRduino UNO R3 1">
+    <digitalPins name="0">
+      <module xsi:type="arduino:Buzzer" name="Buzzer"/>
+    </digitalPins>
+  </boards>
+  <sketches name="Blinker" board="//@boards.0">
+    <block>
+      <instructions xsi:type="arduino:VariableDeclaration">
+        <variable xsi:type="arduino:IntegerVariable" name="n"/>
+      </instructions>
+      <instructions xsi:type="arduino:Repeat" iteration="8">
+        <block>
+          <instructions xsi:type="arduino:If">
+            <block>
+              <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.0/@digitalPins.0/@module">
+                <operand xsi:type="arduino:IntegerConstant" value="1023"/>
+              </instructions>
+            </block>
+            <condition xsi:type="arduino:BinaryBooleanExpression" operator="equal">
+              <left xsi:type="arduino:BinaryIntegerExpression" operator="pourcent">
+                <left xsi:type="arduino:IntegerVariableRef" variable="//@sketches.0/@block/@instructions.0/@variable"/>
+                <right xsi:type="arduino:IntegerConstant" value="2"/>
+              </left>
+              <right xsi:type="arduino:IntegerConstant" value="1"/>
+            </condition>
+            <elseBlock>
+              <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.0/@digitalPins.0/@module">
+                <operand xsi:type="arduino:IntegerConstant"/>
+              </instructions>
+            </elseBlock>
+          </instructions>
+          <instructions xsi:type="arduino:If">
+            <block>
+              <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.0/@digitalPins.1/@module">
+                <operand xsi:type="arduino:IntegerConstant" value="1023"/>
+              </instructions>
+            </block>
+            <condition xsi:type="arduino:BinaryBooleanExpression" operator="equal">
+              <left xsi:type="arduino:BinaryIntegerExpression" operator="pourcent">
+                <left xsi:type="arduino:BinaryIntegerExpression" operator="div">
+                  <left xsi:type="arduino:IntegerVariableRef" variable="//@sketches.0/@block/@instructions.0/@variable"/>
+                  <right xsi:type="arduino:IntegerConstant" value="2"/>
+                </left>
+                <right xsi:type="arduino:IntegerConstant" value="2"/>
+              </left>
+              <right xsi:type="arduino:IntegerConstant" value="1"/>
+            </condition>
+            <elseBlock>
+              <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.0/@digitalPins.1/@module">
+                <operand xsi:type="arduino:IntegerConstant"/>
+              </instructions>
+            </elseBlock>
+          </instructions>
+          <instructions xsi:type="arduino:If">
+            <block>
+              <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.0/@digitalPins.2/@module">
+                <operand xsi:type="arduino:IntegerConstant" value="1023"/>
+              </instructions>
+            </block>
+            <condition xsi:type="arduino:BinaryBooleanExpression" operator="equal">
+              <left xsi:type="arduino:BinaryIntegerExpression" operator="pourcent">
+                <left xsi:type="arduino:BinaryIntegerExpression" operator="div">
+                  <left xsi:type="arduino:IntegerVariableRef" variable="//@sketches.0/@block/@instructions.0/@variable"/>
+                  <right xsi:type="arduino:IntegerConstant" value="4"/>
+                </left>
+                <right xsi:type="arduino:IntegerConstant" value="2"/>
+              </left>
+              <right xsi:type="arduino:IntegerConstant" value="1"/>
+            </condition>
+            <elseBlock>
+              <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.0/@digitalPins.2/@module">
+                <operand xsi:type="arduino:IntegerConstant"/>
+              </instructions>
+            </elseBlock>
+          </instructions>
+          <instructions xsi:type="arduino:VariableAssignment" variable="//@sketches.0/@block/@instructions.0/@variable">
+            <operand xsi:type="arduino:BinaryIntegerExpression" operator="plus">
+              <left xsi:type="arduino:IntegerVariableRef" variable="//@sketches.0/@block/@instructions.0/@variable"/>
+              <right xsi:type="arduino:IntegerConstant" value="1"/>
+            </operand>
+          </instructions>
+        </block>
+      </instructions>
+    </block>
+  </sketches>
+  <sketches name="Buzzer" board="//@boards.1">
+    <block>
+      <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.1/@digitalPins.0/@module">
+        <operand xsi:type="arduino:IntegerConstant" value="1023"/>
+      </instructions>
+      <instructions xsi:type="arduino:Delay" value="500"/>
+      <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.1/@digitalPins.0/@module">
+        <operand xsi:type="arduino:IntegerConstant"/>
+      </instructions>
+    </block>
+  </sketches>
+</arduino:Project>

@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ECL moc application for activityDiagram
+Bundle-SymbolicName: org.modelexecution.operationalsemantics.ad.concurrent.ecl
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.modelexecution.operationalsemantics.gemoc.ecl.Activator
+Bundle-Vendor: INRIA/I3S AOSTE
+Require-Bundle: org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy

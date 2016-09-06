@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="ASCII"?>
+<arduino:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:arduino="http://execarduino/">
+  <boards xsi:type="arduino:ArduinoBoard" name="slave1">
+    <digitalPins name="0">
+      <module xsi:type="arduino:LED" name="White LED" color="white"/>
+    </digitalPins>
+    <digitalPins name="1">
+      <module xsi:type="arduino:LED" name="Blue LED"/>
+    </digitalPins>
+    <digitalPins name="2">
+      <module xsi:type="arduino:LED" name="Red LED" color="red"/>
+    </digitalPins>
+    <analogPins name="3">
+      <module xsi:type="arduino:BluetoothTransceiver" name="BlueTooth_1"/>
+    </analogPins>
+  </boards>
+  <boards xsi:type="arduino:ArduinoBoard" name="slave2">
+    <digitalPins name="a">
+      <module xsi:type="arduino:LED" name="LED Blanche" color="white"/>
+    </digitalPins>
+    <digitalPins name="b">
+      <module xsi:type="arduino:LED" name="LED bleue"/>
+    </digitalPins>
+    <digitalPins name="c">
+      <module xsi:type="arduino:LED" name="LED rouge" color="red"/>
+    </digitalPins>
+    <analogPins name="d">
+      <module xsi:type="arduino:BluetoothTransceiver" name="BlueTooth_A"/>
+    </analogPins>
+  </boards>
+  <boards xsi:type="arduino:ArduinoBoard" name="master">
+    <digitalPins name="0">
+      <module xsi:type="arduino:PushButton" name="button1"/>
+    </digitalPins>
+    <digitalPins name="1">
+      <module xsi:type="arduino:PushButton" name="button2"/>
+    </digitalPins>
+    <digitalPins name="2">
+      <module xsi:type="arduino:PushButton" name="button3"/>
+    </digitalPins>
+    <analogPins name="3">
+      <module xsi:type="arduino:BluetoothTransceiver" name="BlueTooth_master" connectedTransceiver="//@boards.1/@analogPins.0/@module //@boards.0/@analogPins.0/@module"/>
+    </analogPins>
+  </boards>
+  <sketches name="masterAlgorithm" board="//@boards.2">
+    <block>
+      <instructions xsi:type="arduino:VariableDeclaration">
+        <variable xsi:type="arduino:BooleanVariable" name="b1Status"/>
+      </instructions>
+      <instructions xsi:type="arduino:VariableDeclaration">
+        <variable xsi:type="arduino:BooleanVariable" name="b2Status"/>
+      </instructions>
+      <instructions xsi:type="arduino:VariableDeclaration">
+        <variable xsi:type="arduino:BooleanVariable" name="b3Status"/>
+      </instructions>
+      <instructions xsi:type="arduino:VariableDeclaration">
+        <variable xsi:type="arduino:IntegerVariable" name="InputValue"/>
+      </instructions>
+      <instructions xsi:type="arduino:Repeat" iteration="2">
+        <block>
+          <instructions xsi:type="arduino:VariableAssignment" variable="//@sketches.0/@block/@instructions.0/@variable">
+            <operand xsi:type="arduino:BooleanModuleGet" module="//@boards.2/@digitalPins.0/@module"/>
+          </instructions>
+          <instructions xsi:type="arduino:VariableAssignment" variable="//@sketches.0/@block/@instructions.1/@variable">
+            <operand xsi:type="arduino:BooleanModuleGet" module="//@boards.2/@digitalPins.1/@module"/>
+          </instructions>
+          <instructions xsi:type="arduino:VariableAssignment" variable="//@sketches.0/@block/@instructions.2/@variable">
+            <operand xsi:type="arduino:BooleanModuleGet" module="//@boards.2/@digitalPins.2/@module"/>
+          </instructions>
+          <instructions xsi:type="arduino:If">
+            <block>
+              <instructions xsi:type="arduino:VariableAssignment" variable="//@sketches.0/@block/@instructions.3/@variable">
+                <operand xsi:type="arduino:BinaryIntegerExpression" operator="plus">
+                  <left xsi:type="arduino:IntegerVariableRef" variable="//@sketches.0/@block/@instructions.3/@variable"/>
+                  <right xsi:type="arduino:IntegerConstant" value="1"/>
+                </operand>
+              </instructions>
+            </block>
+            <condition xsi:type="arduino:BinaryBooleanExpression" operator="equal">
+              <left xsi:type="arduino:BooleanVariableRef" variable="//@sketches.0/@block/@instructions.0/@variable"/>
+              <right xsi:type="arduino:BooleanConstant" value="true"/>
+            </condition>
+          </instructions>
+          <instructions xsi:type="arduino:If">
+            <block>
+              <instructions xsi:type="arduino:VariableAssignment" variable="//@sketches.0/@block/@instructions.3/@variable">
+                <operand xsi:type="arduino:BinaryIntegerExpression" operator="plus">
+                  <left xsi:type="arduino:IntegerVariableRef" variable="//@sketches.0/@block/@instructions.3/@variable"/>
+                  <right xsi:type="arduino:IntegerConstant" value="2"/>
+                </operand>
+              </instructions>
+            </block>
+            <condition xsi:type="arduino:BinaryBooleanExpression" operator="equal">
+              <left xsi:type="arduino:BooleanVariableRef" variable="//@sketches.0/@block/@instructions.1/@variable"/>
+              <right xsi:type="arduino:BooleanConstant" value="true"/>
+            </condition>
+          </instructions>
+          <instructions xsi:type="arduino:If">
+            <block>
+              <instructions xsi:type="arduino:VariableAssignment" variable="//@sketches.0/@block/@instructions.3/@variable">
+                <operand xsi:type="arduino:BinaryIntegerExpression" operator="plus">
+                  <left xsi:type="arduino:IntegerVariableRef" variable="//@sketches.0/@block/@instructions.3/@variable"/>
+                  <right xsi:type="arduino:IntegerConstant" value="4"/>
+                </operand>
+              </instructions>
+            </block>
+            <condition xsi:type="arduino:BinaryBooleanExpression" operator="equal">
+              <left xsi:type="arduino:BooleanVariableRef" variable="//@sketches.0/@block/@instructions.2/@variable"/>
+              <right xsi:type="arduino:BooleanConstant" value="true"/>
+            </condition>
+          </instructions>
+          <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.2/@analogPins.0/@module">
+            <operand xsi:type="arduino:IntegerVariableRef" variable="//@sketches.0/@block/@instructions.3/@variable"/>
+          </instructions>
+        </block>
+      </instructions>
+    </block>
+  </sketches>
+  <sketches name="slave1Algorithm" board="//@boards.0">
+    <block>
+      <instructions xsi:type="arduino:VariableDeclaration">
+        <variable xsi:type="arduino:IntegerVariable" name="consign"/>
+      </instructions>
+      <instructions xsi:type="arduino:VariableDeclaration">
+        <variable xsi:type="arduino:IntegerVariable" name="temp"/>
+      </instructions>
+      <instructions xsi:type="arduino:Repeat" iteration="2">
+        <block>
+          <instructions xsi:type="arduino:VariableAssignment" variable="//@sketches.1/@block/@instructions.0/@variable">
+            <operand xsi:type="arduino:IntegerModuleGet" module="//@boards.0/@analogPins.0/@module"/>
+          </instructions>
+          <instructions xsi:type="arduino:If">
+            <block>
+              <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.0/@digitalPins.0/@module">
+                <operand xsi:type="arduino:IntegerConstant" value="1023"/>
+              </instructions>
+              <instructions xsi:type="arduino:VariableAssignment" variable="//@sketches.1/@block/@instructions.0/@variable">
+                <operand xsi:type="arduino:BinaryIntegerExpression">
+                  <left xsi:type="arduino:IntegerVariableRef" variable="//@sketches.1/@block/@instructions.0/@variable"/>
+                  <right xsi:type="arduino:IntegerConstant" value="4"/>
+                </operand>
+              </instructions>
+            </block>
+            <condition xsi:type="arduino:BinaryBooleanExpression" operator="supOrEqual">
+              <left xsi:type="arduino:BinaryIntegerExpression">
+                <left xsi:type="arduino:IntegerVariableRef" variable="//@sketches.1/@block/@instructions.0/@variable"/>
+                <right xsi:type="arduino:IntegerConstant" value="4"/>
+              </left>
+              <right xsi:type="arduino:IntegerConstant"/>
+            </condition>
+            <elseBlock>
+              <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.0/@digitalPins.0/@module">
+                <operand xsi:type="arduino:IntegerConstant"/>
+              </instructions>
+            </elseBlock>
+          </instructions>
+          <instructions xsi:type="arduino:If">
+            <block>
+              <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.0/@digitalPins.1/@module">
+                <operand xsi:type="arduino:IntegerConstant" value="1023"/>
+              </instructions>
+              <instructions xsi:type="arduino:VariableAssignment" variable="//@sketches.1/@block/@instructions.0/@variable">
+                <operand xsi:type="arduino:BinaryIntegerExpression">
+                  <left xsi:type="arduino:IntegerVariableRef" variable="//@sketches.1/@block/@instructions.0/@variable"/>
+                  <right xsi:type="arduino:IntegerConstant" value="2"/>
+                </operand>
+              </instructions>
+            </block>
+            <condition xsi:type="arduino:BinaryBooleanExpression" operator="supOrEqual">
+              <left xsi:type="arduino:BinaryIntegerExpression">
+                <left xsi:type="arduino:IntegerVariableRef" variable="//@sketches.1/@block/@instructions.0/@variable"/>
+                <right xsi:type="arduino:IntegerConstant" value="2"/>
+              </left>
+              <right xsi:type="arduino:IntegerConstant"/>
+            </condition>
+            <elseBlock>
+              <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.0/@digitalPins.1/@module">
+                <operand xsi:type="arduino:IntegerConstant"/>
+              </instructions>
+            </elseBlock>
+          </instructions>
+          <instructions xsi:type="arduino:If">
+            <block>
+              <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.0/@digitalPins.2/@module">
+                <operand xsi:type="arduino:IntegerConstant" value="1023"/>
+              </instructions>
+              <instructions xsi:type="arduino:VariableAssignment" variable="//@sketches.1/@block/@instructions.0/@variable">
+                <operand xsi:type="arduino:BinaryIntegerExpression">
+                  <left xsi:type="arduino:IntegerVariableRef" variable="//@sketches.1/@block/@instructions.0/@variable"/>
+                  <right xsi:type="arduino:IntegerConstant" value="1"/>
+                </operand>
+              </instructions>
+            </block>
+            <condition xsi:type="arduino:BinaryBooleanExpression" operator="supOrEqual">
+              <left xsi:type="arduino:BinaryIntegerExpression">
+                <left xsi:type="arduino:IntegerVariableRef" variable="//@sketches.1/@block/@instructions.0/@variable"/>
+                <right xsi:type="arduino:IntegerConstant" value="1"/>
+              </left>
+              <right xsi:type="arduino:IntegerConstant"/>
+            </condition>
+            <elseBlock>
+              <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.0/@digitalPins.2/@module">
+                <operand xsi:type="arduino:IntegerConstant"/>
+              </instructions>
+            </elseBlock>
+          </instructions>
+        </block>
+      </instructions>
+    </block>
+  </sketches>
+  <sketches name="slave2Algorithm" board="//@boards.1">
+    <block>
+      <instructions xsi:type="arduino:VariableDeclaration">
+        <variable xsi:type="arduino:IntegerVariable" name="consign"/>
+      </instructions>
+      <instructions xsi:type="arduino:VariableDeclaration">
+        <variable xsi:type="arduino:IntegerVariable" name="temp"/>
+      </instructions>
+      <instructions xsi:type="arduino:Repeat" iteration="2">
+        <block>
+          <instructions xsi:type="arduino:VariableAssignment" variable="//@sketches.2/@block/@instructions.0/@variable">
+            <operand xsi:type="arduino:IntegerModuleGet" module="//@boards.1/@analogPins.0/@module"/>
+          </instructions>
+          <instructions xsi:type="arduino:If">
+            <block>
+              <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.1/@digitalPins.0/@module">
+                <operand xsi:type="arduino:IntegerConstant" value="1023"/>
+              </instructions>
+              <instructions xsi:type="arduino:VariableAssignment" variable="//@sketches.2/@block/@instructions.0/@variable">
+                <operand xsi:type="arduino:BinaryIntegerExpression">
+                  <left xsi:type="arduino:IntegerVariableRef" variable="//@sketches.2/@block/@instructions.0/@variable"/>
+                  <right xsi:type="arduino:IntegerConstant" value="4"/>
+                </operand>
+              </instructions>
+            </block>
+            <condition xsi:type="arduino:BinaryBooleanExpression" operator="supOrEqual">
+              <left xsi:type="arduino:BinaryIntegerExpression">
+                <left xsi:type="arduino:IntegerVariableRef" variable="//@sketches.2/@block/@instructions.0/@variable"/>
+                <right xsi:type="arduino:IntegerConstant" value="4"/>
+              </left>
+              <right xsi:type="arduino:IntegerConstant"/>
+            </condition>
+            <elseBlock>
+              <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.1/@digitalPins.0/@module">
+                <operand xsi:type="arduino:IntegerConstant"/>
+              </instructions>
+            </elseBlock>
+          </instructions>
+          <instructions xsi:type="arduino:If">
+            <block>
+              <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.1/@digitalPins.1/@module">
+                <operand xsi:type="arduino:IntegerConstant" value="1023"/>
+              </instructions>
+              <instructions xsi:type="arduino:VariableAssignment" variable="//@sketches.2/@block/@instructions.0/@variable">
+                <operand xsi:type="arduino:BinaryIntegerExpression">
+                  <left xsi:type="arduino:IntegerVariableRef" variable="//@sketches.2/@block/@instructions.0/@variable"/>
+                  <right xsi:type="arduino:IntegerConstant" value="2"/>
+                </operand>
+              </instructions>
+            </block>
+            <condition xsi:type="arduino:BinaryBooleanExpression" operator="supOrEqual">
+              <left xsi:type="arduino:BinaryIntegerExpression">
+                <left xsi:type="arduino:IntegerVariableRef" variable="//@sketches.2/@block/@instructions.0/@variable"/>
+                <right xsi:type="arduino:IntegerConstant" value="2"/>
+              </left>
+              <right xsi:type="arduino:IntegerConstant"/>
+            </condition>
+            <elseBlock>
+              <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.1/@digitalPins.1/@module">
+                <operand xsi:type="arduino:IntegerConstant"/>
+              </instructions>
+            </elseBlock>
+          </instructions>
+          <instructions xsi:type="arduino:If">
+            <block>
+              <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.1/@digitalPins.2/@module">
+                <operand xsi:type="arduino:IntegerConstant" value="1023"/>
+              </instructions>
+              <instructions xsi:type="arduino:VariableAssignment" variable="//@sketches.2/@block/@instructions.0/@variable">
+                <operand xsi:type="arduino:BinaryIntegerExpression">
+                  <left xsi:type="arduino:IntegerVariableRef" variable="//@sketches.2/@block/@instructions.0/@variable"/>
+                  <right xsi:type="arduino:IntegerConstant" value="1"/>
+                </operand>
+              </instructions>
+            </block>
+            <condition xsi:type="arduino:BinaryBooleanExpression" operator="supOrEqual">
+              <left xsi:type="arduino:BinaryIntegerExpression">
+                <left xsi:type="arduino:IntegerVariableRef" variable="//@sketches.2/@block/@instructions.0/@variable"/>
+                <right xsi:type="arduino:IntegerConstant" value="1"/>
+              </left>
+              <right xsi:type="arduino:IntegerConstant"/>
+            </condition>
+            <elseBlock>
+              <instructions xsi:type="arduino:ModuleAssignment" module="//@boards.1/@digitalPins.2/@module">
+                <operand xsi:type="arduino:IntegerConstant"/>
+              </instructions>
+            </elseBlock>
+          </instructions>
+        </block>
+      </instructions>
+    </block>
+  </sketches>
+</arduino:Project>
