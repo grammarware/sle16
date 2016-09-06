@@ -65,6 +65,11 @@
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/sirius/updates/releases/3.1.4/mars</url>
 		</repository>
+        <repository>
+            <id>nebula</id>
+            <layout>p2</layout>
+            <url>http://archive.eclipse.org/nebula/Q22016/incubation</url>
+        </repository>
 	</repositories>
 
 	<build>

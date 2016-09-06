@@ -153,13 +153,15 @@ In the end, the result can then be found in `gemoc_studio/releng/org.gemoc.gemoc
 
 ### Adding xMOF to the studio
 
-In addition to the basic GEMOC studio, the compilation process also created an eclipse update site for the xMOF engine and components. The update site is created in `moliz.gemoc/releng/org.modelexecution.xmof.gemoc.updatesite/target/repository`.
+In addition to the basic GEMOC studio, the compilation process also created an eclipse update site for the xMOF engine and components. The update site is created in `moliz.gemoc/releng/org.modelexecution.xmof.gemoc.updatesite/target/repository`. The provided update site of xmof will also be required.
 
 To add the xMOF engine to the obtained studio:
 
 1. Start the GEMOC studio that you compiled
 2. Go to *Help*, *Install New Software...*
 3. Click on *Add* to add an update site
+4. Click on *Local* and select the folder `moliz.gemoc/moliz-updatesite`
+3. Click on *Add* to add another update site
 4. Click on *Local* and select the folder `moliz.gemoc/releng/org.modelexecution.xmof.gemoc.updatesite/target/repository`
 5. Select the xMOF GEMOC feature
 6. Click on finish
