@@ -1,16 +1,12 @@
-# GEMOC Studio
+# Examples
 
-## Installation
+## Presentation
 
-The folder `studios`contains compiled and off-the-shelf GEMOC Studios for all platforms. Please unzip the archive corresponding to your platform to start using the GEMOC Studio.
+Each folder contains one example of xDSML and one example of model conforming to the xDSML.
 
-The folder `examples` contains one example per engine. Each example contains one language and one model.
+## Common recipe
 
-## Playing with the engines
-
-Thereafter, we present simplified tutorials to play with two execution engines of the GEMOC studio, and with the corresponding relevant addons.
-
-### Common recipe
+For each engine, you can process in the following way:
 
 1. Start the GEMOC Studio in a fresh workspace.
 1. Import the example xDSML by doing *File, *Import..*, *Existing Projects into Workspace*, and choose the folder `language-workbench` of the considered engine. Select all the projects and click on *Finish*.
