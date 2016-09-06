@@ -25,8 +25,8 @@ Note that the last two projects are only provided so that a complete GEMOC Studi
 
 As explained in the paper, the execution framework provides facilities to define two sorts of components:
 
-	- **addons**, which are components that implement runtime services (eg. debugging) that react to the progress of the execution of models.
-	- **engines**, which are components responsible for starting and controlling the execution of interpreters of xDSMLs, and that must and notify addons of the progress of the execution of models.
+- **addons**, which are components that implement runtime services (eg. debugging) that react to the progress of the execution of models.
+- **engines**, which are components responsible for starting and controlling the execution of interpreters of xDSMLs, and that must and notify addons of the progress of the execution of models.
 
 All the content of the framework is found in the folder `ModelDebugging`, more precisely in the `framework` subfolder. We present both APIs in the following sections.
 
