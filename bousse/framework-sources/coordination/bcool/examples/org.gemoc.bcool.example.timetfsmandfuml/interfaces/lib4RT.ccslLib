@@ -1,0 +1,434 @@
+/*
+ * real time facilities Library
+ * @author: Julien Deantoni
+ * date : Thu June 23th 2011
+ */
+
+/*
+ * This version is edited by Arda Goknil
+ * date : March 19th 2013
+ */
+Library CCSL4RT{ 
+
+	imports{ 
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib" as kernel;
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib" as CCSL;
+	}
+	DenseClockType physicalTime{
+			baseUnit s
+	}
+	RelationLibrary CCSL4RT_Relations{
+		RelationDefinition AfterBeforeHappensDef[AfterBeforeHappens]{
+                  Relation rl1 [Precedes (LeftClock -> ClockBefore, RightClock -> ClockMiddle)
+                  Relation rl2 [Precedes (LeftClock -> ClockMiddle, RightClock -> ClockAfter)
+            }
+		RelationDefinition PrecedesAlternativeTwoMessagesDef[PrecedesAlternativeTwoMessages]{
+     		    Expression o1Uo2 = Union(Clock1 -> OptionalClock1, Clock2 -> OptionalClock2) 
+
+                Relation rl1 [Precedes (LeftClock -> FirstClock, RightClock -> o1Uo2)
+                Relation rl2 [Exclusion (Clock1 -> OptionalClock1, Clock2 -> OptionalClock2)
+                
+            }
+		RelationDefinition PrecedesAlternativeThreeMessagesDef[PrecedesAlternativeThreeMessages]{
+     		    Expression o1Uo2 = Union(Clock1 -> OptionalClock1, Clock2 -> OptionalClock2)
+     		    Expression o1Uo2Uo3 = Union(Clock1 -> o1Uo2, Clock2 -> OptionalClock3)
+                Relation rl1 [Precedes (LeftClock -> FirstClock, RightClock -> o1Uo2Uo3)
+                Relation rl2 [Exclusion (Clock1 -> OptionalClock1, Clock2 -> OptionalClock2)
+                Relation rl3 [Exclusion (Clock1 -> OptionalClock1, Clock2 -> OptionalClock3)
+                Relation rl4 [Exclusion (Clock1 -> OptionalClock2, Clock2 -> OptionalClock3)
+            }
+		RelationDefinition PrecedesAlternativeFourMessagesDef[PrecedesAlternativeFourMessages]{
+     		    Expression o1Uo2 = Union(Clock1 -> OptionalClock1, Clock2 -> OptionalClock2)
+     		    Expression o1Uo2Uo3 = Union(Clock1 -> o1Uo2, Clock2 -> OptionalClock3)
+     		    Expression o1Uo2Uo3Uo4 = Union(Clock1 -> o1Uo2Uo3, Clock2 -> OptionalClock4)
+                Relation rl1 [Precedes (LeftClock -> FirstClock, RightClock -> o1Uo2Uo3Uo4)
+                Relation rl2 [Exclusion (Clock1 -> OptionalClock1, Clock2 -> OptionalClock2)
+                Relation rl3 [Exclusion (Clock1 -> OptionalClock1, Clock2 -> OptionalClock3)
+                Relation rl4 [Exclusion (Clock1 -> OptionalClock1, Clock2 -> OptionalClock4)
+                Relation rl5 [Exclusion (Clock1 -> OptionalClock2, Clock2 -> OptionalClock3)
+                Relation rl6 [Exclusion (Clock1 -> OptionalClock2, Clock2 -> OptionalClock4)
+                Relation rl7 [Exclusion (Clock1 -> OptionalClock3, Clock2 -> OptionalClock4)
+            }
+		RelationDefinition AlternativeTwoMessagesPrecedesDef[AlternativeTwoMessagesPrecedes]{
+     		    Expression o1Uo2 = Union(Clock1 -> OptionalClock1, Clock2 -> OptionalClock2)
+                Relation rl1 [Precedes (LeftClock -> o1Uo2, RightClock -> FirstClock)
+                Relation rl2 [Exclusion (Clock1 -> OptionalClock1, Clock2 -> OptionalClock2)
+            }
+		RelationDefinition AlternativeThreeMessagesPrecedesDef[AlternativeThreeMessagesPrecedes]{
+     		    Expression o1Uo2 = Union(Clock1 -> OptionalClock1, Clock2 -> OptionalClock2)
+     		    Expression o1Uo2Uo3 = Union(Clock1 -> o1Uo2, Clock2 -> OptionalClock3)
+                Relation rl1 [Precedes (LeftClock -> o1Uo2Uo3, RightClock -> FirstClock)
+                Relation rl2 [Exclusion (Clock1 -> OptionalClock1, Clock2 -> OptionalClock2)
+                Relation rl3 [Exclusion (Clock1 -> OptionalClock1, Clock2 -> OptionalClock3)
+                Relation rl4 [Exclusion (Clock1 -> OptionalClock2, Clock2 -> OptionalClock3)
+            }
+		RelationDefinition AlternativeFourMessagesPrecedesDef[AlternativeFourMessagesPrecedes]{
+     		    Expression o1Uo2 = Union(Clock1 -> OptionalClock1, Clock2 -> OptionalClock2)
+     		    Expression o1Uo2Uo3 = Union(Clock1 -> o1Uo2, Clock2 -> OptionalClock3)
+     		    Expression o1Uo2Uo3Uo4 = Union(Clock1 -> o1Uo2Uo3, Clock2 -> OptionalClock4)
+                Relation rl1 [Precedes (LeftClock -> o1Uo2Uo3Uo4, RightClock -> FirstClock)
+                Relation rl2 [Exclusion (Clock1 -> OptionalClock1, Clock2 -> OptionalClock2)
+                Relation rl3 [Exclusion (Clock1 -> OptionalClock1, Clock2 -> OptionalClock3)
+                Relation rl4 [Exclusion (Clock1 -> OptionalClock1, Clock2 -> OptionalClock4)
+                Relation rl5 [Exclusion (Clock1 -> OptionalClock2, Clock2 -> OptionalClock3)
+                Relation rl6 [Exclusion (Clock1 -> OptionalClock2, Clock2 -> OptionalClock4)
+                Relation rl7 [Exclusion (Clock1 -> OptionalClock3, Clock2 -> OptionalClock4)
+            }
+		RelationDefinition OptionalTwoMessagesAfterDef[OptionalTwoMessagesAfter]{
+     		    Expression o1Uo2 = Union(Clock1 -> OptionalClock1, Clock2 -> OptionalClock2)
+                Relation rl6 [Alternates (AlternatesLeftClock -> FirstClock, AlternatesRightClock -> o1Uo2)
+                Relation rl7[Exclusion (Clock1 -> OptionalClock1, Clock2 -> OptionalClock2)		    	
+
+		    }
+		RelationDefinition OptionalThreeMessagesAfterDef[OptionalThreeMessagesAfter]{
+     		    Expression o1Uo2 = Union(Clock1 -> OptionalClock1, Clock2 -> OptionalClock2)
+     		    Expression o1Uo2Uo3 = Union(Clock1 -> o1Uo2, Clock2 -> OptionalClock3)
+                Relation rl6 [Alternates (AlternatesLeftClock -> FirstClock, AlternatesRightClock -> o1Uo2Uo3)
+                Relation rl7[Exclusion (Clock1 -> OptionalClock1, Clock2 -> OptionalClock2)
+                Relation rl8[Exclusion (Clock1-> OptionalClock1, Clock2 -> OptionalClock3)
+                Relation rl9[Exclusion (Clock1 -> OptionalClock2, Clock2 -> OptionalClock3)		    	
+
+		    }
+		RelationDefinition OptionalFourMessagesAfterDef[OptionalFourMessagesAfter]{
+     		    Expression o1Uo2 = Union(Clock1 -> OptionalClock1, Clock2 -> OptionalClock2)
+     		    Expression o1Uo2Uo3 = Union(Clock1 -> o1Uo2, Clock2 -> OptionalClock3)
+     		    Expression o1Uo2Uo3Uo4 = Union(Clock1 -> o1Uo2Uo3, Clock2 -> OptionalClock4)
+                Relation rl6 [Alternates (AlternatesLeftClock -> FirstClock, AlternatesRightClock -> o1Uo2Uo3Uo4)
+                Relation rl7[Exclusion (Clock1 -> OptionalClock1, Clock2 -> OptionalClock2)
+                Relation rl8[Exclusion (Clock1 -> OptionalClock1, Clock2 -> OptionalClock3)
+                Relation rl9[Exclusion (Clock1 -> OptionalClock1, Clock2 -> OptionalClock4)
+                Relation rl10[Exclusion (Clock1 -> OptionalClock2, Clock2 -> OptionalClock3)
+                Relation rl11[Exclusion (Clock1 -> OptionalClock2, Clock2 -> OptionalClock4)
+                Relation rl12[Exclusion (Clock1 -> OptionalClock3, Clock2 -> OptionalClock4)		    	
+
+		    }
+		RelationDefinition OptionalTwoMessagesBeforeDef[OptionalTwoMessagesBefore]{
+     		    Expression o1Uo2 = Union(Clock1 -> OptionalClock1, Clock2 -> OptionalClock2)
+                Relation rl6 [Alternates (AlternatesLeftClock -> o1Uo2, AlternatesRightClock -> FirstClock)
+                Relation rl7[Exclusion (Clock1 -> OptionalClock1, Clock2 -> OptionalClock2)		    	
+
+		    }
+		RelationDefinition OptionalThreeMessagesBeforeDef[OptionalThreeMessagesBefore]{
+     		    Expression o1Uo2 = Union(Clock1 -> OptionalClock1, Clock2 -> OptionalClock2)
+     		    Expression o1Uo2Uo3 = Union(Clock1 -> o1Uo2, Clock2 -> OptionalClock3)
+                Relation rl6 [Alternates (AlternatesLeftClock -> o1Uo2Uo3, AlternatesRightClock -> FirstClock)
+                Relation rl7[Exclusion (Clock1 -> OptionalClock1, Clock2 -> OptionalClock2)
+                Relation rl8[Exclusion (Clock1 -> OptionalClock1, Clock2 -> OptionalClock3)
+                Relation rl9[Exclusion (Clock1 -> OptionalClock2, Clock2 -> OptionalClock3)		    	
+
+		    }
+		RelationDefinition OptionalFourMessagesBeforeDef[OptionalFourMessagesBefore]{
+     		    Expression o1Uo2 = Union(Clock1 -> OptionalClock1, Clock2 -> OptionalClock2)
+     		    Expression o1Uo2Uo3 = Union(Clock1 -> o1Uo2, Clock2 -> OptionalClock3)
+     		    Expression o1Uo2Uo3Uo4 = Union(Clock1 -> o1Uo2Uo3, Clock2 -> OptionalClock4)
+                Relation rl6 [Alternates (AlternatesLeftClock -> o1Uo2Uo3Uo4, AlternatesRightClock -> FirstClock)
+                Relation rl7[Exclusion (Clock1 -> OptionalClock1, Clock2 -> OptionalClock2)
+                Relation rl8[Exclusion (Clock1 -> OptionalClock1, Clock2 -> OptionalClock3)
+                Relation rl9[Exclusion (Clock1 -> OptionalClock1, Clock2 -> OptionalClock4)
+                Relation rl10[Exclusion (Clock1 -> OptionalClock2, Clock2 -> OptionalClock3)
+                Relation rl11[Exclusion (Clock1 -> OptionalClock2, Clock2 -> OptionalClock4)
+                Relation rl12[Exclusion (Clock1 -> OptionalClock3, Clock2 -> OptionalClock4)		    	
+
+		    }
+		RelationDefinition NegationDef[Negation]{
+		        Integer i=1
+		        Clock Ca:clock
+		        Relation rl1[SubClock (LeftClock -> NegatedClock, RightClock -> Ca)
+		        Relation rl2[Precedes (LeftClock -> Ca, RightClock -> FirstClock)
+		        Relation rl3[Alternates (AlternatesLeftClock -> FirstClock, AlternatesRightClock -> LastClock)
+		        Expression caTemp = DelayFor(DelayForClockToDelay-> Ca, DelayForClockForCounting-> Ca, DelayForDelay-> i)
+		        Relation rl4[Precedes (LeftClock -> LastClock, RightClock -> caTemp)	
+		    }
+		RelationDefinition NonStrictAlternatesDef[NonStrictAlternates]{
+				Sequence seqOneInfinite:IntegerSequence = ( Integer infone = 1 )
+				
+				//c1 <= c2
+				Relation NonStrictAlt_c1PrecedesC2[NonStrictPrecedes (LeftClock -> NonStrictAlternatesLeftClock
+					,RightClock -> NonStrictAlternatesRightClock)
+				
+				
+				// c1 delayedBy (1)
+				Expression NonStrictAlt_c1DelayedByOne=Defer
+					(BaseClock -> NonStrictAlternatesLeftClock,
+					DelayClock -> NonStrictAlternatesLeftClock,
+					DelayPatternExpression -> seqOneInfinite)
+				
+				
+				//c2 < (c1 delayedBy (1))
+				Relation NonStrictAlt_c2precedesC1DelayedByOne[Precedes (LeftClock -> NonStrictAlternatesRightClock,
+					RightClock -> NonStrictAlt_c1DelayedByOne)
+				
+										
+			}
+		RelationDefinition DurationDef[Duration]{
+			
+			// start delayedBy Max on base
+			Expression Duration_startDelayedByMinOnBase= Defer 
+				(BaseClock -> Start,
+				 DelayClock -> Base,
+				 DelayPatternExpression -> seqForDurationMin)
+			
+			// start delayedBy Min on base
+			Expression Duration_startDelayedByMaxOnBase = Defer
+				(BaseClock -> Start,
+				 DelayClock -> Base,
+				 DelayPatternExpression -> seqForDurationMax)
+			
+									
+			//end < (start delayedBy max on base)
+			Relation Duration_p1[NonStrictPrecedes (LeftClock -> End,
+				 			  RightClock -> Duration_startDelayedByMaxOnBase)
+			
+			
+			//(start delayedBy min on base) < end
+			Relation Duration_p2[NonStrictPrecedes (LeftClock -> Duration_startDelayedByMinOnBase,
+				 			  RightClock -> End)
+									
+		}
+		RelationDefinition DeadlineDef[Deadline]{
+			
+			// start delayedBy Max on base
+			Expression Deadline_startDelayedByDeadlineOnBase= Defer 
+				(BaseClock -> DeadlineStart,
+				 DelayClock -> DeadlineBase,
+				 DelayPatternExpression -> seqForDeadline)
+						
+									
+			//end < (start delayedBy max on base)
+			Relation Duration_p1[NonStrictPrecedes (LeftClock -> DeadlineEnd,
+				 			  RightClock -> Deadline_startDelayedByDeadlineOnBase)			
+		
+	}
+	
+	
+	//CommunicationTime(CommunicationTimeSend:clock, CommunicationTimeReceive:clock, CommunicationTimeBase:clock, CommunicationTimeMinValue:int, CommunicationTimeMaxValue:int),
+	
+	RelationDefinition CommunicationTimeDef[CommunicationTime]{
+			
+			Relation CommunicationTime_duration[Duration (
+				Start -> CommunicationTimeSend,
+				End -> CommunicationTimeReceive,
+				Base -> CommunicationTimeBase,
+				MaxValue -> CommunicationTimeMaxValue,
+				MinValue -> CommunicationTimeMinValue
+			)
+									
+		}
+
+	
+	
+	//ResponseTime(ResponseTimeStart:clock, ResponseTimeEnd:clock, ResponseTimeBase:clock, ResponseTimeMinValue:int, ResponseTimeMaxValue:int)
+	
+	RelationDefinition ResponseTimeDef[ResponseTime]{
+			
+			Relation ResponseTime_duration[Duration (
+				Start -> ResponseTimeStart,
+				End -> ResponseTimeEnd,
+				Base -> ResponseTimeBase,
+				MaxValue -> ResponseTimeMaxValue,
+				MinValue -> ResponseTimeMinValue
+			)
+									
+		}
+		RelationDefinition PeriodicWithJitterDef[PeriodicWithJitter]{
+							
+		
+			// a perfectPeriodic
+			Expression PeriodicWithJitter_PerfectPeriodic =Periodic
+				(PeriodicBaseClock -> PeriodicWithJitterBase,
+				 PeriodicOffset -> PeriodicWithJitterOffset,
+				 PeriodicPeriod -> PeriodicWithJitterPeriod)
+			
+			
+			Expression PeriodicWithJitter_perfectDelayedByJitter=Defer
+				(BaseClock -> PeriodicWithJitter_PerfectPeriodic,
+				 DelayClock -> PeriodicWithJitterBase,
+				 DelayPatternExpression -> seqForPeriodicWithJitter)
+			
+			
+			Relation PeriodicWithJitter_p1[Precedes (LeftClock -> PeriodicWithJitterRes,
+							  RightClock -> PeriodicWithJitter_perfectDelayedByJitter)
+			
+			
+			Relation PeriodicWithJitter_p2[Precedes (LeftClock -> PeriodicWithJitter_perfectDelayedByJitter,
+							  RightClock -> PeriodicWithJitterRes)
+			
+			
+		}
+	
+	
+	
+	ConditionalRelationDefinition SporadicDef[Sporadic]{
+			
+			//SporadicRes delayFor one on SporadicRes
+			 Expression Sporadic_resDelayForOneOnRes= DelayFor
+				(DelayForClockToDelay -> SporadicRes,
+				 DelayForClockForCounting -> SporadicRes,
+				 DelayForDelay -> one)
+			
+			//	(res delayedFor (dmin) on base)
+			 Expression Sporadic_resDelayedByDminOnBase= DelayFor
+				(DelayForClockToDelay -> SporadicRes,
+				 DelayForClockForCounting -> SporadicBase,
+				 DelayForDelay -> SporadicDmin)
+				 
+			 Expression Sporadic_resDelayedByDmaxOnBase= DelayFor
+				(DelayForClockToDelay -> SporadicRes,
+				 DelayForClockForCounting -> SporadicBase,
+				 DelayForDelay -> SporadicDmax)
+			
+			switch{
+				case (IntegerVariableRef [SporadicDmax] == IntegerRef[minusOne]):
+					 Relation Sporadic_p1[Precedes (LeftClock -> Sporadic_resDelayedByDminOnBase,
+							 RightClock -> Sporadic_resDelayForOneOnRes)
+				}	
+			default Relation Sporadic_p1[Precedes (LeftClock -> Sporadic_resDelayedByDminOnBase,
+							 RightClock -> Sporadic_resDelayForOneOnRes)
+					Relation Sporadic_p1[Precedes (LeftClock -> Sporadic_resDelayForOneOnRes,
+							 RightClock -> Sporadic_resDelayedByDmaxOnBase) 
+			
+		}
+		RelationDeclaration AfterBeforeHappens(ClockBefore:clock, ClockMiddle:clock, ClockAfter:clock) RelationDeclaration PrecedesAlternativeTwoMessages(FirstClock:clock, OptionalClock1:clock, OptionalClock2:clock) RelationDeclaration PrecedesAlternativeThreeMessages(FirstClock:clock, OptionalClock1:clock, OptionalClock2:clock, OptionalClock3:clock) RelationDeclaration PrecedesAlternativeFourMessages(FirstClock:clock, OptionalClock1:clock, OptionalClock2:clock, OptionalClock3:clock, OptionalClock4:clock) RelationDeclaration AlternativeTwoMessagesPrecedes(FirstClock:clock, OptionalClock1:clock, OptionalClock2:clock) RelationDeclaration AlternativeThreeMessagesPrecedes(FirstClock:clock, OptionalClock1:clock, OptionalClock2:clock, OptionalClock3:clock) RelationDeclaration AlternativeFourMessagesPrecedes(FirstClock:clock, OptionalClock1:clock, OptionalClock2:clock, OptionalClock3:clock, OptionalClock4:clock) RelationDeclaration OptionalTwoMessagesAfter(FirstClock:clock, OptionalClock1:clock, OptionalClock2:clock) RelationDeclaration OptionalThreeMessagesAfter(FirstClock:clock, OptionalClock1:clock, OptionalClock2:clock, OptionalClock3:clock) RelationDeclaration OptionalFourMessagesAfter(FirstClock:clock, OptionalClock1:clock, OptionalClock2:clock, OptionalClock3:clock, OptionalClock4:clock) RelationDeclaration OptionalTwoMessagesBefore(FirstClock:clock, OptionalClock1:clock, OptionalClock2:clock) RelationDeclaration OptionalThreeMessagesBefore(FirstClock:clock, OptionalClock1:clock, OptionalClock2:clock, OptionalClock3:clock) RelationDeclaration OptionalFourMessagesBefore(FirstClock:clock, OptionalClock1:clock, OptionalClock2:clock, OptionalClock3:clock, OptionalClock4:clock) RelationDeclaration Negation(FirstClock:clock, NegatedClock:clock, LastClock:clock) RelationDeclaration PeriodicTask(PeriodicTask_start:clock,
+													PeriodicTask_stop:clock,
+													PeriodicTask_ref4Period:clock,
+													PeriodicTask_ref4et:clock,
+													PeriodicTask_et:int,
+													PeriodicTask_period:int,
+													PeriodicTask_offset:int
+			)
+			RelationDeclaration PeriodicTaskOffsetClock(PeriodicTaskOffsetClock_start:clock,
+													PeriodicTaskOffsetClock_stop:clock,
+													PeriodicTaskOffsetClock_ref4Period:clock,
+													PeriodicTaskOffsetClock_ref4et:clock,
+													PeriodicTaskOffsetClock_et:int,
+													PeriodicTaskOffsetClock_period:int,
+													PeriodicTaskOffsetClock_offsetClock:clock
+			)
+			RelationDeclaration Duration(Start:clock, End:clock, Base:clock, MinValue:int, MaxValue:int)
+			RelationDeclaration Deadline(DeadlineStart:clock, DeadlineEnd:clock, DeadlineBase:clock, DeadlineValue:int)
+			RelationDeclaration CommunicationTime(CommunicationTimeSend:clock, CommunicationTimeReceive:clock, CommunicationTimeBase:clock, CommunicationTimeMinValue:int, CommunicationTimeMaxValue:int)
+			RelationDeclaration ResponseTime(ResponseTimeStart:clock, ResponseTimeEnd:clock, ResponseTimeBase:clock, ResponseTimeMinValue:int, ResponseTimeMaxValue:int)
+			RelationDeclaration	PeriodicWithJitter(PeriodicWithJitterRes:clock, PeriodicWithJitterBase:clock, PeriodicWithJitterOffset:int, PeriodicWithJitterPeriod:int, PeriodicWithJitterJitter:int)	
+			RelationDeclaration Sporadic(SporadicRes:clock, SporadicBase:clock, SporadicDmin:int, SporadicDmax:int)
+
+			RelationDeclaration NonStrictAlternates(NonStrictAlternatesLeftClock:clock, NonStrictAlternatesRightClock:clock) Integer zero=0
+		/**
+			 * PeriodicTaskDef
+			 */
+			
+//			RelationDefinition PeriodicTaskDef[PeriodicTask]{
+//			Sequence PeriodicTask_execEnd=(IntegerVariableRef PeriodicTask_wcetRef[PeriodicTask_et])
+//			Sequence PeriodicTask_notTheFirstOne=2(1) 
+//        	Sequence seqOneInfinite:IntegerSequence = (infone=1)
+//        	Expression PeriodicTask_FirstSliceOfExecution=RecursiveNonStrictSample(RecursiveNonStrictSample_SampledClock->PeriodicTask_start, 
+//        																		   RecursiveNonStrictSample_SamplingClock->PeriodicTask_ref4et
+//        	)
+//        	Expression PeriodicTask_endOfexecutionTime=FilterBy(FilterByClock-> PeriodicTask_ref4et,
+//        														FilterBySeq-> PeriodicTask_execEnd
+//        	)
+//			Expression PeriodicTask_BeginActivableState=Periodic(
+//							PeriodicBaseClock->PeriodicTask_ref4Period,
+//							PeriodicPeriod-> PeriodicTask_period,
+//							PeriodicOffset-> PeriodicTask_offset
+//							)
+//			Expression PeriodicTask_VeryFirstExecTime=OneTickAndDie( OneTickAndDieClock->  PeriodicTask_ref4et )
+//			Expression PeriodicTask_nextRef4etAfterStop=Defer( BaseClock-> PeriodicTask_stop 	,DelayClock-> PeriodicTask_ref4et 	,DelayPatternExpression-> seqOneInfinite)
+//			Expression PeriodicTask_FirstSliceOfExecutionButFirst=FilterBy( FilterByClock-> PeriodicTask_FirstSliceOfExecution, FilterBySeq-> PeriodicTask_notTheFirstOne)
+//				Relation relation_5[Coincides] (Clock2-> PeriodicTask_nextRef4etAfterStop,
+//											   Clock1-> PeriodicTask_FirstSliceOfExecutionButFirst
+//				)
+//
+//				Relation relation_3[NonStrictAlternates] (NonStrictAlternatesLeftClock-> PeriodicTask_start,
+//														 NonStrictAlternatesRightClock-> PeriodicTask_FirstSliceOfExecution
+//				)
+//				Relation relation_4[NonStrictPrecedes] (   LeftClock->  PeriodicTask_start,	RightClock-> PeriodicTask_VeryFirstExecTime  )
+//				Relation relation_1[Coincides] (Clock1->PeriodicTask_stop,Clock2->PeriodicTask_endOfexecutionTime)
+//				Relation relation_0[NonStrictAlternates] (NonStrictAlternatesLeftClock -> PeriodicTask_start, NonStrictAlternatesRightClock -> PeriodicTask_stop)
+//				Relation relation_2[Coincides] (Clock1-> PeriodicTask_BeginActivableState, Clock2-> PeriodicTask_start)
+//			}
+		
+		
+		
+		
+		
+//		RelationDefinition PeriodicTaskOffsetClock[PeriodicTaskOffsetClock]{
+//	
+//			
+//			Sequence PeriodicTaskOffsetClock_execEnd=(IntegerVariableRef PeriodicTaskOffsetClock_wcetRef[PeriodicTaskOffsetClock_et])
+//			Sequence PeriodicTaskOffsetClock_notTheFirstOne=2(1)
+//			Sequence PeriodicTaskOffsetClock_finiteOne=1 
+//			Sequence seqOneInfinite:IntegerSequence = (infone=1)
+//				Expression PeriodicTaskOffsetClock_ref4PeriodWithOffset=Concatenation(LeftClock-> PeriodicTaskOffsetClock_ref4PeriodWaitOffset,
+//																				RightClock-> PeriodicTaskOffsetClock_ref4Period
+//				)
+//				//Clone is added to avoid death propagation
+//				Expression PeriodicTaskOffsetClock_ref4PeriodWithOffsetClone=Intersection( Clock1->  PeriodicTaskOffsetClock_ref4PeriodWithOffset	,Clock2-> PeriodicTaskOffsetClock_ref4PeriodWithOffset  )
+//
+//				Expression PeriodicTaskOffsetClock_ref4PeriodWaitOffset= Wait(WaitingClock -> PeriodicTaskOffsetClock_offsetClock, WaitingValue -> one)
+//				Expression PeriodicTaskOffsetClock_FirstSliceOfExecution=RecursiveNonStrictSample(RecursiveNonStrictSample_SampledClock->PeriodicTaskOffsetClock_start, 
+//        																		   RecursiveNonStrictSample_SamplingClock->PeriodicTaskOffsetClock_ref4et
+//	        	)
+//	        	Expression PeriodicTaskOffsetClock_endOfexecutionTime=FilterBy(FilterByClock-> PeriodicTaskOffsetClock_ref4et,
+//	        														FilterBySeq-> PeriodicTaskOffsetClock_execEnd
+//	        	)
+//				Expression PeriodicTaskOffsetClock_BeginActivableState=Periodic(
+//								PeriodicBaseClock->PeriodicTaskOffsetClock_ref4PeriodWithOffsetClone,
+//								PeriodicPeriod-> PeriodicTaskOffsetClock_period,
+//								PeriodicOffset-> zero
+//								)
+//				Expression PeriodicTaskOffsetClock_VeryFirstExecTime=OneTickAndDie( OneTickAndDieClock->  PeriodicTaskOffsetClock_ref4et )
+//				Expression PeriodicTaskOffsetClock_nextRef4etAfterStop=Defer( BaseClock-> PeriodicTaskOffsetClock_stop 	,DelayClock-> PeriodicTaskOffsetClock_ref4et 	,DelayPatternExpression-> seqOneInfinite)
+//				Expression PeriodicTaskOffsetClock_FirstSliceOfExecutionButFirst=FilterBy( FilterByClock-> PeriodicTaskOffsetClock_FirstSliceOfExecution, FilterBySeq-> PeriodicTaskOffsetClock_notTheFirstOne)
+//				
+//				Relation PeriodicTaskOffsetClock_relation_5[Coincides] (Clock2-> PeriodicTaskOffsetClock_nextRef4etAfterStop,
+//											   Clock1-> PeriodicTaskOffsetClock_FirstSliceOfExecutionButFirst
+//				)
+//
+//				Relation PeriodicTaskOffsetClock_relation_3[NonStrictAlternates] (NonStrictAlternatesLeftClock-> PeriodicTaskOffsetClock_start,
+//														 NonStrictAlternatesRightClock-> PeriodicTaskOffsetClock_FirstSliceOfExecution
+//				)
+//				Relation PeriodicTaskOffsetClock_relation_4[NonStrictPrecedes] (   LeftClock->  PeriodicTaskOffsetClock_start,	RightClock-> PeriodicTaskOffsetClock_VeryFirstExecTime  )
+//				Relation PeriodicTaskOffsetClock_relation_1[Coincides] (Clock1->PeriodicTaskOffsetClock_stop,Clock2->PeriodicTaskOffsetClock_endOfexecutionTime)
+//				Relation PeriodicTaskOffsetClock_relation_0[NonStrictAlternates (NonStrictAlternatesLeftClock -> PeriodicTaskOffsetClock_start, NonStrictAlternatesRightClock -> PeriodicTaskOffsetClock_stop)
+//				Relation PeriodicTaskOffsetClock_relation_2[Coincides] (Clock1-> PeriodicTaskOffsetClock_BeginActivableState, Clock2-> PeriodicTaskOffsetClock_start)
+//
+//			}
+	
+
+	Sequence seqForDurationMax: IntegerSequence=(IntegerVariableRef refForDurationMax[MaxValue])
+	Sequence seqForDurationMin:IntegerSequence=	(IntegerVariableRef refForDurationMin[MinValue])
+		//Deadline(DeadlineStart:clock, DeadlineEnd:clock, DeadlineBase:clock, DeadlineValue:int),
+	Sequence seqForDeadline:IntegerSequence=(IntegerVariableRef refForDurationMin[DeadlineValue])
+		//PeriodicWithJitter(PeriodicWithJitterResClock:clock, PeriodicWithJitterBaseClock:clock, PeriodicWithJitterOffset:int, PeriodicWithJitterPeriod:int, PeriodicWithJitterJitter:int)	
+	Sequence seqForPeriodicWithJitter:IntegerSequence=	(IntegerVariableRef refForPeriodicWithJitter[PeriodicWithJitterJitter])
+	}
+	
+	ExpressionLibrary CCSL4RT_Relations{
+		ExpressionDefinition RecursiveNonStrictSampleDef[RecursiveNonStrictSample]{
+			root=RecursiveNonStrictSample_rootConcat
+			Expression RecursiveNonStrictSample_rootConcat=Concatenation( LeftClock-> RecursiveNonStrictSample_Sample, 
+																		  RightClock-> RecursiveNonStrictSample_rootConcat
+			)
+			Expression RecursiveNonStrictSample_Sample=NonStrictSample(SampledClock->RecursiveNonStrictSample_SampledClock,
+																	   SamplingClock->RecursiveNonStrictSample_SamplingClock
+			)
+		}
+	
+		ExpressionDefinition ResetableFilterByDef[ResetableFilterBy]{
+			root=ResetableFilterBy_rootConcat
+			Expression ResetableFilterBy_rootConcat=Concatenation( LeftClock->ResetableFilterBy_FilterByUpToReset, 
+																		  RightClock-> ResetableFilterBy_rootConcat
+			)
+			Expression ResetableFilterBy_FilterByUpToReset=UpTo(ClockToFollow-> ResetableFilterBy_FilterBy, 
+																KillerCLock-> ResetableFilterBy_reset
+			)
+			Expression ResetableFilterBy_FilterBy=FilterBy(FilterByClock->ResetableFilterBy_FilterByClock,
+														   FilterBySeq->ResetableFilterBy_FilterBySeq
+			)
+		}
+		ExpressionDeclaration RecursiveNonStrictSample(RecursiveNonStrictSample_SampledClock:clock, RecursiveNonStrictSample_SamplingClock:clock):clock
+		ExpressionDeclaration ResetableFilterBy(ResetableFilterBy_FilterByClock:clock, ResetableFilterBy_FilterBySeq:IntegerSequence, ResetableFilterBy_reset:clock):clock
+	
+	Clock second:physicalTime
+	}
+}

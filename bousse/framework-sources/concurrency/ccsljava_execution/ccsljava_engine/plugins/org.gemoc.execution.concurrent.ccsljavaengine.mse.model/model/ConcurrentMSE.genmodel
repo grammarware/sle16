@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.gemoc.execution.ccsljava.concurrent.mse.model/src"
+    modelPluginID="org.gemoc.execution.ccsljava.concurrent.mse.model" modelName="ConcurrentMSE"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../fr.inria.aoste.timesquare.ecl.feedback.model/model/feedback.genmodel#//feedback ../../fr.inria.diverse.trace.commons.model/model/GenericTrace.genmodel#//trace"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>ConcurrentMSE.ecore</foreignModel>
+  <genPackages prefix="Concurrentmse" basePackage="org.gemoc.execution.concurrent.ccsljavaengine"
+      disposableProviderFactory="true" ecorePackage="ConcurrentMSE.ecore#/">
+    <genClasses ecoreClass="ConcurrentMSE.ecore#//FeedbackMSE">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ConcurrentMSE.ecore#//FeedbackMSE/feedbackModelSpecificEvent"/>
+      <genOperations ecoreOperation="ConcurrentMSE.ecore#//FeedbackMSE/getCaller"/>
+      <genOperations ecoreOperation="ConcurrentMSE.ecore#//FeedbackMSE/getAction"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

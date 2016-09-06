@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="bcoolbuilder"
+         name="Gemoc BCOoL Builder"
+         point="org.eclipse.core.resources.builders">
+      <builder
+            hasNature="true">
+         <run
+               class="org.gemoc.bcool.model.xtext.builder.GemocBCOoLBuilder">
+         </run>
+      </builder>
+   </extension>
+   <extension
+         id="bcoolnature"
+         name="Gemoc BCOoL Nature"
+         point="org.eclipse.core.resources.natures">
+      <runtime>
+         <run
+               class="org.gemoc.bcool.model.xtext.builder.GemocBCOoLNature">
+         </run>
+      </runtime>
+      <builder
+            id="org.gemoc.bcool.model.xtext.bcoolbuilder">
+      </builder>
+   </extension>
+   <extension
+         id="Convert to BCOoL project"
+         point="org.eclipse.ui.commands">
+      <category
+            id="org.gemoc.bcool.model.xtext.bcoolnature.category"
+            name="Gemoc BCOoL Nature commands">
+      </category>
+      <command
+            categoryId="org.gemoc.bcool.model.xtext.bcoolnature.category"
+            defaultHandler="org.gemoc.bcool.model.xtext.builder.AddRemoveGemocBCOoLNatureHandler"
+            id="org.gemoc.bcool.model.xtext.addRemoveGemocBCOoLNature"
+            name="Add/RemoveGemoc BCOoL Nature">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="popup:org.eclipse.ui.projectConfigure?after=additions">
+         <command
+               commandId="org.gemoc.bcool.model.xtext.addRemoveGemocBCOoLNature"
+               label="Remove BCOoL Nature"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <with
+                     variable="selection">
+                  <count
+                        value="1">
+                  </count>
+                  <iterate>
+                     <adapt
+                           type="org.eclipse.core.resources.IProject">
+                        <test
+                              property="org.eclipse.core.resources.projectNature"
+                              value="org.gemoc.bcool.model.xtext.bcoolnature">
+                        </test>
+                     </adapt>
+                  </iterate>
+               </with>
+            </visibleWhen>
+         </command>
+         <command
+               commandId="org.gemoc.bcool.model.xtext.addRemoveGemocBCOoLNature"
+               label="Add BCOoL Nature"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <with
+                     variable="selection">
+                  <count
+                        value="1">
+                  </count>
+                  <iterate>
+                     <adapt
+                           type="org.eclipse.core.resources.IProject">
+                        <not>
+                           <test
+                                 property="org.eclipse.core.resources.projectNature"
+                                 value="org.gemoc.bcool.model.xtext.bcoolnature">
+                           </test>
+                        </not>
+                     </adapt>
+                  </iterate>
+               </with>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         id="xmlProblem"
+         name="XML Problem"
+         point="org.eclipse.core.resources.markers">
+      <super
+            type="org.eclipse.core.resources.problemmarker">
+      </super>
+      <persistent
+            value="true">
+      </persistent>
+   </extension>
+   <extension
+         name="BCOoL icon"
+         point="org.eclipse.ui.ide.projectNatureImages">
+      <image
+            icon="icons/bcoolicon.ico"
+            id="org.gemoc.bcool.model.xtext.bcoolicon"
+            natureId="org.gemoc.bcool.model.xtext.bcoolnature">
+      </image>
+   </extension>
+
+</plugin>

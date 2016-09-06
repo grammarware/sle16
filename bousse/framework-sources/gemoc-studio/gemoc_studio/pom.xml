@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <name>GEMOC Studio root build</name>
+    <groupId>org.gemoc.gemoc_studio</groupId>
+    <artifactId>org.gemoc.gemoc_studio.parent</artifactId>
+    <version>2.2.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+	<parent>
+		<groupId>org.gemoc</groupId>
+		<artifactId>org.gemoc.gemoc_studio.root</artifactId>
+    	<version>0.1.0-SNAPSHOT</version>
+		<relativePath>..</relativePath>
+	</parent>
+    <properties>
+        <tycho-version>0.25.0</tycho-version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <modules>
+        <module>plugins/org.gemoc.gemoc_studio.branding</module>
+        <module>plugins/org.gemoc.gemoc_language_workbench.documentation</module>
+        <module>releng/org.gemoc.gemoc_studio.product</module>
+        <module>releng/org.gemoc.gemoc_studio.branding.feature</module>	
+        <module>releng/org.gemoc.gemoc_studio.branding.source.feature</module>		
+        <module>releng/org.gemoc.gemoc_studio.additions.feature</module>	
+        <module>releng/org.gemoc.modeldebugging.feature</module>
+        <module>releng/org.gemoc.concurrency.feature</module>
+        <module>releng/org.gemoc.coordination.feature</module>
+        <module>releng/org.gemoc.gemoc_studio.updatesite</module>
+    </modules>
+
+    <repositories>
+
+        <!-- IMPORTANT : repository used to get older versions of org.eclipse.ocl.examples.feature.group for ECL, need to be removed ASAP -->
+        <repository>
+            <id>OCL releases</id>
+            <layout>p2</layout>
+            <url>http://download.eclipse.org/modeling/mdt/ocl/updates</url>
+        </repository>
+        
+    	<!-- Repositories specific for the studio (typically referred by the additional feature) -->
+    	<repository>
+            <id>Subversive</id>
+            <layout>p2</layout>
+            <url>http://community.polarion.com/projects/subversive/download/eclipse/5.0/mars-site/</url>
+        </repository>         
+        <repository>
+            <id>M2E connectors</id>
+            <layout>p2</layout>
+            <url>http://repo1.maven.org/maven2/.m2e/connectors/m2eclipse-tycho/0.7.0/N/0.7.0.201309291400/</url>
+        </repository>
+        <repository>
+            <id>Palette patch update site</id>
+            <layout>p2</layout>
+            <url>http://gemoc.org/pub/studio/patch_sirius_palette/</url>
+        </repository>
+        
+        <repository>
+            <id>Sirius</id>
+            <layout>p2</layout>
+            <url>http://download.eclipse.org/sirius/updates/releases/3.1.4/mars</url>
+        </repository>
+		<repository>
+            <id>Groovy4Eclipse</id>
+            <layout>p2</layout>
+            <url>http://dist.springsource.org/snapshot/GRECLIPSE/e4.5/</url>
+        </repository>
+        <!-- *********** Xtext related update site -->
+       <!--  <repository>
+            <id>xtext all releases</id>
+            <layout>p2</layout>
+            <url>http://download.eclipse.org/modeling/tmf/xtext/updates/releases/</url>
+        </repository> -->
+        <!-- refinement from "xtext all releases" -->
+<!--         <repository> strange : required by fr.inria.aoste.timesquare.ccslkernel.solver.priorities.editor.feature.feature.group -->
+<!--             <id>xtext releases 2.8.4</id> -->
+<!--             <layout>p2</layout> -->
+<!--             <url>http://download.eclipse.org/modeling/tmf/xtext/updates/releases/2.8.4/</url> -->
+<!--         </repository> -->
+        
+        <!-- *********** -->
+        <repository>
+            <id>Checkstyle</id>
+            <layout>p2</layout>
+            <url>http://sourceforge.net/projects/eclipse-cs/files/updatesite/5.7.0/</url>
+        </repository>
+        <repository>
+            <id>AspectJ</id>
+            <layout>p2</layout>
+            <url>http://download.eclipse.org/tools/ajdt/44/dev/update</url>
+        </repository>
+    
+    </repositories>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.eclipse.tycho</groupId>
+                <artifactId>tycho-maven-plugin</artifactId>
+                <version>${tycho-version}</version>
+                <extensions>true</extensions>
+            </plugin>
+            <!-- disable source feature generation -->
+			<plugin>
+		      <groupId>org.eclipse.tycho.extras</groupId>
+		      <artifactId>tycho-source-feature-plugin</artifactId>
+		      <version>${tycho-version}</version>
+		      <configuration>
+     			<skip>true</skip>
+   			  </configuration>
+		    </plugin>
+            <plugin>
+                <groupId>org.eclipse.tycho</groupId>
+                <artifactId>target-platform-configuration</artifactId>
+                <version>${tycho-version}</version>
+                <configuration>
+                    <!-- environments that will be built -->
+                    <environments>
+                       	<environment>
+                            <os>linux</os>
+                            <ws>gtk</ws>
+                            <arch>x86_64</arch>
+                        </environment>
+                        <environment>
+                            <os>linux</os>
+                            <ws>gtk</ws>
+                            <arch>x86</arch>
+                        </environment>
+                        <environment>
+                            <os>win32</os>
+                            <ws>win32</ws>
+                            <arch>x86</arch>
+                        </environment>
+                        <environment>
+                            <os>win32</os>
+                            <ws>win32</ws>
+                            <arch>x86_64</arch>
+                        </environment>
+                        <environment>
+                            <os>macosx</os>  
+                            <ws>cocoa</ws>  
+                            <arch>x86_64</arch> 
+                        </environment>
+                    </environments>
+                </configuration>
+            </plugin>
+            <!-- Java compiler plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.5</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+        </plugins>
+    </build>
+    <profiles>
+    <!-- Profiles are used for easier test of the build, allowing to compile for a single OS -->
+    <!-- combined with offline mode, the build is relatively fast -->
+    	<profile>
+	    	<!-- use this command line to activate this profile -->
+	    	<!-- mvn clean package -Denvironment=test_win32 -->
+	    	<!-- or directly with the ID using the eclipse UI -->
+	    	<id>test_win32</id>
+	    	<activation>
+		      <property>
+		        <name>environment</name>
+		        <value>test_win32</value>
+		      </property>
+		    </activation>
+    		<build>
+    			<plugins>
+    				<plugin>
+		    			<groupId>org.eclipse.tycho</groupId>
+		                <artifactId>target-platform-configuration</artifactId>
+		                <version>${tycho-version}</version>
+		                <configuration>
+		                    <!-- environments that will be built in test mode -->
+		                    <environments>
+		                        <environment>
+		                            <os>win32</os>
+		                            <ws>win32</ws>
+		                            <arch>x86_64</arch>
+		                        </environment>		                        
+<!-- 		                        <environment> -->
+<!-- 		                            <os>win32</os> -->
+<!-- 		                            <ws>win32</ws> -->
+<!-- 		                            <arch>x86</arch> -->
+<!-- 		                        </environment> -->
+		                    </environments>
+		                </configuration>
+    				</plugin>
+    			</plugins>
+    		</build>
+    	</profile>
+    	<profile>
+	    	<!-- use this command line to activate this profile -->
+	    	<!-- mvn clean package -Denvironment=test_linux -->
+	    	<!-- or directly with the ID using the eclipse UI -->
+	    	<id>test_linux</id>
+	    	<activation>
+		      <property>
+		        <name>environment</name>
+		        <value>test_linux</value>
+		      </property>
+		    </activation>
+    		<build>
+    			<plugins>
+    				<plugin>
+		    			<groupId>org.eclipse.tycho</groupId>
+		                <artifactId>target-platform-configuration</artifactId>
+		                <version>${tycho-version}</version>
+		                <configuration>
+		                    <!-- environments that will be built in test mode -->
+		                    <environments>
+		                      	<environment>
+		                            <os>linux</os>
+		                            <ws>gtk</ws>
+		                            <arch>x86_64</arch>
+		                        </environment>
+		                    </environments>
+		                </configuration>
+    				</plugin>
+    			</plugins>
+    		</build>
+    	</profile>
+    	<profile>
+	    	<!-- use this command line to activate this profile -->
+	    	<!-- mvn clean package -Denvironment=x86_only -->
+	    	<!-- or directly with the ID using the eclipse UI -->
+	    	<id>x86_only</id>
+	    	<activation>
+		      <property>
+		        <name>environment</name>
+		        <value>x86_only</value>
+		      </property>
+		    </activation>
+    		<build>
+    			<plugins>
+    				<plugin>
+		    			<groupId>org.eclipse.tycho</groupId>
+		                <artifactId>target-platform-configuration</artifactId>
+		                <version>${tycho-version}</version>
+		                <configuration>
+		                    <!-- environments that will be built in test mode -->
+		                    <environments>
+		                        <environment>
+		                            <os>linux</os>
+		                            <ws>gtk</ws>
+		                            <arch>x86</arch>
+		                        </environment>
+		                        <environment>
+		                            <os>win32</os>
+		                            <ws>win32</ws>
+		                            <arch>x86</arch>
+		                        </environment>
+		                    </environments>
+		                </configuration>
+    				</plugin>
+    			</plugins>
+    		</build>
+    	</profile>
+    	<profile>
+	    	<!-- use this command line to activate this profile -->
+	    	<!-- mvn clean package -Denvironment=x86_64_only -->
+	    	<!-- or directly with the ID using the eclipse UI -->
+	    	<id>x86_64_only</id>
+	    	<activation>
+		      <property>
+		        <name>environment</name>
+		        <value>x86_64_only</value>
+		      </property>
+		    </activation>
+    		<build>
+    			<plugins>
+    				<plugin>
+		    			<groupId>org.eclipse.tycho</groupId>
+		                <artifactId>target-platform-configuration</artifactId>
+		                <version>${tycho-version}</version>
+		                <configuration>
+		                    <!-- environments that will be built in test mode -->
+		                    <environments>
+		                       	<environment>
+		                            <os>linux</os>
+		                            <ws>gtk</ws>
+		                            <arch>x86_64</arch>
+		                        </environment>		                        
+		                        <environment>
+		                            <os>win32</os>
+		                            <ws>win32</ws>
+		                            <arch>x86_64</arch>
+		                        </environment>
+		                        <environment>
+		                            <os>macosx</os>  
+		                            <ws>cocoa</ws>  
+		                            <arch>x86_64</arch> 
+		                        </environment>
+		                    </environments>
+		                </configuration>
+    				</plugin>
+    			</plugins>
+    		</build>
+    	</profile>
+    	
+    	<!-- Profiles are used for switching the repositories used for the build so they either use the CI update sites or local repositories -->
+    	<profile>
+	        <id>ignore_CI_repositories</id>
+	        <activation>
+	        </activation>
+	        <repositories>
+		    </repositories>
+	    </profile>
+	    <profile>
+	        <id>use_CI_repositories</id>
+	        <activation>
+	            <activeByDefault>true</activeByDefault>
+	        </activation>
+	        <repositories>
+<!-- 		        <repository> -->
+<!-- 		            <id>Gemoc Target Platform all-except-gemoc-executionengine_ccsljava</id> -->
+<!-- 		            <layout>p2</layout> -->
+<!-- 		            <url>https://ci.inria.fr/gemoc/job/org.gemoc.targetplatform.redirects/lastSuccessfulBuild/artifact/org/gemoc/targetplatform/update/all-except-gemoc-executionengine_ccsljava</url> -->
+<!-- 		        </repository> -->
+				<repository>
+		            <id>gemoc-studio_commons on CI</id>
+		            <layout>p2</layout>
+		            <url>https://ci.inria.fr/gemoc/job/gemoc-studio_commons/lastSuccessfulBuild/artifact/commons/releng/org.gemoc.commons.repository/target/repository/</url>
+		        </repository>
+				<repository>
+		            <id>gemoc-studio_gemoc_commons on CI</id>
+		            <layout>p2</layout>
+		            <url>https://ci.inria.fr/gemoc/job/gemoc-studio_gemoc_commons/lastSuccessfulBuild/artifact/gemoc_commons/releng/org.gemoc.gemoc_commons.repository/target/repository/</url>
+		        </repository>
+		        <repository>
+		            <id>modeldebugging_framework_frameworkcommons on CI</id>
+		            <layout>p2</layout>
+		            <url>https://ci.inria.fr/gemoc/job/framework_and_trace/lastSuccessfulBuild/artifact/framework/framework_commons/releng/org.gemoc.modeldebugging.framework.commons.repository/target/repository/</url>
+		        </repository>
+		        <repository>
+		            <id>modeldebugging_framework_xdsmlframework on CI</id>
+		            <layout>p2</layout>
+		            <url>https://ci.inria.fr/gemoc/job/framework_and_trace/lastSuccessfulBuild/artifact/framework/xdsml_framework/releng/org.gemoc.modeldebugging.xdsmlframework.repository/target/repository/</url>
+		        </repository>
+		        <repository>
+		            <id>modeldebugging_framework_executionframework on CI</id>
+		            <layout>p2</layout>
+		            <url>https://ci.inria.fr/gemoc/job/framework_and_trace/lastSuccessfulBuild/artifact/framework/execution_framework/releng/org.gemoc.modeldebugging.executionframework.repository/target/repository/</url>
+		        </repository>
+		        <repository>
+		            <id>modelanimation_siriusmodelanimation on CI</id>
+		            <layout>p2</layout>
+		            <url>http://obeo-siriuslab-nightly.s3-website-eu-west-1.amazonaws.com/SiriusAnimator/master/repository/</url>
+		        </repository>		        
+		        <repository>
+		            <id>modelanimation_executionengine_java on CI</id>
+		            <layout>p2</layout>
+		            <url>https://ci.inria.fr/gemoc/job/java_execution/lastSuccessfulBuild/artifact/java_execution/releng/org.gemoc.execution.sequential.java.repository/target/repository/</url>
+		        </repository>
+		        <repository>
+		            <id>concurrency_executionengine_ccsljava on CI</id>
+		            <layout>p2</layout>
+		            <url>https://ci.inria.fr/gemoc/view/All/job/concurrency_executionengine_ccsljava/lastSuccessfulBuild/artifact/ccsljava_execution/releng/org.gemoc.executionengine.ccsljava.repository/target/repository/</url>
+		        </repository>
+				<repository>
+		            <id>concurrency_concurrent_addons on CI</id>
+		            <layout>p2</layout>
+		            <url>https://ci.inria.fr/gemoc/view/All/job/concurrency_concurrent_addons/lastSuccessfulBuild/artifact/concurrent_addons/releng/org.gemoc.concurrent_addons.repository/target/repository/</url>
+		        </repository>
+		        <repository>
+		            <id>concurrency_moccml on CI</id>
+		            <layout>p2</layout>
+		            <url>https://ci.inria.fr/gemoc/view/All/job/concurrency_moccml/lastSuccessfulBuild/artifact/moccml/releng/org.gemoc.mocc.p2updatesite/target/repository/</url>
+		        </repository>	
+				<repository>
+		            <id>concurrency_exploration on CI</id>
+		            <layout>p2</layout>
+		            <url>https://ci.inria.fr/gemoc/job/concurrency_exploration/lastSuccessfulBuild/artifact/exploration/releng/org.gemoc.mocc.clocksystem.features.updatesite/target/repository/</url>
+		        </repository>				
+		        <repository>
+		            <id>coordination_bcool on CI</id>
+		            <layout>p2</layout>
+		            <url>https://ci.inria.fr/gemoc/job/coordination_bcool/lastSuccessfulBuild/artifact/bcool/deployment/org.gemoc.bcool.updatesite/target/repository/</url>
+		        </repository>
+		        <repository>
+		            <id>coordination_heterogeneousCoordinationEngine on CI</id>
+		            <layout>p2</layout>
+		            <url>https://ci.inria.fr/gemoc/job/coordination_heterogeneousCoordinationEngine/lastSuccessfulBuild/artifact/heterogeneousCoordinationEngine/releng/org.gemoc.heterogeneous_coordination_engine.repository/target/repository/</url>
+		        </repository>		        
+		        <repository>
+		            <id>gemoc-studio_official_samples_deployer on CI</id>
+		            <layout>p2</layout>
+		            <url>https://ci.inria.fr/gemoc/job/gemoc-studio_official_samples_deployer/lastSuccessfulBuild/artifact/official_samples/sample.deployers/releng/org.gemoc.official_samples.deployers.repository/target/repository/</url>
+		        </repository>
+		        <repository>
+		            <id>modeldebugging_trace_commons on CI</id>
+		            <layout>p2</layout>
+		            <url>https://ci.inria.fr/gemoc/job/framework_and_trace/lastSuccessfulBuild/artifact/trace/commons/releng/fr.inria.diverse.trace.commons.updatesite/target/repository/</url>
+		        </repository>
+		    	<repository>
+		            <id>modeldebugging_trace_generator on CI</id>
+		            <layout>p2</layout>
+		            <url>https://ci.inria.fr/gemoc/job/framework_and_trace/lastSuccessfulBuild/artifact/trace/generator/releng/org.gemoc.modeldebugging.trace.generator.updatesite/target/repository/</url>
+		        </repository>
+		    	<repository>
+		            <id>modeldebugging_trace_manager on CI</id>
+		            <layout>p2</layout>
+		            <url>https://ci.inria.fr/gemoc/job/framework_and_trace/lastSuccessfulBuild/artifact/trace/manager/releng/org.gemoc.modeldebugging.trace.manager.updatesite/target/repository/</url>
+		        </repository>
+		        <repository>
+		            <id>concurrency_gel on CI</id>
+		            <layout>p2</layout>
+		            <url>https://ci.inria.fr/gemoc/job/concurrency_gel/lastSuccessfulBuild/artifact/gel/releng/org.gemoc.gel.repository/target/repository/</url>
+		        </repository>
+		    </repositories>
+	    </profile>
+    </profiles>
+</project> 

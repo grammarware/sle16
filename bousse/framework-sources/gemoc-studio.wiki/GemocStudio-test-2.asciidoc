@@ -1,0 +1,69 @@
+## TEST 2: Create Concurrent language from scratch
+
+Main goal: be able to create a new sequential language
+[cols="a,a,1*", options="header"]
+|===
+|Actions to execute
+|Verification
+|Result for version: V2.0.1 2016_01_13
+
+|
+- in Sirius Perspective, 
+- File new Gemoc Concurrent Project
+|
+- .melange
+- MANIFEST.MF
+- Concurrent Nature & Builder
+- Extension point in plugin.xml
+- CodeExecutor class
+|:question:
+
+|
+- Right click on .melange GEMOC Language > Create Domain Model Project for language
+- Create a few classes in the sirius editor, save
+|
+- must update Require-Bundle in MANIFEST.MF
+- must add syntax "platform/resource/project/folder/model.ecore" in the .melange
+- must open the EMF project wizard, then the sirius editor
+|:question:
+
+|
+- Right click on .melange GEMOC Language > Create DSA Project for language
+|
+- must open the K3 wizard with default project name based on language project name, with default options to creates aspects classes for the domain model
+- must add 'with' operator in the .melange
+- must update Require-Bundle in MANIFEST.MF
+|:question: :red_circle: action of generate plugin.xml neither documented nor enforced by builder (required after any changes in the list of aspect in the melange file)
+
+|
+- Right click on .melange GEMOC Language > Create Sirius Editor Project for language
+- connect the odesign to the domain, create a default layer and a few representations
+|
+-must open the Sirius wizard with default project name based on language project name, 
+|:question:
+
+|
+- Right click on .melange GEMOC Language > Create Animator Project for language
+- add debug layer to existing diagram 
+- select the previous odesign
+|
+-must open the "Create GEMOC debug representation" wizard
+| :question:
+
+|
+- Right click on .melange GEMOC Language > Create MOCC Library Project for language
+|
+must open the a MocMl wizard with default project name based on language project name
+| :question:
+
+|
+- Right click on .melange GEMOC Language > Create DSE Project for language
+|
+- must open the a DSE project wizard with default project name based on language project name, the project contains a base .ecl file with an import to the ecore of the domain model
+- - must add (or update) 'ecl' operator in the .melange
+| :question:
+
+|
+|
+|===
+

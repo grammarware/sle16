@@ -1,0 +1,27 @@
+
+Library extraExpressions{ 
+	imports{ 
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib" as kernel;
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib" as CCSLLib;
+	}
+	
+	IntegerType four
+	IntegerType three
+	
+	RelationLibrary bcoolrelations{
+		RelationDefinition RendezVousDef[RendezVous]{ 
+			Relation RendezVousrelat[Coincides]( Clock1->RightClock, Clock2->LeftClock)
+		}
+		RelationDeclaration RendezVous(LeftClock:clock, RightClock:clock)
+	}
+	
+	ExpressionLibrary bcoolfilters{
+		ExpressionDefinition AfterNDef [AfterN]{
+			root=filterN_result 
+			Expression filterN_result = Periodic
+						( PeriodicBaseClock->WaitingClock, PeriodicPeriod -> WaitingValue, PeriodicOffset -> four)	
+  		}
+		ExpressionDeclaration AfterN(WaitingClock: clock,  WaitingValue: int):clock
+	}	
+	
+}

@@ -1,0 +1,15 @@
+SyncProductTfsmwithfUML
+
+ImportLib "platform:/resource/org.gemoc.bcool.example.productfumlandtfsm/library/facilities.bcoollib"
+ImportLib "platform:/resource/org.gemoc.bcool.example.productfumlandtfsm/library/bcoollib.ccslLib"
+
+ImportInterface "platform:/resource/org.gemoc.bcool.example.productfumlandtfsm/interfaces/TFSM.ecl" as tfsm // left
+ImportInterface "platform:/resource/org.gemoc.bcool.example.productfumlandtfsm/interfaces/activitySemantics.ecl" as activity // right
+
+Spec test 
+
+Operator  MatchingandCoordinationSharedEvents (dse1 : activity::startAction , dse2 : tfsm::occurs)
+	MatchingCorrespondance: when  (dse1.name = dse2.name) ;
+		CoordinationRule:
+			facilities.RendezVous(dse1, dse2)
+end operator; 

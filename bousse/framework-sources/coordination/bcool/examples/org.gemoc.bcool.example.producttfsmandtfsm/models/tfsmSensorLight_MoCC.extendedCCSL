@@ -1,0 +1,136 @@
+ClockConstraintSystem tfsmSensorLight {
+	imports {
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib" as kernel ;
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib" as CCSL ;
+		import "platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/interfaces/TFSMMoC.ccslLib" as TFSMMoC ;
+		import "platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/models/tfsmSensorLight.tfsm" as TFSM ;
+	}
+	entryBlock mainBlock
+	Block mainBlock {
+		Expression GreentoRed_SampledOn_eventOccursAfterOrWhileStateEntering = SampledOn
+		( SampledOnSampledClock -> Green_entering,
+		SampledOnTrigger -> alarmOn_occurs )
+		Expression RedtoGreen_SampledOn_eventOccursAfterOrWhileStateEntering = SampledOn
+		( SampledOnSampledClock -> Red_entering,
+		SampledOnTrigger -> alarmOff_occurs )
+		Expression inittoGreen_DelayFor_delayIsExpired_wrt_StateEntering = DelayFor
+		( DelayForClockToDelay -> init_entering,
+		DelayForClockForCounting -> gblclk_ticks,
+		DelayForDelay -> inittoGreenguardinit_afterDuration )
+		Expression initintermediate_allFiredoutgoingTransition1 = Union
+		( Clock1 -> inittoGreen_fire,
+		Clock2 -> inittoGreen_fire )
+		Expression Redintermediate_allFiredoutgoingTransition1 = Union
+		( Clock1 -> RedtoGreen_fire,
+		Clock2 -> RedtoGreen_fire )
+		Expression Greenintermediate_allFiredoutgoingTransition1 = Union
+		( Clock1 -> GreentoRed_fire,
+		Clock2 -> GreentoRed_fire )
+		Expression Redintermediate_allInputTransition1 = Union
+		( Clock1 -> GreentoRed_fire,
+		Clock2 -> GreentoRed_fire )
+		Expression Greenintermediate_allInputTransition1 = Union
+		( Clock1 -> inittoGreen_fire,
+		Clock2 -> RedtoGreen_fire )
+		Expression tfsmSensorLightintermediate_onlyOneFirst1 = OneTickAndNoMore
+		( OneTickAndNoMoreClock -> tfsmSensorLight_start )
+		Relation GreentoRedCoincides_fireWhenEventOccursOneTransition [ Coincides ]
+		( Clock2 -> GreentoRed_SampledOn_eventOccursAfterOrWhileStateEntering,
+		Clock1 -> GreentoRed_fire )
+		Relation RedtoGreenCoincides_fireWhenEventOccursOneTransition [ Coincides ]
+		( Clock2 -> RedtoGreen_SampledOn_eventOccursAfterOrWhileStateEntering,
+		Clock1 -> RedtoGreen_fire )
+		Relation inittoGreenCoincides_fireWhenTemporalGuardHoldsOneTransition [ Coincides ]
+		( Clock2 -> inittoGreen_DelayFor_delayIsExpired_wrt_StateEntering,
+		Clock1 -> inittoGreen_fire )
+		Relation GreentoRedCoincides_TriggerEventOcurrs [ Coincides ]
+		( Clock2 -> alarmOn_occurs,
+		Clock1 -> GreentoRed_trigger )
+		Relation RedtoGreenCoincides_TriggerEventOcurrs [ Coincides ]
+		( Clock2 -> alarmOff_occurs,
+		Clock1 -> RedtoGreen_trigger )
+		Relation initAlternates_enterOnceBeforeToLeave [ Alternates ]
+		( AlternatesLeftClock -> init_entering,
+		AlternatesRightClock -> init_leaving )
+		Relation RedAlternates_enterOnceBeforeToLeave [ Alternates ]
+		( AlternatesLeftClock -> Red_entering,
+		AlternatesRightClock -> Red_leaving )
+		Relation GreenAlternates_enterOnceBeforeToLeave [ Alternates ]
+		( AlternatesLeftClock -> Green_entering,
+		AlternatesRightClock -> Green_leaving )
+		Relation initCoincides_firingATransitionAlternatesWithLeavingState [ Coincides ]
+		( Clock2 -> initintermediate_allFiredoutgoingTransition1,
+		Clock1 -> init_leaving )
+		Relation RedCoincides_firingATransitionAlternatesWithLeavingState [ Coincides ]
+		( Clock2 -> Redintermediate_allFiredoutgoingTransition1,
+		Clock1 -> Red_leaving )
+		Relation GreenCoincides_firingATransitionAlternatesWithLeavingState [ Coincides ]
+		( Clock2 -> Greenintermediate_allFiredoutgoingTransition1,
+		Clock1 -> Green_leaving )
+		Relation RedCauses_stateEntering [ Causes ]
+		( LeftClock -> Redintermediate_allInputTransition1,
+		RightClock -> Red_entering )
+		Relation GreenCauses_stateEntering [ Causes ]
+		( LeftClock -> Greenintermediate_allInputTransition1,
+		RightClock -> Green_entering )
+		Relation tfsmSensorLightintermediate_oneStateAtATime1_2 [ Exclusion ]
+		( Clock1 -> init_entering,
+		Clock2 -> Green_entering )
+		Relation tfsmSensorLightintermediate_oneStateAtATime1_3 [ Exclusion ]
+		( Clock1 -> init_entering,
+		Clock2 -> Red_entering )
+		Relation tfsmSensorLightintermediate_oneStateAtATime2_3 [ Exclusion ]
+		( Clock1 -> Green_entering,
+		Clock2 -> Red_entering )
+		Relation tfsmSensorLightintermediate_oneTransitionAtATime1_2 [ Exclusion ]
+		( Clock1 -> inittoGreen_fire,
+		Clock2 -> GreentoRed_fire )
+		Relation tfsmSensorLightintermediate_oneTransitionAtATime1_3 [ Exclusion ]
+		( Clock1 -> inittoGreen_fire,
+		Clock2 -> RedtoGreen_fire )
+		Relation tfsmSensorLightintermediate_oneTransitionAtATime2_3 [ Exclusion ]
+		( Clock1 -> GreentoRed_fire,
+		Clock2 -> RedtoGreen_fire )
+		Relation tfsmSensorLightCoincides_firstIsInitialState [ Coincides ]
+		( Clock2 -> tfsmSensorLight_start,
+		Clock1 -> init_entering )
+		Relation tfsmSensorLightCoincides_firstOnlyOnce [ Coincides ]
+		( Clock2 -> tfsmSensorLight_start,
+		Clock1 -> tfsmSensorLightintermediate_onlyOneFirst1 )
+		Clock alarmOn_occurs : clock -> evt_alarmOn_occurs
+		( "alarmOn" )
+		Clock alarmOff_occurs : clock -> evt_alarmOff_occurs
+		( "alarmOff" )
+		Clock gblclk_ticks : clock -> evt_gblclk_ticks
+		( "gblclk" )
+		Clock GreentoRed_fire : clock -> evt_GreentoRed_fire
+		( "GreentoRed" )
+		Clock RedtoGreen_fire : clock -> evt_RedtoGreen_fire
+		( "RedtoGreen" )
+		Clock inittoGreen_fire : clock -> evt_inittoGreen_fire
+		( "inittoGreen" )
+		Clock GreentoRed_trigger : clock -> evt_GreentoRed_trigger
+		( "GreentoRed" )
+		Clock RedtoGreen_trigger : clock -> evt_RedtoGreen_trigger
+		( "RedtoGreen" )
+		Clock inittoGreen_trigger : clock -> evt_inittoGreen_trigger
+		( "inittoGreen" )
+		Clock init_entering : clock -> evt_init_entering
+		( "init" )
+		Clock Red_entering : clock -> evt_Red_entering
+		( "Red" )
+		Clock Green_entering : clock -> evt_Green_entering
+		( "Green" )
+		Clock init_leaving : clock -> evt_init_leaving
+		( "init" )
+		Clock Red_leaving : clock -> evt_Red_leaving
+		( "Red" )
+		Clock Green_leaving : clock -> evt_Green_leaving
+		( "Green" )
+		Clock tfsmSensorLight_start : clock -> evt_tfsmSensorLight_start
+		( "tfsmSensorLight" )
+		Clock tfsmSensorLight_stall : clock -> evt_tfsmSensorLight_stall
+		( )
+		Integer inittoGreenguardinit_afterDuration : int = 1
+	}
+}

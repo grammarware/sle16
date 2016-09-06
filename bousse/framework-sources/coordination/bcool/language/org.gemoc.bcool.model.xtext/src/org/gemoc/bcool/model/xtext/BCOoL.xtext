@@ -1,0 +1,72 @@
+grammar org.gemoc.bcool.model.xtext.BCOoL with org.gemoc.gexpressions.xtext.GExpressions
+
+//import "http://www.eclipse.org/xtext/xbase/Xbase" as xbase
+//import "http://www.eclipse.org/xtext/common/JavaVMTypes" as types
+
+import "http://org.gemoc.bcool.model/"
+//import "http://fr.inria.aoste.timesquare.ecl" as ecl 
+import "http://www.eclipse.org/ocl/3.1.0/CompleteOCLCST" as ocl
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+BCoolSpec returns BCoolSpecification:
+	(name=ID)? 
+		(importsLib+= ImportLibRule)+
+		(importsBehavioralInterface+= ImportInterfaceRule)+
+		(bcoolOperators+=BCoolOperatorSpec)+
+;
+
+BCoolOperatorSpec returns BCoolOperator:
+	('Spec' name=ID)? 
+						(globalEventExpressions+=globalEventExpressionRule)?
+						(globalDSEs+=globalDSEsRule)?
+						(bcoolCompositionRules+=BCoolCompositionRule)+
+;
+
+globalDSEsRule returns ocl::DefPropertyCS:
+	'Global Event' name=ID';'
+;
+
+globalEventExpressionRule returns EventExpression:
+	'let' EventExpression
+;
+
+BCoolCompositionRule returns BCoolCompositionRule: 
+	'Operator' name=ID '(' BCoolOperatorArgs+=BCoolOperatorArg (',' BCoolOperatorArgs+=BCoolOperatorArg)* ')'
+					   ('MatchingCorrespondance:')? matchingRule=MatchingRule
+					    coordinationRule=CoordinationRule
+	'end operator;'
+;
+
+BCoolOperatorArg returns BCoolOperatorArg: 
+	 name=ID ' : ' Interface=[ImportInterfaceStatement] '::'  (DSE=[ocl::DefPropertyCS|ID])? (InterfaceClass=[ecore::EClass|STRING])?
+;
+
+
+MatchingRule returns MatchingRule:
+	'when' condition=GExpression ';' 
+	 'CoordinationRule:'
+	 ('Local Event' filterEventExpressions+=EventExpression';')*
+	;
+
+EventExpression returns EventExpression:
+	//name=ID '=' declaration=[ExpressionDeclaration|ID]'(' (actualParameters+=STRING (',' actualParameters+=STRING)*)? ')'
+	name=ID '=' declaration=[ExpressionDeclaration|QualifiedName] '(' (actualParameters+=[ecore::EObject|ID] (',' actualParameters+=[ecore::EObject|ID])*)? ')'
+;
+
+CoordinationRule returns CoordinationRule:
+		eventRelations=EventRelation
+;
+
+EventRelation returns EventRelation:
+	{EventRelation}
+	 declaration=[RelationDeclaration|QualifiedName] '(' (actualParameters+=[ocl::DefPropertyCS|ID] (',' actualParameters+=[ocl::DefPropertyCS|ID])*)? ')'
+;
+ 
+
+ImportLibRule returns ImportLibStatement:
+	"ImportLib" importURI=STRING
+;
+
+ImportInterfaceRule returns ImportInterfaceStatement:
+	"ImportInterface" importURI=STRING "as" name=ID
+;
+

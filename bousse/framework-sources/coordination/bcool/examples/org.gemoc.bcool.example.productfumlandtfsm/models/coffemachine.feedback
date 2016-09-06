@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ASCII"?>
+<feedback:ActionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:feedback="http://timesquare.inria.fr/feedback">
+  <events name="MSE_globalclk_ticks">
+    <caller href="coffemachine.tfsm#//@globalClocks.0"/>
+    <action href="http://www.gemoc.org/sample/tfsm#//FSMClock/ticks"/>
+    <solverEvent href="coffemachine_MoCC.extendedCCSL#//@subBlock.0/@elements.0"/>
+  </events>
+  <events name="MSE_inittoopen_fire">
+    <caller href="coffemachine.tfsm#//@tfsms.0/@ownedTransitions.0"/>
+    <action href="http://www.gemoc.org/sample/tfsm#//Transition/fire"/>
+    <solverEvent href="coffemachine_MoCC.extendedCCSL#//@subBlock.0/@elements.1"/>
+  </events>
+  <events name="MSE_opentoclose_fire">
+    <caller href="coffemachine.tfsm#//@tfsms.0/@ownedTransitions.1"/>
+    <action href="http://www.gemoc.org/sample/tfsm#//Transition/fire"/>
+    <solverEvent href="coffemachine_MoCC.extendedCCSL#//@subBlock.0/@elements.2"/>
+  </events>
+  <events name="MSE_unlockedtolocked_fire">
+    <caller href="coffemachine.tfsm#//@tfsms.0/@ownedTransitions.2"/>
+    <action href="http://www.gemoc.org/sample/tfsm#//Transition/fire"/>
+    <solverEvent href="coffemachine_MoCC.extendedCCSL#//@subBlock.0/@elements.3"/>
+  </events>
+  <events name="MSE_coin_occurs">
+    <solverEvent href="coffemachine_MoCC.extendedCCSL#//@subBlock.0/@elements.4"/>
+  </events>
+  <events name="MSE_coffeeDone_occurs">
+    <solverEvent href="coffemachine_MoCC.extendedCCSL#//@subBlock.0/@elements.5"/>
+  </events>
+  <events name="MSE_unlock_occurs">
+    <solverEvent href="coffemachine_MoCC.extendedCCSL#//@subBlock.0/@elements.6"/>
+  </events>
+  <events name="MSE_start_occurs">
+    <solverEvent href="coffemachine_MoCC.extendedCCSL#//@subBlock.0/@elements.7"/>
+  </events>
+  <events name="MSE_Locked_entering">
+    <solverEvent href="coffemachine_MoCC.extendedCCSL#//@subBlock.0/@elements.8"/>
+  </events>
+  <events name="MSE_Unlocked_entering">
+    <solverEvent href="coffemachine_MoCC.extendedCCSL#//@subBlock.0/@elements.9"/>
+  </events>
+  <events name="MSE_init_entering">
+    <solverEvent href="coffemachine_MoCC.extendedCCSL#//@subBlock.0/@elements.10"/>
+  </events>
+  <events name="MSE_Locked_leaving">
+    <solverEvent href="coffemachine_MoCC.extendedCCSL#//@subBlock.0/@elements.11"/>
+  </events>
+  <events name="MSE_Unlocked_leaving">
+    <solverEvent href="coffemachine_MoCC.extendedCCSL#//@subBlock.0/@elements.12"/>
+  </events>
+  <events name="MSE_init_leaving">
+    <solverEvent href="coffemachine_MoCC.extendedCCSL#//@subBlock.0/@elements.13"/>
+  </events>
+  <events name="MSE_CoffeeCoin_start">
+    <solverEvent href="coffemachine_MoCC.extendedCCSL#//@subBlock.0/@elements.14"/>
+  </events>
+  <events name="MSE_CoffeeCoin_stall">
+    <solverEvent href="coffemachine_MoCC.extendedCCSL#//@subBlock.0/@elements.15"/>
+  </events>
+  <importStatements importURI="platform:/1"/>
+</feedback:ActionModel>

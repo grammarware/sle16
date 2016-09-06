@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_4uSaYLwiEeSMQuAD2oZAdg" name="HighBatteryModel">
+  <packagedElement xmi:type="uml:Activity" xmi:id="_9qUPgLwiEeSMQuAD2oZAdg" name="doJPEG2000" node="_C1bCcLwjEeSMQuAD2oZAdg _HLg48LwjEeSMQuAD2oZAdg _SSa78LwjEeSMQuAD2oZAdg _9uY6YLwmEeSMQuAD2oZAdg _DJR1wLwnEeSMQuAD2oZAdg _DVUtsLwnEeSMQuAD2oZAdg">
+    <edge xmi:type="uml:ControlFlow" xmi:id="_zv3GoLwkEeSMQuAD2oZAdg" name="flow2" target="_HLg48LwjEeSMQuAD2oZAdg" source="_DVUtsLwnEeSMQuAD2oZAdg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_3_koULwkEeSMQuAD2oZAdg" name="flow1" target="_C1bCcLwjEeSMQuAD2oZAdg" source="_SSa78LwjEeSMQuAD2oZAdg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_Ex4V0LwoEeSMQuAD2oZAdg" name="flow3" target="_9uY6YLwmEeSMQuAD2oZAdg" source="_C1bCcLwjEeSMQuAD2oZAdg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_4jai8LwpEeSMQuAD2oZAdg" name="flow4" target="_DJR1wLwnEeSMQuAD2oZAdg" source="_9uY6YLwmEeSMQuAD2oZAdg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_9KolsLwpEeSMQuAD2oZAdg" name="flow5" target="_DVUtsLwnEeSMQuAD2oZAdg" source="_DJR1wLwnEeSMQuAD2oZAdg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_C1bCcLwjEeSMQuAD2oZAdg" name="waveletTransform" incoming="_3_koULwkEeSMQuAD2oZAdg" outgoing="_Ex4V0LwoEeSMQuAD2oZAdg"/>
+    <node xmi:type="uml:ActivityFinalNode" xmi:id="_HLg48LwjEeSMQuAD2oZAdg" name="FinalNode1" incoming="_zv3GoLwkEeSMQuAD2oZAdg"/>
+    <node xmi:type="uml:InitialNode" xmi:id="_SSa78LwjEeSMQuAD2oZAdg" name="InitialNode1" outgoing="_3_koULwkEeSMQuAD2oZAdg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_9uY6YLwmEeSMQuAD2oZAdg" name="Quantizer" incoming="_Ex4V0LwoEeSMQuAD2oZAdg" outgoing="_4jai8LwpEeSMQuAD2oZAdg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_DJR1wLwnEeSMQuAD2oZAdg" name="RunLengthCoder" incoming="_4jai8LwpEeSMQuAD2oZAdg" outgoing="_9KolsLwpEeSMQuAD2oZAdg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_DVUtsLwnEeSMQuAD2oZAdg" name="Transmission" incoming="_9KolsLwpEeSMQuAD2oZAdg" outgoing="_zv3GoLwkEeSMQuAD2oZAdg"/>
+  </packagedElement>
+</uml:Model>

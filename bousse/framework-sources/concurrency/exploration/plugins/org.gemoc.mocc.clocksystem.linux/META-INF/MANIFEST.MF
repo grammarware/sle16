@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Linux
+Bundle-SymbolicName: org.gemoc.mocc.clocksystem.linux
+Bundle-Version: 0.0.1.qualifier
+Fragment-Host: org.gemoc.mocc.clocksystem.common;bundle-version="0.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Eclipse-PlatformFilter: (osgi.os=linux)
+Bundle-Vendor: ENSTA

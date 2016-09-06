@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_EoR_wLzqEeSRn62sONH9bg">
+  <packagedElement xmi:type="uml:Activity" xmi:id="_GXON0LzqEeSRn62sONH9bg" name="CoffeeMachine" node="_O5HWYLzqEeSRn62sONH9bg _THhQgLzqEeSRn62sONH9bg _WyAlQLzqEeSRn62sONH9bg _dCtHQLzqEeSRn62sONH9bg _jEPL4LzqEeSRn62sONH9bg _zo0YgLzqEeSRn62sONH9bg _1PQx4LzqEeSRn62sONH9bg _1JfPILzsEeSRn62sONH9bg">
+    <edge xmi:type="uml:ControlFlow" xmi:id="_xUas8LzqEeSRn62sONH9bg" name="flow1" target="_O5HWYLzqEeSRn62sONH9bg" source="_zo0YgLzqEeSRn62sONH9bg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_2pfewLzrEeSRn62sONH9bg" name="flow2" target="_THhQgLzqEeSRn62sONH9bg" source="_O5HWYLzqEeSRn62sONH9bg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_QzyBYLzsEeSRn62sONH9bg" name="flow3" target="_WyAlQLzqEeSRn62sONH9bg" source="_THhQgLzqEeSRn62sONH9bg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_WEGEcLzsEeSRn62sONH9bg" name="flow4" target="_dCtHQLzqEeSRn62sONH9bg" source="_WyAlQLzqEeSRn62sONH9bg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_c6zdkLzsEeSRn62sONH9bg" name="flow5" target="_jEPL4LzqEeSRn62sONH9bg" source="_dCtHQLzqEeSRn62sONH9bg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_AigV0LztEeSRn62sONH9bg" name="flow7" target="_1JfPILzsEeSRn62sONH9bg" source="_jEPL4LzqEeSRn62sONH9bg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_GlUz4LztEeSRn62sONH9bg" name="flow8" target="_1PQx4LzqEeSRn62sONH9bg" source="_1JfPILzsEeSRn62sONH9bg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_JbCcwLztEeSRn62sONH9bg" name="flow9" target="_O5HWYLzqEeSRn62sONH9bg" source="_1JfPILzsEeSRn62sONH9bg"/>
+    <node xmi:type="uml:MergeNode" xmi:id="_O5HWYLzqEeSRn62sONH9bg" name="Merge1" incoming="_xUas8LzqEeSRn62sONH9bg _JbCcwLztEeSRn62sONH9bg" outgoing="_2pfewLzrEeSRn62sONH9bg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_THhQgLzqEeSRn62sONH9bg" name="unlock" incoming="_2pfewLzrEeSRn62sONH9bg" outgoing="_QzyBYLzsEeSRn62sONH9bg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_WyAlQLzqEeSRn62sONH9bg" name="selectCoffee" incoming="_QzyBYLzsEeSRn62sONH9bg" outgoing="_WEGEcLzsEeSRn62sONH9bg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_dCtHQLzqEeSRn62sONH9bg" name="makeCoffee" incoming="_WEGEcLzsEeSRn62sONH9bg" outgoing="_c6zdkLzsEeSRn62sONH9bg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_jEPL4LzqEeSRn62sONH9bg" name="coffeeDone" incoming="_c6zdkLzsEeSRn62sONH9bg" outgoing="_AigV0LztEeSRn62sONH9bg"/>
+    <node xmi:type="uml:InitialNode" xmi:id="_zo0YgLzqEeSRn62sONH9bg" name="initialNode" outgoing="_xUas8LzqEeSRn62sONH9bg"/>
+    <node xmi:type="uml:ActivityFinalNode" xmi:id="_1PQx4LzqEeSRn62sONH9bg" name="finalNode" incoming="_GlUz4LztEeSRn62sONH9bg"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_1JfPILzsEeSRn62sONH9bg" name="Decision1" incoming="_AigV0LztEeSRn62sONH9bg" outgoing="_GlUz4LztEeSRn62sONH9bg _JbCcwLztEeSRn62sONH9bg"/>
+  </packagedElement>
+</uml:Model>

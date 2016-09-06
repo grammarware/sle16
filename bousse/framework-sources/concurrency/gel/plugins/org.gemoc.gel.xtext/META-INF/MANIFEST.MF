@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: GEL Xtext
+Bundle-Vendor: IRIT
+Bundle-Version: 0.1.0.qualifier
+Bundle-SymbolicName: org.gemoc.gel.xtext; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.gemoc.gel;bundle-version="0.1.0",
+ org.eclipse.xtext.generator;resolution:=optional,
+ org.eclipse.emf.mwe2.launch;resolution:=optional,
+ org.gemoc.gexpressions.xtext,
+ org.eclipse.xtext,
+ org.eclipse.xtext.util,
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.gemoc.gexpressions
+Import-Package: org.apache.commons.logging,
+ org.apache.log4j;version="1.2.15",
+ org.eclipse.xtext.xbase.lib
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: org.gemoc.gel,
+ org.gemoc.gel.formatting,
+ org.gemoc.gel.generator,
+ org.gemoc.gel.linking,
+ org.gemoc.gel.parser.antlr,
+ org.gemoc.gel.parser.antlr.internal,
+ org.gemoc.gel.scoping,
+ org.gemoc.gel.serializer,
+ org.gemoc.gel.services,
+ org.gemoc.gel.validation

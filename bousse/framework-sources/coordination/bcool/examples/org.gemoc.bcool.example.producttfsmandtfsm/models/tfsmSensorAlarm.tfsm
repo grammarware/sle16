@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.gemoc.sample.tfsm:TFSM xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.gemoc.sample.tfsm="http://www.gemoc.org/sample/tfsm" name="tfsmSensorAlarm" initialState="//@ownedStates.0">
+  <ownedStates name="init" outgoingTransitions="//@ownedTransitions.0"/>
+  <ownedStates name="Idle" outgoingTransitions="//@ownedTransitions.1" incomingTransitions="//@ownedTransitions.0 //@ownedTransitions.2"/>
+  <ownedStates name="Danger" outgoingTransitions="//@ownedTransitions.2" incomingTransitions="//@ownedTransitions.1"/>
+  <localEvents name="alarmOn" sollicitingTransitions="//@ownedTransitions.1"/>
+  <localEvents name="alarmOff" sollicitingTransitions="//@ownedTransitions.2"/>
+  <localEvents name="sensorOn"/>
+  <localEvents name="sensorOff"/>
+  <localClock name="gblclk"/>
+  <ownedTransitions name="inittoIdle" source="//@ownedStates.0" target="//@ownedStates.1">
+    <ownedGuard xsi:type="org.gemoc.sample.tfsm:TemporalGuard" name="guardinit" onClock="//@localClock" afterDuration="2"/>
+  </ownedTransitions>
+  <ownedTransitions name="IdletoDanger" source="//@ownedStates.1" target="//@ownedStates.2" generatedEvents="//@localEvents.0">
+    <ownedGuard xsi:type="org.gemoc.sample.tfsm:EventGuard" name="guardsensorOn" triggeringEvent="//@localEvents.2"/>
+  </ownedTransitions>
+  <ownedTransitions name="DangertoIdle" source="//@ownedStates.2" target="//@ownedStates.1" generatedEvents="//@localEvents.1">
+    <ownedGuard xsi:type="org.gemoc.sample.tfsm:EventGuard" name="guardsensorOff" triggeringEvent="//@localEvents.3"/>
+  </ownedTransitions>
+</org.gemoc.sample.tfsm:TFSM>

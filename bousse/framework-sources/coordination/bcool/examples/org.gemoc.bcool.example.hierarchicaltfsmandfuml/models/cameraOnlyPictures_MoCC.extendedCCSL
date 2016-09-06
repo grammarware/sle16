@@ -1,0 +1,187 @@
+ClockConstraintSystem CameraOnlyPictures {
+	imports {
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib" as kernel ;
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib" as CCSL ;
+		import "platform:/resource/org.gemoc.bcool.example.hierarchicaltfsmandfuml/interfaces/TFSMMoC.ccslLib" as TFSMMoC ;
+		import "platform:/resource/org.gemoc.bcool.example.hierarchicaltfsmandfuml/models/cameraOnlyPictures.tfsm" as
+		TimedSystem ;
+	}
+	entryBlock mainBlock
+	Block mainBlock {
+		Expression initCameratoHighBattery_SampledOn_eventOccursAfterOrWhileStateEntering = SampledOn
+		( SampledOnSampledClock -> init_entering,
+		SampledOnTrigger -> start_occurs )
+		Expression HighBatterytoLowBatteryintermediate_otherFireFromTheSameState21 = Union
+		( Clock1 -> HightBatterytoHighBattery_fire,
+		Clock2 -> HightBatterytoHighBattery_fire )
+		Expression LowBatterytoHighBatteryintermediate_otherFireFromTheSameState21 = Union
+		( Clock1 -> LowBatterytoLowBattery_fire,
+		Clock2 -> LowBatterytoLowBattery_fire )
+		Expression HightBatterytoHighBatteryintermediate_otherFireFromTheSameState1 = Union
+		( Clock1 -> HighBatterytoLowBattery_fire,
+		Clock2 -> HighBatterytoLowBattery_fire )
+		Expression LowBatterytoLowBatteryintermediate_otherFireFromTheSameState1 = Union
+		( Clock1 -> LowBatterytoHighBattery_fire,
+		Clock2 -> LowBatterytoHighBattery_fire )
+		Expression HighBatteryintermediate_allFiredoutgoingTransition1 = Union
+		( Clock1 -> HighBatterytoLowBattery_fire,
+		Clock2 -> HightBatterytoHighBattery_fire )
+		Expression LowBatteryintermediate_allFiredoutgoingTransition1 = Union
+		( Clock1 -> LowBatterytoHighBattery_fire,
+		Clock2 -> LowBatterytoLowBattery_fire )
+		Expression initintermediate_allFiredoutgoingTransition1 = Union
+		( Clock1 -> initCameratoHighBattery_fire,
+		Clock2 -> initCameratoHighBattery_fire )
+		Expression HighBatteryintermediate_allInputTransition1 = Union
+		( Clock1 -> initCameratoHighBattery_fire,
+		Clock2 -> LowBatterytoHighBattery_fire )
+		Expression HighBatteryintermediate_allInputTransition3 = Union
+		( Clock1 -> HighBatteryintermediate_allInputTransition1,
+		Clock2 -> HightBatterytoHighBattery_fire )
+		Expression LowBatteryintermediate_allInputTransition1 = Union
+		( Clock1 -> HighBatterytoLowBattery_fire,
+		Clock2 -> LowBatterytoLowBattery_fire )
+		Expression CameraEncoderintermediate_onlyOneFirst1 = OneTickAndNoMore
+		( OneTickAndNoMoreClock -> CameraEncoder_start )
+		Relation initCameratoHighBatteryCoincides_fireWhenEventOccursOneTransition [ Coincides ]
+		( Clock2 -> initCameratoHighBattery_SampledOn_eventOccursAfterOrWhileStateEntering,
+		Clock1 -> initCameratoHighBattery_fire )
+		Relation HighBatterytoLowBatteryEventTransition_fireWhenEventOccursVariousTransition [ EventTransition ]
+		( EventTransition_MakeFireable -> HighBattery_entering,
+		EventTransition_Trigger -> BatteryIsLow_occurs,
+		EventTransition_Reset -> HighBatterytoLowBatteryintermediate_otherFireFromTheSameState21,
+		EventTransition_Fire -> HighBatterytoLowBattery_fire )
+		Relation LowBatterytoHighBatteryEventTransition_fireWhenEventOccursVariousTransition [ EventTransition ]
+		( EventTransition_MakeFireable -> LowBattery_entering,
+		EventTransition_Trigger -> BatteryIsHigh_occurs,
+		EventTransition_Reset -> LowBatterytoHighBatteryintermediate_otherFireFromTheSameState21,
+		EventTransition_Fire -> LowBatterytoHighBattery_fire )
+		Relation HightBatterytoHighBatteryTemporalTransition_fireWhenTemporalGuardHoldsVariousTransition [ TemporalTransition
+		]
+		( TemporalTransition_MakeFireable -> HighBattery_entering,
+		TemporalTransition_RefClock -> glbclk_ticks,
+		TemporalTransition_Reset -> HightBatterytoHighBatteryintermediate_otherFireFromTheSameState1,
+		TemporalTransition_delay -> HightBatterytoHighBatteryguardHIghtoHighguardDelay_afterDuration,
+		TemporalTransition_Fire -> HightBatterytoHighBattery_fire )
+		Relation LowBatterytoLowBatteryTemporalTransition_fireWhenTemporalGuardHoldsVariousTransition [ TemporalTransition ]
+		( TemporalTransition_MakeFireable -> LowBattery_entering,
+		TemporalTransition_RefClock -> glbclk_ticks,
+		TemporalTransition_Reset -> LowBatterytoLowBatteryintermediate_otherFireFromTheSameState1,
+		TemporalTransition_delay -> LowBatterytoLowBatteryguardLowtoLowguardDelay_afterDuration,
+		TemporalTransition_Fire -> LowBatterytoLowBattery_fire )
+		Relation HighBatteryAlternates_enterOnceBeforeToLeave [ Alternates ]
+		( AlternatesLeftClock -> HighBattery_entering,
+		AlternatesRightClock -> HighBattery_leaving )
+		Relation LowBatteryAlternates_enterOnceBeforeToLeave [ Alternates ]
+		( AlternatesLeftClock -> LowBattery_entering,
+		AlternatesRightClock -> LowBattery_leaving )
+		Relation initAlternates_enterOnceBeforeToLeave [ Alternates ]
+		( AlternatesLeftClock -> init_entering,
+		AlternatesRightClock -> init_leaving )
+		Relation HighBatteryCoincides_firingATransitionAlternatesWithLeavingState [ Coincides ]
+		( Clock2 -> HighBatteryintermediate_allFiredoutgoingTransition1,
+		Clock1 -> HighBattery_leaving )
+		Relation LowBatteryCoincides_firingATransitionAlternatesWithLeavingState [ Coincides ]
+		( Clock2 -> LowBatteryintermediate_allFiredoutgoingTransition1,
+		Clock1 -> LowBattery_leaving )
+		Relation initCoincides_firingATransitionAlternatesWithLeavingState [ Coincides ]
+		( Clock2 -> initintermediate_allFiredoutgoingTransition1,
+		Clock1 -> init_leaving )
+		Relation HighBatteryCauses_stateEntering [ Causes ]
+		( LeftClock -> HighBatteryintermediate_allInputTransition3,
+		RightClock -> HighBattery_entering )
+		Relation LowBatteryCauses_stateEntering [ Causes ]
+		( LeftClock -> LowBatteryintermediate_allInputTransition1,
+		RightClock -> LowBattery_entering )
+		Relation CameraEncoderintermediate_oneStateAtATime1_2 [ Exclusion ]
+		( Clock2 -> init_entering,
+		Clock1 -> HighBattery_entering )
+		Relation CameraEncoderintermediate_oneStateAtATime1_3 [ Exclusion ]
+		( Clock2 -> init_entering,
+		Clock1 -> LowBattery_entering )
+		Relation CameraEncoderintermediate_oneStateAtATime2_3 [ Exclusion ]
+		( Clock2 -> HighBattery_entering,
+		Clock1 -> LowBattery_entering )
+		Relation CameraEncoderintermediate_oneTransitionAtATime1_2 [ Exclusion ]
+		( Clock2 -> initCameratoHighBattery_fire,
+		Clock1 -> HighBatterytoLowBattery_fire )
+		Relation CameraEncoderintermediate_oneTransitionAtATime1_3 [ Exclusion ]
+		( Clock2 -> initCameratoHighBattery_fire,
+		Clock1 -> HightBatterytoHighBattery_fire )
+		Relation CameraEncoderintermediate_oneTransitionAtATime1_4 [ Exclusion ]
+		( Clock2 -> initCameratoHighBattery_fire,
+		Clock1 -> LowBatterytoHighBattery_fire )
+		Relation CameraEncoderintermediate_oneTransitionAtATime1_5 [ Exclusion ]
+		( Clock2 -> initCameratoHighBattery_fire,
+		Clock1 -> LowBatterytoLowBattery_fire )
+		Relation CameraEncoderintermediate_oneTransitionAtATime2_3 [ Exclusion ]
+		( Clock2 -> HighBatterytoLowBattery_fire,
+		Clock1 -> HightBatterytoHighBattery_fire )
+		Relation CameraEncoderintermediate_oneTransitionAtATime2_4 [ Exclusion ]
+		( Clock2 -> HighBatterytoLowBattery_fire,
+		Clock1 -> LowBatterytoHighBattery_fire )
+		Relation CameraEncoderintermediate_oneTransitionAtATime2_5 [ Exclusion ]
+		( Clock2 -> HighBatterytoLowBattery_fire,
+		Clock1 -> LowBatterytoLowBattery_fire )
+		Relation CameraEncoderintermediate_oneTransitionAtATime3_4 [ Exclusion ]
+		( Clock2 -> HightBatterytoHighBattery_fire,
+		Clock1 -> LowBatterytoHighBattery_fire )
+		Relation CameraEncoderintermediate_oneTransitionAtATime3_5 [ Exclusion ]
+		( Clock2 -> HightBatterytoHighBattery_fire,
+		Clock1 -> LowBatterytoLowBattery_fire )
+		Relation CameraEncoderintermediate_oneTransitionAtATime4_5 [ Exclusion ]
+		( Clock2 -> LowBatterytoHighBattery_fire,
+		Clock1 -> LowBatterytoLowBattery_fire )
+		Relation CameraEncoderCoincides_firstIsInitialState [ Coincides ]
+		( Clock2 -> CameraEncoder_start,
+		Clock1 -> init_entering )
+		Relation CameraEncoderCoincides_firstOnlyOnce [ Coincides ]
+		( Clock2 -> CameraEncoder_start,
+		Clock1 -> CameraEncoderintermediate_onlyOneFirst1 )
+		Clock glbclk_ticks : clock -> evt_glbclk_ticks
+		( "glbclk",
+		"glbclk::ticks()" )
+		Clock localclk_ticks : clock -> evt_localclk_ticks
+		( "localclk",
+		"localclk::ticks()" )
+		Clock initCameratoHighBattery_fire : clock -> evt_initCameratoHighBattery_fire
+		( "initCameratoHighBattery",
+		"initCameratoHighBattery::fire()" )
+		Clock HightBatterytoHighBattery_fire : clock -> evt_HightBatterytoHighBattery_fire
+		( "HightBatterytoHighBattery",
+		"HightBatterytoHighBattery::fire()" )
+		Clock LowBatterytoLowBattery_fire : clock -> evt_LowBatterytoLowBattery_fire
+		( "LowBatterytoLowBattery",
+		"LowBatterytoLowBattery::fire()" )
+		Clock HighBatterytoLowBattery_fire : clock -> evt_HighBatterytoLowBattery_fire
+		( "HighBatterytoLowBattery",
+		"HighBatterytoLowBattery::fire()" )
+		Clock LowBatterytoHighBattery_fire : clock -> evt_LowBatterytoHighBattery_fire
+		( "LowBatterytoHighBattery",
+		"LowBatterytoHighBattery::fire()" )
+		Clock start_occurs : clock -> evt_start_occurs
+		( )
+		Clock BatteryIsLow_occurs : clock -> evt_BatteryIsLow_occurs
+		( )
+		Clock BatteryIsHigh_occurs : clock -> evt_BatteryIsHigh_occurs
+		( )
+		Clock HighBattery_entering : clock -> evt_HighBattery_entering
+		( "HighBattery" )
+		Clock LowBattery_entering : clock -> evt_LowBattery_entering
+		( "LowBattery" )
+		Clock init_entering : clock -> evt_init_entering
+		( "init" )
+		Clock HighBattery_leaving : clock -> evt_HighBattery_leaving
+		( "HighBattery" )
+		Clock LowBattery_leaving : clock -> evt_LowBattery_leaving
+		( "LowBattery" )
+		Clock init_leaving : clock -> evt_init_leaving
+		( "init" )
+		Clock CameraEncoder_start : clock -> evt_CameraEncoder_start
+		( )
+		Clock CameraEncoder_stall : clock -> evt_CameraEncoder_stall
+		( )
+		Integer HightBatterytoHighBatteryguardHIghtoHighguardDelay_afterDuration : int = 5
+		Integer LowBatterytoLowBatteryguardLowtoLowguardDelay_afterDuration : int = 5
+	}
+}

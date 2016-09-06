@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: fr.inria.diverse.trace.gemoc.generator.xmof
+Bundle-SymbolicName: fr.inria.diverse.trace.gemoc.generator.xmof;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Require-Bundle: org.eclipse.core.runtime,
+ fr.inria.diverse.trace.gemoc.generator,
+ org.eclipse.xtend.lib,
+ fr.inria.diverse.melange.metamodel,
+ org.eclipse.core.resources,
+ fr.inria.diverse.trace.xmof.tracematerialextractor,
+ fr.inria.diverse.ecorext
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.gemoc.executionengine.gel.feature_0.1.0.qualifier.jar" id="org.gemoc.executionengine.gel.feature" version="0.1.0.qualifier">
+      <category name="executionengine.gel"/>
+   </feature>
+   <feature url="features/org.gemoc.executionengine.gel.feature.source_0.1.0.qualifier.jar" id="org.gemoc.executionengine.gel.feature.source" version="0.1.0.qualifier">
+      <category name="executionengine.gel"/>
+   </feature>
+   <feature url="features/org.gemoc.executionengine.gel.runtime.feature_0.1.0.qualifier.jar" id="org.gemoc.executionengine.gel.runtime.feature" version="0.1.0.qualifier">
+      <category name="executionengine.gel"/>
+   </feature>
+   <feature url="features/org.gemoc.executionengine.gel.runtime.feature.source_0.1.0.qualifier.jar" id="org.gemoc.executionengine.gel.runtime.feature.source" version="0.1.0.qualifier">
+      <category name="executionengine.gel"/>
+   </feature>
+   <feature url="features/org.gemoc.executionengine.gel.runtime.ui.feature_0.1.0.qualifier.jar" id="org.gemoc.executionengine.gel.runtime.ui.feature" version="0.1.0.qualifier">
+      <category name="executionengine.gel"/>
+   </feature>
+   <feature url="features/org.gemoc.executionengine.gel.runtime.ui.feature.source_0.1.0.qualifier.jar" id="org.gemoc.executionengine.gel.runtime.ui.feature.source" version="0.1.0.qualifier">
+      <category name="executionengine.gel"/>
+   </feature>
+   <category-def name="executionengine.gel" label="CCSL Java GEL Execution Engine (concurrent)"/>
+</site>

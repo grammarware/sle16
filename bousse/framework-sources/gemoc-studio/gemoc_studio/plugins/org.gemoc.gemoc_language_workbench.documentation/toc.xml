@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+
+<toc label="GEMOC Studio Documentation" topic="eclipse_help/html/toc.html">
+ <topic href="eclipse_help/guide/eclipse/Guide.html" label="GEMOC Studio User Guide">
+    <link toc="eclipse_help/guide/eclipse/toc.xml"/>
+ </topic>
+ <topic label="GEMOC Studio Tutorials &amp; Examples">
+    <topic href="eclipse_help/tutorial_markedgraph/eclipse/GuideTutorialMarkedGraph.html" label="Tutorial : Markedgraph">
+       <link toc="eclipse_help/tutorial_markedgraph/eclipse/toc.xml"/>
+    </topic>
+    <topic href="eclipse_help/tutorial_sigpml/eclipse/Tutorial_SigPML.html" label="Tutorial : SigPML">
+       <link toc="eclipse_help/tutorial_sigpml/eclipse/toc.xml"/>
+    </topic>
+    <topic href="eclipse_help/html/index.html" label="GEMOC Examples">
+       <anchor id="GEMOC.examples"/>
+    </topic>
+ </topic>
+</toc>

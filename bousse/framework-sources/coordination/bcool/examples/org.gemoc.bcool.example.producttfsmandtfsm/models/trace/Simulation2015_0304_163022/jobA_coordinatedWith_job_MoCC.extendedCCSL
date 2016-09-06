@@ -1,0 +1,22 @@
+ClockConstraintSystem SyncProductTfsmwithTfsmCoordination {
+	imports {
+		import "platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/library/bcoollib.ccslLib" as lib_2 ;
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib" as model_1_1 ;
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib" as model_1_2 ;
+		import "platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/interfaces/TFSMMoC.ccslLib" as model_1_3 ;
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib" as model_2_1 ;
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib" as model_2_2 ;
+		import "platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/interfaces/TFSMMoC.ccslLib" as model_2_3 ;
+		import "platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/models/jobB_MoCC.extendedCCSL" as inM1 ;
+		import "platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/models/jobA_MoCC.extendedCCSL" as inM2 ;
+	}
+	entryBlock mainBlock
+	Block mainBlock {
+		Relation MatchingandCoordinationSharedEventsping_occursping_occurs [ RendezVous ]
+		( LeftClock -> "TFSMB::mainBlock::ping_occurs",
+		RightClock -> "TFSMA::mainBlock::ping_occurs" )
+		Relation MatchingandCoordinationSharedEventspong_occurspong_occurs [ RendezVous ]
+		( LeftClock -> "TFSMB::mainBlock::pong_occurs",
+		RightClock -> "TFSMA::mainBlock::pong_occurs" )
+	}
+}

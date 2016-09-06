@@ -1,0 +1,152 @@
+ClockConstraintSystem tfsmSensorAlarm {
+	imports {
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib" as kernel ;
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib" as CCSL ;
+		import "platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/interfaces/TFSMMoC.ccslLib" as TFSMMoC ;
+		import "platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/models/tfsmSensorAlarm.tfsm" as TFSM ;
+	}
+	entryBlock mainBlock
+	Block mainBlock {
+		Expression alarmOnintermediate_AllTriggeringOccurrences1 = Union
+		( Clock1 -> IdletoDanger_fire,
+		Clock2 -> IdletoDanger_fire )
+		Expression alarmOffintermediate_AllTriggeringOccurrences1 = Union
+		( Clock1 -> DangertoIdle_fire,
+		Clock2 -> DangertoIdle_fire )
+		Expression IdletoDanger_SampledOn_eventOccursAfterOrWhileStateEntering = SampledOn
+		( SampledOnSampledClock -> Idle_entering,
+		SampledOnTrigger -> sensorOn_occurs )
+		Expression DangertoIdle_SampledOn_eventOccursAfterOrWhileStateEntering = SampledOn
+		( SampledOnSampledClock -> Danger_entering,
+		SampledOnTrigger -> sensorOff_occurs )
+		Expression inittoIdle_DelayFor_delayIsExpired_wrt_StateEntering = DelayFor
+		( DelayForClockToDelay -> init_entering,
+		DelayForClockForCounting -> gblclk_ticks,
+		DelayForDelay -> inittoIdleguardinit_afterDuration )
+		Expression Idleintermediate_allFiredoutgoingTransition1 = Union
+		( Clock1 -> IdletoDanger_fire,
+		Clock2 -> IdletoDanger_fire )
+		Expression initintermediate_allFiredoutgoingTransition1 = Union
+		( Clock1 -> inittoIdle_fire,
+		Clock2 -> inittoIdle_fire )
+		Expression Dangerintermediate_allFiredoutgoingTransition1 = Union
+		( Clock1 -> DangertoIdle_fire,
+		Clock2 -> DangertoIdle_fire )
+		Expression Idleintermediate_allInputTransition1 = Union
+		( Clock1 -> inittoIdle_fire,
+		Clock2 -> DangertoIdle_fire )
+		Expression Dangerintermediate_allInputTransition1 = Union
+		( Clock1 -> IdletoDanger_fire,
+		Clock2 -> IdletoDanger_fire )
+		Expression tfsmSensorAlarmintermediate_onlyOneFirst1 = OneTickAndNoMore
+		( OneTickAndNoMoreClock -> tfsmSensorAlarm_start )
+		Relation alarmOnFSMEventSendReceive_occursWhenSolicitate [ FSMEventSendReceive ]
+		( ClockA -> alarmOnintermediate_AllTriggeringOccurrences1,
+		ClockB -> alarmOn_occurs )
+		Relation alarmOffFSMEventSendReceive_occursWhenSolicitate [ FSMEventSendReceive ]
+		( ClockA -> alarmOffintermediate_AllTriggeringOccurrences1,
+		ClockB -> alarmOff_occurs )
+		Relation IdletoDangerCoincides_fireWhenEventOccursOneTransition [ Coincides ]
+		( Clock2 -> IdletoDanger_SampledOn_eventOccursAfterOrWhileStateEntering,
+		Clock1 -> IdletoDanger_fire )
+		Relation DangertoIdleCoincides_fireWhenEventOccursOneTransition [ Coincides ]
+		( Clock2 -> DangertoIdle_SampledOn_eventOccursAfterOrWhileStateEntering,
+		Clock1 -> DangertoIdle_fire )
+		Relation inittoIdleCoincides_fireWhenTemporalGuardHoldsOneTransition [ Coincides ]
+		( Clock2 -> inittoIdle_DelayFor_delayIsExpired_wrt_StateEntering,
+		Clock1 -> inittoIdle_fire )
+		Relation IdletoDangerCoincides_TriggerEventOcurrs [ Coincides ]
+		( Clock2 -> sensorOn_occurs,
+		Clock1 -> IdletoDanger_trigger )
+		Relation DangertoIdleCoincides_TriggerEventOcurrs [ Coincides ]
+		( Clock2 -> sensorOff_occurs,
+		Clock1 -> DangertoIdle_trigger )
+		Relation IdleAlternates_enterOnceBeforeToLeave [ Alternates ]
+		( AlternatesLeftClock -> Idle_entering,
+		AlternatesRightClock -> Idle_leaving )
+		Relation initAlternates_enterOnceBeforeToLeave [ Alternates ]
+		( AlternatesLeftClock -> init_entering,
+		AlternatesRightClock -> init_leaving )
+		Relation DangerAlternates_enterOnceBeforeToLeave [ Alternates ]
+		( AlternatesLeftClock -> Danger_entering,
+		AlternatesRightClock -> Danger_leaving )
+		Relation IdleCoincides_firingATransitionAlternatesWithLeavingState [ Coincides ]
+		( Clock2 -> Idleintermediate_allFiredoutgoingTransition1,
+		Clock1 -> Idle_leaving )
+		Relation initCoincides_firingATransitionAlternatesWithLeavingState [ Coincides ]
+		( Clock2 -> initintermediate_allFiredoutgoingTransition1,
+		Clock1 -> init_leaving )
+		Relation DangerCoincides_firingATransitionAlternatesWithLeavingState [ Coincides ]
+		( Clock2 -> Dangerintermediate_allFiredoutgoingTransition1,
+		Clock1 -> Danger_leaving )
+		Relation IdleCauses_stateEntering [ Causes ]
+		( LeftClock -> Idleintermediate_allInputTransition1,
+		RightClock -> Idle_entering )
+		Relation DangerCauses_stateEntering [ Causes ]
+		( LeftClock -> Dangerintermediate_allInputTransition1,
+		RightClock -> Danger_entering )
+		Relation tfsmSensorAlarmintermediate_oneStateAtATime1_2 [ Exclusion ]
+		( Clock2 -> init_entering,
+		Clock1 -> Idle_entering )
+		Relation tfsmSensorAlarmintermediate_oneStateAtATime1_3 [ Exclusion ]
+		( Clock2 -> init_entering,
+		Clock1 -> Danger_entering )
+		Relation tfsmSensorAlarmintermediate_oneStateAtATime2_3 [ Exclusion ]
+		( Clock2 -> Idle_entering,
+		Clock1 -> Danger_entering )
+		Relation tfsmSensorAlarmintermediate_oneTransitionAtATime1_2 [ Exclusion ]
+		( Clock2 -> inittoIdle_fire,
+		Clock1 -> IdletoDanger_fire )
+		Relation tfsmSensorAlarmintermediate_oneTransitionAtATime1_3 [ Exclusion ]
+		( Clock2 -> inittoIdle_fire,
+		Clock1 -> DangertoIdle_fire )
+		Relation tfsmSensorAlarmintermediate_oneTransitionAtATime2_3 [ Exclusion ]
+		( Clock2 -> IdletoDanger_fire,
+		Clock1 -> DangertoIdle_fire )
+		Relation tfsmSensorAlarmCoincides_firstIsInitialState [ Coincides ]
+		( Clock2 -> tfsmSensorAlarm_start,
+		Clock1 -> init_entering )
+		Relation tfsmSensorAlarmCoincides_firstOnlyOnce [ Coincides ]
+		( Clock2 -> tfsmSensorAlarm_start,
+		Clock1 -> tfsmSensorAlarmintermediate_onlyOneFirst1 )
+		Clock alarmOn_occurs : clock -> evt_alarmOn_occurs
+		( "alarmOn" )
+		Clock sensorOn_occurs : clock -> evt_sensorOn_occurs
+		( "sensorOn" )
+		Clock alarmOff_occurs : clock -> evt_alarmOff_occurs
+		( "alarmOff" )
+		Clock sensorOff_occurs : clock -> evt_sensorOff_occurs
+		( "sensorOff" )
+		Clock gblclk_ticks : clock -> evt_gblclk_ticks
+		( "gblclk" )
+		Clock inittoIdle_fire : clock -> evt_inittoIdle_fire
+		( "inittoIdle" )
+		Clock IdletoDanger_fire : clock -> evt_IdletoDanger_fire
+		( "IdletoDanger" )
+		Clock DangertoIdle_fire : clock -> evt_DangertoIdle_fire
+		( "DangertoIdle" )
+		Clock inittoIdle_trigger : clock -> evt_inittoIdle_trigger
+		( "inittoIdle" )
+		Clock IdletoDanger_trigger : clock -> evt_IdletoDanger_trigger
+		( "IdletoDanger" )
+		Clock DangertoIdle_trigger : clock -> evt_DangertoIdle_trigger
+		( "DangertoIdle" )
+		Clock Idle_entering : clock -> evt_Idle_entering
+		( "Idle" )
+		Clock init_entering : clock -> evt_init_entering
+		( "init" )
+		Clock Danger_entering : clock -> evt_Danger_entering
+		( "Danger" )
+		Clock Idle_leaving : clock -> evt_Idle_leaving
+		( "Idle" )
+		Clock init_leaving : clock -> evt_init_leaving
+		( "init" )
+		Clock Danger_leaving : clock -> evt_Danger_leaving
+		( "Danger" )
+		Clock tfsmSensorAlarm_start : clock -> evt_tfsmSensorAlarm_start
+		( "tfsmSensorAlarm" )
+		Clock tfsmSensorAlarm_stall : clock -> evt_tfsmSensorAlarm_stall
+		( )
+		Integer inittoIdleguardinit_afterDuration : int = 2
+	}
+}

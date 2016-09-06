@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.gemoc.gel</groupId>
+	<artifactId>org.gemoc.gel.root</artifactId>
+	<version>0.1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<parent>
+		<groupId>org.gemoc</groupId>
+		<artifactId>org.gemoc.concurrent.root</artifactId>
+		<version>0.1.0-SNAPSHOT</version>
+		<relativePath>..</relativePath>
+	</parent>
+	<modules>
+		<!-- plugins -->
+		<module>plugins/org.gemoc.gel</module>
+		<module>plugins/org.gemoc.gel.compiler</module>
+		<module>plugins/org.gemoc.gel.compiler.ui</module>
+		<module>plugins/org.gemoc.gel.xtext</module>
+		<module>plugins/org.gemoc.gel.xtext.ui</module>
+		<module>plugins/org.gemoc.gel.microgel</module>
+		<module>plugins/org.gemoc.gel.microgel.edit</module>
+		<module>plugins/org.gemoc.gel.microgel.editor</module>
+
+
+		<!-- feature and update site -->
+		<module>releng/org.gemoc.gel.feature</module>
+		<module>releng/org.gemoc.gel.microgel.feature</module>
+		<module>releng/org.gemoc.gel.repository</module>
+	</modules>
+
+	<properties>
+		<xtend.version>2.9.1</xtend.version>
+	</properties>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.xtend</groupId>
+				<artifactId>xtend-maven-plugin</artifactId>
+				<version>${xtend.version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>xtend-gen</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			
+			<plugin>
+	        	<groupId>org.eclipse.tycho</groupId>
+	            <artifactId>tycho-compiler-plugin</artifactId>
+	            <version>${tycho-version}</version>
+	           	<configuration> <!-- ignore -->
+	            	<compilerArgument>-warn:none</compilerArgument>     
+	            	<compilerArgument>-err:none</compilerArgument>      
+	           	</configuration>
+	        </plugin>
+		</plugins>
+	</build>
+	<profiles>
+		<!-- Profiles are used for switching the repositories used for the build 
+			so they either use the CI update sites or local repositories -->
+		<profile>
+			<id>ignore_CI_repositories</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<repositories>
+			</repositories>
+		</profile>
+		<profile>
+			<id>use_CI_repositories</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<repositories>
+				<!-- <repository> -->
+				<!-- <id>Gemoc Target Platform all-except-gemoc-gel</id> -->
+				<!-- <layout>p2</layout> -->
+				<!-- <url>https://ci.inria.fr/gemoc/job/org.gemoc.targetplatform.redirects/lastSuccessfulBuild/artifact/org/gemoc/targetplatform/update/all-except-gemoc-gel</url> -->
+				<!-- </repository> -->
+				<repository>
+					<id>gemoc-studio_commons on CI</id>
+					<layout>p2</layout>
+					<url>https://ci.inria.fr/gemoc/job/gemoc-studio_commons/lastSuccessfulBuild/artifact/commons/releng/org.gemoc.commons.repository/target/repository/</url>
+				</repository>
+				<repository>
+		            <id>modeldebugging_framework_executionframework on CI</id>
+		            <layout>p2</layout>
+		            <url>https://ci.inria.fr/gemoc/job/framework_and_trace/lastSuccessfulBuild/artifact/framework/execution_framework/releng/org.gemoc.modeldebugging.executionframework.repository/target/repository/</url>
+		        </repository>
+				<repository>
+					<id>modelanimation_siriusmodelanimation on CI</id>
+					<layout>p2</layout>
+					<url>http://obeo-siriuslab-nightly.s3-website-eu-west-1.amazonaws.com/SiriusAnimator/master/repository/</url>
+				</repository>
+				<repository>
+					<id>concurrency_executionengine_ccsljava on CI</id>
+					<layout>p2</layout>
+					<url>https://ci.inria.fr/gemoc/job/concurrency_executionengine_ccsljava/lastSuccessfulBuild/artifact/ccsljava_execution/releng/org.gemoc.executionengine.ccsljava.repository/target/repository/</url>
+				</repository>
+				<repository>
+					<id>gemoc-studio_gemoc_commons_gexpressions on CI</id>
+					<url>https://ci.inria.fr/gemoc/job/gemoc-studio_gemoc_commons/lastSuccessfulBuild/artifact/gemoc_commons/releng/org.gemoc.gemoc_commons.repository/target/repository/</url>
+					<layout>p2</layout>
+					<releases>
+						<enabled>true</enabled>
+					</releases>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+				</repository>
+			</repositories>
+		</profile>
+
+	</profiles>
+</project>

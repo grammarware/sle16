@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CCSLJavaXDSML API
+Bundle-SymbolicName: org.gemoc.execution.concurrent.ccsljavaxdsml.api;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.core.runtime,
+ org.gemoc.xdsmlframework.api;bundle-version="0.1.0",
+ fr.inria.aoste.trace,
+ org.gemoc.executionframework.reflectivetrace.model,
+ fr.inria.aoste.timesquare.ecl.feedback.model,
+ fr.inria.diverse.trace.commons;bundle-version="1.0.0"
+Export-Package: org.gemoc.execution.concurrent.ccsljavaxdsml.api.core,
+ org.gemoc.execution.concurrent.ccsljavaxdsml.api.dsa.executors,
+ org.gemoc.execution.concurrent.ccsljavaxdsml.api.dse,
+ org.gemoc.execution.concurrent.ccsljavaxdsml.api.extensions.deciders,
+ org.gemoc.execution.concurrent.ccsljavaxdsml.api.extensions.languages,
+ org.gemoc.execution.concurrent.ccsljavaxdsml.api.moc
+Bundle-ActivationPolicy: lazy

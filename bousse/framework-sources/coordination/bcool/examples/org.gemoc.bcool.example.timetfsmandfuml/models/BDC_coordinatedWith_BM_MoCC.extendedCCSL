@@ -1,0 +1,86 @@
+ClockConstraintSystem AtomicActionsOperCoordination {
+	imports {
+		import "platform:/resource/org.gemoc.bcool.example.timetfsmandfuml/library/bcoollib.ccslLib" as lib_2 ;
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib" as model_1_1 ;
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib" as model_1_2 ;
+		import "platform:/resource/org.gemoc.bcool.example.timetfsmandfuml/interfaces/TFSMMoC.ccslLib" as model_1_3 ;
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib" as model_2_1 ;
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib" as model_2_2 ;
+		import "platform:/resource/org.gemoc.bcool.example.timetfsmandfuml/interfaces/lib4RT.ccslLib" as model_2_3 ;
+		import "platform:/resource/org.gemoc.bcool.example.timetfsmandfuml/models/BDC_MoCC.extendedCCSL" as inM1 ;
+		import "platform:/resource/org.gemoc.bcool.example.timetfsmandfuml/models/BMC_MoCC.extendedCCSL" as inM2 ;
+	}
+	entryBlock mainBlock
+	Block mainBlock {
+		Expression samplerdoClose_startActionglobalclk_ticks = SampleBy
+		( Sampled -> "Model::mainBlock::doClose_startAction",
+		Sampler -> "BarrierControl::mainBlock::globalclk_ticks" )
+		Expression samplerclosed_startActionglobalclk_ticks = SampleBy
+		( Sampled -> "Model::mainBlock::closed_startAction",
+		Sampler -> "BarrierControl::mainBlock::globalclk_ticks" )
+		Expression samplerreadSensorDown_startActionglobalclk_ticks = SampleBy
+		( Sampled -> "Model::mainBlock::readSensorDown_startAction",
+		Sampler -> "BarrierControl::mainBlock::globalclk_ticks" )
+		Expression samplerstopMotorDown_startActionglobalclk_ticks = SampleBy
+		( Sampled -> "Model::mainBlock::stopMotorDown_startAction",
+		Sampler -> "BarrierControl::mainBlock::globalclk_ticks" )
+		Expression samplerstartBarrierDown_startActionglobalclk_ticks = SampleBy
+		( Sampled -> "Model::mainBlock::startBarrierDown_startAction",
+		Sampler -> "BarrierControl::mainBlock::globalclk_ticks" )
+		Expression samplerdoOpen_startActionglobalclk_ticks = SampleBy
+		( Sampled -> "Model::mainBlock::doOpen_startAction",
+		Sampler -> "BarrierControl::mainBlock::globalclk_ticks" )
+		Expression samplerstartBarrierUp_startActionglobalclk_ticks = SampleBy
+		( Sampled -> "Model::mainBlock::startBarrierUp_startAction",
+		Sampler -> "BarrierControl::mainBlock::globalclk_ticks" )
+		Expression samplerreadSensorUp_startActionglobalclk_ticks = SampleBy
+		( Sampled -> "Model::mainBlock::readSensorUp_startAction",
+		Sampler -> "BarrierControl::mainBlock::globalclk_ticks" )
+		Expression samplerstopMotorUp_startActionglobalclk_ticks = SampleBy
+		( Sampled -> "Model::mainBlock::stopMotorUp_startAction",
+		Sampler -> "BarrierControl::mainBlock::globalclk_ticks" )
+		Expression sampleropened_startActionglobalclk_ticks = SampleBy
+		( Sampled -> "Model::mainBlock::opened_startAction",
+		Sampler -> "BarrierControl::mainBlock::globalclk_ticks" )
+		Relation MatchingandCoordinationActionsTicksdoClose_finishActionsamplerdoClose_startActionglobalclk_ticks [ Causality
+		]
+		( ClockA -> "Model::mainBlock::doClose_finishAction",
+		ClockB -> samplerdoClose_startActionglobalclk_ticks )
+		Relation MatchingandCoordinationActionsTicksclosed_finishActionsamplerclosed_startActionglobalclk_ticks [ Causality ]
+		( ClockA -> "Model::mainBlock::closed_finishAction",
+		ClockB -> samplerclosed_startActionglobalclk_ticks )
+		Relation
+		MatchingandCoordinationActionsTicksreadSensorDown_finishActionsamplerreadSensorDown_startActionglobalclk_ticks [
+		Causality ]
+		( ClockA -> "Model::mainBlock::readSensorDown_finishAction",
+		ClockB -> samplerreadSensorDown_startActionglobalclk_ticks )
+		Relation MatchingandCoordinationActionsTicksstopMotorDown_finishActionsamplerstopMotorDown_startActionglobalclk_ticks
+		[ Causality ]
+		( ClockA -> "Model::mainBlock::stopMotorDown_finishAction",
+		ClockB -> samplerstopMotorDown_startActionglobalclk_ticks )
+		Relation
+		MatchingandCoordinationActionsTicksstartBarrierDown_finishActionsamplerstartBarrierDown_startActionglobalclk_ticks [
+		Causality ]
+		( ClockA -> "Model::mainBlock::startBarrierDown_finishAction",
+		ClockB -> samplerstartBarrierDown_startActionglobalclk_ticks )
+		Relation MatchingandCoordinationActionsTicksdoOpen_finishActionsamplerdoOpen_startActionglobalclk_ticks [ Causality ]
+		( ClockA -> "Model::mainBlock::doOpen_finishAction",
+		ClockB -> samplerdoOpen_startActionglobalclk_ticks )
+		Relation
+		MatchingandCoordinationActionsTicksstartBarrierUp_finishActionsamplerstartBarrierUp_startActionglobalclk_ticks [
+		Causality ]
+		( ClockA -> "Model::mainBlock::startBarrierUp_finishAction",
+		ClockB -> samplerstartBarrierUp_startActionglobalclk_ticks )
+		Relation MatchingandCoordinationActionsTicksreadSensorUp_finishActionsamplerreadSensorUp_startActionglobalclk_ticks [
+		Causality ]
+		( ClockA -> "Model::mainBlock::readSensorUp_finishAction",
+		ClockB -> samplerreadSensorUp_startActionglobalclk_ticks )
+		Relation MatchingandCoordinationActionsTicksstopMotorUp_finishActionsamplerstopMotorUp_startActionglobalclk_ticks [
+		Causality ]
+		( ClockA -> "Model::mainBlock::stopMotorUp_finishAction",
+		ClockB -> samplerstopMotorUp_startActionglobalclk_ticks )
+		Relation MatchingandCoordinationActionsTicksopened_finishActionsampleropened_startActionglobalclk_ticks [ Causality ]
+		( ClockA -> "Model::mainBlock::opened_finishAction",
+		ClockB -> sampleropened_startActionglobalclk_ticks )
+	}
+}

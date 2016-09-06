@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.modelexecution.fuml.nfr.feature_1.0.0.201307310947.jar" id="org.modelexecution.fuml.nfr.feature" version="1.0.0.201307310947">
+      <category name="org.modelexecution"/>
+   </feature>
+   <feature url="features/org.modelexecution.fumldebug.debugger.feature_1.0.0.201307310947.jar" id="org.modelexecution.fumldebug.debugger.feature" version="1.0.0.201307310947">
+      <category name="org.modelexecution"/>
+   </feature>
+   <feature url="features/org.modelexecution.fumldebug.feature_1.0.0.201307310947.jar" id="org.modelexecution.fumldebug.feature" version="1.0.0.201307310947">
+      <category name="org.modelexecution"/>
+   </feature>
+   <feature url="features/org.modelexecution.xmof.feature_1.0.0.201307310947.jar" id="org.modelexecution.xmof.feature" version="1.0.0.201307310947">
+      <category name="org.modelexecution"/>
+   </feature>
+   <feature url="features/org.modelexecution.xmof.diff.feature_1.0.0.qualifier.jar" id="org.modelexecution.xmof.diff.feature" version="1.0.0.qualifier">
+      <category name="org.modelexecution"/>
+   </feature>
+   <feature url="features/org.modelexecution.xmof.feature.core_1.0.0.201609061702.jar" id="org.modelexecution.xmof.feature.core" version="1.0.0.201609061702">
+      <category name="org.modelexecution"/>
+   </feature>
+   <category-def name="org.modelexecution" label="Moliz"/>
+</site>

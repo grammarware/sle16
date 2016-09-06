@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.gemoc.bflow.grammar/emf-gen" editDirectory="/org.gemoc.bflow.grammar.edit/src"
+    editorDirectory="/org.gemoc.bflow.grammar.editor/src" modelPluginID="org.gemoc.bflow.grammar"
+    forceOverwrite="true" modelName="BFlow" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    editPluginID="org.gemoc.bflow.grammar.edit" editorPluginID="org.gemoc.bflow.grammar.editor"
+    runtimeVersion="2.10" usedGenPackages="../../org.eclipse.ocl.examples.xtext.base/model/BaseCS.genmodel#//basecs ../../org.gemoc.bcool.model/model/bcool.genmodel#//bcool ../../org.eclipse.ocl.examples.xtext.completeocl/model/CompleteOCLCS.genmodel#//completeoclcs ../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eclipse.ocl.examples.xtext.essentialocl/model/EssentialOCLCS.genmodel#//essentialoclcs ../../org.gemoc.gexpressions/model/gexpressions.genmodel#//gexpressions ../../org.eclipse.ocl.examples.pivot/model/Pivot.merged.genmodel#//pivot">
+  <foreignModel>BFlow.ecore</foreignModel>
+  <genPackages prefix="BFlow" basePackage="org.gemoc.bflow" disposableProviderFactory="true"
+      fileExtensions="bflow" ecorePackage="BFlow.ecore#/">
+    <genClasses ecoreClass="BFlow.ecore#//Model">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BFlow.ecore#//Model/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BFlow.ecore#//Model/importURI"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BFlow.ecore#//Model/outputtimemodel"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BFlow.ecore#//Model/models"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BFlow.ecore#//Model/bcoolflow"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BFlow.ecore#//Model/launchers"/>
+    </genClasses>
+    <genClasses ecoreClass="BFlow.ecore#//modelinput">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BFlow.ecore#//modelinput/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BFlow.ecore#//modelinput/modeluri"/>
+    </genClasses>
+    <genClasses ecoreClass="BFlow.ecore#//Flows">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BFlow.ecore#//Flows/oper"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference BFlow.ecore#//Flows/params"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference BFlow.ecore#//Flows/operator"/>
+    </genClasses>
+    <genClasses ecoreClass="BFlow.ecore#//Launcher">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BFlow.ecore#//Launcher/LauncherURI"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

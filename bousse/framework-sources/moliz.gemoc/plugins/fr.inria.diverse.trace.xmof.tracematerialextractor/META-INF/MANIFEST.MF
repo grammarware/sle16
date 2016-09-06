@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Xmof2mmext
+Bundle-SymbolicName: fr.inria.diverse.trace.xmof.tracematerialextractor;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.xtend.lib,
+ org.eclipse.xtend.lib.macro,
+ com.google.guava,
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.emf.ecore,
+ fr.inria.diverse.ecorext,
+ org.modelexecution.xmof,
+ fr.inria.diverse.trace.commons
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: fr.inria.diverse.tracemm.xmof2tracematerial

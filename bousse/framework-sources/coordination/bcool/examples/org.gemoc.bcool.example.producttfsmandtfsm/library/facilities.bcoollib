@@ -1,0 +1,13 @@
+BCoolLibrary facilities{
+
+
+relationDeclarations { 
+	RelationDeclaration RendezVous { formalParameters {"a","b"} } 
+
+}
+
+expressionDeclarations {
+	ExpressionDeclaration AfterN {formalParameters {"a","b"}}
+}
+
+}

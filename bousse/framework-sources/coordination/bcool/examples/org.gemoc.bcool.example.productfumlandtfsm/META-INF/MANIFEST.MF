@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Productfumlandtfsm
+Bundle-SymbolicName: org.gemoc.bcool.example.productfumlandtfsm
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.xtext.xbase;bundle-version="2.6.2"

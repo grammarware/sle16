@@ -1,0 +1,46 @@
+
+Library extraExpressions{ 
+	imports{ 
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib" as kernel;
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib" as CCSLLib;
+	}
+	
+ 	IntegerType four 
+	IntegerType three
+	IntegerType five
+	
+	RelationLibrary bcoolrelations{
+		RelationDefinition RendezVousDef[RendezVous]{ 
+			Relation RendezVousrelat[Coincides]( Clock1->ClockA, Clock2->ClockB)
+		}
+		
+		
+		RelationDefinition CausalityDef[Causality]{ 
+			Relation Causalityrelat[Causes]( LeftClock->ClockA, RightClock->ClockB)
+		}
+		
+		RelationDeclaration RendezVous(ClockA:clock, ClockB:clock)
+		RelationDeclaration Causality(ClockA:clock, ClockB:clock)
+
+	}
+	
+	ExpressionLibrary bcoolfilters{
+		ExpressionDefinition AfterNDef [AfterN]{
+			root=filterN_result 
+			Expression filterN_result = Periodic
+						( PeriodicBaseClock->WaitingClock, PeriodicPeriod -> WaitingValue, PeriodicOffset -> four)	
+  		}
+		ExpressionDeclaration AfterN(WaitingClock: clock,  WaitingValue: int):clock
+		
+		
+		ExpressionDefinition SampleDef [SampleBy]{
+			root=Sample_result 
+			Expression Sample_result = Union
+						( Clock1 -> Sampler, Clock2 -> Sampled)	
+  		}
+		ExpressionDeclaration SampleBy(Sampler: clock,  Sampled: clock):clock
+		
+		
+	}	
+	
+}

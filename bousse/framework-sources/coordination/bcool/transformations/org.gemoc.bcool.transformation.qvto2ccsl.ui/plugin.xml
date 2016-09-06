@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+			adaptable="true"
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*"
+			id="org.gemoc.bcool.transformation.qvto2ccsl.ui.popupMenus.contribution.IFile">
+         <menu
+               icon="icons/IconeGemocLanguage-16.png"
+               id="org.gemoc.coordination.menu"
+               label="GEMOC Coordination"
+               path="xdsmlGroup">
+               <groupMarker name="additions"/> 
+         </menu>
+         <action
+               class="org.gemoc.bcool.transformation.qvto2ccsl.ui.popup.actions.Qvto2CCSLTranslator"
+               enablesFor="multiple"
+               icon="icons/plus-16.png"
+               id="org.gemoc.bcool.transformation.qvto2ccsl.ui.newAction"
+               label="create CCSL coordination model"
+               menubarPath="org.gemoc.coordination.menu/additions">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>
+	

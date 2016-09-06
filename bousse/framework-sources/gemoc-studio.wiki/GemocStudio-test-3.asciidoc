@@ -1,0 +1,130 @@
+# TEST 3 TFSM sequential
+
+## Test 3.1 : Language workbench
+Main goal: Make sure that the language workbench correctly defines and compiles all required element for TFSM in Sequential 
+[cols="a,a,1*", options="header"]
+|===
+|Actions to execute
+|Verification
+|Result for Version: 2.1.0-SNAPSHOT
+Build id: 2016-03-11 19:04
+
+|
+- File > new > Examples > TFSM Language example (sequential)
+| all added projects should be error free (may require a "clean all")
+|:white_check_mark:
+
+|
+- Open the Main.melange file
+- Ctrl+Click on 'syntax' URI hyperlink
+|must open an editor on the ecore file of the domain, 
+|:white_check_mark:
+
+|
+- Ctrl+Click on 'with' class hyperlink
+|must open an editor on the .k3 file containing aspects
+|:white_check_mark:
+
+|
+- click on Graphical editor / Sirius viewpoint design project link
+|-must open the .odesign file
+|:question: Deprecated
+
+|
+- click on Graphical editor / Sirius animator project link
+|-must open the .odesign file
+|:question: Deprecated
+
+|
+- Right click on Main.melange > GEMOC Language > Create Multidimensional Trace Addon project for language
+|-must generate a trace addon project for TFSM
+| :white_check_mark:
+
+|
+|
+|===
+
+
+
+## Test 3.2: Modeling Workbench
+Main goal: Make sure that the TFSM sample run correctly using the Sequential engine
+[cols="a,a,1*", options="header"]
+|===
+|Actions to execute
+|Verification
+|Result for Version: 2.1.0-SNAPSHOT
+Build id: 2016-03-11 19:04
+
+|
+- File > new > Examples > Gemoc model for TFSM Language (Sequential)
+| all added projects should be error free (may require a "clean all")
+|:question:
+Can't resolve Require-Bundle: org.gemoc.sample.tfsm.plaink3.xdsml;bundle-version="1.0.0" in MANIFEST.MF
+
+|
+- right click on the single_traffic_light.tfsm file, Debug as , Debug as Gemoc Sequential eXecutable model
+| should launch the shared launchconfiguration or open the launchconf dialog
+|:white_check_mark:
+
+|
+- start execution using the break at start option in the launchconfiguration
+- go forward using step by step, step into, step over
+| check the stack, and element hightlighted in the sirius editor
+| :white_check_mark:
+
+|
+- open sirius editor (using model explorer view )
+- test toggle breakpoints
+| - must show the breakpoint in the sirius editor, in the breakpoint view
+- execution must pause on the breakpoint
+| :white_check_mark:
+
+|
+- test multidimensional timeline (backward, forward)
+| 
+| :white_check_mark:
+
+|
+|
+|===
+
+## Test 3.3: Modeling Workbench
+Main goals: +
+- Check Launch configuration wizard work correctly +
+- Make sure that the TFSM sample run correctly using the Sequential engine
+[cols="a,a,1*", options="header"]
+|===
+|Actions to execute
+|Verification
+|Result for Version: 2.1.0-SNAPSHOT
+Build id: 2016-03-11 19:04
+
+|
+- File > new > Examples > Gemoc model for TFSM Language (Sequential)
+| 
+all added projects should be error free (may require a "clean all")
+|:question:
+Can't resolve Require-Bundle: org.gemoc.sample.tfsm.plaink3.xdsml;bundle-version="1.0.0" in MANIFEST.MF
+
+|
+- Right click on the single_traffic_light.tfsm file, Debug as , Debug Configurations...
+- New GEMOC Sequential eXecutable model
+| 
+should complains about unfilled fields
+|:white_check_mark:
+
+|
+- Model to execute : single_traffic_light.tfsm
+- Melange language :   org.gemoc.sample.tfsm.xdsml.Tfsm
+- Animator : single_traffic_light.aird
+- Main method : TimedSystemAspect.main
+- Main element : /
+| 
+- Check main model element name
+- Proposed Melange Language
+- Proposed Main method & main element
+| :white_check_mark:
+
+|
+|
+|===

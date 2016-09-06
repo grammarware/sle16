@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="ASCII"?>
+<feedback:ActionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:feedback="http://timesquare.inria.fr/feedback">
+  <events name="MSE_target1_dataRead">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.0"/>
+  </events>
+  <events name="MSE_target2_dataRead">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.1"/>
+  </events>
+  <events name="MSE_ActivityFinalNode1_startIt">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.2"/>
+  </events>
+  <events name="MSE_MergeUp_startIt">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.3"/>
+  </events>
+  <events name="MSE_IsUpDecision_startIt">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.4"/>
+  </events>
+  <events name="MSE_IsDownDecision_startIt">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.5"/>
+  </events>
+  <events name="MSE_ForkNode1_startIt">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.6"/>
+  </events>
+  <events name="MSE_InitialNode1_startIt">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.7"/>
+  </events>
+  <events name="MSE_MergeDown_startIt">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.8"/>
+  </events>
+  <events name="MSE_JoinNode1_startIt">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.9"/>
+  </events>
+  <events name="MSE_ActivityFinalNode1_finishIt">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.10"/>
+  </events>
+  <events name="MSE_MergeUp_finishIt">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.11"/>
+  </events>
+  <events name="MSE_IsUpDecision_finishIt">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.12"/>
+  </events>
+  <events name="MSE_IsDownDecision_finishIt">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.13"/>
+  </events>
+  <events name="MSE_ForkNode1_finishIt">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.14"/>
+  </events>
+  <events name="MSE_InitialNode1_finishIt">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.15"/>
+  </events>
+  <events name="MSE_MergeDown_finishIt">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.16"/>
+  </events>
+  <events name="MSE_JoinNode1_finishIt">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.17"/>
+  </events>
+  <events name="MSE_ActivityFinalNode1_temporalEvent">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.18"/>
+  </events>
+  <events name="MSE_MergeUp_temporalEvent">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.19"/>
+  </events>
+  <events name="MSE_IsUpDecision_temporalEvent">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.20"/>
+  </events>
+  <events name="MSE_IsDownDecision_temporalEvent">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.21"/>
+  </events>
+  <events name="MSE_ForkNode1_temporalEvent">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.22"/>
+  </events>
+  <events name="MSE_InitialNode1_temporalEvent">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.23"/>
+  </events>
+  <events name="MSE_MergeDown_temporalEvent">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.24"/>
+  </events>
+  <events name="MSE_JoinNode1_temporalEvent">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.25"/>
+  </events>
+  <events name="MSE_Activity1_startActivity">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.26"/>
+  </events>
+  <events name="MSE_Activity1_finishActivity">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.27"/>
+  </events>
+  <events name="MSE_stopMotorUp_startAction">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.30"/>
+  </events>
+  <events name="MSE_doClose_startAction">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.28"/>
+  </events>
+  <events name="MSE_readSensorUp_startAction">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.29"/>
+  </events>
+  <events name="MSE_startBarrierUp_startAction">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.31"/>
+  </events>
+  <events name="MSE_startBarrierDown_startAction">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.32"/>
+  </events>
+  <events name="MSE_stopMotorDown_startAction">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.33"/>
+  </events>
+  <events name="MSE_closed_startAction">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.34"/>
+  </events>
+  <events name="MSE_opened_startAction">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.37"/>
+  </events>
+  <events name="MSE_doOpen_startAction">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.36"/>
+  </events>
+  <events name="MSE_readSensorDown_startAction">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.35"/>
+  </events>
+  <events name="MSE_stopMotorUp_finishAction">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.40"/>
+  </events>
+  <events name="MSE_doClose_finishAction">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.38"/>
+  </events>
+  <events name="MSE_readSensorUp_finishAction">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.39"/>
+  </events>
+  <events name="MSE_startBarrierUp_finishAction">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.41"/>
+  </events>
+  <events name="MSE_startBarrierDown_finishAction">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.42"/>
+  </events>
+  <events name="MSE_stopMotorDown_finishAction">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.43"/>
+  </events>
+  <events name="MSE_closed_finishAction">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.44"/>
+  </events>
+  <events name="MSE_opened_finishAction">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.47"/>
+  </events>
+  <events name="MSE_doOpen_finishAction">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.46"/>
+  </events>
+  <events name="MSE_readSensorDown_finishAction">
+    <solverEvent href="BMC_MoCC.extendedCCSL#//@subBlock.0/@elements.45"/>
+  </events>
+  <importStatements importURI="platform:/17"/>
+</feedback:ActionModel>

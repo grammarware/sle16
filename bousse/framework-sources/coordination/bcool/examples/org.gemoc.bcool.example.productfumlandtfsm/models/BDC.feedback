@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ASCII"?>
+<feedback:ActionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:feedback="http://timesquare.inria.fr/feedback">
+  <events name="MSE_localclk_ticks">
+    <caller href="BDC.tfsm#//@tfsms.0/@localClock"/>
+    <action href="http://www.gemoc.org/sample/tfsm#//FSMClock/ticks"/>
+    <solverEvent href="BDC_MoCC.extendedCCSL#//@subBlock.0/@elements.0"/>
+  </events>
+  <events name="MSE_globalclk_ticks">
+    <caller href="BDC.tfsm#//@globalClocks.0"/>
+    <action href="http://www.gemoc.org/sample/tfsm#//FSMClock/ticks"/>
+    <solverEvent href="BDC_MoCC.extendedCCSL#//@subBlock.0/@elements.1"/>
+  </events>
+  <events name="MSE_closetotopen_fire">
+    <caller href="BDC.tfsm#//@tfsms.0/@ownedTransitions.2"/>
+    <action href="http://www.gemoc.org/sample/tfsm#//Transition/fire"/>
+    <solverEvent href="BDC_MoCC.extendedCCSL#//@subBlock.0/@elements.2"/>
+  </events>
+  <events name="MSE_opentoclose_fire">
+    <caller href="BDC.tfsm#//@tfsms.0/@ownedTransitions.1"/>
+    <action href="http://www.gemoc.org/sample/tfsm#//Transition/fire"/>
+    <solverEvent href="BDC_MoCC.extendedCCSL#//@subBlock.0/@elements.3"/>
+  </events>
+  <events name="MSE_inittoopen_fire">
+    <caller href="BDC.tfsm#//@tfsms.0/@ownedTransitions.0"/>
+    <action href="http://www.gemoc.org/sample/tfsm#//Transition/fire"/>
+    <solverEvent href="BDC_MoCC.extendedCCSL#//@subBlock.0/@elements.4"/>
+  </events>
+  <events name="MSE_closed_occurs">
+    <solverEvent href="BDC_MoCC.extendedCCSL#//@subBlock.0/@elements.5"/>
+  </events>
+  <events name="MSE_doClose_occurs">
+    <solverEvent href="BDC_MoCC.extendedCCSL#//@subBlock.0/@elements.6"/>
+  </events>
+  <events name="MSE_Open_entering">
+    <solverEvent href="BDC_MoCC.extendedCCSL#//@subBlock.0/@elements.7"/>
+  </events>
+  <events name="MSE_init_entering">
+    <solverEvent href="BDC_MoCC.extendedCCSL#//@subBlock.0/@elements.8"/>
+  </events>
+  <events name="MSE_Close_entering">
+    <solverEvent href="BDC_MoCC.extendedCCSL#//@subBlock.0/@elements.9"/>
+  </events>
+  <events name="MSE_Open_leaving">
+    <solverEvent href="BDC_MoCC.extendedCCSL#//@subBlock.0/@elements.10"/>
+  </events>
+  <events name="MSE_init_leaving">
+    <solverEvent href="BDC_MoCC.extendedCCSL#//@subBlock.0/@elements.11"/>
+  </events>
+  <events name="MSE_Close_leaving">
+    <solverEvent href="BDC_MoCC.extendedCCSL#//@subBlock.0/@elements.12"/>
+  </events>
+  <events name="MSE_BDC_start">
+    <solverEvent href="BDC_MoCC.extendedCCSL#//@subBlock.0/@elements.13"/>
+  </events>
+  <events name="MSE_BDC_stall">
+    <solverEvent href="BDC_MoCC.extendedCCSL#//@subBlock.0/@elements.14"/>
+  </events>
+  <importStatements importURI="platform:/5"/>
+</feedback:ActionModel>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.gemoc.heterogeneous_coordination_engine.feature_0.1.0.qualifier.jar" id="org.gemoc.heterogeneous_coordination_engine.feature" version="0.1.0.qualifier">
+      <category name="gemoc_coordination"/>
+   </feature>
+   <feature url="features/org.gemoc.heterogeneous_coordination_engine.feature.source_0.1.0.qualifier.jar" id="org.gemoc.heterogeneous_coordination_engine.feature.source" version="0.1.0.qualifier">
+      <category name="gemoc_coordination"/>
+   </feature>
+   <category-def name="gemoc_coordination" label="Gemoc Heterogeneous Coordination Engine"/>
+</site>

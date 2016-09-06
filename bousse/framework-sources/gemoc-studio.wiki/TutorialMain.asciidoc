@@ -1,0 +1,73 @@
+////
+ifeval::[{docname}=='TutorialMain']
+:toc:
+:numbered:
+:tabsize=4:
+endif::[]
+////
+
+
+= GEMOC xDSML tutorial
+
+
+
+The purpose of these tutorials is to explain on simple examples with
+different features, how to define an eXecutable Domain Specific Modeling
+Language (xDSML). Based on an existing DSML definition (abstract and concrete
+syntaxes), we define a concurrent semantics.
+
+
+
+
+- link:../../tutorial_markedgraph/html_single/GuideTutorialMarkedGraph.html[Marked Graph tutorial] (or link:../../tutorial_markedgraph/html/GuideTutorialMarkedGraph.html[chunked version]): quick example to
+  demonstrate how to define an
+  execution semantics and graphical animation for a highly concurrent language,
+  Marked Graph.
+
+- link:../../tutorial_sigpml/html_single/Tutorial_SigPML.html[SigPML tutorial] (or link:../../tutorial_sigpml/html/Tutorial_SigPML.html[chunked version])
+
+
+////
+
+- link:../../tutorial_automata/html_single/Tutorial_Automata.html[Automata tutorial] (or link:../../tutorial_automata/html/Tutorial_Automata.html[chunked version]): The used DSML is automata
+  used to recognize words built on an alphabet.   Its focus is on a possible
+  methodology to make a DSML executable.
+
+////
+
+Starting from an already defined languages with their own metamodel and
+graphical concrete syntaxes, the previous tutorials illustrate the the GEMOC
+approach to make a language executable and provide graphical animation for it.
+
+// Added from TutorialMain by XC
+
+The Gemoc approach aims to add execution semantics on an existing DSML
+definition.  It consists in extending the abstract syntax (metamodel) of a DSML
+with several concerns:
+
+* the **DSA** --Domain Specific Actions-- defines the data dedicated to the
+  runtime updates (Execution Data -- ED) and the functions to handle these
+  datas (Execution Functions -- EF). DSA and DSML abstract syntax define the
+  extended asbstract syntax. 
+
+* the **MoCC** (Model of Concurrency and Communication) which includes the
+  mapping definition on the extended abstract syntax and the schedule
+  constraints of the semantics definition. 
+
+* the **DSE** (Domain Specific Event): a two-way protocole between the DSA and
+  the MoCC.
+
+* the **animator** which provides views to control and monitor the execution of
+  the models conforming to the xDSML.
+
+The next figure gives an overview of the architecture on an xDSML according to GEMOC.
+
+// XXX: Concrete syntaxes are missing from the next figure.
+
+// TODO: à garder mais à aligner sur celle de Benoit
+//[[Focus-Tutorial]]
+
+[[figure-gemoc-bigPicture]]
+.Gemoc overview and tutorial focus.
+image::images/gemoc_bigPicture.jpg[Gemoc overview, 800]
+(((GEMOC Big Picture)))

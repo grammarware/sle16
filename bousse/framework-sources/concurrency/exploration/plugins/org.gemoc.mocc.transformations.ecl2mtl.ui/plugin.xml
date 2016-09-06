@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<!--
+ Copyright (c) 2012-2016 GEMOC consortium.
+ 
+ http://www.gemoc.org
+ 
+ Contributors:
+   Stephen Creff - ENSTA Bretagne [stephen.creff@ensta-bretagne.fr]
+   Papa Issa Diallo - ENSTA Bretagne [papa_issa.diallo@ensta-bretagne.fr]
+   
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+   
+ $Id$
+-->
+<plugin>
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.ecl"
+            id="org.gemoc.mocc.transformations.ecl2mtl.ui.popupMenus.contribution.IFile">
+         <menu
+               icon="icons/clocksystem_logo_16x16.png"
+               id="org.gemoc.mocc.exhaustiveExploration"
+               label="%menu.label"
+               path="xdsmlGroup">
+               <groupMarker name="additions"/> 
+         </menu>
+         <action
+               class="org.gemoc.mocc.transformations.ecl2mtl.ui.popupMenus.AcceleoGenerateEcl2MTLAction"
+               enablesFor="1"
+               id="org.gemoc.mocc.transformations.ecl2mtl.ui.popupMenus.acceleoGenerateEcl2MTLAction"
+               icon="icons/cs_t1_16x16.png"
+               label="%t1.label"
+               menubarPath="org.gemoc.mocc.exhaustiveExploration/additions"/>
+      </objectContribution>
+   </extension>
+   
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.ecl"
+            id="org.gemoc.mocc.transformations.ecl2mtl.ui.popupMenus.contribution.IFile">
+         <menu
+               icon="icons/clocksystem_logo_16x16.png"
+               id="org.gemoc.mocc.exhaustiveExploration"
+               label="%menu.label"
+               path="xdsmlGroup">
+               <groupMarker name="additions"/> 
+         </menu>
+         <action
+               class="org.gemoc.mocc.transformations.ecl2mtl.ui.popupMenus.AcceleoGenerateEcl2ClocksystemAction"
+               enablesFor="1"
+               id="org.gemoc.mocc.transformations.ecl2mtl.ui.popupMenus.acceleoGenerateEcl2ClocksystemAction"
+               icon="icons/cs_t1_16x16.png"
+               label="%t3.label"
+               menubarPath="org.gemoc.mocc.exhaustiveExploration/additions"/>
+      </objectContribution>
+   </extension>
+   
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.*"
+            id="org.gemoc.mocc.transformations.instance2clocksystem.handler.compileAndGenerateClockSystem.IFile">
+         <menu
+               icon="icons/clocksystem_logo_16x16.png"
+               id="org.gemoc.mocc.exhaustiveExploration"
+               label="%menu.label"
+               path="xdsmlGroup">
+               <groupMarker name="additions"/> 
+         </menu>
+         <action
+               class="org.gemoc.mocc.transformations.instance2clocksystem.handler.CompileAndGenerationClockSystemAction"
+               enablesFor="1"
+               id="org.gemoc.mocc.transformations.instance2clocksystem.handler.compileAndGenerateClockSystem"
+               icon="icons/cs_t2_16x16.png"
+               label="%t2.label"
+               menubarPath="org.gemoc.mocc.exhaustiveExploration/additions"/>
+      </objectContribution>
+   </extension>
+</plugin>

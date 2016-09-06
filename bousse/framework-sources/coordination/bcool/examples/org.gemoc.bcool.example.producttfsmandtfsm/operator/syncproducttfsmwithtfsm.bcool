@@ -1,0 +1,14 @@
+SyncProductTfsmwithTfsm
+
+ImportLib "platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/library/facilities.bcoollib"
+ImportLib "platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/library/bcoollib.ccslLib"
+
+ImportInterface "platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/interfaces/TFSM.ecl" as i_tfsm1// left
+ImportInterface "platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/interfaces/TFSM.ecl" as i_tfsm2 // left
+
+Spec test 
+
+Operator  MatchingandCoordinationSharedEvents (dse1 : i_tfsm1::occurs , dse2 : i_tfsm2::occurs)
+MatchingCorrespondance : when (dse1.name = dse2.name);
+		CoordinationRule: RendezVous(dse1, dse2)
+end operator;

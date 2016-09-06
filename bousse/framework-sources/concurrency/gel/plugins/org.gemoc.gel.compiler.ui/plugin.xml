@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IFile"
+            id="org.gemoc.gel.compiler.ui.contribution1">
+         <menu
+               label="GEL"
+               path="org.gemoc.modeling.advanced.menu/additions"
+               id="org.gemoc.gel.compiler.ui.menu1">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               label="Unfold DSEs to create MSEs"
+               class="org.gemoc.gel.compiler.ui.popup.actions.GenerateModelSpecificEventsSpecification"
+               menubarPath="org.gemoc.modeling.advanced.menu/org.gemoc.gel.compiler.ui.menu1/group1"
+               enablesFor="3"
+               id="org.gemoc.gel.compiler.ui.newAction">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>

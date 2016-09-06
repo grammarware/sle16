@@ -1,0 +1,98 @@
+# TEST 4 TFSM Concurrent
+
+## Test 4.1 : Language workbench
+Main goal: Make sure that the language workbench correctly defines and compiles all required element for TFSM in Concurrent
+
+[cols="a,a,1*", options="header"]
+|===
+|Actions to execute
+|Verification
+|Result for Version: 2.1.0-SNAPSHOT Build id: 2016-03-11 19:04
+
+|
+- File > new > Examples > TFSM Language example (Concurrent)
+| all added projects should be error free (may require a "clean all")
+|:white_check_mark:
+
+|
+- Open the Main.melange file
+- Ctrl+Click on 'syntax' URI hyperlink
+| must open an editor on the ecore/resp genmodel file of the domain, 
+| :white_check_mark:
+
+|
+- Ctrl+Click on 'with' class hyperlink
+| must open an editor on the .k3 file containing aspects
+| :white_check_mark:
+
+|
+- click on Graphical editor / Sirius viewpoint design project link
+|-must open the .odesign file
+|:question: Deprecated
+
+|
+- click on Graphical editor / Sirius animator project link
+|-must open the .odesign file
+|:question: Deprecated
+
+|
+- Ctrl+Click on 'ECL' URI hyperlink
+|-must open the .ecl file
+|:white_check_mark:
+
+|
+- ECL file generates a correct .qvto file
+|
+| :white_check_mark:
+
+|
+|
+|===
+
+
+
+## Test 4.2: Modeling Workbench
+Main goal: Make sure that the TFSM sample run correctly using the Concurrent engine
+[cols="a,a,1*", options="header"]
+|===
+|Actions to execute
+|Verification
+|Result for Version: 2.1.0-SNAPSHOT Build id: 2016-03-11 19:04
+
+|
+- File > new > Examples > Gemoc model for TFSM Language (Concurrent)
+| all added projects should be error free (may require a "clean all")
+|:white_check_mark:
+
+|
+- right click on the simple_example.tfsm file, Debug as , Debug as Gemoc Concurrent eXecutable model
+| should launch the shared launchconfiguration or open the launchconf dialog
+|:white_check_mark:
+
+|
+- start execution using the break at start option in the launchconfiguration
+- go forward using step by step, step into, step over
+| check the stack, and element hightlighted in the sirius editor
+| :white_check_mark:
+
+|
+- open sirius editor (using model explorer view )
+- test toggle breakpoints
+| - must show the breakpoint in the sirius editor, in the breakpoint view
+- execution must pause on the breakpoint
+| :white_check_mark:
+
+|
+- test simple Event scheduling timeline trace
+| should display the logical steps and some details about them
+| :question:
+
+
+|
+- test advanced Event scheduling timeline trace (backward, forward, branch 
+| should jump, update sirius view, update debugstack, ...
+| :question:
+
+|
+|
+|===

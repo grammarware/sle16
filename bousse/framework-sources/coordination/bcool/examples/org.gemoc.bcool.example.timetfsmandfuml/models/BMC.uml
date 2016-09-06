@@ -1,0 +1,2981 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_twUaICaeEeOS_s08y94Udg" name="Model">
+  <packageImport xmi:id="_twUaISaeEeOS_s08y94Udg">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_IFuOIOl2EeKsIfZXhui_7g" name="Activity1" isReentrant="false" node="_J-V8oOl2EeKsIfZXhui_7g _K43nsOrVEeKW-tiMOlpwSA _IyngUOrqEeKeMtIUuWEFqQ _ahNoEOyiEeKUJNNbSM5AWw _yGnMEOyiEeKUJNNbSM5AWw _z3SfgOyiEeKUJNNbSM5AWw _6vAlQOyiEeKUJNNbSM5AWw _JrrY4OyjEeKUJNNbSM5AWw _VfMX4O0fEeK0ZPAdheaO0Q _ZfeWcO0fEeK0ZPAdheaO0Q _clByIO0fEeK0ZPAdheaO0Q _OIvSQO0gEeK0ZPAdheaO0Q _TGrL4O0gEeK0ZPAdheaO0Q _U_3iIO0gEeK0ZPAdheaO0Q _eVAFgO0gEeK0ZPAdheaO0Q _rLIqcO0gEeK0ZPAdheaO0Q _Kf0V4O-0EeKLx60JPwBiQA _LOV0ICesEeOJBZOPH_DMVw">
+    <ownedComment xmi:id="_AdxiUCagEeOS_s08y94Udg">
+      <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000</body>
+    </ownedComment>
+    <ownedComment xmi:id="_AeEdQCagEeOS_s08y94Udg">
+      <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 1000</body>
+    </ownedComment>
+    <ownedComment xmi:id="_eWSqMCagEeOS_s08y94Udg">
+      <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 00000000000000000</body>
+    </ownedComment>
+    <ownedComment xmi:id="_eWmMMCagEeOS_s08y94Udg">
+      <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 10000000000000000</body>
+    </ownedComment>
+    <ownedComment xmi:id="_4l7KYCahEeOS_s08y94Udg">
+      <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000001000000000000000000000000</body>
+    </ownedComment>
+    <ownedComment xmi:id="_4mDGMCahEeOS_s08y94Udg">
+      <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 100000000000000000000000000000000000000000000</body>
+    </ownedComment>
+    <ownedComment xmi:id="_ma7usCajEeOS_s08y94Udg">
+      <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 00000000000000000</body>
+    </ownedComment>
+    <ownedComment xmi:id="_mbJKECajEeOS_s08y94Udg">
+      <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 01000000000000000</body>
+    </ownedComment>
+    <ownedComment xmi:id="_GroKsCarEeOgVaRbL5OSfA">
+      <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000000000000000000000000000000100000000000000000000000</body>
+    </ownedComment>
+    <ownedComment xmi:id="_GrxUoCarEeOgVaRbL5OSfA">
+      <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0001000000000000000000000000000000000000000000000000000000000000</body>
+    </ownedComment>
+    <ownedComment xmi:id="_-3mGUCatEeOgVaRbL5OSfA">
+      <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000100000000000</body>
+    </ownedComment>
+    <ownedComment xmi:id="_-3nUcCatEeOgVaRbL5OSfA">
+      <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 100000000000000000000000000000000000000000000000000000000</body>
+    </ownedComment>
+    <ownedComment xmi:id="_G0wUsCavEeOgVaRbL5OSfA">
+      <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000</body>
+    </ownedComment>
+    <ownedComment xmi:id="_G0z_ECavEeOgVaRbL5OSfA">
+      <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 1000000000000000000000000000000000000000</body>
+    </ownedComment>
+    <ownedComment xmi:id="_4Sl2UCavEeOgVaRbL5OSfA">
+      <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000</body>
+    </ownedComment>
+    <ownedComment xmi:id="_4SnEcCavEeOgVaRbL5OSfA">
+      <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000</body>
+    </ownedComment>
+    <ownedComment xmi:id="_GcaQsCawEeOgVaRbL5OSfA">
+      <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+    </ownedComment>
+    <ownedComment xmi:id="_Gcbe0CawEeOgVaRbL5OSfA">
+      <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+    </ownedComment>
+    <ownedComment xmi:id="_r8pQgCazEeOLIIm-NgzZvQ">
+      <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+    </ownedComment>
+    <ownedComment xmi:id="_r8yacCazEeOLIIm-NgzZvQ">
+      <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 1000000000000000000000000000000000000000000000</body>
+    </ownedComment>
+    <ownedComment xmi:id="_57FhUCazEeOLIIm-NgzZvQ">
+      <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000</body>
+    </ownedComment>
+    <ownedComment xmi:id="_57KZ0CazEeOLIIm-NgzZvQ">
+      <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+    </ownedComment>
+    <ownedComment xmi:id="__q3SICa0EeOLIIm-NgzZvQ">
+      <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000</body>
+    </ownedComment>
+    <ownedComment xmi:id="__q6VcCa0EeOLIIm-NgzZvQ">
+      <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000</body>
+    </ownedComment>
+    <ownedComment xmi:id="_YcvWsCa9EeO6V5Tt1gKMXg">
+      <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+    </ownedComment>
+    <ownedComment xmi:id="_YdEG0Ca9EeO6V5Tt1gKMXg">
+      <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+    </ownedComment>
+    <ownedComment xmi:id="_TAxrICerEeOJBZOPH_DMVw">
+      <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000</body>
+    </ownedComment>
+    <ownedComment xmi:id="_TAy5QCerEeOJBZOPH_DMVw">
+      <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+    </ownedComment>
+    <ownedComment xmi:id="_7oLiQDJZEeOzVpimy8zuaw">
+      <body>CCSL simulation results:
+   number of activation: 0
+   schedule: </body>
+    </ownedComment>
+    <ownedComment xmi:id="_7oVTQDJZEeOzVpimy8zuaw">
+      <body>CCSL simulation results:
+   number of activation: 0
+   schedule: </body>
+    </ownedComment>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_Nky_gOyjEeKUJNNbSM5AWw" name="ControlFlow37" target="_6vAlQOyiEeKUJNNbSM5AWw" source="_K43nsOrVEeKW-tiMOlpwSA">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_Nk0NoOyjEeKUJNNbSM5AWw" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_Nk0NoeyjEeKUJNNbSM5AWw"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_OmnB0OyjEeKUJNNbSM5AWw" name="ControlFlow38" target="_JrrY4OyjEeKUJNNbSM5AWw" source="_6vAlQOyiEeKUJNNbSM5AWw">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_Omno4OyjEeKUJNNbSM5AWw" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_Omno4eyjEeKUJNNbSM5AWw"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_SKyTMOyjEeKUJNNbSM5AWw" name="ControlFlow39" target="_ahNoEOyiEeKUJNNbSM5AWw" source="_JrrY4OyjEeKUJNNbSM5AWw">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_SKy6QOyjEeKUJNNbSM5AWw" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_SKzhUOyjEeKUJNNbSM5AWw"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_UumTwOyjEeKUJNNbSM5AWw" name="ControlFlow40" target="_yGnMEOyiEeKUJNNbSM5AWw" source="_ahNoEOyiEeKUJNNbSM5AWw">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_Uunh4OyjEeKUJNNbSM5AWw" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_Uunh4eyjEeKUJNNbSM5AWw"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_WHSlAOyjEeKUJNNbSM5AWw" name="ControlFlow41" target="_z3SfgOyiEeKUJNNbSM5AWw" source="_yGnMEOyiEeKUJNNbSM5AWw">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_WHTMEOyjEeKUJNNbSM5AWw" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_WHTMEeyjEeKUJNNbSM5AWw"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_XWuMkOyjEeKUJNNbSM5AWw" name="ControlFlow42" target="_JrrY4OyjEeKUJNNbSM5AWw" source="_yGnMEOyiEeKUJNNbSM5AWw">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_XWuzoOyjEeKUJNNbSM5AWw" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_XWuzoeyjEeKUJNNbSM5AWw"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_cojSkOyjEeKUJNNbSM5AWw" name="ControlFlow43" target="_IyngUOrqEeKeMtIUuWEFqQ" source="_z3SfgOyiEeKUJNNbSM5AWw">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_coj5oOyjEeKUJNNbSM5AWw" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_coj5oeyjEeKUJNNbSM5AWw"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_yCs_MO0gEeK0ZPAdheaO0Q" name="ControlFlow44" target="_LOV0ICesEeOJBZOPH_DMVw" source="_IyngUOrqEeKeMtIUuWEFqQ">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_yCtmQO0gEeK0ZPAdheaO0Q" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_yCtmQe0gEeK0ZPAdheaO0Q"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_ysuzoO0gEeK0ZPAdheaO0Q" name="ControlFlow45" target="_LOV0ICesEeOJBZOPH_DMVw" source="_eVAFgO0gEeK0ZPAdheaO0Q">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_ysvasO0gEeK0ZPAdheaO0Q" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_ysvase0gEeK0ZPAdheaO0Q"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_0jjLUO0gEeK0ZPAdheaO0Q" name="ControlFlow47" target="_rLIqcO0gEeK0ZPAdheaO0Q" source="_J-V8oOl2EeKsIfZXhui_7g">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_0jjyYO0gEeK0ZPAdheaO0Q" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_0jkZcO0gEeK0ZPAdheaO0Q"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_1E490O0gEeK0ZPAdheaO0Q" name="ControlFlow48" target="_K43nsOrVEeKW-tiMOlpwSA" source="_rLIqcO0gEeK0ZPAdheaO0Q">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_1E5k4O0gEeK0ZPAdheaO0Q" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_1E5k4e0gEeK0ZPAdheaO0Q"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_1yiuAO0gEeK0ZPAdheaO0Q" name="ControlFlow49" target="_VfMX4O0fEeK0ZPAdheaO0Q" source="_rLIqcO0gEeK0ZPAdheaO0Q">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_1yjVEO0gEeK0ZPAdheaO0Q" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_1yjVEe0gEeK0ZPAdheaO0Q"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_3u5tAO0gEeK0ZPAdheaO0Q" name="ControlFlow50" target="_ZfeWcO0fEeK0ZPAdheaO0Q" source="_VfMX4O0fEeK0ZPAdheaO0Q">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_3u6UEO0gEeK0ZPAdheaO0Q" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_3u6UEe0gEeK0ZPAdheaO0Q"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_4ZFScO0gEeK0ZPAdheaO0Q" name="ControlFlow51" target="_clByIO0fEeK0ZPAdheaO0Q" source="_ZfeWcO0fEeK0ZPAdheaO0Q">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_4ZF5gO0gEeK0ZPAdheaO0Q" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_4ZF5ge0gEeK0ZPAdheaO0Q"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_5AjiIO0gEeK0ZPAdheaO0Q" name="ControlFlow52" target="_OIvSQO0gEeK0ZPAdheaO0Q" source="_clByIO0fEeK0ZPAdheaO0Q">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_5AkJMO0gEeK0ZPAdheaO0Q" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_5AkJMe0gEeK0ZPAdheaO0Q"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_5xvHcO0gEeK0ZPAdheaO0Q" name="ControlFlow53" target="_TGrL4O0gEeK0ZPAdheaO0Q" source="_OIvSQO0gEeK0ZPAdheaO0Q">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_5xvugO0gEeK0ZPAdheaO0Q" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_5xvuge0gEeK0ZPAdheaO0Q"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_6kvRsO0gEeK0ZPAdheaO0Q" name="ControlFlow54" target="_U_3iIO0gEeK0ZPAdheaO0Q" source="_TGrL4O0gEeK0ZPAdheaO0Q">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_6kv4wO0gEeK0ZPAdheaO0Q" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_6kv4we0gEeK0ZPAdheaO0Q"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_7Z4J8O0gEeK0ZPAdheaO0Q" name="ControlFlow55" target="_clByIO0fEeK0ZPAdheaO0Q" source="_TGrL4O0gEeK0ZPAdheaO0Q">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_7Z4xAO0gEeK0ZPAdheaO0Q" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_7Z4xAe0gEeK0ZPAdheaO0Q"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_9QY_oO0gEeK0ZPAdheaO0Q" name="ControlFlow56" target="_eVAFgO0gEeK0ZPAdheaO0Q" source="_U_3iIO0gEeK0ZPAdheaO0Q">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_9QY_oe0gEeK0ZPAdheaO0Q" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_9QZmsO0gEeK0ZPAdheaO0Q"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_OC-TkO-0EeKLx60JPwBiQA" name="ControlFlow57" target="_Kf0V4O-0EeKLx60JPwBiQA" source="_LOV0ICesEeOJBZOPH_DMVw">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_OC-6oO-0EeKLx60JPwBiQA" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_OC-6oe-0EeKLx60JPwBiQA"/>
+    </edge>
+    <node xmi:type="uml:InitialNode" xmi:id="_J-V8oOl2EeKsIfZXhui_7g" name="InitialNode1" outgoing="_0jjLUO0gEeK0ZPAdheaO0Q">
+      <ownedComment xmi:id="_AfNFsCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 1000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_AfcWQCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 1000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_eYcmUCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 01000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_eYqowCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 01000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4mo8ECahEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 100000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4mvCsCahEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 100000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_mcSZkCajEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 01000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_mcem0CajEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 01000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_Gr4CUCarEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0001000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_Gr5QcCarEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0001000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_-3q-0CatEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 010000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_-3rl4CatEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 010000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_G09JACavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0100000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_G0-XICavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0100000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4SqHwSavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4SrV4CavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GcfJMCawEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GcfwQCawEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_r85IICazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 1000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_r869UCazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 1000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_57OEMSazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_57PSUCazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="__q9_0Sa0EeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="__q_N8Ca0EeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_YdY28Ca9EeO6V5Tt1gKMXg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_YdchUCa9EeO6V5Tt1gKMXg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_TA2joCerEeOJBZOPH_DMVw">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_TA3KsCerEeOJBZOPH_DMVw">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_7od2IDJZEeOzVpimy8zuaw">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: </body>
+      </ownedComment>
+      <ownedComment xmi:id="_7ofrUDJZEeOzVpimy8zuaw">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: </body>
+      </ownedComment>
+    </node>
+    <node xmi:type="uml:AcceptEventAction" xmi:id="_K43nsOrVEeKW-tiMOlpwSA" name="doClose" incoming="_1E490O0gEeK0ZPAdheaO0Q" outgoing="_Nky_gOyjEeKUJNNbSM5AWw">
+      <ownedComment xmi:id="_AiEzgCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_AiN9cCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_eb3twCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 00010000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_ecEiECagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 00100000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4oRTwCahEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 001000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4oYogCahEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 010000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_mrmA4CajEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 00000000000000100</body>
+      </ownedComment>
+      <ownedComment xmi:id="_mryOICajEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 00000000000010000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GsK9QCarEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000000100000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GsOAkCarEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000001000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_-32lACatEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000100000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_-33MECatEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000001000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_G1IIICavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000010000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_G1IvMCavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000100000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4S1G4CavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4S1t8CavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_Gco6MSawEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GcqIUCawEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_r9SJsCazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_r9T-4CazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_57ZqYCazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_57aRcCazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="__rHw0Ca0EeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="__rIX4Ca0EeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_YeHPsCa9EeO6V5Tt1gKMXg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_YeK6ECa9EeO6V5Tt1gKMXg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_TBD_ACerEeOJBZOPH_DMVw">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_TBFNICerEeOJBZOPH_DMVw">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_7ox_MDJZEeOzVpimy8zuaw">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: </body>
+      </ownedComment>
+      <ownedComment xmi:id="_7oz0YDJZEeOzVpimy8zuaw">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: </body>
+      </ownedComment>
+    </node>
+    <node xmi:type="uml:SendSignalAction" xmi:id="_IyngUOrqEeKeMtIUuWEFqQ" name="closed" incoming="_cojSkOyjEeKUJNNbSM5AWw" outgoing="_yCs_MO0gEeK0ZPAdheaO0Q" signal="_IybTEOrqEeKeMtIUuWEFqQ">
+      <ownedComment xmi:id="_AhRiQCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_AhchYCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_ea7SkCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 00000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_ebG4wCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 00000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4n0AwCahEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000001000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4n6HYCahEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000010000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_mqqz0CajEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 00000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_mq3BECajEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 00000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GsGEwCarEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000000000000000000000000000010000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GsHS4CarEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000000000000000000000000001000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_-30IwSatEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000010000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_-30v0CatEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000100000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_G1Fr4SavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_G1GS8CavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4SyqoSavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4SzRsCavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GcnFASawEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GcnsECawEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_r9NRMCazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_r9OfUCazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_57XOISazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_57X1MCazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="__rF7oCa0EeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="__rGisCa0EeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_Yd9esCa9EeO6V5Tt1gKMXg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_Yd_T4Ca9EeO6V5Tt1gKMXg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_TBA7sCerEeOJBZOPH_DMVw">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_TBBiwCerEeOJBZOPH_DMVw">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_7osfoDJZEeOzVpimy8zuaw">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: </body>
+      </ownedComment>
+      <ownedComment xmi:id="_7ouU0DJZEeOzVpimy8zuaw">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: </body>
+      </ownedComment>
+      <target xmi:id="_IyvcIOrqEeKeMtIUuWEFqQ" name="target1">
+        <upperBound xmi:type="uml:LiteralInteger" xmi:id="_IyvcIerqEeKeMtIUuWEFqQ" value="1"/>
+      </target>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_ahNoEOyiEeKUJNNbSM5AWw" name="readSensorDown" incoming="_SKyTMOyjEeKUJNNbSM5AWw" outgoing="_UumTwOyjEeKUJNNbSM5AWw">
+      <ownedComment xmi:id="_AioNICagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_AiwwACagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_ecqX8CagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 00000000100000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_ec3MQCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 00000001000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4o8pMCahEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000001000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4pIPYCahEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000100000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_msW14CajEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 00000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_msjDICajEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 00000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GsRD4CarEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 3
+   schedule: 0000000000000000000000010000100001000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GsSSACarEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 3
+   schedule: 0000000000000000000000100001000100000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_-35BQCatEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 3
+   schedule: 000000000000000000000100000000100001000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_-35oUCatEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 3
+   schedule: 000000000000000000001000000100000100000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_G1KkYCavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 3
+   schedule: 0000000000000000000000000100000000100001</body>
+      </ownedComment>
+      <ownedComment xmi:id="_G1KkYSavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 3
+   schedule: 0000000000000000000000001000000001000010</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4S3jICavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4S3jISavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_Gcr9gCawEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_Gcr9gSawEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_r9Y3YCazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_r9aFgCazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_57ctsCazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 5
+   schedule: 000000000000000000001000000000100000010010000001000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_57dUwCazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 5
+   schedule: 000000000000000000010000000001000001000100000010000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="__rKNECa0EeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="__rKNESa0EeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_YeTc8Ca9EeO6V5Tt1gKMXg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_YeV5MCa9EeO6V5Tt1gKMXg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_TBHpYCerEeOJBZOPH_DMVw">
+        <body>CCSL simulation results:
+   number of activation: 4
+   schedule: 0000000000000000001000100010001000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_TBHpYSerEeOJBZOPH_DMVw">
+        <body>CCSL simulation results:
+   number of activation: 4
+   schedule: 0000000000000000010001000100010000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_7o4F0DJZEeOzVpimy8zuaw">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: </body>
+      </ownedComment>
+      <ownedComment xmi:id="_7o5T8DJZEeOzVpimy8zuaw">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: </body>
+      </ownedComment>
+    </node>
+    <node xmi:type="uml:DecisionNode" xmi:id="_yGnMEOyiEeKUJNNbSM5AWw" name="IsDownDecision" incoming="_UumTwOyjEeKUJNNbSM5AWw" outgoing="_WHSlAOyjEeKUJNNbSM5AWw _XWuMkOyjEeKUJNNbSM5AWw">
+      <ownedComment xmi:id="_AfqYsCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_Af9ToCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_eY4EICagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 00000000100000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_eZJw8CagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 00000000100000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4m1JUCahEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000100000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4m-6UCahEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000100000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_mcqNACajEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 00000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_mc6EoCajEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 00000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_Gr53gCarEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 3
+   schedule: 0000000000000000000000001000100001000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_Gr-I8CarEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 3
+   schedule: 0000000000000000000000001000100001000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_-3sM8CatEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 3
+   schedule: 000000000000000000000010000000100000100000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_-3v3UCatEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 3
+   schedule: 000000000000000000000010000000100000100000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_G0--MCavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 3
+   schedule: 0000000000000000000000000000100000100001</body>
+      </ownedComment>
+      <ownedComment xmi:id="_G1CBgCavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 3
+   schedule: 0000000000000000000000000000100000100001</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4SrV4SavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4SuZMCavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GcgXUCawEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GcjaoCawEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_r88LcCazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_r9DgMCazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_57P5YCazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 5
+   schedule: 000000000000000000000000100000001000010000010001000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_57S8sCazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 5
+   schedule: 000000000000000000000000100000001000010000010001000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="__q_N8Sa0EeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="__rCRQCa0EeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_Yde9kCa9EeO6V5Tt1gKMXg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_YdqjwCa9EeO6V5Tt1gKMXg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_TA3xwCerEeOJBZOPH_DMVw">
+        <body>CCSL simulation results:
+   number of activation: 4
+   schedule: 0000000000000000000100010001000100000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_TA61ECerEeOJBZOPH_DMVw">
+        <body>CCSL simulation results:
+   number of activation: 4
+   schedule: 0000000000000000001000100010001000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_7og5cDJZEeOzVpimy8zuaw">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: </body>
+      </ownedComment>
+      <ownedComment xmi:id="_7olK4DJZEeOzVpimy8zuaw">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: </body>
+      </ownedComment>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_z3SfgOyiEeKUJNNbSM5AWw" name="stopMotorDown" incoming="_WHSlAOyjEeKUJNNbSM5AWw" outgoing="_cojSkOyjEeKUJNNbSM5AWw">
+      <ownedComment xmi:id="_Ajqu8CagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_AjzR0CagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_eeIXkCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 00000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_eeTWsCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 00000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4qXlgCahEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000100000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4qjLsCahEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000010000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_mtsSoCajEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 00000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_mt01gCajEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 00000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GsWjcCarEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000000000000000000000000001000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GsXKgCarEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000000000000000000000000010000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_-38EkSatEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000100000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_-38roCatEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000001000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_G1NnsCavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_G1NnsSavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4S5_YSavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4S6mcCavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GcvA0CawEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GcvA0SawEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_r9jPcCazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_r9kdkCazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_57gYECazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_57g_ICazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="__rNQYCa0EeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="__rNQYSa0EeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_YeitgCa9EeO6V5Tt1gKMXg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_YekisCa9EeO6V5Tt1gKMXg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_TBKssCerEeOJBZOPH_DMVw">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_TBLTwCerEeOJBZOPH_DMVw">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_7pAosDJZEeOzVpimy8zuaw">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: </body>
+      </ownedComment>
+      <ownedComment xmi:id="_7pBPwDJZEeOzVpimy8zuaw">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: </body>
+      </ownedComment>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_6vAlQOyiEeKUJNNbSM5AWw" name="startBarrierDown" incoming="_Nky_gOyjEeKUJNNbSM5AWw" outgoing="_OmnB0OyjEeKUJNNbSM5AWw">
+      <ownedComment xmi:id="_AjJKgCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_AjRGUCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_edZ-0CagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 00000010000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_edllACagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 00000100000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4pqa4CahEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000010000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4p2BECahEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 001000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_mtGcwCajEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 00000000000000001</body>
+      </ownedComment>
+      <ownedComment xmi:id="_mtSC8CajEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 00000000000000100</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GsUHMCarEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000000000010000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GsUuQCarEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000000000100000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_-362cCatEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000100000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_-362cSatEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000010000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_G1LygSavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000000100000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_G1MZkCavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000001000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4S4xQCavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4S4xQSavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GctLoSawEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GctysCawEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_r9e-ACazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_r9gMICazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_57ei4CazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_57fJ8CazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="__rLbMSa0EeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="__rMCQCa0EeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_YebYwCa9EeO6V5Tt1gKMXg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_YedN8Ca9EeO6V5Tt1gKMXg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_TBI3gSerEeOJBZOPH_DMVw">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_TBJekCerEeOJBZOPH_DMVw">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_7o8XQDJZEeOzVpimy8zuaw">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: </body>
+      </ownedComment>
+      <ownedComment xmi:id="_7o8-UDJZEeOzVpimy8zuaw">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: </body>
+      </ownedComment>
+    </node>
+    <node xmi:type="uml:MergeNode" xmi:id="_JrrY4OyjEeKUJNNbSM5AWw" name="MergeDown" incoming="_OmnB0OyjEeKUJNNbSM5AWw _XWuMkOyjEeKUJNNbSM5AWw" outgoing="_SKyTMOyjEeKUJNNbSM5AWw">
+      <ownedComment xmi:id="_AehwQCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_AgbNsCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_AgkXoCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_eXkckCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 00000000010000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_eZyDECagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 2
+   schedule: 00000001000100000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_eZ-3YCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 2
+   schedule: 00000001000100000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4mXPQCahEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4nROMCahEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000001000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4nWtwCahEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000001000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_mbu_8CajEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 00000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_mpjZgCajEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 00000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_mpu_sCajEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 00000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_Gr1mECarEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 2
+   schedule: 0000000000000000000000000100010000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GsBzUCarEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 3
+   schedule: 0000000000000000000000100010000100000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GsCaYCarEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 3
+   schedule: 0000000000000000000000100010000100000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_-3pwsCatEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 2
+   schedule: 000000000000000000000000010000010000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_-3xsgCatEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 3
+   schedule: 000000000000000000010000000100000100000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_-3yTkCatEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 3
+   schedule: 000000000000000000010000000100000100000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_G06FsCavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 2
+   schedule: 0000000000000000000000000000010000000100</body>
+      </ownedComment>
+      <ownedComment xmi:id="_G1D2sCavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 3
+   schedule: 0000000000000000000001000000000100000010</body>
+      </ownedComment>
+      <ownedComment xmi:id="_G1D2sSavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 3
+   schedule: 0000000000000000000001000000000100000010</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4SpgsCavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4SwOYCavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4SwOYSavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_Gcd7ECawEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GclP0CawEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GclP0SawEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_r82r4CazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_r9IYsCazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_r9Jm0CazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_57M2ECazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 4
+   schedule: 000000000000000000000000001000000100001000001000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_57Ux4CazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 5
+   schedule: 000000000000000001000000000010000010000100000100000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_57VY8CazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 5
+   schedule: 000000000000000001000000000010000010000100000100000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="__q9YwCa0EeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="__rDfYSa0EeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="__rEGcCa0EeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_YdPF8Ca9EeO6V5Tt1gKMXg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_YdyfkCa9EeO6V5Tt1gKMXg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_Yd0UwCa9EeO6V5Tt1gKMXg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_TA1VgCerEeOJBZOPH_DMVw">
+        <body>CCSL simulation results:
+   number of activation: 3
+   schedule: 0000000000000000000100010001000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_TA9RUCerEeOJBZOPH_DMVw">
+        <body>CCSL simulation results:
+   number of activation: 4
+   schedule: 0000000000000000010001000100010000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_TA94YCerEeOJBZOPH_DMVw">
+        <body>CCSL simulation results:
+   number of activation: 4
+   schedule: 0000000000000000100010001000100000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_7oaLwDJZEeOzVpimy8zuaw">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: </body>
+      </ownedComment>
+      <ownedComment xmi:id="_7oo1QDJZEeOzVpimy8zuaw">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: </body>
+      </ownedComment>
+      <ownedComment xmi:id="_7oqDYDJZEeOzVpimy8zuaw">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: </body>
+      </ownedComment>
+    </node>
+    <node xmi:type="uml:AcceptEventAction" xmi:id="_VfMX4O0fEeK0ZPAdheaO0Q" name="doOpen" incoming="_1yiuAO0gEeK0ZPAdheaO0Q" outgoing="_3u5tAO0gEeK0ZPAdheaO0Q">
+      <ownedComment xmi:id="_AiXHYCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0010</body>
+      </ownedComment>
+      <ownedComment xmi:id="_AifqQCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0100</body>
+      </ownedComment>
+      <ownedComment xmi:id="_ecRWYCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 00010000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_ecdjoCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 00100000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4ok1wCahEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000001000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4owb8CahEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000010000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_mr-bYCajEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 00000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_msLPsCajEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 00000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GsPOsCarEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000000000000000000000000000000000000010000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GsQc0CarEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000000000000000000000000000000000010000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_-33zICatEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000100000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_-34aMCatEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000001000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_G1JWQCavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_G1J9UCavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4S2VACavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4S28ECavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GcqvYCawEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GcrWcCawEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_r9V0ECazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_r9XCMCazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_57bfkCazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_57cGoCazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="__rI-8Ca0EeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="__rJmACa0EeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_YeN9YCa9EeO6V5Tt1gKMXg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_YeRAsCa9EeO6V5Tt1gKMXg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_TBF0MCerEeOJBZOPH_DMVw">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_TBHCUCerEeOJBZOPH_DMVw">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_7o1pkDJZEeOzVpimy8zuaw">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: </body>
+      </ownedComment>
+      <ownedComment xmi:id="_7o23sDJZEeOzVpimy8zuaw">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: </body>
+      </ownedComment>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_ZfeWcO0fEeK0ZPAdheaO0Q" name="startBarrierUp" incoming="_3u5tAO0gEeK0ZPAdheaO0Q" outgoing="_4ZFScO0gEeK0ZPAdheaO0Q">
+      <ownedComment xmi:id="_AjZpMCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_AjiMECagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0001</body>
+      </ownedComment>
+      <ownedComment xmi:id="_edxLMCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 00000001000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_ed8KUCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 00000100000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4qBAMCahEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000010000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4qMmYCahEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000100000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_mtbM4CajEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 00000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_mtjvwCajEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 00000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GsVVUCarEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000000000000000000000000000000000000001000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GsV8YCarEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000000000000000000000000000000000000010000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_-37dgCatEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000100000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_-38EkCatEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000001000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_G1NAoCavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_G1NAoSavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4S5YUCavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4S5_YCavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GctysSawEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GcuZwCawEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_r9haQCazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_r9iBUCazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_57fJ8SazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_57fxACazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="__rMCQSa0EeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="__rMpUCa0EeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_YefDICa9EeO6V5Tt1gKMXg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_Yeg4UCa9EeO6V5Tt1gKMXg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_TBKFoCerEeOJBZOPH_DMVw">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_TBKFoSerEeOJBZOPH_DMVw">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_7o-McDJZEeOzVpimy8zuaw">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: </body>
+      </ownedComment>
+      <ownedComment xmi:id="_7o_akDJZEeOzVpimy8zuaw">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: </body>
+      </ownedComment>
+    </node>
+    <node xmi:type="uml:MergeNode" xmi:id="_clByIO0fEeK0ZPAdheaO0Q" name="MergeUp" incoming="_4ZFScO0gEeK0ZPAdheaO0Q _7Z4J8O0gEeK0ZPAdheaO0Q" outgoing="_5AjiIO0gEeK0ZPAdheaO0Q">
+      <ownedComment xmi:id="_Ag_OYCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_AhIYUCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_Ah8QoCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_eai4ECagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 00000000100000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_eavFUCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 00000000100000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_ebq5cCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 00000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4noakCahEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 3
+   schedule: 000000001000000010000010000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4nt6ICahEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 3
+   schedule: 000000001000000010000010000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4oL0MCahEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 2
+   schedule: 000000000000100000001000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_mqTAYCajEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 00000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_mqfNoCajEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 00000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_mraasCajEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 00000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GsE2oCarEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 2
+   schedule: 0000000000000000000000000000000000000000000000000100000100000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GsFdsCarEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 2
+   schedule: 0000000000000000000000000000000000000000000000000100000100000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GsJvICarEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000000000000000000000000000000000000000000010000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_-3zhsCatEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 2
+   schedule: 000000000000000000000000000000000000000000000000010000001</body>
+      </ownedComment>
+      <ownedComment xmi:id="_-30IwCatEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 2
+   schedule: 000000000000000000000000000000000000000000000000010000001</body>
+      </ownedComment>
+      <ownedComment xmi:id="_-3198CatEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000010</body>
+      </ownedComment>
+      <ownedComment xmi:id="_G1FE0SavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_G1Fr4CavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_G1HhECavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4SxcgCavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4SyqoCavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4S0f0CavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_Gcmd8CawEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GcnFACawEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_Gco6MCawEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_r9MDECazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_r9MqICazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_r9Q7kCazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_57WnECazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 2
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000001000100000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_57XOICazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 2
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000001000100000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_57ZDUSazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="__rFUkCa0EeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="__rFUkSa0EeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="__rHJwSa0EeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_Yd50UCa9EeO6V5Tt1gKMXg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_Yd7pgCa9EeO6V5Tt1gKMXg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_YeFagCa9EeO6V5Tt1gKMXg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_TA_tkCerEeOJBZOPH_DMVw">
+        <body>CCSL simulation results:
+   number of activation: 5
+   schedule: 0000000000000000000000000000000000000000000000010001000100010001000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_TBAUoCerEeOJBZOPH_DMVw">
+        <body>CCSL simulation results:
+   number of activation: 5
+   schedule: 0000000000000000000000000000000000000000000000100010001000100010000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_TBDX8CerEeOJBZOPH_DMVw">
+        <body>CCSL simulation results:
+   number of activation: 4
+   schedule: 0000000000000000000000000000000000000000000000000100010001000100000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_7oqqcDJZEeOzVpimy8zuaw">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: </body>
+      </ownedComment>
+      <ownedComment xmi:id="_7or4kDJZEeOzVpimy8zuaw">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: </body>
+      </ownedComment>
+      <ownedComment xmi:id="_7oxYIDJZEeOzVpimy8zuaw">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: </body>
+      </ownedComment>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_OIvSQO0gEeK0ZPAdheaO0Q" name="readSensorUp" incoming="_5AjiIO0gEeK0ZPAdheaO0Q" outgoing="_5xvHcO0gEeK0ZPAdheaO0Q">
+      <ownedComment xmi:id="_Ai4r0CagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_AjAnoCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_edCycCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 00000000000100000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_edOYoCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 00000000001000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4pT1kCahEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 3
+   schedule: 000000000001000000010001000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4pe0sCahEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 3
+   schedule: 000000000100000001000010000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_msupUCajEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 00000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_ms62kCajEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 00000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GsS5ECarEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 2
+   schedule: 0000000000000000000000000000000000000000000000000010000010000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GsTgICarEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 2
+   schedule: 0000000000000000000000000000000000000000000000000100000100000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_-35oUSatEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000100000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_-36PYCatEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 2
+   schedule: 000000000000000000000000000000000000000000000000010000001</body>
+      </ownedComment>
+      <ownedComment xmi:id="_G1LLcCavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_G1LygCavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4S4KMCavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4S4KMSavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GcskkCawEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GctLoCawEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_r9b6sCazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_r9dI0CazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_57dUwSazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 2
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000100000100000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_57d70CazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 2
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000001000100000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="__rK0ICa0EeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="__rLbMCa0EeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_YeXuYCa9EeO6V5Tt1gKMXg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_YeZjkCa9EeO6V5Tt1gKMXg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_TBIQcCerEeOJBZOPH_DMVw">
+        <body>CCSL simulation results:
+   number of activation: 5
+   schedule: 0000000000000000000000000000000000000000000000001000100010001000100000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_TBI3gCerEeOJBZOPH_DMVw">
+        <body>CCSL simulation results:
+   number of activation: 5
+   schedule: 0000000000000000000000000000000000000000000000010001000100010001000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_7o6iEDJZEeOzVpimy8zuaw">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: </body>
+      </ownedComment>
+      <ownedComment xmi:id="_7o7JIDJZEeOzVpimy8zuaw">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: </body>
+      </ownedComment>
+    </node>
+    <node xmi:type="uml:DecisionNode" xmi:id="_TGrL4O0gEeK0ZPAdheaO0Q" name="IsUpDecision" incoming="_5xvHcO0gEeK0ZPAdheaO0Q" outgoing="_6kvRsO0gEeK0ZPAdheaO0Q _7Z4J8O0gEeK0ZPAdheaO0Q">
+      <ownedComment xmi:id="_AgGdkCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_AgRcsCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_eZXzYCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 00000000000100000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_eZlOwCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 00000000000100000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4nFA8CahEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 3
+   schedule: 000000000001000000010000100000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4nLHkCahEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 3
+   schedule: 000000000001000000010000100000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_mdGR4CajEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 00000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_mpS60CajEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 00000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_Gr_XECarEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 2
+   schedule: 0000000000000000000000000000000000000000000000000000100001000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GsAlMCarEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 2
+   schedule: 0000000000000000000000000000000000000000000000000000100001000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_-3weYCatEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000001000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_-3xFcCatEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000001000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_G1CokCavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_G1DPoCavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4SvAQCavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4SvnUCavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GckBsCawEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GckowCawEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_r9FVYCazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_r9GjgCazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_57TjwCazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 2
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000100000000001000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_57UK0CazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 2
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000100000000001000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="__rC4UCa0EeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="__rDfYCa0EeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_YdtAACa9EeO6V5Tt1gKMXg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_YdwDUCa9EeO6V5Tt1gKMXg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_TA8DMCerEeOJBZOPH_DMVw">
+        <body>CCSL simulation results:
+   number of activation: 5
+   schedule: 0000000000000000000000000000000000000000000000000100010001000100010000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_TA8qQCerEeOJBZOPH_DMVw">
+        <body>CCSL simulation results:
+   number of activation: 5
+   schedule: 0000000000000000000000000000000000000000000000001000100010001000100000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_7omZADJZEeOzVpimy8zuaw">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: </body>
+      </ownedComment>
+      <ownedComment xmi:id="_7onnIDJZEeOzVpimy8zuaw">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: </body>
+      </ownedComment>
+    </node>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_U_3iIO0gEeK0ZPAdheaO0Q" name="stopMotorUp" incoming="_6kvRsO0gEeK0ZPAdheaO0Q" outgoing="_9QY_oO0gEeK0ZPAdheaO0Q">
+      <ownedComment xmi:id="_Aj70sCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_AkEXkCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_eee84CagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 00000000000000100</body>
+      </ownedComment>
+      <ownedComment xmi:id="_eeqjECagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 00000000000001000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4quK0CahEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000001000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4q5J8CahEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000010000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_mt9_cCajEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 00000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_muGiUCajEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 00000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GsXxkCarEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000000000000000000000000000000000000000000000000000001</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GsYYoCarEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000000000000000000000000000000000000000000000000010000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_-39SsCatEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_-39SsSatEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_G1OOwCavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_G1O10CavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4S7NgCavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4S7NgSavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_Gcvn4CawEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GcwO8CawEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_r9lrsCazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_r9mSwCazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_57g_ISazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_57hmMCazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="__rN3cCa0EeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="__rN3cSa0EeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_YemX4Ca9EeO6V5Tt1gKMXg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_YeoNECa9EeO6V5Tt1gKMXg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_TBLTwSerEeOJBZOPH_DMVw">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_TBL60CerEeOJBZOPH_DMVw">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_7pCd4DJZEeOzVpimy8zuaw">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: </body>
+      </ownedComment>
+      <ownedComment xmi:id="_7pDE8DJZEeOzVpimy8zuaw">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: </body>
+      </ownedComment>
+    </node>
+    <node xmi:type="uml:SendSignalAction" xmi:id="_eVAFgO0gEeK0ZPAdheaO0Q" name="opened" incoming="_9QY_oO0gEeK0ZPAdheaO0Q" outgoing="_ysuzoO0gEeK0ZPAdheaO0Q" signal="_eU27kO0gEeK0ZPAdheaO0Q">
+      <ownedComment xmi:id="_AhlrUCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_AhzGsCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_ebSe8CagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 00000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_ebesMCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 00000000000000010</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4n_m8CahEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000100000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4oFtkCahEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000001000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_mrCnQCajEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 00000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_mrO0gCajEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 00000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GsH58CarEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GsIhACarEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000000000000000000000000000000000000000000000000000001</body>
+      </ownedComment>
+      <ownedComment xmi:id="_-31W4CatEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_-31W4SatEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_G1G6ACavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_G1G6ASavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4Sz4wCavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4Sz4wSavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GcoTICawEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GcoTISawEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_r9PGYCazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_r9PtcCazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_57YcQCazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_57ZDUCazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="__rGisSa0EeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="__rHJwCa0EeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_YeBwICa9EeO6V5Tt1gKMXg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_YeDlUCa9EeO6V5Tt1gKMXg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_TBCJ0CerEeOJBZOPH_DMVw">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_TBCw4CerEeOJBZOPH_DMVw">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_7ou74DJZEeOzVpimy8zuaw">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: </body>
+      </ownedComment>
+      <ownedComment xmi:id="_7owKADJZEeOzVpimy8zuaw">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: </body>
+      </ownedComment>
+      <target xmi:id="_eVChwO0gEeK0ZPAdheaO0Q" name="target2">
+        <upperBound xmi:type="uml:LiteralInteger" xmi:id="_eVChwe0gEeK0ZPAdheaO0Q" value="1"/>
+      </target>
+    </node>
+    <node xmi:type="uml:ForkNode" xmi:id="_rLIqcO0gEeK0ZPAdheaO0Q" name="ForkNode1" incoming="_0jjLUO0gEeK0ZPAdheaO0Q" outgoing="_1E490O0gEeK0ZPAdheaO0Q _1yiuAO0gEeK0ZPAdheaO0Q">
+      <ownedComment xmi:id="_Aeq6MCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0100</body>
+      </ownedComment>
+      <ownedComment xmi:id="_AfA4cCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0100</body>
+      </ownedComment>
+      <ownedComment xmi:id="_eX4loCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 00100000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_eYPK8CagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 00100000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4mdV4CahEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 010000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4mi1cCahEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 010000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_mb6mICajEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 00100000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_mcGMUCajEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 00100000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_Gr2NICarEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000010000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_Gr3bQCarEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000010000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_-3pwsSatEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000100000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_-3qXwCatEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000100000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_G07T0CavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000010000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_G08h8CavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000010000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4SpgsSavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4SqHwCavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GceiICawEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GceiISawEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_r83S8CazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0100000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_r84hECazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0100000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_57NdICazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_57OEMCazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="__q9YwSa0EeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="__q9_0Ca0EeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_YdSwUCa9EeO6V5Tt1gKMXg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_YdWasCa9EeO6V5Tt1gKMXg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_TA18kCerEeOJBZOPH_DMVw">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_TA18kSerEeOJBZOPH_DMVw">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_7obZ4DJZEeOzVpimy8zuaw">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: </body>
+      </ownedComment>
+      <ownedComment xmi:id="_7ocoADJZEeOzVpimy8zuaw">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: </body>
+      </ownedComment>
+    </node>
+    <node xmi:type="uml:ActivityFinalNode" xmi:id="_Kf0V4O-0EeKLx60JPwBiQA" name="ActivityFinalNode1" incoming="_OC-TkO-0EeKLx60JPwBiQA">
+      <ownedComment xmi:id="_AeO1UCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_AeYmUCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_eW7jYCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 00000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_eXQ6kCagEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 00000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4mLCACahEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000100000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4mRIoCahEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000100000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_mbWlcCajEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 00000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_mbiysCajEeOS_s08y94Udg">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 00000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GrzJ0CarEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000000000000000000000000000001000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_Gr0_ACarEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000000000000000000000000000001000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_-3n7gCatEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000001000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_-3pJoCatEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000001000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_G03CYCavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_G043kCavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4SoSkCavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_4So5oCavEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_Gccs8CawEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_GcdUACawEeOgVaRbL5OSfA">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_r80PoCazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_r82E0CazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 0000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_57Ln8CazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_57MPACazEeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="__q8KoCa0EeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="__q8xsCa0EeOLIIm-NgzZvQ">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: 000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_YdJmYCa9EeO6V5Tt1gKMXg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_YdNQwCa9EeO6V5Tt1gKMXg">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_TA0HYCerEeOJBZOPH_DMVw">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_TA0ucCerEeOJBZOPH_DMVw">
+        <body>CCSL simulation results:
+   number of activation: 1
+   schedule: 0000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000</body>
+      </ownedComment>
+      <ownedComment xmi:id="_7oXIcDJZEeOzVpimy8zuaw">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: </body>
+      </ownedComment>
+      <ownedComment xmi:id="_7oY9oDJZEeOzVpimy8zuaw">
+        <body>CCSL simulation results:
+   number of activation: 0
+   schedule: </body>
+      </ownedComment>
+    </node>
+    <node xmi:type="uml:JoinNode" xmi:id="_LOV0ICesEeOJBZOPH_DMVw" name="JoinNode1" incoming="_ysuzoO0gEeK0ZPAdheaO0Q _yCs_MO0gEeK0ZPAdheaO0Q" outgoing="_OC-TkO-0EeKLx60JPwBiQA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Signal" xmi:id="_IybTEOrqEeKeMtIUuWEFqQ" name="closed"/>
+  <packagedElement xmi:type="uml:Signal" xmi:id="_eU27kO0gEeK0ZPAdheaO0Q" name="opened"/>
+</uml:Model>

@@ -1,0 +1,22 @@
+[INFO] Error stacktraces are turned on.
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building org.gemoc.gemoc_studio.root 0.1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ org.gemoc.gemoc_studio.root ---
+[INFO] 
+[INFO] --- tycho-source-plugin:0.25.0:plugin-source (plugin-source) @ org.gemoc.gemoc_studio.root ---
+[INFO] 
+[INFO] --- tycho-source-feature-plugin:0.25.0:source-feature (source-feature) @ org.gemoc.gemoc_studio.root ---
+[INFO] 
+[INFO] --- tycho-p2-plugin:0.25.0:p2-metadata (attach-p2-metadata) @ org.gemoc.gemoc_studio.root ---
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 2.215 s
+[INFO] Finished at: 2016-09-05T16:44:30+02:00
+[INFO] Final Memory: 14M/261M
+[INFO] ------------------------------------------------------------------------
+[WARNING] The requested profile "ignore_CI_repositories" could not be activated because it does not exist.

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ASCII"?>
+<feedback:ActionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:feedback="http://timesquare.inria.fr/feedback">
+  <events name="MSE_alarmOn_occurs">
+    <solverEvent href="tfsmSensorAlarm_MoCC.extendedCCSL#//@subBlock.0/@elements.0"/>
+  </events>
+  <events name="MSE_sensorOn_occurs">
+    <solverEvent href="tfsmSensorAlarm_MoCC.extendedCCSL#//@subBlock.0/@elements.1"/>
+  </events>
+  <events name="MSE_alarmOff_occurs">
+    <solverEvent href="tfsmSensorAlarm_MoCC.extendedCCSL#//@subBlock.0/@elements.2"/>
+  </events>
+  <events name="MSE_sensorOff_occurs">
+    <solverEvent href="tfsmSensorAlarm_MoCC.extendedCCSL#//@subBlock.0/@elements.3"/>
+  </events>
+  <events name="MSE_gblclk_ticks">
+    <solverEvent href="tfsmSensorAlarm_MoCC.extendedCCSL#//@subBlock.0/@elements.4"/>
+  </events>
+  <events name="MSE_inittoIdle_fire">
+    <solverEvent href="tfsmSensorAlarm_MoCC.extendedCCSL#//@subBlock.0/@elements.5"/>
+  </events>
+  <events name="MSE_IdletoDanger_fire">
+    <solverEvent href="tfsmSensorAlarm_MoCC.extendedCCSL#//@subBlock.0/@elements.6"/>
+  </events>
+  <events name="MSE_DangertoIdle_fire">
+    <solverEvent href="tfsmSensorAlarm_MoCC.extendedCCSL#//@subBlock.0/@elements.7"/>
+  </events>
+  <events name="MSE_inittoIdle_trigger">
+    <solverEvent href="tfsmSensorAlarm_MoCC.extendedCCSL#//@subBlock.0/@elements.8"/>
+  </events>
+  <events name="MSE_IdletoDanger_trigger">
+    <solverEvent href="tfsmSensorAlarm_MoCC.extendedCCSL#//@subBlock.0/@elements.9"/>
+  </events>
+  <events name="MSE_DangertoIdle_trigger">
+    <solverEvent href="tfsmSensorAlarm_MoCC.extendedCCSL#//@subBlock.0/@elements.10"/>
+  </events>
+  <events name="MSE_Idle_entering">
+    <solverEvent href="tfsmSensorAlarm_MoCC.extendedCCSL#//@subBlock.0/@elements.11"/>
+  </events>
+  <events name="MSE_init_entering">
+    <solverEvent href="tfsmSensorAlarm_MoCC.extendedCCSL#//@subBlock.0/@elements.12"/>
+  </events>
+  <events name="MSE_Danger_entering">
+    <solverEvent href="tfsmSensorAlarm_MoCC.extendedCCSL#//@subBlock.0/@elements.13"/>
+  </events>
+  <events name="MSE_Idle_leaving">
+    <solverEvent href="tfsmSensorAlarm_MoCC.extendedCCSL#//@subBlock.0/@elements.14"/>
+  </events>
+  <events name="MSE_init_leaving">
+    <solverEvent href="tfsmSensorAlarm_MoCC.extendedCCSL#//@subBlock.0/@elements.15"/>
+  </events>
+  <events name="MSE_Danger_leaving">
+    <solverEvent href="tfsmSensorAlarm_MoCC.extendedCCSL#//@subBlock.0/@elements.16"/>
+  </events>
+  <events name="MSE_tfsmSensorAlarm_start">
+    <solverEvent href="tfsmSensorAlarm_MoCC.extendedCCSL#//@subBlock.0/@elements.17"/>
+  </events>
+  <events name="MSE_tfsmSensorAlarm_stall">
+    <solverEvent href="tfsmSensorAlarm_MoCC.extendedCCSL#//@subBlock.0/@elements.18"/>
+  </events>
+  <importStatements importURI="platform:/1"/>
+</feedback:ActionModel>

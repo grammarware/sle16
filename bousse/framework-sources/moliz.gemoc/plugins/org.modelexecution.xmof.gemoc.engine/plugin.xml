@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.debug.core.launchConfigurationTypes">
+      <launchConfigurationType
+            delegate="org.modelexecution.xmof.gemoc.engine.ui.launcher.Launcher"
+            id="org.xmof.execution.engine.ui.launcher"
+            modes="run, debug"
+            name="Gemoc XMOF eXecutable Model">
+      </launchConfigurationType>
+   </extension>
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+      <launchConfigurationTabGroup
+            class="org.modelexecution.xmof.gemoc.engine.ui.launcher.LauncherTabGroup"
+            id="org.xmof.execution.engine.ui.launcher.tabGroup"
+            type="org.xmof.execution.engine.ui.launcher">
+      </launchConfigurationTabGroup>
+   </extension>
+
+</plugin>

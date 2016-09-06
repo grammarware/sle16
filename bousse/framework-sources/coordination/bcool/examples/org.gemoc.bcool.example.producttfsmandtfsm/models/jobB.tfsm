@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.gemoc.sample.tfsm:TimedSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.gemoc.sample.tfsm="http://www.gemoc.org/sample/tfsm" name="TFSMB">
+  <tfsms name="B" initialState="//@tfsms.0/@ownedStates.2">
+    <ownedStates name="A" outgoingTransitions="//@tfsms.0/@ownedTransitions.0" incomingTransitions="//@tfsms.0/@ownedTransitions.1 //@tfsms.0/@ownedTransitions.2"/>
+    <ownedStates name="B" outgoingTransitions="//@tfsms.0/@ownedTransitions.1" incomingTransitions="//@tfsms.0/@ownedTransitions.0"/>
+    <ownedStates name="init" outgoingTransitions="//@tfsms.0/@ownedTransitions.2"/>
+    <localEvents name="ping" sollicitingTransitions="//@tfsms.0/@ownedTransitions.0"/>
+    <localEvents name="pong"/>
+    <localEvents name="start"/>
+    <localClock name="sec"/>
+    <ownedTransitions name="t1_2" source="//@tfsms.0/@ownedStates.0" target="//@tfsms.0/@ownedStates.1" generatedEvents="//@tfsms.0/@localEvents.0" action=" ">
+      <ownedGuard xsi:type="org.gemoc.sample.tfsm:TemporalGuard" name="after1onSec" onClock="//@tfsms.0/@localClock" afterDuration="1"/>
+    </ownedTransitions>
+    <ownedTransitions name="t2_1" source="//@tfsms.0/@ownedStates.1" target="//@tfsms.0/@ownedStates.0" action=" ">
+      <ownedGuard xsi:type="org.gemoc.sample.tfsm:EventGuard" name="whenPong" triggeringEvent="//@tfsms.0/@localEvents.1"/>
+    </ownedTransitions>
+    <ownedTransitions name="tinit" source="//@tfsms.0/@ownedStates.2" target="//@tfsms.0/@ownedStates.0" action="initialize()">
+      <ownedGuard xsi:type="org.gemoc.sample.tfsm:EventGuard" name="whenStart" triggeringEvent="//@tfsms.0/@localEvents.2"/>
+    </ownedTransitions>
+  </tfsms>
+</org.gemoc.sample.tfsm:TimedSystem>

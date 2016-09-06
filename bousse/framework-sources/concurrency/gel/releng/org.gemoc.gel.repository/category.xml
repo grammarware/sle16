@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.gemoc.gel.feature_0.1.0.qualifier.jar" id="org.gemoc.gel.feature" version="0.1.0.qualifier">
+      <category name="gemoc.gel"/>
+   </feature>
+   <feature url="features/org.gemoc.gel.microgel.feature_0.1.0.qualifier.jar" id="org.gemoc.gel.microgel.feature" version="0.1.0.qualifier">
+      <category name="gemoc.gel"/>
+   </feature>
+   <category-def name="gemoc.gel" label="GEMOC Events Language">
+      <description>
+         GEL allows the specification of the Communication Protocol (Domain-Specific Events and Feedback Policies) for Concurrency-aware xDSMLs.
+      </description>
+   </category-def>
+</site>

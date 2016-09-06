@@ -1,0 +1,105 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>org.gemoc.bcool.transformation.bcool2qvto</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>eclipse-plugin</packaging>
+  
+    <parent>
+	<relativePath>../../deployment/org.gemoc.bcool.build</relativePath>
+  	<groupId>org.gemoc.bcool.framework</groupId>
+  	<artifactId>org.gemoc.bcool.build</artifactId>
+  	<version>0.0.1-SNAPSHOT</version>
+  </parent>
+  
+  
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <resources>
+      <resource>
+        <directory>src</directory>
+        <excludes>
+          <exclude>**/*.java</exclude>
+        </excludes>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+          <source/>
+          <target/>
+        </configuration>
+      </plugin>
+      <plugin>
+       <groupId>org.eclipse.acceleo</groupId>
+       <artifactId>org.eclipse.acceleo.maven</artifactId>
+       <version>3.5.2</version>
+       <executions>
+         <execution>
+           <phase>compile</phase>
+           <goals>
+              <goal>acceleo-compile</goal>
+            </goals>
+         </execution>
+       </executions>
+       <configuration>
+         <useBinaryResources>false</useBinaryResources>
+         <usePlatformResourcePath>true</usePlatformResourcePath>
+         <acceleoProject>
+           <root>${project.basedir}</root>
+           <entries>
+             <entry>
+               <input>src</input>
+               <output>target/classes</output>
+             </entry>
+           </entries>
+         </acceleoProject>
+         <packagesToRegister>
+           	<packageToRegister>fr.inria.aoste.timesquare.ccslkernel.model.TimeModel.BasicType.BasicTypePackage</packageToRegister>
+           	<packageToRegister>fr.inria.aoste.timesquare.ccslkernel.model.TimeModel.CCSLModel.ClockExpressionAndRelation.ClockExpressionAndRelationPackage</packageToRegister>
+			<packageToRegister>fr.inria.aoste.timesquare.ECL.ECLPackage</packageToRegister>
+			<packageToRegister>org.eclipse.emf.ecore.EcorePackage</packageToRegister>
+           	<packageToRegister>org.eclipse.ocl.examples.xtext.completeocl.completeoclcs.CompleteOCLCSPackage</packageToRegister>
+			<packageToRegister>org.eclipse.ocl.examples.pivot.PivotPackage</packageToRegister>
+			<packageToRegister>org.eclipse.ocl.examples.xtext.base.basecs.BaseCSPackage</packageToRegister>
+           	<packageToRegister>org.eclipse.ocl.examples.xtext.essentialocl.essentialoclcs.EssentialOCLCSPackage</packageToRegister>
+           	<packageToRegister>org.eclipse.xtext.xbase.XbasePackage</packageToRegister>
+           	<packageToRegister>org.gemoc.bcool.model.bcool.BcoolPackage</packageToRegister>
+           	<packageToRegister>org.gemoc.gexpressions.GexpressionsPackage</packageToRegister>           	
+         </packagesToRegister>
+       </configuration>
+     </plugin>
+    </plugins>
+  </build>
+  <repositories>
+<!--      <repository> -->
+<!--        <id>obeo market place</id> -->
+<!--        <layout>p2</layout> -->
+<!--        <url>http://marketplace.obeonetwork.com/updates/od5/</url> -->
+<!--      </repository> -->
+<!--      <repository> -->
+<!--        <id>Eclipse - Acceleo Snapshots</id> -->
+<!--        <url>https://repo.eclipse.org/content/repositories/acceleo-snapshots</url> -->
+<!--      </repository> -->
+     <repository>
+       <id>Eclipse - Acceleo Release</id>
+       <url>https://repo.eclipse.org/content/repositories/acceleo-releases</url>
+     </repository>
+  </repositories>
+  <pluginRepositories>
+<!--      <pluginRepository> -->
+<!--        <id>codehaus.snapshots</id> -->
+<!--        <url>http://snapshots.repository.codehaus.org/</url> -->
+<!--      </pluginRepository> -->
+<!--      <pluginRepository> -->
+<!--        <id>Eclipse - Acceleo Snapshots</id> -->
+<!--        <url>https://repo.eclipse.org/content/repositories/acceleo-snapshots</url> -->
+<!--      </pluginRepository> -->
+     <pluginRepository>
+       <id>Eclipse - Acceleo Release</id>
+       <url>https://repo.eclipse.org/content/repositories/acceleo-releases</url>
+     </pluginRepository>
+  </pluginRepositories>
+  
+</project>

@@ -1,0 +1,218 @@
+grammar org.gemoc.gel.GEL with org.gemoc.gexpressions.xtext.GExpressions
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore // An Execution Function is essentially an EOperation
+import "http://www.gemoc.org/gel/GEL" as gel 
+import "http://fr.inria.aoste.timesquare.ecl" as ecl // Exports the MoccEvents
+//import "http://www.gemoc.org/gel/SimpleOCL" as simpleocl
+ 
+//-----------------------------------------------------------------------------
+// Main stuff
+//-----------------------------------------------------------------------------
+DomainSpecificEventsSpecification returns gel::DomainSpecificEventsSpecification:
+	{gel::DomainSpecificEventsSpecification}
+	(imports += ImportStatement)*
+	events+=(DomainSpecificEvent)*
+;
+
+ImportStatement returns gel::ImportStatement:
+	'import' importURI=STRING /*('as' alias=ID)?*/
+;
+
+DomainSpecificEvent returns gel::DomainSpecificEvent:
+	AtomicDomainSpecificEvent | CompositeDomainSpecificEvent
+;
+
+AtomicDomainSpecificEvent returns gel::DomainSpecificEvent:
+	{gel::AtomicDomainSpecificEvent}
+	(visibility = Visibility)?
+	'DSE' name=ID ':'
+	'upon' uponMoccEvent=MoccEvent
+	(executionKind=ExecutionKind executionFunction=ExecutionFunction
+		('feedback' ':' feedbackPolicy=FeedbackPolicy 'end')?
+	)?
+	('raises' raisedMoccEvent=MoccEvent)?
+	'end'
+;
+// End
+
+//-----------------------------------------------------------------------------
+// Composite DSE stuff
+//-----------------------------------------------------------------------------
+CompositeDomainSpecificEvent returns gel::DomainSpecificEvent:
+	{gel::CompositeDomainSpecificEvent}
+	(visibility = Visibility)?
+	'Composite' name=ID ':'
+		(unfoldingStrategy = UnfoldingStrategy)? 
+		body = DomainSpecificEventsPattern
+	'end'
+;
+
+UnfoldingStrategy returns gel::UnfoldingStrategy:
+	{gel::UnfoldingStrategy}
+	'forall' '{'
+	(localVariables+=LocalVariable)+
+	'}' 'where' '{'
+	(instantiationPredicates+=InstantiationPredicate)+
+	'}'
+;
+
+LocalVariable returns gel::LocalVariable:
+	{gel::LocalVariable}
+	name=ID ':' type=[ecore::EClassifier|QualifiedName]
+;
+
+InstantiationPredicate returns gel::InstantiationPredicate:
+	{gel::InstantiationPredicate}
+	body=GExpression
+;
+
+DomainSpecificEventsPattern returns gel::DomainSpecificEventsPattern:
+	LogicalSequence 
+;
+
+LogicalSequence returns gel::DomainSpecificEventsPattern:
+	CoincidencePattern ({gel::LogicalSequence.leftOperand=current}=> '--->' rightOperand=CoincidencePattern)*
+;
+
+CoincidencePattern returns gel::DomainSpecificEventsPattern:
+	OrPattern ({gel::CoincidencePattern.leftOperand=current} '&' rightOperand=OrPattern)*
+;
+
+OrPattern returns gel::DomainSpecificEventsPattern:
+	XorPattern ({gel::OrPattern.leftOperand=current} '|' rightOperand=XorPattern)*
+;
+
+XorPattern returns gel::DomainSpecificEventsPattern:
+	PlusPattern ({gel::XorPattern.leftOperand=current} '><' rightOperand=PlusPattern)*
+;
+
+PlusPattern returns gel::DomainSpecificEventsPattern:
+	IterationPattern ({gel::PlusPattern.operand=current} '+')?
+;
+
+IterationPattern returns gel::DomainSpecificEventsPattern:
+	DomainSpecificEventReferenceOrPattern ({gel::IterationPattern.operand=current} '[' numberOfIterations=INT ']')?
+;
+
+DomainSpecificEventReferenceOrPattern returns gel::DomainSpecificEventsPattern:
+	DomainSpecificEventReferenceWithOrWithoutTarget
+	| '(' DomainSpecificEventsPattern ')'
+;
+
+DomainSpecificEventReferenceWithOrWithoutTarget returns gel::DomainSpecificEventsPattern:
+	DomainSpecificEventReference | DomainSpecificEventReferenceWithArguments
+;
+
+DomainSpecificEventReference returns gel::DomainSpecificEventsPattern:
+	{gel::DomainSpecificEventReference}
+	referencedDse=[gel::DomainSpecificEvent|ID]
+;
+
+DomainSpecificEventReferenceWithArguments returns gel::DomainSpecificEventsPattern:
+	{gel::DomainSpecificEventReferenceWithArguments}
+	referencedDse=[gel::DomainSpecificEvent|ID]
+	'(' arguments=ListOfArguments ')'
+;
+
+ListOfArguments returns gel::ListOfArguments:
+	SingleArgument | MultipleArguments
+;
+
+SingleArgument returns gel::ListOfArguments:
+	{gel::SingleArgument}
+	argument=[gel::LocalVariable|ID]
+;
+
+MultipleArguments returns gel::ListOfArguments:
+	{gel::MultipleArguments}
+	head=[gel::LocalVariable|ID] 
+	","
+	tail=ListOfArguments
+;
+
+
+// End
+
+//-----------------------------------------------------------------------------
+// Feedback Policy stuff
+//-----------------------------------------------------------------------------
+FeedbackPolicy returns gel::FeedbackPolicy:
+	{gel::FeedbackPolicy}
+	(rules += FeedbackRule)*
+	defaultRule = DefaultFeedbackRule
+;
+
+FeedbackRule returns gel::FeedbackRule:
+	{gel::FeedbackRule}
+	'[' filter=FeedbackFilter ']'
+	'=>' consequence=FeedbackConsequence
+;
+
+DefaultFeedbackRule returns gel::FeedbackRule:
+	{gel::FeedbackRule}
+	'default' '=>' consequence=FeedbackConsequence 
+;
+
+FeedbackFilter returns gel::FeedbackFilter:
+	{gel::FeedbackFilter}
+	 body=GExpression
+;
+
+FeedbackConsequence returns gel::FeedbackConsequence:
+	{gel::FeedbackConsequence}
+	'allow' navigationPathToMoccEvent=GExpression
+;
+// End
+
+//-----------------------------------------------------------------------------
+// Imported from the MoCC
+//-----------------------------------------------------------------------------
+MoccEvent returns gel::MoccEvent:
+	EclEvent
+;
+
+EclEvent returns gel::MoccEvent:
+	{gel::EclEvent}
+	eventReference = [ecl::ECLDefCS|QualifiedName]
+;  
+// End
+
+//-----------------------------------------------------------------------------
+// Imported from the DSA
+//-----------------------------------------------------------------------------
+ExecutionFunction returns gel::ExecutionFunction:
+	Kermeta3ExecutionFunction
+;
+ 
+Kermeta3ExecutionFunction returns gel::ExecutionFunction:
+	{gel::Kermeta3ExecutionFunction}
+	navigationPathToOperation = GExpression
+	(callKind=CallKind)?
+	('returning'
+	result=ExecutionFunctionResult)?
+;
+
+
+ExecutionFunctionResult returns gel::ExecutionFunctionResult:
+	{gel::ExecutionFunctionResult}
+	name=ID
+;
+// End
+
+// Additional stuff
+enum Visibility returns gel::Visibility:
+	public='public' | private='private'
+;
+
+enum ExecutionKind returns gel::ExecutionKind:
+	submission='triggers' | interruption='interrupts'
+;
+
+enum CallKind returns gel::CallKind:
+	blocking='blocking' | nonBlocking="nonblocking"
+;
+
+QualifiedName returns ecore::EString: 
+	ID (=>'.' ID)*
+;
+// End

@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.4"?><plugin>
+  <extension id="gemocLanguageDesignerBuilder" name="GEMOC Concurrent xDSML Builder" point="org.eclipse.core.resources.builders">
+    <builder hasNature="true">
+      <run class="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.builder.GemocLanguageDesignerBuilder"/>
+    </builder>
+  </extension>
+  <extension id="gemocLanguageDesignerNature" name="Concurrent xDSML Project Nature" point="org.eclipse.core.resources.natures">
+    <runtime>
+      <run class="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.builder.GemocLanguageDesignerNature"/>
+    </runtime>
+    <builder id="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.gemocLanguageDesignerBuilder"/>
+  </extension>
+  <extension point="org.eclipse.ui.popupMenus">
+    <objectContribution adaptable="true" id="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.addnature.contribution" nameFilter="*" objectClass="org.eclipse.core.resources.IProject">
+      <action class="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.builder.ToggleNatureAction" enablesFor="+" icon="icons/IconeGemocLanguage-16.png" id="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.addRemoveNatureAction" label="Add Concurrent xDSML Nature" menubarPath="org.eclipse.ui.projectConfigure/additions"/>
+      <visibility>
+        <and>
+          <not>
+            <objectState name="projectNature" value="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.gemocLanguageDesignerNature"/>
+          </not>
+          <objectClass name="org.eclipse.core.resources.IProject"/>
+        </and>
+      </visibility>
+    </objectContribution>
+    <objectContribution adaptable="true" id="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.removenature.contribution" nameFilter="*" objectClass="org.eclipse.core.resources.IProject">
+      <action class="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.builder.ToggleNatureAction" enablesFor="+" icon="icons/IconeGemocLanguage-16.png" id="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.addRemoveNatureAction" label="Remove Concurrent xDSML Nature" menubarPath="org.eclipse.ui.projectConfigure/additions"/>
+      <visibility>
+        <and>
+          <objectClass name="org.eclipse.core.resources.IProject"/>
+          <objectState name="projectNature" value="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.gemocLanguageDesignerNature"/>
+        </and>
+      </visibility>
+    </objectContribution>
+  </extension>
+  <extension id="xmlProblem" name="XML Problem" point="org.eclipse.core.resources.markers">
+    <super type="org.eclipse.core.resources.problemmarker"/>
+    <persistent value="true"/>
+  </extension>
+  <extension point="org.eclipse.ui.ide.projectNatureImages">
+    <image icon="icons/IconeGemocLanguage-10.png" id="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.gemocLanguageDesignerNature.image" natureId="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.gemocLanguageDesignerNature"/>
+    <image icon="icons/IconeGemocDSE-10.png" id="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.gemocDSENature.image" natureId="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.dse_nature"/>
+  </extension>
+  <!-- definitions of commands -->
+  <extension point="org.eclipse.ui.commands">
+    <command defaultHandler="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.commands.MergeExtendedCCSLCommandHandler" id="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.commands.MergeExtendedCCSL" name="Merge extendedCCSLFile or time model ino one XMI resource"/>
+  </extension>
+  <!-- contributions to popup menus -->
+  <extension point="org.eclipse.ui.menus">
+    <menuContribution allPopups="true" locationURI="popup:org.eclipse.ui.popup.any?after=xdsmlGroup">
+      <menu icon="icons/IconeGemocModel-16.png" id="org.gemoc.modeling.advanced.menu" label="GEMOC Modeling advanced tools">
+        <command commandId="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.commands.MergeExtendedCCSL" label="Merge into one XMI resource" style="push">
+          <visibleWhen checkEnabled="false">
+            <with variable="selection">
+              <iterate ifEmpty="false" operator="and">
+                <and>
+                  <adapt type="org.eclipse.core.resources.IFile"/>
+                  <or>
+                    <test property="org.eclipse.core.resources.extension" value="extendedCCSL"/>
+                    <test property="org.eclipse.core.resources.extension" value="timemodel"/>
+                  </or>
+                </and>
+              </iterate>
+            </with>
+          </visibleWhen>
+        </command>
+      </menu>
+    </menuContribution>
+  </extension>
+  <!-- expression definitions for simplifying the filtering of command and menu contributions -->
+  <extension point="org.eclipse.ui.newWizards">
+    <category id="org.gemoc.execution.concurrent.ccsljavaxdsml.ui" name="GEMOC Concurrent"/>
+    <wizard category="org.gemoc.execution.concurrent.ccsljavaxdsml.ui" class="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.wizards.CreateNewGemocConcurrentLanguageProject" finalPerspective="org.gemoc.xdsmlframework.ide.ui.xdsml.perspective" icon="icons/IconeGemocLanguage-16.png" id="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.wizards.CreateNewGemocLanguageProject" name="GEMOC Concurrent xDSML Project" project="true"/>
+    <wizard category="org.gemoc.execution.concurrent.ccsljavaxdsml.ui" class="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.wizards.CreateNewDSEProject" finalPerspective="org.gemoc.xdsmlframework.ide.ui.xdsml.perspective" icon="icons/IconeGemocLanguage-16.png" id="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.wizards.CreateNewDSEProject" name="DSE Project" project="true"/>
+    <wizard category="org.gemoc.execution.concurrent.ccsljavaxdsml.ui" class="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.wizards.CreateNewMoCProject" finalPerspective="org.gemoc.xdsmlframework.ide.ui.xdsml.perspective" icon="icons/IconeGemocLanguage-16.png" id="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.wizards.CreateNewMoCProject" name="MoCCML Project" project="true"/>
+  </extension>
+  <extension point="org.eclipse.ui.perspectiveExtensions">
+    <perspectiveExtension targetID="org.gemoc.xdsmlframework.ide.ui.xdsml.perspective">
+      <newWizardShortcut id="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.wizards.CreateNewGemocLanguageProject"/>
+      <newWizardShortcut id="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.wizards.CreateNewDSEProject"/>
+      <newWizardShortcut id="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.wizards.CreateNewMoCProject"/>
+    </perspectiveExtension>
+  </extension>
+  <extension point="org.eclipse.ui.navigator.navigatorContent">
+    <commonWizard menuGroupId="org.gemoc.execution.concurrent.ccsljavaxdsml.ui" type="new" wizardId="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.wizards.CreateNewGemocLanguageProject">
+      <enablement>
+        <with variable="activeWorkbenchWindow.activePerspective">
+          <equals value="org.eclipse.sirius.ui.tools.perspective.design"/>
+        </with>
+      </enablement>
+    </commonWizard>
+  </extension>
+  <!-- DSE extensions -->
+  <extension id="dse_builder" name="DSE Project Builder" point="org.eclipse.core.resources.builders">
+    <builder hasNature="true">
+      <run class="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.dse.GemocDSEBuilder"/>
+    </builder>
+  </extension>
+  <extension id="dse_nature" name="DSE Project Nature" point="org.eclipse.core.resources.natures">
+    <runtime>
+      <run class="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.dse.GemocDSENature"/>
+    </runtime>
+    <builder id="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.dse_builder"/>
+  </extension>
+  <extension point="org.eclipse.ui.commands">
+    <category id="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.GemocConcurrenrLanguageNature.category" name="GemocConcurrentLanguage Project Nature commands"/>
+    <command categoryId="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.GemocConcurrenrLanguageNature.category" defaultHandler="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.commands.CreateDomainModelProjectHandler" id="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.commands.CreateDomainModelProject" name="CreateDomainModelProject"/>
+    <command categoryId="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.GemocConcurrenrLanguageNature.category" defaultHandler="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.commands.CreateDSAProjectHandler" id="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.commands.CreateDSAProject" name="CreateDSAProject"/>
+    <command categoryId="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.GemocConcurrenrLanguageNature.category" defaultHandler="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.commands.CreateDSEProjectHandler" id="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.commands.CreateDSEProject" name="CreateDSEProject"/>
+    <command categoryId="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.GemocConcurrenrLanguageNature.category" defaultHandler="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.commands.CreateMOCCProjectHandler" id="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.commands.CreateMOCCProject" name="CreateMOCCProject"/>
+    <command categoryId="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.GemocConcurrenrLanguageNature.category" defaultHandler="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.commands.CreateSiriusEditorProjectHandler" id="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.commands.CreateSiriusEditorProject" name="CreateSiriusEditorProject"/>
+    <command categoryId="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.GemocConcurrenrLanguageNature.category" defaultHandler="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.commands.CreateXtextEditorProjectHandler" id="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.commands.CreateXtextEditorProject" name="CreateXtextEditorProject"/>
+    <command categoryId="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.GemocConcurrenrLanguageNature.category" defaultHandler="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.commands.CreateAnimatorProjectHandler" id="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.commands.CreateAnimatorProject" name="CreateAnimatorProject"/>
+  </extension>
+  <extension point="org.eclipse.ui.menus">
+    <menuContribution allPopups="false" locationURI="popup:org.eclipse.ui.popup.any?after=xdsmlGroup">
+      <menu icon="icons/IconeGemocLanguage-16.png" id="GemocConcurrentLanguage.menu" label="GEMOC Language">
+        <command commandId="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.commands.CreateDomainModelProject" icon="icons/plus-16.png" label="Create Domain Model Project for language" style="push">
+          <visibleWhen checkEnabled="false">
+            <with variable="selection">
+              <count value="1"/>
+              <iterate ifEmpty="false">
+                <reference definitionId="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.definitions.IsSelectionInGemocConcurrentLanguageProject"/>
+              </iterate>
+            </with>
+          </visibleWhen>
+        </command>
+        <command commandId="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.commands.CreateSiriusEditorProject" icon="icons/plus-16.png" label="Create Sirius Editor Project for language" style="push">
+          <visibleWhen checkEnabled="false">
+            <with variable="selection">
+              <count value="1"/>
+              <iterate ifEmpty="false">
+                <reference definitionId="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.definitions.IsSelectionInGemocConcurrentLanguageProject"/>
+              </iterate>
+            </with>
+          </visibleWhen>
+        </command>
+        <command commandId="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.commands.CreateXtextEditorProject" icon="icons/plus-16.png" label="Create XText Editor Project for language" style="push">
+          <visibleWhen checkEnabled="false">
+            <with variable="selection">
+              <count value="1"/>
+              <iterate ifEmpty="false">
+                <reference definitionId="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.definitions.IsSelectionInGemocConcurrentLanguageProject"/>
+              </iterate>
+            </with>
+          </visibleWhen>
+        </command>
+        <command commandId="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.commands.CreateDSAProject" icon="icons/plus-16.png" label="Create DSA Project for language" style="push">
+          <visibleWhen checkEnabled="false">
+            <with variable="selection">
+              <count value="1"/>
+              <iterate ifEmpty="false">
+                <reference definitionId="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.definitions.IsSelectionInGemocConcurrentLanguageProject"/>
+              </iterate>
+            </with>
+          </visibleWhen>
+        </command>
+        <command commandId="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.commands.CreateDSEProject" icon="icons/plus-16.png" label="Create DSE Project for language" style="push">
+          <visibleWhen checkEnabled="false">
+            <with variable="selection">
+              <count value="1"/>
+              <iterate ifEmpty="false">
+                <reference definitionId="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.definitions.IsSelectionInGemocConcurrentLanguageProject"/>
+              </iterate>
+            </with>
+          </visibleWhen>
+        </command>
+        <command commandId="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.commands.CreateMOCCProject" icon="icons/plus-16.png" label="Create MOCC Library Project for language" style="push">
+          <visibleWhen checkEnabled="false">
+            <with variable="selection">
+              <count value="1"/>
+              <iterate ifEmpty="false">
+                <reference definitionId="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.definitions.IsSelectionInGemocConcurrentLanguageProject"/>
+              </iterate>
+            </with>
+          </visibleWhen>
+        </command>
+        <command commandId="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.commands.CreateAnimatorProject" icon="icons/plus-16.png" label="Create Animator Project for language" style="push">
+          <visibleWhen checkEnabled="false">
+            <with variable="selection">
+              <count value="1"/>
+              <iterate ifEmpty="false">
+                <reference definitionId="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.definitions.IsSelectionInGemocConcurrentLanguageProject"/>
+              </iterate>
+            </with>
+          </visibleWhen>
+        </command>
+      </menu>
+    </menuContribution>
+  </extension>
+  <extension point="org.eclipse.ui.commands">
+    <category id="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.dse.category" name="ECL"/>
+    <command categoryId="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.dse.category" defaultHandler="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.dse.AddRemoveGemocDSENatureHandler" id="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.dse.addRemoveDSENature" name="Add/Remove DSE Project Nature"/>
+  </extension>
+  <extension point="org.eclipse.ui.menus">
+    <menuContribution locationURI="popup:org.eclipse.ui.projectConfigure?after=additions">
+      <command commandId="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.dse.addRemoveDSENature" label="Remove DSE Project Nature" style="push">
+        <visibleWhen checkEnabled="false">
+          <with variable="selection">
+            <count value="1"/>
+            <iterate>
+              <and>
+                <adapt type="org.eclipse.core.resources.IProject">
+                  <test property="org.eclipse.core.resources.projectNature " value="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.dse_nature"/>
+                </adapt>
+              </and>
+            </iterate>
+          </with>
+        </visibleWhen>
+      </command>
+      <command commandId="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.dse.addRemoveDSENature" label="Add DSE Project Nature" style="push">
+        <visibleWhen checkEnabled="false">
+          <with variable="selection">
+            <count value="1"/>
+            <iterate>
+              <and>
+                <adapt type="org.eclipse.core.resources.IProject">
+                  <not>
+                    <test property="org.eclipse.core.resources.projectNature " value="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.dse_nature"/>
+                  </not>
+                </adapt>
+              </and>
+            </iterate>
+          </with>
+        </visibleWhen>
+      </command>
+    </menuContribution>
+  </extension>
+  <extension id="dse_problem" name="DSE Problem" point="org.eclipse.core.resources.markers">
+    <super type="org.eclipse.core.resources.problemmarker"/>
+    <persistent value="true"/>
+  </extension>
+  <extension-point id="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.dse.builder_addon" name="GemocDSEBuilderAddon" schema="schema/org.gemoc.execution.concurrent.ccsljavaxdsml.ui.dse.builder_addon.exsd"/>
+  <extension point="fr.inria.diverse.commons.eclipse.pde.projectContent">
+    <wizard class="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.templates.ConcurrentNewWizard" id="fr.inria.diverse.melange.ui.templates.projectContent.Concurrent" name="Simple concurrent GEMOC project" targetPluginId="fr.inria.diverse.melange.ui">
+      <description>
+            This template includes the definition of a concurrent language.
+         </description>
+    </wizard>
+  </extension>
+  <extension point="fr.inria.diverse.commons.eclipse.pde.templates">
+    <template class="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.templates.ConcurrentTemplate" contributingId="fr.inria.diverse.melange.ui.templates.template1" id="fr.inria.diverse.melange.ui.templates.template_simple_concurrent_language" name="Simple concurrent GEMOC project"/>
+  </extension>
+  <extension point="org.eclipse.core.expressions.definitions">
+    <definition id="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.definitions.IsSelectionInGemocConcurrentLanguageProject">
+      <adapt type="org.eclipse.core.resources.IResource">
+        <test property="org.eclipse.core.resources.projectNature " value="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.gemocLanguageDesignerNature"/>
+      </adapt>
+    </definition>
+  </extension>
+  <extension point="fr.inria.diverse.melange.ui.contentassist_ecl">
+    <proposal class="org.gemoc.execution.concurrent.ccsljavaxdsml.ui.editor.SelectEclProposal"/>
+  </extension>
+</plugin>

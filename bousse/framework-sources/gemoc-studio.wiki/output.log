@@ -1,0 +1,226 @@
+[INFO] Error stacktraces are turned on.
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GEMOC Studio Guide 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- asciidoctor-maven-plugin:1.5.2:process-asciidoc (output-docbook) @ gemoc-studio-guide ---
+[INFO] Downloading: http://repository.jboss.org/nexus/content/groups/public/org/apache/maven/maven-plugin-api/2.0/maven-plugin-api-2.0.pom
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0/maven-plugin-api-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0/maven-plugin-api-2.0.pom (0 B at 0.0 KB/sec)
+[INFO] Downloading: http://repository.jboss.org/nexus/content/groups/public/org/apache/maven/maven/2.0/maven-2.0.pom
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0/maven-2.0.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0/maven-2.0.pom (0 B at 0.0 KB/sec)
+[INFO] Downloading: http://repository.jboss.org/nexus/content/groups/public/org/apache/commons/commons-parent/9/commons-parent-9.pom
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/9/commons-parent-9.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/9/commons-parent-9.pom (0 B at 0.0 KB/sec)
+[INFO] Downloading: http://repository.jboss.org/nexus/content/groups/public/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.pom
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.pom (0 B at 0.0 KB/sec)
+[INFO] Downloading: http://repository.jboss.org/nexus/content/groups/public/org/apache/commons/commons-parent/5/commons-parent-5.pom
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/5/commons-parent-5.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/5/commons-parent-5.pom (0 B at 0.0 KB/sec)
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/GuideLW_DefiningDebug_Section.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/GuideLW_Seq_DomainSpecificActionsProject_Section.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/Home.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/GuideLW_DomainModelProject_Section.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/GemocStudio-tests-scenarios.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/GuideLW_DefiningConcreteSyntax_Section.asciidoc
+asciidoctor: WARNING: Tutorial_SigPML.asciidoc: line 175: include file not found: /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/SigPML/files/xSigpml.moccml
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/Tutorial_SigPML.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/GuideLW_Chapter.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/TutorialMain.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/GemocStudio-test-4.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/GuideMW_Chapter.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/GuideMW_EditingModelEMFTreeEditor_Section.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/sigpml.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/GemocStudio-test-5.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/GemocStudio-test-3.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/GemocStudio-test-2.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/GuideLW_ExhaustiveExploration_Section.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/GuideMW_ExhaustiveExploration_Section.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/Guide.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/GuideMW_ExecutingSequentialModel_Section.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/GuideLW_Dashboard_Section.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/GuideMW_ExecutingModel_Section.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/Tutorial_Automata.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/GuideLW_XDSMLProject_Section.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/GuideLW_DefiningFeedbackSpecification_Section.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/GemocStudio-test-7.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/Tutorial_Automata-TODO.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/GuideLW_DefiningMultidimensionalTrace_Section.asciidoc
+asciidoctor: WARNING: GuideQuickTutorial.asciidoc: line 111: include file not found: /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/tutorial_sigpml.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/GuideQuickTutorial.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/GuideLW_ECLMoCCML_Section.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/GuideLW_DomainSpecificEvents_Section.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/GuideMW_EditingModelWithSirius_Section.asciidoc
+asciidoctor: WARNING: GuideTutorialMarkedGraph.asciidoc: line 888: include file not found: /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/MarkedGraph/markedgraph.ccslLib
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/GuideTutorialMarkedGraph.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/GuideLW_ComposingLanguages_Section.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/GuideMW_ExecutingConcurrentModel_Section.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/GuideREADME.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/GuideGlossary.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/GuideLW_DomainSpecificActionsProject_Section.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/README.asciidoc
+asciidoctor: WARNING: GuideLW_DeployLanguages_Section.asciidoc: line 12: section title out of sequence: expected levels 0 or 1, got level 2
+asciidoctor: WARNING: GuideLW_DeployLanguages_Section.asciidoc: line 23: section title out of sequence: expected levels 0 or 1, got level 2
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/GuideLW_DeployLanguages_Section.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/GuideMW_CoordinatingModelExecution_Section.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/GuideBibliography.asciidoc
+[INFO] Rendered /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/GemocStudio-test-1.asciidoc
+[INFO] 
+[INFO] --- docbkx-maven-plugin:2.0.15:generate-html (manual-single-page-html) @ gemoc-studio-guide ---
+[INFO] Executing tasks
+[INFO] Executed tasks
+[INFO] Processing input file: Guide.xml
+[INFO] Applying customization parameters after docbkx parameters
+Loading Xslthl configuration from file:/home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/src/docbkx/custom/highlighters/xslthl-config.xml...
+[INFO] /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/target/docbook/publish/guide/html_single/Guide.html has been generated.
+[INFO] Executing tasks
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- docbkx-maven-plugin:2.0.15:generate-html (manual-multi-page-html) @ gemoc-studio-guide ---
+[INFO] Executing tasks
+[INFO] Executed tasks
+[INFO] Processing input file: Guide.xml
+[INFO] Applying customization parameters after docbkx parameters
+[INFO] Chunking output.
+[INFO] See /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/target/docbook/publish/guide/html for generated file(s)
+[INFO] 
+[INFO] --- docbkx-maven-plugin:2.0.15:generate-eclipse (multi-page-eclipse) @ gemoc-studio-guide ---
+[INFO] Executing tasks
+[INFO] Executed tasks
+[INFO] Processing input file: Guide.xml
+[INFO] Applying customization parameters after docbkx parameters
+[INFO] See /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/target/docbook/publish/guide/eclipse for generated file(s)
+[INFO] 
+[INFO] --- docbkx-maven-plugin:2.0.15:generate-html (tutorials-single-page-html) @ gemoc-studio-guide ---
+[INFO] Executing tasks
+[INFO] Executed tasks
+[INFO] Processing input file: TutorialMain.xml
+[INFO] Applying customization parameters after docbkx parameters
+[INFO] /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/target/docbook/publish/tutorials/html_single/TutorialMain.html has been generated.
+[INFO] 
+[INFO] --- docbkx-maven-plugin:2.0.15:generate-html (tutorial-markedgraph-single-page-html) @ gemoc-studio-guide ---
+[INFO] Executing tasks
+[INFO] Executed tasks
+[INFO] Processing input file: GuideTutorialMarkedGraph.xml
+[INFO] Applying customization parameters after docbkx parameters
+[INFO] /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/target/docbook/publish/tutorial_markedgraph/html_single/GuideTutorialMarkedGraph.html has been generated.
+[INFO] 
+[INFO] --- docbkx-maven-plugin:2.0.15:generate-html (tutorial-markedgraph-multi-page-html) @ gemoc-studio-guide ---
+[INFO] Executing tasks
+[INFO] Executed tasks
+[INFO] Processing input file: GuideTutorialMarkedGraph.xml
+[INFO] Applying customization parameters after docbkx parameters
+[INFO] Chunking output.
+[INFO] See /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/target/docbook/publish/tutorial_markedgraph/html for generated file(s)
+[INFO] 
+[INFO] --- docbkx-maven-plugin:2.0.15:generate-eclipse (tutorial-markedgraph-multi-page-eclipse) @ gemoc-studio-guide ---
+[INFO] Executing tasks
+[INFO] Executed tasks
+[INFO] Processing input file: GuideTutorialMarkedGraph.xml
+[INFO] Applying customization parameters after docbkx parameters
+[INFO] See /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/target/docbook/publish/tutorial_markedgraph/eclipse for generated file(s)
+[INFO] 
+[INFO] --- docbkx-maven-plugin:2.0.15:generate-html (tutorial-automata-single-page-html) @ gemoc-studio-guide ---
+[INFO] Executing tasks
+[INFO] Executed tasks
+[INFO] Processing input file: Tutorial_Automata.xml
+[INFO] Applying customization parameters after docbkx parameters
+[INFO] /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/target/docbook/publish/tutorial_automata/html_single/Tutorial_Automata.html has been generated.
+[INFO] 
+[INFO] --- docbkx-maven-plugin:2.0.15:generate-html (tutorial-automata-multi-page-html) @ gemoc-studio-guide ---
+[INFO] Executing tasks
+[INFO] Executed tasks
+[INFO] Processing input file: Tutorial_Automata.xml
+[INFO] Applying customization parameters after docbkx parameters
+[INFO] Chunking output.
+[INFO] See /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/target/docbook/publish/tutorial_automata/html for generated file(s)
+[INFO] 
+[INFO] --- docbkx-maven-plugin:2.0.15:generate-html (tutorial-sigpml-single-page-html) @ gemoc-studio-guide ---
+[INFO] Executing tasks
+[INFO] Executed tasks
+[INFO] Processing input file: Tutorial_SigPML.xml
+[INFO] Applying customization parameters after docbkx parameters
+[INFO] /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/target/docbook/publish/tutorial_sigpml/html_single/Tutorial_SigPML.html has been generated.
+[INFO] 
+[INFO] --- docbkx-maven-plugin:2.0.15:generate-html (tutorial-sigpml-multi-page-html) @ gemoc-studio-guide ---
+[INFO] Executing tasks
+[INFO] Executed tasks
+[INFO] Processing input file: Tutorial_SigPML.xml
+[INFO] Applying customization parameters after docbkx parameters
+[INFO] Chunking output.
+[INFO] See /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/target/docbook/publish/tutorial_sigpml/html for generated file(s)
+[INFO] 
+[INFO] --- docbkx-maven-plugin:2.0.15:generate-eclipse (tutorial-sigpml-multi-page-eclipse) @ gemoc-studio-guide ---
+[INFO] Executing tasks
+[INFO] Executed tasks
+[INFO] Processing input file: Tutorial_SigPML.xml
+[INFO] Applying customization parameters after docbkx parameters
+[INFO] See /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/target/docbook/publish/tutorial_sigpml/eclipse for generated file(s)
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gemoc-studio-guide ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gemoc-studio-guide ---
+[INFO] Downloading: http://repository.jboss.org/nexus/content/groups/public/junit/junit/3.8.2/junit-3.8.2.pom
+[INFO] Downloading: https://repo.maven.apache.org/maven2/junit/junit/3.8.2/junit-3.8.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/junit/junit/3.8.2/junit-3.8.2.pom (0 B at 0.0 KB/sec)
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gemoc-studio-guide ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio.wiki/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gemoc-studio-guide ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ gemoc-studio-guide ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- replacer:1.5.3:replace (replace_imagemap_gemoc_user_guide_html_single) @ gemoc-studio-guide ---
+[INFO] Replacement run on 1 file.
+[INFO] 
+[INFO] --- replacer:1.5.3:replace (replace_imagemap_gemoc_user_guide_html_chunked) @ gemoc-studio-guide ---
+[INFO] Replacement run on 1 file.
+[INFO] 
+[INFO] --- replacer:1.5.3:replace (replace_imagemap_gemoc_user_guide_eclipse_help) @ gemoc-studio-guide ---
+[INFO] Replacement run on 1 file.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ gemoc-studio-guide ---
+[INFO] Downloading: http://repository.jboss.org/nexus/content/groups/public/org/codehaus/plexus/plexus-archiver/2.1/plexus-archiver-2.1.pom
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.1/plexus-archiver-2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.1/plexus-archiver-2.1.pom (3 KB at 24.3 KB/sec)
+[INFO] Downloading: http://repository.jboss.org/nexus/content/groups/public/org/codehaus/plexus/plexus-io/2.0.2/plexus-io-2.0.2.pom
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.2/plexus-io-2.0.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.2/plexus-io-2.0.2.pom (2 KB at 15.5 KB/sec)
+[INFO] Downloading: http://repository.jboss.org/nexus/content/groups/public/org/codehaus/plexus/plexus-components/1.1.19/plexus-components-1.1.19.pom
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.19/plexus-components-1.1.19.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.19/plexus-components-1.1.19.pom (3 KB at 25.1 KB/sec)
+[INFO] Downloading: http://repository.jboss.org/nexus/content/groups/public/commons-lang/commons-lang/2.1/commons-lang-2.1.pom
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.1/commons-lang-2.1.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.1/commons-lang-2.1.pom (10 KB at 84.3 KB/sec)
+[INFO] Downloading: http://repository.jboss.org/nexus/content/groups/public/org/codehaus/plexus/plexus-interpolation/1.15/plexus-interpolation-1.15.jar
+[INFO] Downloading: http://repository.jboss.org/nexus/content/groups/public/org/codehaus/plexus/plexus-archiver/2.1/plexus-archiver-2.1.jar
+[INFO] Downloading: http://repository.jboss.org/nexus/content/groups/public/org/codehaus/plexus/plexus-io/2.0.2/plexus-io-2.0.2.jar
+[INFO] Downloading: http://repository.jboss.org/nexus/content/groups/public/commons-lang/commons-lang/2.1/commons-lang-2.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.15/plexus-interpolation-1.15.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.1/plexus-archiver-2.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.1/commons-lang-2.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.2/plexus-io-2.0.2.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.15/plexus-interpolation-1.15.jar (60 KB at 369.1 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.1/commons-lang-2.1.jar (203 KB at 549.7 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.2/plexus-io-2.0.2.jar (57 KB at 153.0 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.1/plexus-archiver-2.1.jar (181 KB at 377.6 KB/sec)
+[WARNING] JAR will be empty - no content was marked for inclusion!
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 35.180 s
+[INFO] Finished at: 2016-09-05T21:53:37+02:00
+[INFO] Final Memory: 52M/1139M
+[INFO] ------------------------------------------------------------------------
+[WARNING] The requested profile "ignore_CI_repositories" could not be activated because it does not exist.

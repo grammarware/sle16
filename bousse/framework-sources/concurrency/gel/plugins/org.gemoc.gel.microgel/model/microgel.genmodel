@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.gemoc.gel.microgel/src" modelPluginID="org.gemoc.gel.microgel"
+    modelName="Microgel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.gemoc.gel.gexpressions/model/gexpressions.genmodel#//gexpressions ../../fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.genmodel#//TimeModel"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>microgel.ecore</foreignModel>
+  <genPackages prefix="Microgel" basePackage="org.gemoc.gel" disposableProviderFactory="true"
+      ecorePackage="microgel.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="microgel.ecore#//Visibility">
+      <genEnumLiterals ecoreEnumLiteral="microgel.ecore#//Visibility/public"/>
+      <genEnumLiterals ecoreEnumLiteral="microgel.ecore#//Visibility/private"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="microgel.ecore#//ExecutionKind">
+      <genEnumLiterals ecoreEnumLiteral="microgel.ecore#//ExecutionKind/submission"/>
+      <genEnumLiterals ecoreEnumLiteral="microgel.ecore#//ExecutionKind/interruption"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="microgel.ecore#//CallKind">
+      <genEnumLiterals ecoreEnumLiteral="microgel.ecore#//CallKind/blocking"/>
+      <genEnumLiterals ecoreEnumLiteral="microgel.ecore#//CallKind/nonBlocking"/>
+    </genEnums>
+    <genClasses ecoreClass="microgel.ecore#//ModelSpecificEventsSpecification">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference microgel.ecore#//ModelSpecificEventsSpecification/events"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference microgel.ecore#//ModelSpecificEventsSpecification/imports"/>
+    </genClasses>
+    <genClasses ecoreClass="microgel.ecore#//ImportStatement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute microgel.ecore#//ImportStatement/importURI"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="microgel.ecore#//ModelSpecificEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute microgel.ecore#//ModelSpecificEvent/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute microgel.ecore#//ModelSpecificEvent/visibility"/>
+    </genClasses>
+    <genClasses ecoreClass="microgel.ecore#//AtomicModelSpecificEvent">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference microgel.ecore#//AtomicModelSpecificEvent/uponMoccEventInstance"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference microgel.ecore#//AtomicModelSpecificEvent/executionFunction"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference microgel.ecore#//AtomicModelSpecificEvent/feedbackPolicy"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference microgel.ecore#//AtomicModelSpecificEvent/target"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference microgel.ecore#//AtomicModelSpecificEvent/raisedMoccEventInstance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute microgel.ecore#//AtomicModelSpecificEvent/executionKind"/>
+    </genClasses>
+    <genClasses ecoreClass="microgel.ecore#//CompositeModelSpecificEvent">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference microgel.ecore#//CompositeModelSpecificEvent/body"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference microgel.ecore#//CompositeModelSpecificEvent/targets"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="microgel.ecore#//ModelSpecificEventsPattern"/>
+    <genClasses image="false" ecoreClass="microgel.ecore#//UnaryPattern">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference microgel.ecore#//UnaryPattern/operand"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="microgel.ecore#//BinaryPattern">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference microgel.ecore#//BinaryPattern/leftOperand"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference microgel.ecore#//BinaryPattern/rightOperand"/>
+    </genClasses>
+    <genClasses ecoreClass="microgel.ecore#//CoincidencePattern"/>
+    <genClasses ecoreClass="microgel.ecore#//LogicalSequence"/>
+    <genClasses ecoreClass="microgel.ecore#//OrPattern"/>
+    <genClasses ecoreClass="microgel.ecore#//XorPattern"/>
+    <genClasses ecoreClass="microgel.ecore#//PlusPattern"/>
+    <genClasses ecoreClass="microgel.ecore#//IterationPattern">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute microgel.ecore#//IterationPattern/numberOfIterations"/>
+    </genClasses>
+    <genClasses ecoreClass="microgel.ecore#//ModelSpecificEventReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference microgel.ecore#//ModelSpecificEventReference/referencedMse"/>
+    </genClasses>
+    <genClasses ecoreClass="microgel.ecore#//FeedbackPolicy">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference microgel.ecore#//FeedbackPolicy/rules"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference microgel.ecore#//FeedbackPolicy/defaultRule"/>
+    </genClasses>
+    <genClasses ecoreClass="microgel.ecore#//FeedbackRule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference microgel.ecore#//FeedbackRule/filter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference microgel.ecore#//FeedbackRule/consequence"/>
+    </genClasses>
+    <genClasses ecoreClass="microgel.ecore#//FeedbackFilter">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference microgel.ecore#//FeedbackFilter/body"/>
+    </genClasses>
+    <genClasses ecoreClass="microgel.ecore#//FeedbackConsequence">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference microgel.ecore#//FeedbackConsequence/target"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="microgel.ecore#//MoccEventInstance"/>
+    <genClasses ecoreClass="microgel.ecore#//CcslClock">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference microgel.ecore#//CcslClock/referencedClock"/>
+    </genClasses>
+    <genClasses ecoreClass="microgel.ecore#//ExecutionFunctionResult">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute microgel.ecore#//ExecutionFunctionResult/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="microgel.ecore#//ExecutionFunction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference microgel.ecore#//ExecutionFunction/result"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute microgel.ecore#//ExecutionFunction/callKind"/>
+    </genClasses>
+    <genClasses ecoreClass="microgel.ecore#//Kermeta3ExecutionFunction">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference microgel.ecore#//Kermeta3ExecutionFunction/operation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference microgel.ecore#//Kermeta3ExecutionFunction/target"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

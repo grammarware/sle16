@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<artifactId>org.modelexecution.xmof.gemoc.root</artifactId>
+		<groupId>org.modelexecution</groupId>
+		<version>0.1.0-SNAPSHOT</version>
+		<relativePath>../../</relativePath>
+	</parent>
+
+	<artifactId>org.modelexecution.xmof.gemoc.feature</artifactId>
+	<packaging>eclipse-feature</packaging>
+
+	<version>0.1.0-SNAPSHOT</version>
+	<groupId>org.modelexecution</groupId>
+</project> 

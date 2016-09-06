@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ASCII"?>
+<feedback:ActionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:feedback="http://timesquare.inria.fr/feedback">
+  <events name="MSE_alarmOn_occurs">
+    <solverEvent href="tfsmSensorLight_MoCC.extendedCCSL#//@subBlock.0/@elements.0"/>
+  </events>
+  <events name="MSE_alarmOff_occurs">
+    <solverEvent href="tfsmSensorLight_MoCC.extendedCCSL#//@subBlock.0/@elements.1"/>
+  </events>
+  <events name="MSE_gblclk_ticks">
+    <solverEvent href="tfsmSensorLight_MoCC.extendedCCSL#//@subBlock.0/@elements.2"/>
+  </events>
+  <events name="MSE_GreentoRed_fire">
+    <solverEvent href="tfsmSensorLight_MoCC.extendedCCSL#//@subBlock.0/@elements.3"/>
+  </events>
+  <events name="MSE_RedtoGreen_fire">
+    <solverEvent href="tfsmSensorLight_MoCC.extendedCCSL#//@subBlock.0/@elements.4"/>
+  </events>
+  <events name="MSE_inittoGreen_fire">
+    <solverEvent href="tfsmSensorLight_MoCC.extendedCCSL#//@subBlock.0/@elements.5"/>
+  </events>
+  <events name="MSE_GreentoRed_trigger">
+    <solverEvent href="tfsmSensorLight_MoCC.extendedCCSL#//@subBlock.0/@elements.6"/>
+  </events>
+  <events name="MSE_RedtoGreen_trigger">
+    <solverEvent href="tfsmSensorLight_MoCC.extendedCCSL#//@subBlock.0/@elements.7"/>
+  </events>
+  <events name="MSE_inittoGreen_trigger">
+    <solverEvent href="tfsmSensorLight_MoCC.extendedCCSL#//@subBlock.0/@elements.8"/>
+  </events>
+  <events name="MSE_init_entering">
+    <solverEvent href="tfsmSensorLight_MoCC.extendedCCSL#//@subBlock.0/@elements.9"/>
+  </events>
+  <events name="MSE_Red_entering">
+    <solverEvent href="tfsmSensorLight_MoCC.extendedCCSL#//@subBlock.0/@elements.10"/>
+  </events>
+  <events name="MSE_Green_entering">
+    <solverEvent href="tfsmSensorLight_MoCC.extendedCCSL#//@subBlock.0/@elements.11"/>
+  </events>
+  <events name="MSE_init_leaving">
+    <solverEvent href="tfsmSensorLight_MoCC.extendedCCSL#//@subBlock.0/@elements.12"/>
+  </events>
+  <events name="MSE_Red_leaving">
+    <solverEvent href="tfsmSensorLight_MoCC.extendedCCSL#//@subBlock.0/@elements.13"/>
+  </events>
+  <events name="MSE_Green_leaving">
+    <solverEvent href="tfsmSensorLight_MoCC.extendedCCSL#//@subBlock.0/@elements.14"/>
+  </events>
+  <events name="MSE_tfsmSensorLight_start">
+    <solverEvent href="tfsmSensorLight_MoCC.extendedCCSL#//@subBlock.0/@elements.15"/>
+  </events>
+  <events name="MSE_tfsmSensorLight_stall">
+    <solverEvent href="tfsmSensorLight_MoCC.extendedCCSL#//@subBlock.0/@elements.16"/>
+  </events>
+  <importStatements importURI="platform:/13"/>
+</feedback:ActionModel>

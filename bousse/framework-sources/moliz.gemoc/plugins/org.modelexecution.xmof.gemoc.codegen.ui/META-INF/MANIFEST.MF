@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: xMOF Code Generator UI
+Bundle-SymbolicName: org.modelexecution.xmof.gemoc.codegen.ui;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.modelexecution.xmof.gemoc.codegen.ui.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.emf.ecore,
+ org.modelexecution.xmof.gemoc.codegen;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy

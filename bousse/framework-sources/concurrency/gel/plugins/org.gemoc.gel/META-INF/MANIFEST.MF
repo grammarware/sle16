@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: GEL Abstract Syntax
+Bundle-SymbolicName: org.gemoc.gel;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: IRIT
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: org.gemoc.gel,
+ org.gemoc.gel.impl,
+ org.gemoc.gel.util,
+ org.gemoc.gel.utils
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.ocl.examples.domain;bundle-version="[3.4.0,3.5.0)",
+ org.eclipse.ocl.examples.xtext.base;bundle-version="[3.4.0,3.5.0)";visibility:=reexport,
+ org.eclipse.ocl.examples.xtext.completeocl;bundle-version="[3.4.0,3.5.0)";visibility:=reexport,
+ fr.inria.aoste.timesquare.ecl;visibility:=reexport,
+ org.eclipse.ocl.examples.xtext.essentialocl;bundle-version="[3.4.0,3.5.0)";visibility:=reexport,
+ org.eclipse.ocl.examples.pivot;bundle-version="[3.4.0,3.5.0)";visibility:=reexport,
+ fr.inria.aoste.timesquare.ccslkernel.model;visibility:=reexport,
+ org.eclipse.ocl,
+ org.gemoc.gexpressions
+Bundle-ActivationPolicy: lazy

@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: xMOF Code Generator
+Bundle-SymbolicName: org.modelexecution.xmof.gemoc.codegen
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Business Informatics Group, TU Wien
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.emf.ecore,
+ org.modelexecution.xmof;bundle-version="1.0.0",
+ org.eclipse.emf.codegen.ecore,
+ org.eclipse.equinox.registry,
+ org.eclipse.core.resources
+Export-Package: org.modelexecution.xmof.gemoc.codegen

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated microgel -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.gemoc.gel.microgel.presentation.MicrogelModelWizardID"
+            name="%_UI_MicrogelModelWizard_label"
+            class="org.gemoc.gel.microgel.presentation.MicrogelModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/MicrogelModelFile.gif">
+         <description>%_UI_MicrogelModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated microgel -->
+      <editor
+            id="org.gemoc.gel.microgel.presentation.MicrogelEditorID"
+            name="%_UI_MicrogelEditor_label"
+            icon="icons/full/obj16/MicrogelModelFile.gif"
+            extensions="microgel"
+            class="org.gemoc.gel.microgel.presentation.MicrogelEditor"
+            contributorClass="org.gemoc.gel.microgel.presentation.MicrogelActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.gemoc.sample.tfsm:TFSM xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.gemoc.sample.tfsm="http://www.gemoc.org/sample/tfsm" name="tfsmSensorLight" initialState="//@ownedStates.0">
+  <ownedStates name="init" outgoingTransitions="//@ownedTransitions.0"/>
+  <ownedStates name="Green" outgoingTransitions="//@ownedTransitions.1" incomingTransitions="//@ownedTransitions.0 //@ownedTransitions.2"/>
+  <ownedStates name="Red" outgoingTransitions="//@ownedTransitions.2" incomingTransitions="//@ownedTransitions.1"/>
+  <localEvents name="alarmOn"/>
+  <localEvents name="alarmOff"/>
+  <localClock name="gblclk"/>
+  <ownedTransitions name="inittoGreen" source="//@ownedStates.0" target="//@ownedStates.1">
+    <ownedGuard xsi:type="org.gemoc.sample.tfsm:TemporalGuard" name="guardinit" onClock="//@localClock" afterDuration="1"/>
+  </ownedTransitions>
+  <ownedTransitions name="GreentoRed" source="//@ownedStates.1" target="//@ownedStates.2" action="">
+    <ownedGuard xsi:type="org.gemoc.sample.tfsm:EventGuard" name="guardalarmOn" triggeringEvent="//@localEvents.0"/>
+  </ownedTransitions>
+  <ownedTransitions name="RedtoGreen" source="//@ownedStates.2" target="//@ownedStates.1" action="">
+    <ownedGuard xsi:type="org.gemoc.sample.tfsm:EventGuard" name="guardalarmOff" triggeringEvent="//@localEvents.1"/>
+  </ownedTransitions>
+</org.gemoc.sample.tfsm:TFSM>

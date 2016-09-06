@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+ 
+   <extension
+          point="org.eclipse.ui.perspectiveExtensions">
+       <perspectiveExtension
+             targetID="org.eclipse.sirius.ui.tools.perspective.design">
+          <newWizardShortcut
+                id="org.gemoc.executionengine.ccsljava.concurrent_xdsml.presentation.Concurrent_xdsmlModelWizardID">
+          </newWizardShortcut>
+       </perspectiveExtension>
+    </extension>
+
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated concurrent_xdsml -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.gemoc.executionengine.ccsljava.concurrent_xdsml.presentation.Concurrent_xdsmlModelWizardID"
+            name="%_UI_Concurrent_xdsmlModelWizard_label"
+            class="org.gemoc.execution.concurrent.ccsljavaxdsml.concurrent_xdsml.presentation.Concurrent_xdsmlModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/Concurrent_xdsmlModelFile.gif">
+         <description>%_UI_Concurrent_xdsmlModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated concurrent_xdsml -->
+      <editor
+            id="org.gemoc.executionengine.ccsljava.concurrent_xdsml.presentation.Concurrent_xdsmlEditorID"
+            name="%_UI_Concurrent_xdsmlEditor_label"
+            icon="icons/full/obj16/Concurrent_xdsmlModelFile.gif"
+            extensions="xdsml"
+            class="org.gemoc.execution.concurrent.ccsljavaxdsml.concurrent_xdsml.presentation.Concurrent_xdsmlEditor"
+            contributorClass="org.gemoc.execution.concurrent.ccsljavaxdsml.concurrent_xdsml.presentation.Concurrent_xdsmlActionBarContributor">
+      </editor>
+   </extension>
+</plugin>

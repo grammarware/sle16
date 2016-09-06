@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ASCII"?>
+<trace:Trace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:trace="http:///www.eclipse.org/m2m/qvt/operational/trace.ecore">
+  <traceRecords>
+    <mappingOperation name="AtomicActionsOper2CCSL" package="doAtomicActionsOper_To_CCSL" module="doAtomicActionsOper_To_CCSL">
+      <runtimeMappingOperation href="qvto:/module.env#//AtomicActionsOper2CCSL"/>
+    </mappingOperation>
+    <context/>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="ClockConstraintSystem">
+        <value>
+          <modelElement href="BDC_coordinatedWith_BM_MoCC.extendedCCSL#/"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+</trace:Trace>

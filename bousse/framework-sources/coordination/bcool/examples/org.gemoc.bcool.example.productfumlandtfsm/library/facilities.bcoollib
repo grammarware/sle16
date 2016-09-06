@@ -1,0 +1,17 @@
+BCoolLibrary facilities{
+
+
+relationDeclarations { 
+	RelationDeclaration RendezVous { },
+	RelationDeclaration Causality { }
+
+}
+
+expressionDeclarations {
+	ExpressionDeclaration AfterN {formalParameters {"a","b"}} , 
+	ExpressionDeclaration SampleBy {formalParameters{"a","b"}} ,
+	ExpressionDeclaration SampleN {formalParameters{"a","b","c"}},
+	ExpressionDeclaration DelayFor {formalParameters{"a","b","c"}}
+}
+
+}

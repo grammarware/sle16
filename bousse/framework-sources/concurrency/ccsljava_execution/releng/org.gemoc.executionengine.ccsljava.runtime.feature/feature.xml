@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.gemoc.executionengine.ccsljava.runtime.feature"
+      label="Execution Engine CCSL Java Runtime"
+      version="0.1.0.qualifier"
+      provider-name="GEMOC">
+
+   <description url="http://gemoc.org/studio/">
+      List of plugins that are part of the CCSL Java Execution Engine
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <plugin
+         id="org.gemoc.execution.concurrent.ccsljavaengine.extensions.k3"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.gemoc.execution.concurrent.ccsljavaengine.extensions.timesquare"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.gemoc.execution.concurrent.ccsljavaxdsml.utils"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.gemoc.execution.concurrent.ccsljavaxdsml.api"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.gemoc.execution.concurrent.ccsljavaengine"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.gemoc.execution.concurrent.ccsljavaengine.stimuli_scenario.model"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.gemoc.execution.concurrent.ccsljavaengine.mse.model"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

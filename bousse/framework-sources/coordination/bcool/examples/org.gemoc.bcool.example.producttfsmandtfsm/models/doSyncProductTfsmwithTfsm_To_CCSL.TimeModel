@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fr.inria.aoste.timemodel.ccslmodel:ClockConstraintSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fr.inria.aoste.timemodel="http://fr.inria.aoste.timemodel" xmlns:fr.inria.aoste.timemodel.ccslmodel="http://fr.inria.aoste.timemodel.ccslmodel" name="SyncProductTfsmwithTfsmCoordination" superBlock="//@subBlock.0">
+  <subBlock name="mainBlock">
+    <relations name="MatchingandCoordinationSharedEvents_BCoolCompositionRule_alarmOn">
+      <type href="../library/bcoollib.ccslLib#//@relationLibraries.0/@relationDeclarations.0"/>
+      <bindings>
+        <abstract href="../../../plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib#//@relationLibraries.0/@relationDeclarations.5/@leftEntity"/>
+        <bindable xsi:type="fr.inria.aoste.timemodel:Clock" href="tfsmSensorAlarm_MoCC.extendedCCSL#//@subBlock.0/@elements.0"/>
+      </bindings>
+      <bindings>
+        <abstract href="../../../plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib#//@relationLibraries.0/@relationDeclarations.5/@rightEntity"/>
+        <bindable xsi:type="fr.inria.aoste.timemodel:Clock" href="tfsmSensorLight_MoCC.extendedCCSL#//@subBlock.0/@elements.0"/>
+      </bindings>
+    </relations>
+    <relations name="MatchingandCoordinationSharedEvents_BCoolCompositionRule_alarmOff">
+      <type href="../library/bcoollib.ccslLib#//@relationLibraries.0/@relationDeclarations.0"/>
+      <bindings>
+        <abstract href="../../../plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib#//@relationLibraries.0/@relationDeclarations.5/@leftEntity"/>
+        <bindable xsi:type="fr.inria.aoste.timemodel:Clock" href="tfsmSensorAlarm_MoCC.extendedCCSL#//@subBlock.0/@elements.2"/>
+      </bindings>
+      <bindings>
+        <abstract href="../../../plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib#//@relationLibraries.0/@relationDeclarations.5/@rightEntity"/>
+        <bindable xsi:type="fr.inria.aoste.timemodel:Clock" href="tfsmSensorLight_MoCC.extendedCCSL#//@subBlock.0/@elements.1"/>
+      </bindings>
+    </relations>
+  </subBlock>
+  <imports importURI="platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/library/bcoollib.ccslLib" alias="lib_2"/>
+  <imports importURI="platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib" alias="model_1_1"/>
+  <imports importURI="platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib" alias="model_1_2"/>
+  <imports importURI="platform:/resource/org.gemoc.bcool.example.productfumlandtfsm/interfaces/TFSMMoC.ccslLib" alias="model_1_3"/>
+  <imports importURI="platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib" alias="model_2_1"/>
+  <imports importURI="platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib" alias="model_2_2"/>
+  <imports importURI="platform:/resource/org.gemoc.bcool.example.productfumlandtfsm/interfaces/TFSMMoC.ccslLib" alias="model_2_3"/>
+  <imports importURI="platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/models/tfsmSensorAlarm_MoCC.extendedCCSL" alias="inM1"/>
+  <imports importURI="platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/models/tfsmSensorLight_MoCC.extendedCCSL" alias="inM2"/>
+</fr.inria.aoste.timemodel.ccslmodel:ClockConstraintSystem>

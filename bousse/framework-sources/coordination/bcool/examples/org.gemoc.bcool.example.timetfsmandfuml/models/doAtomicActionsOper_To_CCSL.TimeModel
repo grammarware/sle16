@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fr.inria.aoste.timemodel.ccslmodel:ClockConstraintSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:fr.inria.aoste.timemodel.ccslmodel="http://fr.inria.aoste.timemodel.ccslmodel" name="AtomicActionsOperCoordination" superBlock="//@subBlock.0">
+  <subBlock name="mainBlock"/>
+  <imports importURI="platform:/resource/org.gemoc.bcool.example.timetfsmandfuml/library/bcoollib.ccslLib" alias="lib_2"/>
+  <imports importURI="platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib" alias="model_1_1"/>
+  <imports importURI="platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib" alias="model_1_2"/>
+  <imports importURI="platform:/resource/org.gemoc.bcool.example.timetfsmandfuml/interfaces/TFSMMoC.ccslLib" alias="model_1_3"/>
+  <imports importURI="platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib" alias="model_2_1"/>
+  <imports importURI="platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib" alias="model_2_2"/>
+  <imports importURI="platform:/resource/org.gemoc.bcool.example.timetfsmandfuml/interfaces/lib4RT.ccslLib" alias="model_2_3"/>
+  <imports importURI="platform:/resource/org.gemoc.bcool.example.timetfsmandfuml/models/BMC_MoCC.extendedCCSL" alias="inM1"/>
+  <imports importURI="platform:/resource/org.gemoc.bcool.example.timetfsmandfuml/models/BDC_MoCC.extendedCCSL" alias="inM2"/>
+</fr.inria.aoste.timemodel.ccslmodel:ClockConstraintSystem>

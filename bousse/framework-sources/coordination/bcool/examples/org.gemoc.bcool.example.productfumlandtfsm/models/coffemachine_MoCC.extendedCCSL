@@ -1,0 +1,136 @@
+ClockConstraintSystem CoffeeMachine {
+	imports {
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib" as kernel ;
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib" as CCSL ;
+		import "platform:/resource/org.gemoc.bcool.example.productfumlandtfsm/interfaces/TFSMMoC.ccslLib" as TFSMMoC ;
+		import "platform:/resource/org.gemoc.bcool.example.productfumlandtfsm/models/coffemachine.tfsm" as TimedSystem ;
+	}
+	entryBlock mainBlock
+	Block mainBlock {
+		Expression unlockintermediate_AllTriggeringOccurrences1 = Union
+		( Clock1 -> opentoclose_fire,
+		Clock2 -> opentoclose_fire )
+		Expression inittoopen_SampledOn_eventOccursAfterOrWhileStateEntering = SampledOn
+		( SampledOnSampledClock -> init_entering,
+		SampledOnTrigger -> start_occurs )
+		Expression opentoclose_SampledOn_eventOccursAfterOrWhileStateEntering = SampledOn
+		( SampledOnSampledClock -> Locked_entering,
+		SampledOnTrigger -> coin_occurs )
+		Expression unlockedtolocked_SampledOn_eventOccursAfterOrWhileStateEntering = SampledOn
+		( SampledOnSampledClock -> Unlocked_entering,
+		SampledOnTrigger -> coffeeDone_occurs )
+		Expression Lockedintermediate_allFiredoutgoingTransition1 = Union
+		( Clock1 -> opentoclose_fire,
+		Clock2 -> opentoclose_fire )
+		Expression Unlockedintermediate_allFiredoutgoingTransition1 = Union
+		( Clock1 -> unlockedtolocked_fire,
+		Clock2 -> unlockedtolocked_fire )
+		Expression initintermediate_allFiredoutgoingTransition1 = Union
+		( Clock1 -> inittoopen_fire,
+		Clock2 -> inittoopen_fire )
+		Expression Lockedintermediate_allInputTransition1 = Union
+		( Clock1 -> inittoopen_fire,
+		Clock2 -> unlockedtolocked_fire )
+		Expression Unlockedintermediate_allInputTransition1 = Union
+		( Clock1 -> opentoclose_fire,
+		Clock2 -> opentoclose_fire )
+		Expression CoffeeCoinintermediate_onlyOneFirst1 = OneTickAndNoMore
+		( OneTickAndNoMoreClock -> CoffeeCoin_start )
+		Relation unlockFSMEventSendReceive_occursWhenSolicitate [ FSMEventSendReceive ]
+		( ClockA -> unlockintermediate_AllTriggeringOccurrences1,
+		ClockB -> unlock_occurs )
+		Relation inittoopenCoincides_fireWhenEventOccursOneTransition [ Coincides ]
+		( Clock2 -> inittoopen_SampledOn_eventOccursAfterOrWhileStateEntering,
+		Clock1 -> inittoopen_fire )
+		Relation opentocloseCoincides_fireWhenEventOccursOneTransition [ Coincides ]
+		( Clock2 -> opentoclose_SampledOn_eventOccursAfterOrWhileStateEntering,
+		Clock1 -> opentoclose_fire )
+		Relation unlockedtolockedCoincides_fireWhenEventOccursOneTransition [ Coincides ]
+		( Clock2 -> unlockedtolocked_SampledOn_eventOccursAfterOrWhileStateEntering,
+		Clock1 -> unlockedtolocked_fire )
+		Relation LockedAlternates_enterOnceBeforeToLeave [ Alternates ]
+		( AlternatesLeftClock -> Locked_entering,
+		AlternatesRightClock -> Locked_leaving )
+		Relation UnlockedAlternates_enterOnceBeforeToLeave [ Alternates ]
+		( AlternatesLeftClock -> Unlocked_entering,
+		AlternatesRightClock -> Unlocked_leaving )
+		Relation initAlternates_enterOnceBeforeToLeave [ Alternates ]
+		( AlternatesLeftClock -> init_entering,
+		AlternatesRightClock -> init_leaving )
+		Relation LockedCoincides_firingATransitionAlternatesWithLeavingState [ Coincides ]
+		( Clock2 -> Lockedintermediate_allFiredoutgoingTransition1,
+		Clock1 -> Locked_leaving )
+		Relation UnlockedCoincides_firingATransitionAlternatesWithLeavingState [ Coincides ]
+		( Clock2 -> Unlockedintermediate_allFiredoutgoingTransition1,
+		Clock1 -> Unlocked_leaving )
+		Relation initCoincides_firingATransitionAlternatesWithLeavingState [ Coincides ]
+		( Clock2 -> initintermediate_allFiredoutgoingTransition1,
+		Clock1 -> init_leaving )
+		Relation LockedCauses_stateEntering [ Causes ]
+		( LeftClock -> Lockedintermediate_allInputTransition1,
+		RightClock -> Locked_entering )
+		Relation UnlockedCauses_stateEntering [ Causes ]
+		( LeftClock -> Unlockedintermediate_allInputTransition1,
+		RightClock -> Unlocked_entering )
+		Relation CoffeeCoinintermediate_oneStateAtATime1_2 [ Exclusion ]
+		( Clock1 -> init_entering,
+		Clock2 -> Locked_entering )
+		Relation CoffeeCoinintermediate_oneStateAtATime1_3 [ Exclusion ]
+		( Clock1 -> init_entering,
+		Clock2 -> Unlocked_entering )
+		Relation CoffeeCoinintermediate_oneStateAtATime2_3 [ Exclusion ]
+		( Clock1 -> Locked_entering,
+		Clock2 -> Unlocked_entering )
+		Relation CoffeeCoinintermediate_oneTransitionAtATime1_2 [ Exclusion ]
+		( Clock1 -> inittoopen_fire,
+		Clock2 -> opentoclose_fire )
+		Relation CoffeeCoinintermediate_oneTransitionAtATime1_3 [ Exclusion ]
+		( Clock1 -> inittoopen_fire,
+		Clock2 -> unlockedtolocked_fire )
+		Relation CoffeeCoinintermediate_oneTransitionAtATime2_3 [ Exclusion ]
+		( Clock1 -> opentoclose_fire,
+		Clock2 -> unlockedtolocked_fire )
+		Relation CoffeeCoinCoincides_firstIsInitialState [ Coincides ]
+		( Clock2 -> CoffeeCoin_start,
+		Clock1 -> init_entering )
+		Relation CoffeeCoinCoincides_firstOnlyOnce [ Coincides ]
+		( Clock2 -> CoffeeCoin_start,
+		Clock1 -> CoffeeCoinintermediate_onlyOneFirst1 )
+		Clock globalclk_ticks : clock -> evt_globalclk_ticks
+		( "globalclk",
+		"globalclk::ticks()" )
+		Clock inittoopen_fire : clock -> evt_inittoopen_fire
+		( "inittoopen",
+		"inittoopen::fire()" )
+		Clock opentoclose_fire : clock -> evt_opentoclose_fire
+		( "opentoclose",
+		"opentoclose::fire()" )
+		Clock unlockedtolocked_fire : clock -> evt_unlockedtolocked_fire
+		( "unlockedtolocked",
+		"unlockedtolocked::fire()" )
+		Clock coin_occurs : clock -> evt_coin_occurs
+		( )
+		Clock coffeeDone_occurs : clock -> evt_coffeeDone_occurs
+		( )
+		Clock unlock_occurs : clock -> evt_unlock_occurs
+		( )
+		Clock start_occurs : clock -> evt_start_occurs
+		( )
+		Clock Locked_entering : clock -> evt_Locked_entering
+		( "Locked" )
+		Clock Unlocked_entering : clock -> evt_Unlocked_entering
+		( "Unlocked" )
+		Clock init_entering : clock -> evt_init_entering
+		( "init" )
+		Clock Locked_leaving : clock -> evt_Locked_leaving
+		( "Locked" )
+		Clock Unlocked_leaving : clock -> evt_Unlocked_leaving
+		( "Unlocked" )
+		Clock init_leaving : clock -> evt_init_leaving
+		( "init" )
+		Clock CoffeeCoin_start : clock -> evt_CoffeeCoin_start
+		( )
+		Clock CoffeeCoin_stall : clock -> evt_CoffeeCoin_stall
+		( )
+	}
+}

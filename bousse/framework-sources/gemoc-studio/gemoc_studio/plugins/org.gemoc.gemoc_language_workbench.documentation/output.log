@@ -1,0 +1,159 @@
+[INFO] Error stacktraces are turned on.
+[INFO] Scanning for projects...
+[INFO] Computing target platform for MavenProject: org.gemoc.gemoc_studio:org.gemoc.gemoc_language_workbench.documentation:2.2.0-SNAPSHOT @ /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/pom.xml
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/
+[INFO] Adding repository http://download.eclipse.org/modeling/mdt/ocl/updates
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/3.0.0/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/3.0.0/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/3.0.1/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/3.0.1/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/3.0.2/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/3.1.0/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/3.1.0/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/3.1.1/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/3.1.1/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/3.1.2/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/3.1.2/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/3.1.2/R201202060606/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/3.1.2/R201202060606/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/3.1.2/R201202200927/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/3.1.2/R201202200927/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/4.0.0/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/4.0.0/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/4.0.1/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/4.0.2/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/4.0.2/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/4.1.0/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/4.1.0/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/4.1.1/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/4.1.1/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/5.0.0/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/5.0.0/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/5.0.1/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/5.0.1/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/5.0.2/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/5.0.2/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/5.0.3/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/5.0.4/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/5.0.4/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/6.0.0/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/6.0.0/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/5.0.5/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/5.0.5/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/6.0.1/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/6.0.1/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/6.0.2/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/6.0.2/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/6.1.0/
+[INFO] Fetching p2.index from http://download.eclipse.org/modeling/mdt/ocl/updates/releases/6.1.0/
+[INFO] Adding repository http://community.polarion.com/projects/subversive/download/eclipse/5.0/mars-site
+[INFO] Adding repository http://repo1.maven.org/maven2/.m2e/connectors/m2eclipse-tycho/0.7.0/N/0.7.0.201309291400
+[INFO] Adding repository http://gemoc.org/pub/studio/patch_sirius_palette
+[INFO] Adding repository http://download.eclipse.org/sirius/updates/releases/3.1.4/mars
+[INFO] Adding repository http://dist.springsource.org/snapshot/GRECLIPSE/e4.5
+sept. 05, 2016 5:26:33 PM org.apache.http.client.protocol.ResponseProcessCookies processCookies
+AVERTISSEMENT: Invalid cookie header: "Set-Cookie: webflash=; expires="Wed, 31-Aug-2016 15:26:33 GMT"; Max-Age=0; Path=/". Unable to parse expires attribute: "Wed, 31-Aug-2016 15:26:33 GMT"
+sept. 05, 2016 5:26:33 PM org.apache.http.client.protocol.ResponseProcessCookies processCookies
+AVERTISSEMENT: Invalid cookie header: "Set-Cookie: webflash=; expires="Wed, 31-Aug-2016 15:26:33 GMT"; Max-Age=0; Path=/". Unable to parse expires attribute: "Wed, 31-Aug-2016 15:26:33 GMT"
+sept. 05, 2016 5:26:33 PM org.apache.http.client.protocol.ResponseProcessCookies processCookies
+AVERTISSEMENT: Invalid cookie header: "Set-Cookie: webflash=; expires="Wed, 31-Aug-2016 15:26:33 GMT"; Max-Age=0; Path=/". Unable to parse expires attribute: "Wed, 31-Aug-2016 15:26:33 GMT"
+sept. 05, 2016 5:26:33 PM org.apache.http.client.protocol.ResponseProcessCookies processCookies
+AVERTISSEMENT: Invalid cookie header: "Set-Cookie: webflash=; expires="Wed, 31-Aug-2016 15:26:33 GMT"; Max-Age=0; Path=/". Unable to parse expires attribute: "Wed, 31-Aug-2016 15:26:33 GMT"
+sept. 05, 2016 5:26:33 PM org.apache.http.client.protocol.ResponseProcessCookies processCookies
+AVERTISSEMENT: Invalid cookie header: "Set-Cookie: VISITOR=57cd8ea9cc0a4522f414caa8; expires="Thu, 03-Sep-2026 15:26:33 GMT"; httponly; Max-Age=315360000; Path=/". Unable to parse expires attribute: "Thu, 03-Sep-2026 15:26:33 GMT"
+[INFO] Adding repository http://sourceforge.net/projects/eclipse-cs/files/updatesite/5.7.0
+sept. 05, 2016 5:26:34 PM org.apache.http.client.protocol.ResponseProcessCookies processCookies
+AVERTISSEMENT: Invalid cookie header: "Set-Cookie: VISITOR=57cd8eaad059df3ed775ec48; expires="Thu, 03-Sep-2026 15:26:34 GMT"; httponly; Max-Age=315360000; Path=/". Unable to parse expires attribute: "Thu, 03-Sep-2026 15:26:34 GMT"
+sept. 05, 2016 5:26:35 PM org.apache.http.client.protocol.ResponseProcessCookies processCookies
+AVERTISSEMENT: Invalid cookie header: "Set-Cookie: VISITOR=57cd8eaad059df3ed775ec48; expires="Thu, 03-Sep-2026 15:26:35 GMT"; httponly; Max-Age=315360000; Path=/". Unable to parse expires attribute: "Thu, 03-Sep-2026 15:26:35 GMT"
+sept. 05, 2016 5:26:35 PM org.apache.http.client.protocol.ResponseProcessCookies processCookies
+AVERTISSEMENT: Invalid cookie header: "Set-Cookie: sf_mirror_attempt="eclipse-cs:kent:updatesite/5.7.0/content.jar"; expires=120; Path=/". Unable to parse expires attribute: 120
+[INFO] Adding repository http://download.eclipse.org/tools/ajdt/44/dev/update
+[INFO] Fetching p2.index from http://download.eclipse.org/releases/mars/201602261000/
+[INFO] Fetching p2.index from http://download.eclipse.org/releases/mars/201602261000/
+[INFO] Adding repository http://download.eclipse.org/releases/mars/201602261000
+[INFO] Adding repository http://timesquare.inria.fr/update_site/experimental
+[INFO] Adding repository http://timesquare.inria.fr/ecl/update_site/experimental
+[INFO] Adding repository https://ci.inria.fr/diverse-commons/job/diverse-commons.eclipse.root/lastSuccessfulBuild/artifact/commons-eclipse/fr.inria.diverse.commons.eclipse.root/p2updatesite/target/repository
+[INFO] Adding repository http://www.kermeta.org/k3/update
+[INFO] Adding repository http://melange-lang.org/updatesite
+[INFO] Adding repository http://releases.umldesigner.org/5.0.1/repository
+[INFO] Adding repository http://archive.eclipse.org/nebula/Q22016/incubation
+[INFO] Fetching p2.index from http://download.eclipse.org/tools/gef/updates/milestones/
+[INFO] Fetching p2.index from http://download.eclipse.org/tools/gef/updates/milestones/
+[INFO] Adding repository http://download.eclipse.org/tools/gef/updates/milestones
+[INFO] Fetching p2.index from http://download.eclipse.org/tools/gef/updates/milestones/5.0.0M1_gef-master_3556/
+[INFO] Fetching p2.index from http://download.eclipse.org/tools/gef/updates/milestones/5.0.0M1_gef-master_3556/
+[INFO] Resolving dependencies of MavenProject: org.gemoc.gemoc_studio:org.gemoc.gemoc_language_workbench.documentation:2.2.0-SNAPSHOT @ /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/pom.xml
+[INFO] Resolving class path of MavenProject: org.gemoc.gemoc_studio:org.gemoc.gemoc_language_workbench.documentation:2.2.0-SNAPSHOT @ /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/pom.xml
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building org.gemoc.gemoc_language_workbench.documentation 2.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ org.gemoc.gemoc_language_workbench.documentation ---
+[INFO] Deleting /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/target
+[INFO] Deleting /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help (includes = [], excludes = [**/.gitignore, html/**])
+[INFO] 
+[INFO] --- tycho-packaging-plugin:0.25.0:build-qualifier (default-build-qualifier) @ org.gemoc.gemoc_language_workbench.documentation ---
+[INFO] The project's OSGi version is 2.2.0.201609051526
+[INFO] 
+[INFO] --- tycho-packaging-plugin:0.25.0:validate-id (default-validate-id) @ org.gemoc.gemoc_language_workbench.documentation ---
+[INFO] 
+[INFO] --- tycho-packaging-plugin:0.25.0:validate-version (default-validate-version) @ org.gemoc.gemoc_language_workbench.documentation ---
+[INFO] 
+[INFO] --- maven-antrun-plugin:1.3:run (default) @ org.gemoc.gemoc_language_workbench.documentation ---
+[INFO] Executing tasks
+    [mkdir] Created dir: /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide
+     [copy] Copying 212 files to /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/guide/eclipse
+    [mkdir] Created dir: /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/tutorial_markedgraph
+     [copy] Copying 235 files to /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/tutorial_markedgraph/eclipse
+    [mkdir] Created dir: /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/tutorial_sigpml
+     [copy] Copying 187 files to /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/eclipse_help/tutorial_sigpml/eclipse
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- maven-resources-plugin:2.4.3:resources (default-resources) @ org.gemoc.gemoc_language_workbench.documentation ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/src/main/resources
+[INFO] 
+[INFO] --- tycho-compiler-plugin:0.25.0:compile (default-compile) @ org.gemoc.gemoc_language_workbench.documentation ---
+[INFO] Compiling 1 source file to /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.4.3:testResources (default-testResources) @ org.gemoc.gemoc_language_workbench.documentation ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/src/test/resources
+[INFO] 
+[INFO] --- tycho-source-plugin:0.25.0:plugin-source (plugin-source) @ org.gemoc.gemoc_language_workbench.documentation ---
+[WARNING] bundle localization file /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/plugin.properties not found
+[WARNING] Bundle-Vendor header not found in /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/META-INF/MANIFEST.MF, fallback to 'unknown' for source bundle
+[INFO] Building jar: /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/target/org.gemoc.gemoc_language_workbench.documentation-2.2.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-replacer-plugin:1.4.1:replace (replace-for-guide) @ org.gemoc.gemoc_language_workbench.documentation ---
+[INFO] Replacement run on 1 file.
+[INFO] 
+[INFO] --- maven-replacer-plugin:1.4.1:replace (replace-for-tutorial_sigpml) @ org.gemoc.gemoc_language_workbench.documentation ---
+[INFO] Replacement run on 1 file.
+[INFO] 
+[INFO] --- maven-replacer-plugin:1.4.1:replace (replace-for-tutorial_markedgraph) @ org.gemoc.gemoc_language_workbench.documentation ---
+[INFO] Replacement run on 1 file.
+[INFO] 
+[INFO] --- target-platform-configuration:0.25.0:target-platform (default-target-platform) @ org.gemoc.gemoc_language_workbench.documentation ---
+[INFO] 
+[INFO] --- tycho-packaging-plugin:0.25.0:package-plugin (default-package-plugin) @ org.gemoc.gemoc_language_workbench.documentation ---
+[INFO] Building jar: /home/ebousse/git/gemoc-gits/gemoc-studio-compilation/gemoc-studio/gemoc_studio/plugins/org.gemoc.gemoc_language_workbench.documentation/target/org.gemoc.gemoc_language_workbench.documentation-2.2.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- tycho-p2-plugin:0.25.0:p2-metadata-default (default-p2-metadata-default) @ org.gemoc.gemoc_language_workbench.documentation ---
+[INFO] 
+[INFO] --- tycho-source-feature-plugin:0.25.0:source-feature (source-feature) @ org.gemoc.gemoc_language_workbench.documentation ---
+[INFO] 
+[INFO] --- tycho-p2-plugin:0.25.0:p2-metadata (attach-p2-metadata) @ org.gemoc.gemoc_language_workbench.documentation ---
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 56.246 s
+[INFO] Finished at: 2016-09-05T17:26:56+02:00
+[INFO] Final Memory: 72M/389M
+[INFO] ------------------------------------------------------------------------

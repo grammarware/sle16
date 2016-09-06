@@ -1,0 +1,203 @@
+
+===============================================================================
+Notice: Pharo cannot locate the sources file named /tmp/linux_vm/bin/PharoV30.sources.
+
+Please check that the file is named properly and is in the
+same directory as this image.
+===============================================================================
+
+===============================================================================
+Notice: Errors in script loaded from /home/vince/GemocTmp/\\home\\vince\\GemocTmp\\workspace\\org.gemoc.sample.xSigpml.dse\\mtl-gen\\clockSystemScript.st
+===============================================================================
+THERE_BE_DRAGONS_HERE
+An attempt to use interactive tools detected, while in non-interactive mode
+	FileDoesNotExistException: '/\\home\\vince\\GemocTmp\\workspace\\org.gemoc.sample.xSigpml.dse\\mtl-gen\\xSigpml.clocksystem'
+12 February 2016 10:08:19.96282 am
+
+VM: unix - i686 - linux-gnu - NBCoInterpreter NativeBoost-CogPlugin-GuillermoPolito.19 uuid: acc98e51-2fba-4841-a965-2975997bba66 May 15 2014
+NBCogit NativeBoost-CogPlugin-GuillermoPolito.19 uuid: acc98e51-2fba-4841-a965-2975997bba66 May 15 2014
+https://github.com/pharo-project/pharo-vm.git Commit: ed4a4f59208968a21d82fd2406f75c2c4de558b2 Date: 2014-05-15 18:23:04 +0200 By: Esteban Lorenzano <estebanlm@gmail.com> Jenkins build #14826
+
+Image: Pharo3.0 [Latest update: #30860]
+
+NonInteractiveUIManager>>nonInteractive:
+	Receiver: a NonInteractiveUIManager
+	Arguments and temporary variables: 
+		var1: 	FileDoesNotExistException: '/\\home\\vince\\GemocTmp\\workspace\\org.gemo...etc...
+	Receiver's instance variables: 
+		doNotQuitOnRestart: 	false
+		uiManager: 	a MorphicUIManager
+
+
+NonInteractiveUIManager>>fileDoesNotExistsDefaultAction:
+	Receiver: a NonInteractiveUIManager
+	Arguments and temporary variables: 
+		var1: 	FileDoesNotExistException: '/\\home\\vince\\GemocTmp\\workspace\\org.gemo...etc...
+	Receiver's instance variables: 
+		doNotQuitOnRestart: 	false
+		uiManager: 	a MorphicUIManager
+
+
+FileDoesNotExistException>>defaultAction
+	Receiver: FileDoesNotExistException: '/\\home\\vince\\GemocTmp\\workspace\\org.gemoc.sample.xSigpml....etc...
+	Arguments and temporary variables: 
+
+	Receiver's instance variables: 
+		messageText: 	nil
+		tag: 	nil
+		signaler: 	MultiByteFileStream
+		signalContext: 	FileDoesNotExistException(Exception)>>signal
+		handlerContext: 	BlockClosure>>on:do:
+		outerContext: 	nil
+		fileName: 	'/\\home\\vince\\GemocTmp\\workspace\\org.gemoc.sample.xSigpml.dse\\m...etc...
+		readOnly: 	true
+
+
+UndefinedObject>>handleSignal:
+	Receiver: nil
+	Arguments and temporary variables: 
+		var1: 	FileDoesNotExistException: '/\\home\\vince\\GemocTmp\\workspace\\org.gemo...etc...
+	Receiver's instance variables: 
+nil
+
+MethodContext(ContextPart)>>handleSignal:
+	Receiver: BlockClosure>>on:do:
+	Arguments and temporary variables: 
+		var1: 	FileDoesNotExistException: '/\\home\\vince\\GemocTmp\\workspace\\org.gemo...etc...
+	Receiver's instance variables: 
+		sender: 	PharoCommandLineHandler(BasicCommandLineHandler)>>activate
+		pc: 	17
+		stackp: 	3
+		method: 	BlockClosure>>#on:do:
+		closureOrNil: 	nil
+		receiver: 	activate
+	self methodHasNoSourceCode
+
+
+MethodContext(ContextPart)>>handleSignal:
+	Receiver: BlockClosure>>on:do:
+	Arguments and temporary variables: 
+		var1: 	FileDoesNotExistException: '/\\home\\vince\\GemocTmp\\workspace\\org.gemo...etc...
+	Receiver's instance variables: 
+		sender: 	PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubCommand:
+		pc: 	17
+		stackp: 	3
+		method: 	BlockClosure>>#on:do:
+		closureOrNil: 	nil
+		receiver: 	activateSubCommand: var1
+	self methodHasNoSourceCode
+
+
+FileDoesNotExistException(Exception)>>pass
+	Receiver: FileDoesNotExistException: '/\\home\\vince\\GemocTmp\\workspace\\org.gemoc.sample.xSigpml....etc...
+	Arguments and temporary variables: 
+
+	Receiver's instance variables: 
+		messageText: 	nil
+		tag: 	nil
+		signaler: 	MultiByteFileStream
+		signalContext: 	FileDoesNotExistException(Exception)>>signal
+		handlerContext: 	BlockClosure>>on:do:
+		outerContext: 	nil
+		fileName: 	'/\\home\\vince\\G
+===============================================================================
+Notice: Pharo cannot locate the sources file named /tmp/linux_vm/bin/PharoV30.sources.
+
+Please check that the file is named properly and is in the
+same directory as this image.
+===============================================================================
+
+===============================================================================
+Notice: Errors in script loaded from /home/vince/GemocTmp/\\home\\vince\\GemocTmp\\workspace\\org.gemoc.sample.xSigpml.dse\\mtl-gen\\clockSystemScript.st
+===============================================================================
+THERE_BE_DRAGONS_HERE
+An attempt to use interactive tools detected, while in non-interactive mode
+	FileDoesNotExistException: '/\\home\\vince\\GemocTmp\\workspace\\org.gemoc.sample.xSigpml.dse\\mtl-gen\\xSigpml.clocksystem'
+12 February 2016 10:08:26.888584 am
+
+VM: unix - i686 - linux-gnu - NBCoInterpreter NativeBoost-CogPlugin-GuillermoPolito.19 uuid: acc98e51-2fba-4841-a965-2975997bba66 May 15 2014
+NBCogit NativeBoost-CogPlugin-GuillermoPolito.19 uuid: acc98e51-2fba-4841-a965-2975997bba66 May 15 2014
+https://github.com/pharo-project/pharo-vm.git Commit: ed4a4f59208968a21d82fd2406f75c2c4de558b2 Date: 2014-05-15 18:23:04 +0200 By: Esteban Lorenzano <estebanlm@gmail.com> Jenkins build #14826
+
+Image: Pharo3.0 [Latest update: #30860]
+
+NonInteractiveUIManager>>nonInteractive:
+	Receiver: a NonInteractiveUIManager
+	Arguments and temporary variables: 
+		var1: 	FileDoesNotExistException: '/\\home\\vince\\GemocTmp\\workspace\\org.gemo...etc...
+	Receiver's instance variables: 
+		doNotQuitOnRestart: 	false
+		uiManager: 	a MorphicUIManager
+
+
+NonInteractiveUIManager>>fileDoesNotExistsDefaultAction:
+	Receiver: a NonInteractiveUIManager
+	Arguments and temporary variables: 
+		var1: 	FileDoesNotExistException: '/\\home\\vince\\GemocTmp\\workspace\\org.gemo...etc...
+	Receiver's instance variables: 
+		doNotQuitOnRestart: 	false
+		uiManager: 	a MorphicUIManager
+
+
+FileDoesNotExistException>>defaultAction
+	Receiver: FileDoesNotExistException: '/\\home\\vince\\GemocTmp\\workspace\\org.gemoc.sample.xSigpml....etc...
+	Arguments and temporary variables: 
+
+	Receiver's instance variables: 
+		messageText: 	nil
+		tag: 	nil
+		signaler: 	MultiByteFileStream
+		signalContext: 	FileDoesNotExistException(Exception)>>signal
+		handlerContext: 	BlockClosure>>on:do:
+		outerContext: 	nil
+		fileName: 	'/\\home\\vince\\GemocTmp\\workspace\\org.gemoc.sample.xSigpml.dse\\m...etc...
+		readOnly: 	true
+
+
+UndefinedObject>>handleSignal:
+	Receiver: nil
+	Arguments and temporary variables: 
+		var1: 	FileDoesNotExistException: '/\\home\\vince\\GemocTmp\\workspace\\org.gemo...etc...
+	Receiver's instance variables: 
+nil
+
+MethodContext(ContextPart)>>handleSignal:
+	Receiver: BlockClosure>>on:do:
+	Arguments and temporary variables: 
+		var1: 	FileDoesNotExistException: '/\\home\\vince\\GemocTmp\\workspace\\org.gemo...etc...
+	Receiver's instance variables: 
+		sender: 	PharoCommandLineHandler(BasicCommandLineHandler)>>activate
+		pc: 	17
+		stackp: 	3
+		method: 	BlockClosure>>#on:do:
+		closureOrNil: 	nil
+		receiver: 	activate
+	self methodHasNoSourceCode
+
+
+MethodContext(ContextPart)>>handleSignal:
+	Receiver: BlockClosure>>on:do:
+	Arguments and temporary variables: 
+		var1: 	FileDoesNotExistException: '/\\home\\vince\\GemocTmp\\workspace\\org.gemo...etc...
+	Receiver's instance variables: 
+		sender: 	PharoCommandLineHandler(BasicCommandLineHandler)>>activateSubCommand:
+		pc: 	17
+		stackp: 	3
+		method: 	BlockClosure>>#on:do:
+		closureOrNil: 	nil
+		receiver: 	activateSubCommand: var1
+	self methodHasNoSourceCode
+
+
+FileDoesNotExistException(Exception)>>pass
+	Receiver: FileDoesNotExistException: '/\\home\\vince\\GemocTmp\\workspace\\org.gemoc.sample.xSigpml....etc...
+	Arguments and temporary variables: 
+
+	Receiver's instance variables: 
+		messageText: 	nil
+		tag: 	nil
+		signaler: 	MultiByteFileStream
+		signalContext: 	FileDoesNotExistException(Exception)>>signal
+		handlerContext: 	BlockClosure>>on:do:
+		outerContext: 	nil
+		fileName: 	'/\\home\\vince\\

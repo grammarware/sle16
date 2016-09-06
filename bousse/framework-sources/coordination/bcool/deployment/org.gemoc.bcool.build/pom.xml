@@ -1,0 +1,372 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.gemoc.bcool.framework</groupId>
+  <artifactId>org.gemoc.bcool.build</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>org.gemoc.bcool.build</name>
+  <url>http://bcool.inria.fr</url>
+
+	<properties>
+	    <tycho-version>0.25.0</tycho-version>
+		<tycho-extras-version>0.25.0</tycho-extras-version>
+		<xtext.version>2.8.4</xtext.version>
+		<xtend.version>2.8.4</xtend.version>
+		<maven-clean-plugin.version>2.5</maven-clean-plugin.version>
+		<project.build.sourceEncoding>UTF8</project.build.sourceEncoding>
+	</properties>
+
+<profiles>
+    <!-- Profiles are used for switching the repositories used for the build so they either use the CI update sites or local repositories -->
+    	<profile>
+	        <id>ignore_CI_repositories</id>
+	        <activation>
+	            <activeByDefault>false</activeByDefault>
+	        </activation>
+	        <repositories>
+		    </repositories>
+	    </profile>
+	    <profile>
+	        <id>use_CI_repositories</id>
+	        <activation>
+	            <activeByDefault>true</activeByDefault>
+	        </activation>
+	        <repositories>
+
+		<repository>
+			<id>gel</id>
+			<url>https://ci.inria.fr/gemoc/job/gemoc-studio_gemoc_commons/lastSuccessfulBuild/artifact/gemoc_commons/releng/org.gemoc.gemoc_commons.repository/target/repository/</url>
+			<layout>p2</layout>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+
+		
+		
+	<repository>
+			<id>gemoc-studio-commons</id>
+			<url>https://ci.inria.fr/gemoc/job/gemoc-studio_commons/lastSuccessfulBuild/artifact/commons/releng/org.gemoc.commons.repository/target/repository/</url>
+			<layout>p2</layout>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		
+
+
+</repositories>
+	    </profile>
+    	
+    </profiles>
+
+	<repositories>
+		<repository>
+			<id>TimeSquare</id>
+			<url>http://timesquare.inria.fr/update_site</url>
+			<layout>p2</layout>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		
+		<repository>
+			<id>Luna</id>
+			<url>http://download.eclipse.org/releases/luna/</url>
+			<layout>p2</layout>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>luna-updates</id>
+			<url>http://download.eclipse.org/eclipse/updates/4.4</url>
+			<layout>p2</layout>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+<!-- 		<repository> -->
+<!-- 			<id>Xtext All-in-One</id> -->
+<!-- 			<url>http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/</url> -->
+<!-- 			<layout>p2</layout> -->
+<!-- 			<releases> -->
+<!-- 				<enabled>true</enabled> -->
+<!-- 			</releases> -->
+<!-- 			<snapshots> -->
+<!-- 				<enabled>false</enabled> -->
+<!-- 			</snapshots> -->
+<!-- 		</repository> -->
+        <!-- refinement from "xtext all releases" -->
+        <repository>
+            <id>xtext releases 2.8.4</id>
+            <layout>p2</layout>
+            <url>http://download.eclipse.org/modeling/tmf/xtext/updates/releases/2.8.4/</url>
+        </repository>
+        
+		<repository>
+			<id>acceleo</id>
+			<url>http://download.eclipse.org/modeling/m2t/acceleo/updates/releases/3.2</url>
+			<layout>p2</layout>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+				<repository>
+			<id>ecl</id>
+			<url>http://timesquare.inria.fr/ecl/update_site/experimental</url>
+			<layout>p2</layout>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+
+
+		
+		  <repository>
+            <id>diverse-commons</id>
+            <layout>p2</layout>
+            <url>https://ci.inria.fr/diverse-commons/job/diverse-commons.eclipse.root/lastSuccessfulBuild/artifact/commons-eclipse/fr.inria.diverse.commons.eclipse.root/p2updatesite/target/repository/</url>
+        </repository>
+		
+		
+		
+		
+		
+	</repositories>
+
+
+
+	<build>
+		<defaultGoal>clean verify</defaultGoal>
+		
+		
+		<pluginManagement>
+			<plugins>
+				<!-- xtend-maven-plugin is in pluginManagement instead of in plugins
+					 so that it doesn't run before the exec-maven-plugin's *.mwe2 gen;
+					 this way we can list it after. 
+				  -->
+				  
+				<plugin>
+					<groupId>org.eclipse.xtend</groupId>
+					<artifactId>xtend-maven-plugin</artifactId>
+					<version>${xtext.version}</version>
+					<executions>
+						<execution>
+							<goals>
+								<goal>compile</goal>
+								<goal>xtend-install-debug-info</goal>
+								<goal>testCompile</goal>
+								<goal>xtend-test-install-debug-info</goal>
+							</goals>
+						</execution>
+					</executions>
+					<configuration>
+						<outputDirectory>xtend-gen</outputDirectory>
+					</configuration>
+				</plugin>
+
+			</plugins>
+		</pluginManagement>
+		
+		
+		
+		
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<extensions>true</extensions>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+				<pomDependencies>consider</pomDependencies>
+					<environments>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86</arch>
+						</environment>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86_64</arch>
+						</environment>
+						-
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86</arch>
+						</environment>
+						<environment>
+							<os>macosx</os>
+							<ws>cocoa</ws>
+							<arch>x86_64</arch>
+						</environment>
+					</environments>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-source-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<executions>
+					<execution>
+						<id>plugin-source</id>
+						<goals>
+							<goal>plugin-source</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+				    <strictSrcIncludes>false</strictSrcIncludes>
+				  </configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.eclipse.tycho.extras</groupId>
+				<artifactId>tycho-source-feature-plugin</artifactId>
+				<version>${tycho-extras-version}</version>
+				<executions>
+					<execution>
+						<id>source-feature</id>
+						<phase>package</phase>
+						<goals>
+							<goal>source-feature</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<brandingPlugin>fr.inria.aoste.timesquare.ecl.branding</brandingPlugin>
+					<strictSrcIncludes>false</strictSrcIncludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-p2-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<executions>
+					<execution>
+						<id>attach-p2-metadata</id>
+						<phase>package</phase>
+						<goals>
+							<goal>p2-metadata</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+
+            <!-- Java compiler plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.5</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.xtend</groupId>
+				<artifactId>xtend-maven-plugin</artifactId>
+				<version>${xtend.version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>xtend-gen</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	
+	<!-- In continuous integration, only the plugin repository are considered -->
+	<pluginRepositories>
+
+		
+		<pluginRepository>
+		        <id>aostecommons-public-release</id>
+        <name>http://maven.inria.fr-releases</name>
+        <url>http://maven.inria.fr/artifactory/aostecommons-public-release/</url>
+        <releases>
+		<enabled>true</enabled>
+		</releases>
+		<snapshots>
+			<enabled>false</enabled>
+		</snapshots>
+		</pluginRepository>
+		</pluginRepositories>
+	
+	
+
+  <modules>
+  	
+  	<module>../../language/org.gemoc.bcool.model</module>
+  	<module>../org.gemoc.bcool.license.feature</module>
+  	<module>../org.gemoc.bcool.updatesite</module>
+  	<module>../../language/org.gemoc.bcool.feature</module>
+  	<module>../../language/org.gemoc.bcool.model.xtext</module>
+  	<module>../../language/org.gemoc.bcool.bcoollib</module>
+  	<module>../../language/org.gemoc.bcool.bcoollib.ui</module>
+  	<module>
+  		../../language/org.gemoc.bcool.model.xtext.ui
+  	</module>
+  	<module>
+  		../../language/org.gemoc.bflow.grammar
+  	</module>
+  	<module>
+  		../../language/org.gemoc.bflow.grammar.ui
+  	</module>
+
+  	  	<module>
+  		../../transformations/org.gemoc.bcool.transformation.bcool2qvto
+  	</module>
+  	  	  	<module>
+  		../../transformations/org.gemoc.bcool.transformation.bcool2qvto.ui
+  	</module>
+  	 <module>
+  		../../transformations/org.gemoc.bcool.transformation.qvto2ccsl.ui
+  	</module>
+  </modules>
+  <description>Build project of BCOoL Framework</description>
+</project>

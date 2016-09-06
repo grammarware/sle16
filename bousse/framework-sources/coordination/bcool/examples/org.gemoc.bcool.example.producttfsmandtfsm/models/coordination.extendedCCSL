@@ -1,0 +1,21 @@
+ClockConstraintSystem SyncProductTfsmwithTfsmCoordination {
+	imports {
+		import "platform:/resource/org.gemoc.bcool.example.productfumlandtfsm/library/bcoollib.ccslLib" as lib_2 ;
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib" as model_1_1 ;
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib" as model_1_2 ;
+		import "platform:/resource/org.gemoc.bcool.example.productfumlandtfsm/interfaces/TFSMMoC.ccslLib" as model_1_3 ;
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib" as model_2_1 ;
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib" as model_2_2 ;
+		import "platform:/resource/org.gemoc.bcool.example.productfumlandtfsm/interfaces/lib4RT.ccslLib" as model_2_3 ;
+		import "./tfsmSensorAlarm_MoCC.extendedCCSL" as inM1 ;
+		import "./tfsmSensorLight_MoCC.extendedCCSL" as inM2 ;
+	}
+	entryBlock mainBlock
+	Block mainBlock {
+			
+			Relation relation_0[Coincides](   Clock2 -> "tfsmSensorAlarm::mainBlock::alarmOff_occurs" ,	Clock1 -> "tfsmSensorLight::mainBlock::alarmOff_occurs"  )
+			Relation relation_1[Coincides](   Clock2 ->  "tfsmSensorAlarm::mainBlock::alarmOn_occurs",	Clock1 ->  "tfsmSensorLight::mainBlock::alarmOn_occurs" )
+
+		
+	}
+}

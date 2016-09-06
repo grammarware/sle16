@@ -1,0 +1,82 @@
+ClockConstraintSystem HighBatteryModel {
+	imports {
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib" as kernel ;
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib" as CCSL ;
+		import "platform:/resource/org.gemoc.bcool.example.hierarchicaltfsmandfuml/interfaces/lib4RT.ccslLib" as lib4RT ;
+		import "platform:/resource/org.gemoc.bcool.example.hierarchicaltfsmandfuml/models/HighBattery.uml" as Model ;
+	}
+	entryBlock mainBlock
+	Block mainBlock {
+		Relation TransmisionCauses_waitControlToExecutenotNotComingfromControlNode [ Causes ]
+		( LeftClock -> RunLengthCoder_finishAction,
+		RightClock -> Transmision_startAction )
+		Relation RunLengthCoderCauses_waitControlToExecutenotNotComingfromControlNode [ Causes ]
+		( LeftClock -> Quantizer_finishAction,
+		RightClock -> RunLengthCoder_startAction )
+		Relation QuantizerCauses_waitControlToExecutenotNotComingfromControlNode [ Causes ]
+		( LeftClock -> fourierTransform_finishAction,
+		RightClock -> Quantizer_startAction )
+		Relation fourierTransformCauses_waitControlToExecutenotComingfrom [ Causes ]
+		( LeftClock -> InitialNode1_finishIt,
+		RightClock -> fourierTransform_startAction )
+		Relation fourierTransformAlternates_StartAlternatesWithFinish [ Alternates ]
+		( AlternatesLeftClock -> fourierTransform_startAction,
+		AlternatesRightClock -> fourierTransform_finishAction )
+		Relation TransmisionAlternates_StartAlternatesWithFinish [ Alternates ]
+		( AlternatesLeftClock -> Transmision_startAction,
+		AlternatesRightClock -> Transmision_finishAction )
+		Relation RunLengthCoderAlternates_StartAlternatesWithFinish [ Alternates ]
+		( AlternatesLeftClock -> RunLengthCoder_startAction,
+		AlternatesRightClock -> RunLengthCoder_finishAction )
+		Relation QuantizerAlternates_StartAlternatesWithFinish [ Alternates ]
+		( AlternatesLeftClock -> Quantizer_startAction,
+		AlternatesRightClock -> Quantizer_finishAction )
+		Relation HighBatteryCauses_startCausesInit [ Causes ]
+		( LeftClock -> HighBattery_startActivity,
+		RightClock -> InitialNode1_startIt )
+		Relation HighBatteryCauses_lastSingleFinalNodeStopActivity [ Causes ]
+		( LeftClock -> FinalNode1_finishIt,
+		RightClock -> HighBattery_finishActivity )
+		Relation FinalNode1Coincides_instantaneousExecution [ Coincides ]
+		( Clock2 -> FinalNode1_startIt,
+		Clock1 -> FinalNode1_finishIt )
+		Relation InitialNode1Coincides_instantaneousExecution [ Coincides ]
+		( Clock2 -> InitialNode1_startIt,
+		Clock1 -> InitialNode1_finishIt )
+		Relation FinalNode1Causes_waitInputToControlFromAction [ Causes ]
+		( LeftClock -> Transmision_finishAction,
+		RightClock -> FinalNode1_startIt )
+		Clock FinalNode1_startIt : clock -> evt_FinalNode1_startIt
+		( "FinalNode1" )
+		Clock InitialNode1_startIt : clock -> evt_InitialNode1_startIt
+		( "InitialNode1" )
+		Clock FinalNode1_finishIt : clock -> evt_FinalNode1_finishIt
+		( "FinalNode1" )
+		Clock InitialNode1_finishIt : clock -> evt_InitialNode1_finishIt
+		( "InitialNode1" )
+		Clock FinalNode1_temporalEvent : clock -> evt_FinalNode1_temporalEvent
+		( "FinalNode1" )
+		Clock InitialNode1_temporalEvent : clock -> evt_InitialNode1_temporalEvent
+		( "InitialNode1" )
+		Clock HighBattery_startActivity : clock -> evt_HighBattery_startActivity
+		( "HighBatteryModel::HighBattery" )
+		Clock HighBattery_finishActivity : clock -> evt_HighBattery_finishActivity
+		( "HighBatteryModel::HighBattery" )
+		Clock fourierTransform_startAction : clock -> evt_fourierTransform_startAction
+		( "fourierTransform" )
+		Clock Transmision_startAction : clock -> evt_Transmision_startAction
+		( "Transmision" )
+		Clock RunLengthCoder_startAction : clock -> evt_RunLengthCoder_startAction
+		( "RunLengthCoder" )
+		Clock Quantizer_startAction : clock -> evt_Quantizer_startAction
+		( "Quantizer" )
+		Clock fourierTransform_finishAction : clock -> evt_fourierTransform_finishAction
+		( "fourierTransform" )
+		Clock Transmision_finishAction : clock -> evt_Transmision_finishAction
+		( "Transmision" )
+		Clock RunLengthCoder_finishAction : clock -> evt_RunLengthCoder_finishAction
+		( "RunLengthCoder" )
+		Clock Quantizer_finishAction : clock -> evt_Quantizer_finishAction
+		( "Quantizer" )
+	}
+}

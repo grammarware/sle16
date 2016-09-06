@@ -1,0 +1,139 @@
+ClockConstraintSystem BarrierControl {
+	imports {
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib" as kernel ;
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib" as CCSL ;
+		import "../interfaces/TFSMMoC.ccslLib" as TFSMMoC ;
+		import "platform:/resource/org.gemoc.bcool.example.productfumlandtfsm/models/BDC.tfsm" as TimedSystem ;
+	}
+	entryBlock mainBlock
+	Block mainBlock {
+		Expression doCloseintermediate_AllTriggeringOccurrences1 = Union
+		( Clock1 -> opentoclose_fire,
+		Clock2 -> opentoclose_fire )
+		Expression closetotopen_SampledOn_eventOccursAfterOrWhileStateEntering = SampledOn
+		( SampledOnSampledClock -> Close_entering,
+		SampledOnTrigger -> closed_occurs )
+		Expression opentoclose_DelayFor_delayIsExpired_wrt_StateEntering = DelayFor
+		( DelayForClockToDelay -> Open_entering,
+		DelayForClockForCounting -> globalclk_ticks,
+		DelayForDelay -> opentocloseguardopentoclose_afterDuration )
+		Expression inittoopen_DelayFor_delayIsExpired_wrt_StateEntering = DelayFor
+		( DelayForClockToDelay -> init_entering,
+		DelayForClockForCounting -> globalclk_ticks,
+		DelayForDelay -> inittoopenguardinitotopen_afterDuration )
+		Expression Openintermediate_allFiredoutgoingTransition1 = Union
+		( Clock1 -> opentoclose_fire,
+		Clock2 -> opentoclose_fire )
+		Expression initintermediate_allFiredoutgoingTransition1 = Union
+		( Clock1 -> inittoopen_fire,
+		Clock2 -> inittoopen_fire )
+		Expression Closeintermediate_allFiredoutgoingTransition1 = Union
+		( Clock1 -> closetotopen_fire,
+		Clock2 -> closetotopen_fire )
+		Expression Openintermediate_allInputTransition1 = Union
+		( Clock1 -> inittoopen_fire,
+		Clock2 -> closetotopen_fire )
+		Expression Closeintermediate_allInputTransition1 = Union
+		( Clock1 -> opentoclose_fire,
+		Clock2 -> opentoclose_fire )
+		Expression BDCintermediate_onlyOneFirst1 = OneTickAndNoMore
+		( OneTickAndNoMoreClock -> BDC_start )
+		Relation doCloseFSMEventSendReceive_occursWhenSolicitate [ FSMEventSendReceive ]
+		( ClockA -> doCloseintermediate_AllTriggeringOccurrences1,
+		ClockB -> doClose_occurs )
+		Relation closetotopenCoincides_fireWhenEventOccursOneTransition [ Coincides ]
+		( Clock2 -> closetotopen_SampledOn_eventOccursAfterOrWhileStateEntering,
+		Clock1 -> closetotopen_fire )
+		Relation opentocloseCoincides_fireWhenTemporalGuardHoldsOneTransition [ Coincides ]
+		( Clock2 -> opentoclose_DelayFor_delayIsExpired_wrt_StateEntering,
+		Clock1 -> opentoclose_fire )
+		Relation inittoopenCoincides_fireWhenTemporalGuardHoldsOneTransition [ Coincides ]
+		( Clock2 -> inittoopen_DelayFor_delayIsExpired_wrt_StateEntering,
+		Clock1 -> inittoopen_fire )
+		Relation OpenAlternates_enterOnceBeforeToLeave [ Alternates ]
+		( AlternatesLeftClock -> Open_entering,
+		AlternatesRightClock -> Open_leaving )
+		Relation initAlternates_enterOnceBeforeToLeave [ Alternates ]
+		( AlternatesLeftClock -> init_entering,
+		AlternatesRightClock -> init_leaving )
+		Relation CloseAlternates_enterOnceBeforeToLeave [ Alternates ]
+		( AlternatesLeftClock -> Close_entering,
+		AlternatesRightClock -> Close_leaving )
+		Relation OpenCoincides_firingATransitionAlternatesWithLeavingState [ Coincides ]
+		( Clock2 -> Openintermediate_allFiredoutgoingTransition1,
+		Clock1 -> Open_leaving )
+		Relation initCoincides_firingATransitionAlternatesWithLeavingState [ Coincides ]
+		( Clock2 -> initintermediate_allFiredoutgoingTransition1,
+		Clock1 -> init_leaving )
+		Relation CloseCoincides_firingATransitionAlternatesWithLeavingState [ Coincides ]
+		( Clock2 -> Closeintermediate_allFiredoutgoingTransition1,
+		Clock1 -> Close_leaving )
+		Relation OpenCauses_stateEntering [ Causes ]
+		( LeftClock -> Openintermediate_allInputTransition1,
+		RightClock -> Open_entering )
+		Relation CloseCauses_stateEntering [ Causes ]
+		( LeftClock -> Closeintermediate_allInputTransition1,
+		RightClock -> Close_entering )
+		Relation BDCintermediate_oneStateAtATime1_2 [ Exclusion ]
+		( Clock1 -> init_entering,
+		Clock2 -> Open_entering )
+		Relation BDCintermediate_oneStateAtATime1_3 [ Exclusion ]
+		( Clock1 -> init_entering,
+		Clock2 -> Close_entering )
+		Relation BDCintermediate_oneStateAtATime2_3 [ Exclusion ]
+		( Clock1 -> Open_entering,
+		Clock2 -> Close_entering )
+		Relation BDCintermediate_oneTransitionAtATime1_2 [ Exclusion ]
+		( Clock1 -> inittoopen_fire,
+		Clock2 -> opentoclose_fire )
+		Relation BDCintermediate_oneTransitionAtATime1_3 [ Exclusion ]
+		( Clock1 -> inittoopen_fire,
+		Clock2 -> closetotopen_fire )
+		Relation BDCintermediate_oneTransitionAtATime2_3 [ Exclusion ]
+		( Clock1 -> opentoclose_fire,
+		Clock2 -> closetotopen_fire )
+		Relation BDCCoincides_firstIsInitialState [ Coincides ]
+		( Clock2 -> BDC_start,
+		Clock1 -> init_entering )
+		Relation BDCCoincides_firstOnlyOnce [ Coincides ]
+		( Clock2 -> BDC_start,
+		Clock1 -> BDCintermediate_onlyOneFirst1 )
+		Clock localclk_ticks : clock -> evt_localclk_ticks
+		( "localclk",
+		"localclk::ticks()" )
+		Clock globalclk_ticks : clock -> evt_globalclk_ticks
+		( "globalclk",
+		"globalclk::ticks()" )
+		Clock closetotopen_fire : clock -> evt_closetotopen_fire
+		( "closetotopen",
+		"closetotopen::fire()" )
+		Clock opentoclose_fire : clock -> evt_opentoclose_fire
+		( "opentoclose",
+		"opentoclose::fire()" )
+		Clock inittoopen_fire : clock -> evt_inittoopen_fire
+		( "inittoopen",
+		"inittoopen::fire()" )
+		Clock closed_occurs : clock -> evt_closed_occurs
+		( )
+		Clock doClose_occurs : clock -> evt_doClose_occurs
+		( )
+		Clock Open_entering : clock -> evt_Open_entering
+		( "Open" )
+		Clock init_entering : clock -> evt_init_entering
+		( "init" )
+		Clock Close_entering : clock -> evt_Close_entering
+		( "Close" )
+		Clock Open_leaving : clock -> evt_Open_leaving
+		( "Open" )
+		Clock init_leaving : clock -> evt_init_leaving
+		( "init" )
+		Clock Close_leaving : clock -> evt_Close_leaving
+		( "Close" )
+		Clock BDC_start : clock -> evt_BDC_start
+		( )
+		Clock BDC_stall : clock -> evt_BDC_stall
+		( )
+		Integer opentocloseguardopentoclose_afterDuration : int = 3
+		Integer inittoopenguardinitotopen_afterDuration : int = 2
+	}
+}

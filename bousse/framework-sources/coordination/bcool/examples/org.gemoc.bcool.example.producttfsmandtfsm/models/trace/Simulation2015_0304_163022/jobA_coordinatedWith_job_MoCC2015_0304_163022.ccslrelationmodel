@@ -1,0 +1,1712 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:OccurrenceRelationModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel="http://fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel" xmlns:trace="http://www.inria.fr/sophia/aoste/trace/1.0.0">
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.78"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.7"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.52"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.6/@eventOccurrences.7"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.6/@eventOccurrences.52"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.7"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.52"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.7"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.52"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.39/@eventOccurrences.7"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.39/@eventOccurrences.52"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.79"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.1"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.39"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.11/@eventOccurrences.1"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.11/@eventOccurrences.39"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.22/@eventOccurrences.1"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.22/@eventOccurrences.39"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.34/@eventOccurrences.1"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.34/@eventOccurrences.39"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.82"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.15"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.5"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.15"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.5"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.15"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.5"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.15"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.5"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.38/@eventOccurrences.15"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.38/@eventOccurrences.5"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.83"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.30"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.3"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.30"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.3"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.30"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.3"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.30"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.3"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.38/@eventOccurrences.30"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.38/@eventOccurrences.3"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.84"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.23"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.6"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.23"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.6"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.23"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.6"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.23"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.6"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.23"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.6"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.23"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.6"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.23"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.6"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.38/@eventOccurrences.23"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.38/@eventOccurrences.6"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.38/@eventOccurrences.23"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.38/@eventOccurrences.6"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.16"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.16"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.17"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.3/@eventOccurrences.16"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.3/@eventOccurrences.17"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.17"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.17"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.31"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.3/@eventOccurrences.17"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.3/@eventOccurrences.31"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.31"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.31"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.11"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.12"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.2/@eventOccurrences.11"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.2/@eventOccurrences.12"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.3/@eventOccurrences.11"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.3/@eventOccurrences.31"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.2/@eventOccurrences.12"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.3/@eventOccurrences.11"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.85"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.8"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.5"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.3/@eventOccurrences.8"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.3/@eventOccurrences.8"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.5"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.5"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.13/@eventOccurrences.8"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.13/@eventOccurrences.8"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.5"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.5"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.23/@eventOccurrences.8"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.23/@eventOccurrences.8"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.5"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.5"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.37/@eventOccurrences.8"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.37/@eventOccurrences.8"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.38/@eventOccurrences.5"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.38/@eventOccurrences.5"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.86"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.5"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.24"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.5"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.5"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.13/@eventOccurrences.24"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.13/@eventOccurrences.24"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.5"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.5"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.23/@eventOccurrences.24"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.23/@eventOccurrences.24"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.5"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.5"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.37/@eventOccurrences.24"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.37/@eventOccurrences.24"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.38/@eventOccurrences.5"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.24"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.24"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.8"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.13/@eventOccurrences.24"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.13/@eventOccurrences.8"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.23/@eventOccurrences.24"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.23/@eventOccurrences.8"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.37/@eventOccurrences.24"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.37/@eventOccurrences.8"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.87"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.10"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.12"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.2/@eventOccurrences.10"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.2/@eventOccurrences.12"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.88"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.36"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.7"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.36"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.36"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.6/@eventOccurrences.7"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.6/@eventOccurrences.7"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.36"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.36"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.7"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.7"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.36"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.36"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.7"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.7"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.38/@eventOccurrences.36"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.38/@eventOccurrences.36"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.39/@eventOccurrences.7"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.39/@eventOccurrences.7"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.89"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.16"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.13"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.3/@eventOccurrences.16"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.3/@eventOccurrences.13"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.28"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.28"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.37"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.2/@eventOccurrences.28"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.2/@eventOccurrences.37"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.22"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.22"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.10"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.2/@eventOccurrences.22"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.2/@eventOccurrences.10"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.25"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.25"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.22"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.29"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.2/@eventOccurrences.25"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.2/@eventOccurrences.22"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.30"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.30"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.38"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.30"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.38"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.30"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.38"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.30"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.38"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.38/@eventOccurrences.30"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.38/@eventOccurrences.38"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.38"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.38"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.8"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.14"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.2/@eventOccurrences.14"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.3/@eventOccurrences.8"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.38"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.14"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.3/@eventOccurrences.8"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.14"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.11/@eventOccurrences.14"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.13/@eventOccurrences.8"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.38"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.14"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.13/@eventOccurrences.8"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.14"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.19/@eventOccurrences.14"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.23/@eventOccurrences.8"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.38"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.14"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.23/@eventOccurrences.8"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.14"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.36/@eventOccurrences.14"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.37/@eventOccurrences.8"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.38/@eventOccurrences.38"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.38/@eventOccurrences.14"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.37/@eventOccurrences.8"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.38/@eventOccurrences.14"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.36"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.36"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.3"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.36"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.3"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.36"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.3"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.36"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.3"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.36"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.3"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.36"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.3"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.36"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.3"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.38/@eventOccurrences.36"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.38/@eventOccurrences.3"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.38/@eventOccurrences.36"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.38/@eventOccurrences.3"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.91"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.18"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.8"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.3/@eventOccurrences.18"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.3/@eventOccurrences.8"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.3/@eventOccurrences.18"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.3/@eventOccurrences.8"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.11/@eventOccurrences.18"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.11/@eventOccurrences.18"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.13/@eventOccurrences.8"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.13/@eventOccurrences.8"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.22/@eventOccurrences.18"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.22/@eventOccurrences.18"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.23/@eventOccurrences.8"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.23/@eventOccurrences.8"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.34/@eventOccurrences.18"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.34/@eventOccurrences.18"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.37/@eventOccurrences.8"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.37/@eventOccurrences.8"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.35"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.35"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.32"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.11/@eventOccurrences.35"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.11/@eventOccurrences.32"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.22/@eventOccurrences.35"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.22/@eventOccurrences.32"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.34/@eventOccurrences.35"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.34/@eventOccurrences.32"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.32"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.32"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.34"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.11/@eventOccurrences.32"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.11/@eventOccurrences.34"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.22/@eventOccurrences.32"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.22/@eventOccurrences.34"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.34/@eventOccurrences.32"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.34/@eventOccurrences.34"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.34"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.34"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.1"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.6"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.11/@eventOccurrences.1"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.11/@eventOccurrences.34"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.6"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.11/@eventOccurrences.1"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.11/@eventOccurrences.1"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.6"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.22/@eventOccurrences.1"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.22/@eventOccurrences.34"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.6"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.22/@eventOccurrences.1"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.22/@eventOccurrences.1"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.6"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.34/@eventOccurrences.1"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.34/@eventOccurrences.34"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.6"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.34/@eventOccurrences.1"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.34/@eventOccurrences.1"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.38/@eventOccurrences.6"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.92"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.33"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.2"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.3/@eventOccurrences.33"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.3/@eventOccurrences.2"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.93"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.10"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.28"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.2/@eventOccurrences.10"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.2/@eventOccurrences.28"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.94"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.12"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.2"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.2/@eventOccurrences.12"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.2/@eventOccurrences.12"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.3/@eventOccurrences.2"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.3/@eventOccurrences.2"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.95"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.2"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.19"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.3/@eventOccurrences.2"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.19"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.19"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.12"/>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.15"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.15"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.3"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.15"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.3"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.15"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.3"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.15"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.3"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.15"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.3"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.15"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.3"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.15"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.3"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.38/@eventOccurrences.15"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.38/@eventOccurrences.3"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.38/@eventOccurrences.15"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.38/@eventOccurrences.3"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.23"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.23"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.3"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.23"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.3"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.23"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.3"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.23"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.3"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.23"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.3"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.23"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.3"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.23"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.3"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.38/@eventOccurrences.23"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.38/@eventOccurrences.3"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.38/@eventOccurrences.23"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.38/@eventOccurrences.3"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.97"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.35"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.0"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.11/@eventOccurrences.35"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.11/@eventOccurrences.0"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.22/@eventOccurrences.35"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.22/@eventOccurrences.0"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.34/@eventOccurrences.35"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.34/@eventOccurrences.0"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.98"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.27"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.4"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.11/@eventOccurrences.27"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.11/@eventOccurrences.4"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.22/@eventOccurrences.27"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.22/@eventOccurrences.4"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.34/@eventOccurrences.27"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.34/@eventOccurrences.4"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.18"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.18"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.13"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.0"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.3/@eventOccurrences.18"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.3/@eventOccurrences.13"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.11/@eventOccurrences.18"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.11/@eventOccurrences.0"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.22/@eventOccurrences.18"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.22/@eventOccurrences.0"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.34/@eventOccurrences.18"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.34/@eventOccurrences.0"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.33"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.33"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.13"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.3/@eventOccurrences.33"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.3/@eventOccurrences.13"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.3/@eventOccurrences.33"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.3/@eventOccurrences.13"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.27"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.27"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.0"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.11/@eventOccurrences.27"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.11/@eventOccurrences.0"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.11/@eventOccurrences.27"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.11/@eventOccurrences.0"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.22/@eventOccurrences.27"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.22/@eventOccurrences.0"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.22/@eventOccurrences.27"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.22/@eventOccurrences.0"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.34/@eventOccurrences.27"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.34/@eventOccurrences.0"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.34/@eventOccurrences.27"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.34/@eventOccurrences.0"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.100"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.6"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.4"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.6"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.6"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.11/@eventOccurrences.4"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.11/@eventOccurrences.4"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.6"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.6"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.22/@eventOccurrences.4"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.22/@eventOccurrences.4"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.6"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.6"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.34/@eventOccurrences.4"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.34/@eventOccurrences.4"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.38/@eventOccurrences.6"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.101"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.4"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.26"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.11/@eventOccurrences.4"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.11/@eventOccurrences.4"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.26"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.26"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.22/@eventOccurrences.4"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.22/@eventOccurrences.4"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.26"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.26"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.34/@eventOccurrences.4"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.34/@eventOccurrences.4"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.38/@eventOccurrences.26"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.38/@eventOccurrences.26"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.26"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.26"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.6"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.26"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.14/@eventOccurrences.6"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.26"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.25/@eventOccurrences.6"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.38/@eventOccurrences.26"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.38/@eventOccurrences.6"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.103"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.53"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.43"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.53"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.53"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.6/@eventOccurrences.43"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.6/@eventOccurrences.43"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.12/@eventOccurrences.53"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.12/@eventOccurrences.53"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.43"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.43"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.21/@eventOccurrences.53"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.21/@eventOccurrences.53"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.43"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.43"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.34/@eventOccurrences.53"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.34/@eventOccurrences.53"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.39/@eventOccurrences.43"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.39/@eventOccurrences.43"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.104"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.43"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.62"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.6/@eventOccurrences.43"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.6/@eventOccurrences.43"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.12/@eventOccurrences.62"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.12/@eventOccurrences.62"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.43"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.43"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.21/@eventOccurrences.62"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.21/@eventOccurrences.62"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.43"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.43"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.34/@eventOccurrences.62"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.34/@eventOccurrences.62"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.39/@eventOccurrences.43"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.62"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.62"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.53"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.12/@eventOccurrences.62"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.12/@eventOccurrences.53"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.21/@eventOccurrences.62"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.21/@eventOccurrences.53"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.34/@eventOccurrences.62"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.34/@eventOccurrences.53"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.76"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.76"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.63"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.6/@eventOccurrences.76"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.6/@eventOccurrences.63"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.76"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.63"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.76"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.63"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.39/@eventOccurrences.76"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.39/@eventOccurrences.63"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.63"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.63"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.74"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.6/@eventOccurrences.63"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.6/@eventOccurrences.74"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.63"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.74"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.63"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.74"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.39/@eventOccurrences.63"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.39/@eventOccurrences.74"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.74"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.74"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.52"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.53"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.6/@eventOccurrences.52"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.6/@eventOccurrences.74"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.53"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.6/@eventOccurrences.52"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.6/@eventOccurrences.52"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.12/@eventOccurrences.53"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.52"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.74"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.12/@eventOccurrences.53"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.52"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.52"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.21/@eventOccurrences.53"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.52"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.74"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.21/@eventOccurrences.53"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.52"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.52"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.34/@eventOccurrences.53"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.39/@eventOccurrences.52"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.39/@eventOccurrences.74"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.34/@eventOccurrences.53"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.39/@eventOccurrences.52"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.105"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.44"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.42"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.7/@eventOccurrences.44"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.7/@eventOccurrences.44"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.10/@eventOccurrences.42"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.10/@eventOccurrences.42"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.44"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.44"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.21/@eventOccurrences.42"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.21/@eventOccurrences.42"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.44"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.44"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.33/@eventOccurrences.42"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.33/@eventOccurrences.42"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.106"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.42"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.71"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.10/@eventOccurrences.42"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.10/@eventOccurrences.42"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.71"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.71"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.21/@eventOccurrences.42"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.21/@eventOccurrences.42"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.71"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.71"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.33/@eventOccurrences.42"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.71"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.71"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.44"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.71"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.44"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.71"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.44"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.66"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.66"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.48"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.6/@eventOccurrences.66"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.6/@eventOccurrences.48"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.6/@eventOccurrences.66"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.6/@eventOccurrences.48"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.66"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.48"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.66"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.48"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.66"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.48"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.66"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.48"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.39/@eventOccurrences.66"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.39/@eventOccurrences.48"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.39/@eventOccurrences.66"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.39/@eventOccurrences.48"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.107"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.41"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.56"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.1/@eventOccurrences.41"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.1/@eventOccurrences.56"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.108"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.41"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.47"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.1/@eventOccurrences.41"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.1/@eventOccurrences.47"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.75"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.75"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.55"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.10/@eventOccurrences.75"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.10/@eventOccurrences.55"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.21/@eventOccurrences.75"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.21/@eventOccurrences.55"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.33/@eventOccurrences.75"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.33/@eventOccurrences.55"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.55"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.55"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.44"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.40"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.6/@eventOccurrences.40"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.7/@eventOccurrences.44"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.7/@eventOccurrences.44"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.8/@eventOccurrences.40"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.10/@eventOccurrences.55"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.10/@eventOccurrences.40"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.16/@eventOccurrences.40"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.44"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.44"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.18/@eventOccurrences.40"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.21/@eventOccurrences.55"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.21/@eventOccurrences.40"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.24/@eventOccurrences.40"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.44"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.44"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.31/@eventOccurrences.40"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.33/@eventOccurrences.55"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.33/@eventOccurrences.40"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.109"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.64"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.43"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.6/@eventOccurrences.64"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.6/@eventOccurrences.43"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.64"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.43"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.64"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.43"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.39/@eventOccurrences.64"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.39/@eventOccurrences.43"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.64"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.64"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.48"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.6/@eventOccurrences.64"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.6/@eventOccurrences.48"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.6/@eventOccurrences.64"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.6/@eventOccurrences.48"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.64"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.48"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.64"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.48"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.64"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.48"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.64"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.48"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.39/@eventOccurrences.64"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.39/@eventOccurrences.48"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.39/@eventOccurrences.64"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.39/@eventOccurrences.48"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.113"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.76"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.48"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.6/@eventOccurrences.76"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.6/@eventOccurrences.48"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.76"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.48"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.76"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.48"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.39/@eventOccurrences.76"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.39/@eventOccurrences.48"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.61"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.61"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.49"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.61"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.49"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.61"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.49"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.114"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.60"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.53"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.60"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.53"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.60"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.53"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.10/@eventOccurrences.60"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.10/@eventOccurrences.60"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.12/@eventOccurrences.53"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.12/@eventOccurrences.53"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.21/@eventOccurrences.60"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.21/@eventOccurrences.53"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.21/@eventOccurrences.60"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.21/@eventOccurrences.53"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.33/@eventOccurrences.60"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.33/@eventOccurrences.60"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.34/@eventOccurrences.53"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.34/@eventOccurrences.53"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.115"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.47"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.51"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.1/@eventOccurrences.47"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.1/@eventOccurrences.47"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.51"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.51"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.116"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.51"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.72"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.51"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.72"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.72"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.47"/>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.56"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.56"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.70"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.1/@eventOccurrences.56"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.1/@eventOccurrences.70"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.54"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.54"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.41"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.1/@eventOccurrences.54"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.1/@eventOccurrences.41"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.57"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.57"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.54"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.59"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.1/@eventOccurrences.57"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.1/@eventOccurrences.54"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.117"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.58"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.49"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.58"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.49"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.118"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.77"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.39"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.10/@eventOccurrences.77"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.10/@eventOccurrences.77"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.11/@eventOccurrences.39"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.11/@eventOccurrences.39"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.21/@eventOccurrences.77"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.21/@eventOccurrences.77"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.22/@eventOccurrences.39"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.22/@eventOccurrences.39"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.33/@eventOccurrences.77"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.33/@eventOccurrences.77"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.34/@eventOccurrences.39"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.34/@eventOccurrences.39"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.60"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.60"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.46"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.49"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.60"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.49"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.10/@eventOccurrences.60"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.10/@eventOccurrences.46"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.21/@eventOccurrences.60"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.21/@eventOccurrences.46"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.33/@eventOccurrences.60"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.33/@eventOccurrences.46"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.65"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.65"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.46"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.10/@eventOccurrences.65"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.10/@eventOccurrences.46"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.10/@eventOccurrences.65"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.10/@eventOccurrences.46"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.21/@eventOccurrences.65"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.21/@eventOccurrences.46"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.21/@eventOccurrences.65"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.21/@eventOccurrences.46"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.33/@eventOccurrences.65"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.33/@eventOccurrences.46"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.33/@eventOccurrences.65"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.33/@eventOccurrences.46"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.120"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.65"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.42"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.10/@eventOccurrences.65"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.10/@eventOccurrences.42"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.21/@eventOccurrences.65"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.21/@eventOccurrences.42"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.33/@eventOccurrences.65"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.33/@eventOccurrences.42"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.121"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.66"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.44"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.6/@eventOccurrences.66"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.6/@eventOccurrences.66"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.7/@eventOccurrences.44"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.7/@eventOccurrences.44"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.66"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.44"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.66"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.17/@eventOccurrences.44"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.66"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.44"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.66"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.26/@eventOccurrences.44"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Packet">
+      <occurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.39/@eventOccurrences.66"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.123"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.75"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.46"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.10/@eventOccurrences.75"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.10/@eventOccurrences.46"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.21/@eventOccurrences.75"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.21/@eventOccurrences.46"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.33/@eventOccurrences.75"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.33/@eventOccurrences.46"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.77"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.77"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.46"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.10/@eventOccurrences.77"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.10/@eventOccurrences.46"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.10/@eventOccurrences.77"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.10/@eventOccurrences.46"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.21/@eventOccurrences.77"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.21/@eventOccurrences.46"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.21/@eventOccurrences.77"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.21/@eventOccurrences.46"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.33/@eventOccurrences.77"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.33/@eventOccurrences.46"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.33/@eventOccurrences.77"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.33/@eventOccurrences.46"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.58"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.58"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.68"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.58"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.68"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.68"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.68"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.73"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.68"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.73"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.73"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.73"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.45"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.47"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.1/@eventOccurrences.45"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.1/@eventOccurrences.47"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.45"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.73"/>
+    </relatedOccurrenceRelations>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Precedence" isStrict="true">
+      <source href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.1/@eventOccurrences.47"/>
+      <target href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.45"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+  <refsToCCSLConstraints>
+    <ccslConstraint xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.125"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.61"/>
+    <ccslElements xsi:type="trace:ModelElementReference" href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.51"/>
+    <relatedOccurrenceRelations xsi:type="fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:Coincidence">
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.61"/>
+      <coincidentOccurrences href="jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@logicalSteps.4/@eventOccurrences.51"/>
+    </relatedOccurrenceRelations>
+  </refsToCCSLConstraints>
+</fr.inria.aoste.timesquare.instantrelation.CCSLRelationModel:OccurrenceRelationModel>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.gemoc.mocc.transformations.feature_0.0.1.qualifier.jar" id="org.gemoc.mocc.transformations.feature" version="0.0.1.qualifier">
+      <category name="Transformations"/>
+   </feature>
+   <feature url="features/org.gemoc.mocc.clocksystem.common.feature_0.0.1.qualifier.jar" id="org.gemoc.mocc.clocksystem.common.feature" version="0.0.1.qualifier">
+      <category name="Clocksystem"/>
+   </feature>
+   <category-def name="Transformations" label="TransformationsID">
+      <description>
+         This Category contains the plugins generating the ClockSystem models. All Transformation rules and Action Calls leading to the generation of such files is implemented in the given plugins.
+      </description>
+   </category-def>
+   <category-def name="Clocksystem" label="ClocksystemID"/>
+</site>

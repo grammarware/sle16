@@ -1,0 +1,4 @@
+
+TEst 7
+
+:large_orange_diamond: no @InitiailzeModel method in the concurrent activity Diagram

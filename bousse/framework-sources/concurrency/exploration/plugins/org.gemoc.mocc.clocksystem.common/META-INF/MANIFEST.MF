@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Common
+Bundle-SymbolicName: org.gemoc.mocc.clocksystem.common;singleton:=true
+Bundle-Version: 0.0.1.qualifier
+Bundle-Activator: org.gemoc.mocc.clocksystem.common.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: ENSTA
+Eclipse-ExtensibleAPI: true
+Export-Package: org.gemoc.mocc.clocksystem.pharo

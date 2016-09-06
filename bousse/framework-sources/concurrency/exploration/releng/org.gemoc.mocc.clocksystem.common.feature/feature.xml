@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.gemoc.mocc.clocksystem.common.feature"
+      label="Common Features for ClockSystem"
+      version="0.0.1.qualifier"
+      provider-name="ENSTA Bretagne">
+
+   <description>
+      This feature provides the support for Clocksystem Pharo VM.
+   </description>
+
+   <copyright>
+      Copyright (c) 2012-2016 GEMOC consortium.
+ http://www.gemoc.org
+   </copyright>
+
+   <license url="http://www.eclipse.org/legal/epl-v10.html">
+      All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0
+which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
+   </license>
+
+   <plugin
+         id="org.gemoc.mocc.clocksystem.common"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.gemoc.mocc.clocksystem.linux"
+         os="linux"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="org.gemoc.mocc.clocksystem.win"
+         os="win32"
+         ws="win32"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="org.gemoc.mocc.clocksystem.common.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.gemoc.mocc.clocksystem.mac"
+         os="macosx"
+         ws="cocoa"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"
+         unpack="false"/>
+
+</feature>

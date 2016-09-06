@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.bcool"
+            id="org.gemoc.bcool.transformation.bcool2qvto.ui.popupMenus.contribution.IFile">
+         <menu 
+               icon="icons/IconeGemocLanguage-16.png"
+               id="org.gemoc.coordination.menu" label="GEMOC Coordination" path="xdsmlGroup">
+               <groupMarker name="additions"/> 
+         </menu>
+         <action
+               class="org.gemoc.bcool.transformation.bcool2qvto.ui.popupMenus.AcceleoGenerateBcool2qvtoAction"
+               enablesFor="+"
+               id="org.gemoc.bcool.transformation.bcool2qvto.ui.popupMenus.acceleoGenerateBcool2qvtoAction"
+               icon="icons/default.gif"
+               label="Generate BCOoL transformation"
+               menubarPath="org.gemoc.coordination.menu/additions"/>
+      </objectContribution>
+   </extension>
+</plugin>

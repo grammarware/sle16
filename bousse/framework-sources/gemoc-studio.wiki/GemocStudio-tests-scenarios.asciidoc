@@ -1,0 +1,18 @@
+This page lists the manual test scenarios that are passed on the GEMOC Studio before each major release.
+
+Many of them requires to checkout some samples from various repositories.
+First column: an action or a serie of actions
+Second column: verification point needing special attention 
+Third column: last version verification result (using emoji such as :white_check_mark: :large_orange_diamond: :red_circle: )
+
+* link:GemocStudio-test-1[GemocStudio_test_1 Create Sequential language from scracth]
+* link:GemocStudio-test-2[GemocStudio_test_2 Create Concurrent language from scratch]
+* link:GemocStudio-test-3[GemocStudio_test_3 TFSM Sequential]
+* link:GemocStudio-test-4[GemocStudio_test_4 TFSM Concurrent]
+* link:GemocStudio-test-5[GemocStudio_test_5 SigPML Concurrent]
+* link:GemocStudio-test-6[GemocStudio_test_6 Activity Diagram Sequential]
+* link:GemocStudio-test-7[GemocStudio_test_7 Activity Diagram Concurrent]
+* link:GemocStudio-test-8[GemocStudio_test_8 Arduino Sequential]
+* link:GemocStudio-test-9[GemocStudio_test_9 Model coordination TODO]
+
+

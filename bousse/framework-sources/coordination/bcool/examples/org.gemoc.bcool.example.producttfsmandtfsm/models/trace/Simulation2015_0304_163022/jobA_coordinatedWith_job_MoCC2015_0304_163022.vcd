@@ -1,0 +1,116 @@
+$date 
+Wed Mar 04 16:30:23 CET 2015
+$end
+
+$version 
+VCD Generation 2.1.0
+$end
+
+$comment alias TFSMA__mainBlock__S1_entering "TFSMA->S1_entering" $end
+$comment alias TFSMA__mainBlock__S2_entering "TFSMA->S2_entering" $end
+$comment alias TFSMB__mainBlock__A_entering "TFSMB->A_entering" $end
+$comment alias TFSMB__mainBlock__B_entering "TFSMB->B_entering" $end
+$comment alias TFSMA__mainBlock__ping_occurs "TFSMA->ping_occurs" $end
+$comment alias TFSMA__mainBlock__pong_occurs "TFSMA->pong_occurs" $end
+$comment alias TFSMB__mainBlock__ping_occurs "TFSMB->ping_occurs" $end
+$comment alias TFSMB__mainBlock__pong_occurs "TFSMB->pong_occurs" $end
+$comment scale 0.1  $end
+$comment relation   "jobA_coordinatedWith_job_MoCC2015_0304_163022.ccslrelationmodel" $end
+$comment xmi  TFSMB__mainBlock__pong_occurs "jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.1" $end
+$comment xmi  TFSMB__mainBlock__B_entering "jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.6" $end
+$comment xmi  TFSMB__mainBlock__ping_occurs "jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.7" $end
+$comment xmi  TFSMB__mainBlock__A_entering "jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.8" $end
+$comment xmi  TFSMA__mainBlock__pong_occurs "jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.39" $end
+$comment xmi  TFSMA__mainBlock__S2_entering "jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.44" $end
+$comment xmi  TFSMA__mainBlock__ping_occurs "jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.52" $end
+$comment xmi  TFSMA__mainBlock__S1_entering "jobA_coordinatedWith_job_MoCC2015_0304_163022.trace#//@references.53" $end
+$scope module top $end
+$var event 1 !1 TFSMA__mainBlock__S1_entering $end
+$var event 1 !2 TFSMA__mainBlock__S2_entering $end
+$var event 1 !3 TFSMB__mainBlock__A_entering $end
+$var event 1 !4 TFSMB__mainBlock__B_entering $end
+$var event 1 !5 TFSMA__mainBlock__ping_occurs $end
+$var event 1 !6 TFSMA__mainBlock__pong_occurs $end
+$var event 1 !7 TFSMB__mainBlock__ping_occurs $end
+$var event 1 !8 TFSMB__mainBlock__pong_occurs $end
+$upscope $end
+$enddefinitions $end
+
+#0
+#10
+#20
+#30
+1!3
+#40
+1!4
+1!1
+#50
+#60
+1!7
+1!5
+#70
+1!2
+#80
+#90
+#100
+#110
+1!8
+1!6
+#120
+1!1
+#130
+1!3
+#140
+1!4
+#150
+#160
+#170
+1!7
+1!2
+1!5
+#180
+#190
+#200
+#210
+1!1
+#220
+1!8
+1!6
+#230
+1!3
+#240
+#250
+1!4
+#260
+1!7
+1!2
+1!5
+#270
+#280
+#290
+#300
+#310
+#320
+#330
+#340
+1!8
+1!6
+1!1
+#350
+#360
+#370
+1!3
+#380
+1!4
+#390
+1!7
+1!5
+#400
+z!1
+z!2
+z!3
+z!4
+z!5
+z!6
+z!7
+z!8

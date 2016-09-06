@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ASCII"?>
+<feedback:ActionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:feedback="http://timesquare.inria.fr/feedback">
+  <events name="MSE_glbclk_ticks">
+    <caller href="cameraOnlyPictures.tfsm#//@globalClocks.0"/>
+    <action href="http://www.gemoc.org/sample/tfsm#//FSMClock/ticks"/>
+    <solverEvent href="cameraOnlyPictures_MoCC.extendedCCSL#//@subBlock.0/@elements.0"/>
+  </events>
+  <events name="MSE_localclk_ticks">
+    <caller href="cameraOnlyPictures.tfsm#//@tfsms.0/@localClock"/>
+    <action href="http://www.gemoc.org/sample/tfsm#//FSMClock/ticks"/>
+    <solverEvent href="cameraOnlyPictures_MoCC.extendedCCSL#//@subBlock.0/@elements.1"/>
+  </events>
+  <events name="MSE_initCameratoHighBattery_fire">
+    <caller href="cameraOnlyPictures.tfsm#//@tfsms.0/@ownedTransitions.0"/>
+    <action href="http://www.gemoc.org/sample/tfsm#//Transition/fire"/>
+    <solverEvent href="cameraOnlyPictures_MoCC.extendedCCSL#//@subBlock.0/@elements.2"/>
+  </events>
+  <events name="MSE_HightBatterytoHighBattery_fire">
+    <caller href="cameraOnlyPictures.tfsm#//@tfsms.0/@ownedTransitions.3"/>
+    <action href="http://www.gemoc.org/sample/tfsm#//Transition/fire"/>
+    <solverEvent href="cameraOnlyPictures_MoCC.extendedCCSL#//@subBlock.0/@elements.3"/>
+  </events>
+  <events name="MSE_LowBatterytoLowBattery_fire">
+    <caller href="cameraOnlyPictures.tfsm#//@tfsms.0/@ownedTransitions.4"/>
+    <action href="http://www.gemoc.org/sample/tfsm#//Transition/fire"/>
+    <solverEvent href="cameraOnlyPictures_MoCC.extendedCCSL#//@subBlock.0/@elements.4"/>
+  </events>
+  <events name="MSE_HighBatterytoLowBattery_fire">
+    <caller href="cameraOnlyPictures.tfsm#//@tfsms.0/@ownedTransitions.1"/>
+    <action href="http://www.gemoc.org/sample/tfsm#//Transition/fire"/>
+    <solverEvent href="cameraOnlyPictures_MoCC.extendedCCSL#//@subBlock.0/@elements.5"/>
+  </events>
+  <events name="MSE_LowBatterytoHighBattery_fire">
+    <caller href="cameraOnlyPictures.tfsm#//@tfsms.0/@ownedTransitions.2"/>
+    <action href="http://www.gemoc.org/sample/tfsm#//Transition/fire"/>
+    <solverEvent href="cameraOnlyPictures_MoCC.extendedCCSL#//@subBlock.0/@elements.6"/>
+  </events>
+  <events name="MSE_start_occurs">
+    <solverEvent href="cameraOnlyPictures_MoCC.extendedCCSL#//@subBlock.0/@elements.7"/>
+  </events>
+  <events name="MSE_BatteryIsLow_occurs">
+    <solverEvent href="cameraOnlyPictures_MoCC.extendedCCSL#//@subBlock.0/@elements.8"/>
+  </events>
+  <events name="MSE_BatteryIsHigh_occurs">
+    <solverEvent href="cameraOnlyPictures_MoCC.extendedCCSL#//@subBlock.0/@elements.9"/>
+  </events>
+  <events name="MSE_HighBattery_entering">
+    <solverEvent href="cameraOnlyPictures_MoCC.extendedCCSL#//@subBlock.0/@elements.10"/>
+  </events>
+  <events name="MSE_LowBattery_entering">
+    <solverEvent href="cameraOnlyPictures_MoCC.extendedCCSL#//@subBlock.0/@elements.11"/>
+  </events>
+  <events name="MSE_init_entering">
+    <solverEvent href="cameraOnlyPictures_MoCC.extendedCCSL#//@subBlock.0/@elements.12"/>
+  </events>
+  <events name="MSE_HighBattery_leaving">
+    <solverEvent href="cameraOnlyPictures_MoCC.extendedCCSL#//@subBlock.0/@elements.13"/>
+  </events>
+  <events name="MSE_LowBattery_leaving">
+    <solverEvent href="cameraOnlyPictures_MoCC.extendedCCSL#//@subBlock.0/@elements.14"/>
+  </events>
+  <events name="MSE_init_leaving">
+    <solverEvent href="cameraOnlyPictures_MoCC.extendedCCSL#//@subBlock.0/@elements.15"/>
+  </events>
+  <events name="MSE_CameraEncoder_start">
+    <solverEvent href="cameraOnlyPictures_MoCC.extendedCCSL#//@subBlock.0/@elements.16"/>
+  </events>
+  <events name="MSE_CameraEncoder_stall">
+    <solverEvent href="cameraOnlyPictures_MoCC.extendedCCSL#//@subBlock.0/@elements.17"/>
+  </events>
+  <importStatements importURI="platform:/1"/>
+</feedback:ActionModel>

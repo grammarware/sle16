@@ -1,0 +1,239 @@
+ClockConstraintSystem Model {
+	imports {
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib" as kernel ;
+		import "platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib" as CCSL ;
+		import "platform:/resource/org.gemoc.bcool.example.productfumlandtfsm/interfaces/lib4RT.ccslLib" as lib4RT ;
+		import "platform:/resource/org.gemoc.bcool.example.productfumlandtfsm/models/BMC.uml" as Model ;
+	}
+	entryBlock mainBlock
+	Block mainBlock {
+		Expression IsUpDecision_Union_unionOfTwoChoices = Union
+		( Clock1 -> stopMotorUp_startAction,
+		Clock2 -> MergeUp_temporalEvent )
+		Expression IsDownDecision_Union_unionOfTwoChoices = Union
+		( Clock1 -> stopMotorDown_startAction,
+		Clock2 -> MergeDown_temporalEvent )
+		Expression MergeUp_Union_unionOfActionAndDecision = Union
+		( Clock1 -> startBarrierUp_finishAction,
+		Clock2 -> MergeUp_temporalEvent )
+		Expression MergeDown_Union_unionOfActionAndDecision = Union
+		( Clock1 -> startBarrierDown_finishAction,
+		Clock2 -> MergeDown_temporalEvent )
+		Relation closedCauses_waitControlToExecutenotNotComingfromControlNode [ Causes ]
+		( LeftClock -> stopMotorDown_finishAction,
+		RightClock -> closed_startAction )
+		Relation openedCauses_waitControlToExecutenotNotComingfromControlNode [ Causes ]
+		( LeftClock -> stopMotorUp_finishAction,
+		RightClock -> opened_startAction )
+		Relation doCloseCauses_waitControlToExecutenotComingfrom [ Causes ]
+		( LeftClock -> ForkNode1_finishIt,
+		RightClock -> doClose_startAction )
+		Relation readSensorUpCauses_waitControlToExecutenotComingfrom [ Causes ]
+		( LeftClock -> MergeUp_finishIt,
+		RightClock -> readSensorUp_startAction )
+		Relation stopMotorUpCauses_waitControlToExecutenotComingfrom [ Causes ]
+		( LeftClock -> IsUpDecision_finishIt,
+		RightClock -> stopMotorUp_startAction )
+		Relation startBarrierUpCauses_waitControlToExecutenotComingfrom [ Causes ]
+		( LeftClock -> ForkNode1_finishIt,
+		RightClock -> startBarrierUp_startAction )
+		Relation startBarrierDownCauses_waitControlToExecutenotComingfrom [ Causes ]
+		( LeftClock -> ForkNode1_finishIt,
+		RightClock -> startBarrierDown_startAction )
+		Relation stopMotorDownCauses_waitControlToExecutenotComingfrom [ Causes ]
+		( LeftClock -> IsDownDecision_finishIt,
+		RightClock -> stopMotorDown_startAction )
+		Relation readSensorDownCauses_waitControlToExecutenotComingfrom [ Causes ]
+		( LeftClock -> MergeDown_finishIt,
+		RightClock -> readSensorDown_startAction )
+		Relation doOpenCauses_waitControlToExecutenotComingfrom [ Causes ]
+		( LeftClock -> ForkNode1_finishIt,
+		RightClock -> doOpen_startAction )
+		Relation doCloseAlternates_StartAlternatesWithFinish [ Alternates ]
+		( AlternatesLeftClock -> doClose_startAction,
+		AlternatesRightClock -> doClose_finishAction )
+		Relation readSensorUpAlternates_StartAlternatesWithFinish [ Alternates ]
+		( AlternatesLeftClock -> readSensorUp_startAction,
+		AlternatesRightClock -> readSensorUp_finishAction )
+		Relation stopMotorUpAlternates_StartAlternatesWithFinish [ Alternates ]
+		( AlternatesLeftClock -> stopMotorUp_startAction,
+		AlternatesRightClock -> stopMotorUp_finishAction )
+		Relation startBarrierUpAlternates_StartAlternatesWithFinish [ Alternates ]
+		( AlternatesLeftClock -> startBarrierUp_startAction,
+		AlternatesRightClock -> startBarrierUp_finishAction )
+		Relation startBarrierDownAlternates_StartAlternatesWithFinish [ Alternates ]
+		( AlternatesLeftClock -> startBarrierDown_startAction,
+		AlternatesRightClock -> startBarrierDown_finishAction )
+		Relation stopMotorDownAlternates_StartAlternatesWithFinish [ Alternates ]
+		( AlternatesLeftClock -> stopMotorDown_startAction,
+		AlternatesRightClock -> stopMotorDown_finishAction )
+		Relation closedAlternates_StartAlternatesWithFinish [ Alternates ]
+		( AlternatesLeftClock -> closed_startAction,
+		AlternatesRightClock -> closed_finishAction )
+		Relation readSensorDownAlternates_StartAlternatesWithFinish [ Alternates ]
+		( AlternatesLeftClock -> readSensorDown_startAction,
+		AlternatesRightClock -> readSensorDown_finishAction )
+		Relation doOpenAlternates_StartAlternatesWithFinish [ Alternates ]
+		( AlternatesLeftClock -> doOpen_startAction,
+		AlternatesRightClock -> doOpen_finishAction )
+		Relation openedAlternates_StartAlternatesWithFinish [ Alternates ]
+		( AlternatesLeftClock -> opened_startAction,
+		AlternatesRightClock -> opened_finishAction )
+		Relation Activity1Causes_startCausesInit [ Causes ]
+		( LeftClock -> Activity1_startActivity,
+		RightClock -> InitialNode1_startIt )
+		Relation Activity1Causes_lastSingleFinalNodeStopActivity [ Causes ]
+		( LeftClock -> ActivityFinalNode1_finishIt,
+		RightClock -> Activity1_finishActivity )
+		Relation Activity1Alternates_noReEntrance [ Alternates ]
+		( AlternatesLeftClock -> Activity1_startActivity,
+		AlternatesRightClock -> Activity1_finishActivity )
+		Relation IsUpDecisionExclusion_DecisionCausalitiesOutgoingControlNodesActions [ Exclusion ]
+		( Clock2 -> stopMotorUp_startAction,
+		Clock1 -> MergeUp_temporalEvent )
+		Relation IsDownDecisionExclusion_DecisionCausalitiesOutgoingControlNodesActions [ Exclusion ]
+		( Clock2 -> stopMotorDown_startAction,
+		Clock1 -> MergeDown_temporalEvent )
+		Relation IsUpDecisionAlternates_DecisionCausalitiesOutgoingControlNodesActionsAlternates [ Alternates ]
+		( AlternatesLeftClock -> IsUpDecision_startIt,
+		AlternatesRightClock -> IsUpDecision_Union_unionOfTwoChoices )
+		Relation IsDownDecisionAlternates_DecisionCausalitiesOutgoingControlNodesActionsAlternates [ Alternates ]
+		( AlternatesLeftClock -> IsDownDecision_startIt,
+		AlternatesRightClock -> IsDownDecision_Union_unionOfTwoChoices )
+		Relation MergeUpPrecedes_MergeCausalitiesforActionAndDecition [ Precedes ]
+		( LeftClock -> MergeUp_Union_unionOfActionAndDecision,
+		RightClock -> MergeUp_startIt )
+		Relation MergeDownPrecedes_MergeCausalitiesforActionAndDecition [ Precedes ]
+		( LeftClock -> MergeDown_Union_unionOfActionAndDecision,
+		RightClock -> MergeDown_startIt )
+		Relation ActivityFinalNode1Coincides_instantaneousExecution [ Coincides ]
+		( Clock2 -> ActivityFinalNode1_startIt,
+		Clock1 -> ActivityFinalNode1_finishIt )
+		Relation MergeUpCoincides_instantaneousExecution [ Coincides ]
+		( Clock2 -> MergeUp_startIt,
+		Clock1 -> MergeUp_finishIt )
+		Relation IsUpDecisionCoincides_instantaneousExecution [ Coincides ]
+		( Clock2 -> IsUpDecision_startIt,
+		Clock1 -> IsUpDecision_finishIt )
+		Relation IsDownDecisionCoincides_instantaneousExecution [ Coincides ]
+		( Clock2 -> IsDownDecision_startIt,
+		Clock1 -> IsDownDecision_finishIt )
+		Relation ForkNode1Coincides_instantaneousExecution [ Coincides ]
+		( Clock2 -> ForkNode1_startIt,
+		Clock1 -> ForkNode1_finishIt )
+		Relation InitialNode1Coincides_instantaneousExecution [ Coincides ]
+		( Clock2 -> InitialNode1_startIt,
+		Clock1 -> InitialNode1_finishIt )
+		Relation MergeDownCoincides_instantaneousExecution [ Coincides ]
+		( Clock2 -> MergeDown_startIt,
+		Clock1 -> MergeDown_finishIt )
+		Relation JoinNode1Coincides_instantaneousExecution [ Coincides ]
+		( Clock2 -> JoinNode1_startIt,
+		Clock1 -> JoinNode1_finishIt )
+		Relation IsUpDecisionCauses_waitInputToControlFromAction [ Causes ]
+		( LeftClock -> readSensorUp_finishAction,
+		RightClock -> IsUpDecision_startIt )
+		Relation IsDownDecisionCauses_waitInputToControlFromAction [ Causes ]
+		( LeftClock -> readSensorDown_finishAction,
+		RightClock -> IsDownDecision_startIt )
+		Relation JoinNode1Causes_waitInputToControlFromAction [ Causes ]
+		( LeftClock -> opened_finishAction,
+		RightClock -> JoinNode1_startIt )
+		Clock target1_dataRead : clock -> evt_target1_dataRead
+		( "target1" )
+		Clock target2_dataRead : clock -> evt_target2_dataRead
+		( "target2" )
+		Clock ActivityFinalNode1_startIt : clock -> evt_ActivityFinalNode1_startIt
+		( "ActivityFinalNode1" )
+		Clock MergeUp_startIt : clock -> evt_MergeUp_startIt
+		( "MergeUp" )
+		Clock IsUpDecision_startIt : clock -> evt_IsUpDecision_startIt
+		( "IsUpDecision" )
+		Clock IsDownDecision_startIt : clock -> evt_IsDownDecision_startIt
+		( "IsDownDecision" )
+		Clock ForkNode1_startIt : clock -> evt_ForkNode1_startIt
+		( "ForkNode1" )
+		Clock InitialNode1_startIt : clock -> evt_InitialNode1_startIt
+		( "InitialNode1" )
+		Clock MergeDown_startIt : clock -> evt_MergeDown_startIt
+		( "MergeDown" )
+		Clock JoinNode1_startIt : clock -> evt_JoinNode1_startIt
+		( "JoinNode1" )
+		Clock ActivityFinalNode1_finishIt : clock -> evt_ActivityFinalNode1_finishIt
+		( "ActivityFinalNode1" )
+		Clock MergeUp_finishIt : clock -> evt_MergeUp_finishIt
+		( "MergeUp" )
+		Clock IsUpDecision_finishIt : clock -> evt_IsUpDecision_finishIt
+		( "IsUpDecision" )
+		Clock IsDownDecision_finishIt : clock -> evt_IsDownDecision_finishIt
+		( "IsDownDecision" )
+		Clock ForkNode1_finishIt : clock -> evt_ForkNode1_finishIt
+		( "ForkNode1" )
+		Clock InitialNode1_finishIt : clock -> evt_InitialNode1_finishIt
+		( "InitialNode1" )
+		Clock MergeDown_finishIt : clock -> evt_MergeDown_finishIt
+		( "MergeDown" )
+		Clock JoinNode1_finishIt : clock -> evt_JoinNode1_finishIt
+		( "JoinNode1" )
+		Clock ActivityFinalNode1_temporalEvent : clock -> evt_ActivityFinalNode1_temporalEvent
+		( "ActivityFinalNode1" )
+		Clock MergeUp_temporalEvent : clock -> evt_MergeUp_temporalEvent
+		( "MergeUp" )
+		Clock IsUpDecision_temporalEvent : clock -> evt_IsUpDecision_temporalEvent
+		( "IsUpDecision" )
+		Clock IsDownDecision_temporalEvent : clock -> evt_IsDownDecision_temporalEvent
+		( "IsDownDecision" )
+		Clock ForkNode1_temporalEvent : clock -> evt_ForkNode1_temporalEvent
+		( "ForkNode1" )
+		Clock InitialNode1_temporalEvent : clock -> evt_InitialNode1_temporalEvent
+		( "InitialNode1" )
+		Clock MergeDown_temporalEvent : clock -> evt_MergeDown_temporalEvent
+		( "MergeDown" )
+		Clock JoinNode1_temporalEvent : clock -> evt_JoinNode1_temporalEvent
+		( "JoinNode1" )
+		Clock Activity1_startActivity : clock -> evt_Activity1_startActivity
+		( "Model::Activity1" )
+		Clock Activity1_finishActivity : clock -> evt_Activity1_finishActivity
+		( "Model::Activity1" )
+		Clock doClose_startAction : clock -> evt_doClose_startAction
+		( "doClose" )
+		Clock readSensorUp_startAction : clock -> evt_readSensorUp_startAction
+		( "readSensorUp" )
+		Clock stopMotorUp_startAction : clock -> evt_stopMotorUp_startAction
+		( "stopMotorUp" )
+		Clock startBarrierUp_startAction : clock -> evt_startBarrierUp_startAction
+		( "startBarrierUp" )
+		Clock startBarrierDown_startAction : clock -> evt_startBarrierDown_startAction
+		( "startBarrierDown" )
+		Clock stopMotorDown_startAction : clock -> evt_stopMotorDown_startAction
+		( "stopMotorDown" )
+		Clock closed_startAction : clock -> evt_closed_startAction
+		( "closed" )
+		Clock readSensorDown_startAction : clock -> evt_readSensorDown_startAction
+		( "readSensorDown" )
+		Clock doOpen_startAction : clock -> evt_doOpen_startAction
+		( "doOpen" )
+		Clock opened_startAction : clock -> evt_opened_startAction
+		( "opened" )
+		Clock doClose_finishAction : clock -> evt_doClose_finishAction
+		( "doClose" )
+		Clock readSensorUp_finishAction : clock -> evt_readSensorUp_finishAction
+		( "readSensorUp" )
+		Clock stopMotorUp_finishAction : clock -> evt_stopMotorUp_finishAction
+		( "stopMotorUp" )
+		Clock startBarrierUp_finishAction : clock -> evt_startBarrierUp_finishAction
+		( "startBarrierUp" )
+		Clock startBarrierDown_finishAction : clock -> evt_startBarrierDown_finishAction
+		( "startBarrierDown" )
+		Clock stopMotorDown_finishAction : clock -> evt_stopMotorDown_finishAction
+		( "stopMotorDown" )
+		Clock closed_finishAction : clock -> evt_closed_finishAction
+		( "closed" )
+		Clock readSensorDown_finishAction : clock -> evt_readSensorDown_finishAction
+		( "readSensorDown" )
+		Clock doOpen_finishAction : clock -> evt_doOpen_finishAction
+		( "doOpen" )
+		Clock opened_finishAction : clock -> evt_opened_finishAction
+		( "opened" )
+	}
+}

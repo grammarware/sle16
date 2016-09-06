@@ -1,0 +1,28 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: GEL Xtext UI
+Bundle-Vendor: IRIT
+Bundle-Version: 0.1.0.qualifier
+Bundle-SymbolicName: org.gemoc.gel.xtext.ui; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.gemoc.gel.xtext;visibility:=reexport,
+ org.gemoc.gel;bundle-version="0.1.0",
+ org.eclipse.xtext.ui,
+ org.eclipse.xtext.ui.shared,
+ org.eclipse.xtext.builder,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.compare,
+ org.gemoc.gexpressions.xtext.ui,
+ org.eclipse.ui.editors,
+ org.eclipse.ui,
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime
+Import-Package: org.apache.log4j,
+ org.eclipse.xtext.xbase.lib
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: org.gemoc.gel.ui.contentassist,
+ org.gemoc.gel.ui.contentassist.antlr,
+ org.gemoc.gel.ui.internal,
+ org.gemoc.gel.ui.navigation,
+ org.gemoc.gel.ui.quickfix
+Bundle-Activator: org.gemoc.gel.ui.internal.GELActivator

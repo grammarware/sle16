@@ -1,0 +1,70 @@
+## TEST 1: Create Sequential language from scracth
+
+### Test 1.1: Language Workbench
+Main goal: be able to create a new sequential language
+[cols="<1a,<3a,1*", options="header"]
+|===
+|Actions to execute
+|Verification
+|Result for Version: 2.1.0-SNAPSHOT
+Build id: 2016-03-11 19:04
+
+
+|
+- in Sirius Perspective, 
+- File new Gemoc Sequential Project
+|
+- .melange
+- MANIFEST.MF
+- Sequential Nature & Builder
+- Extension point in plugin.xml
+| :white_check_mark:
+
+|
+- Right click on .melange GEMOC Language > Create Domain Model Project for language
+- Create a few classes in the sirius editor, save
+- generate model code
+|
+- must update Require-Bundle in MANIFEST.MF
+- must add syntax "platform/resource/project/folder/model.ecore" in the .melange
+- must open the EMF project wizard, then the sirius editor
+|:large_orange_diamond: ok but main package name is based on last part of project name (usually "model") instead of the language name 
+
+|
+- Right click on .melange GEMOC Language > Create DSA Project for language
+|
+- must open the K3 wizard with default project name based on language project name, with default options to creates aspects classes for the domain model
+- must add 'with' operator in the .melange
+- must update Require-Bundle in MANIFEST.MF
+|:white_check_mark:
+
+|
+- click on .melange GEMOC Language > Create Sirius Editor project for language
+- connect the odesign to the domain, create a default layer and a few representations
+|
+- must open the Sirius wizard with default project name based on language project name, 
+- the new project is set in the .melange file.
+|:large_orange_diamond: Ok but 
+
+dependency to domain model project is not set by default
+
+|
+- click on .melange GEMOC Language > Create Animator project editor for language
+- add debug layer to existing diagram 
+- select the previous odesign
+|- must open the "Create GEMOC debug representation" wizard
+| :large_orange_diamond: Ok but
+the external java action id is wrong, the path to the icons is wrong  (when create debug diagram or extend existing diagram) the service doesn't enforce the correct modelId (for sequential or concurrent)
+
+Crash if project name contains an uppercase letter
+
+
+|
+|
+|===
+
+
+autocompletion support in melange to create domain project
+
+autocompletion on with : filter on aspect classes ? add an @EObject annotation for classes such as context,
+ filter should point to these classes too 

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description name="ECL update site" url="http://timesquare.inria.fr/ecl/update_site">
+      ECL (Event Constraint Language) is an extension of OCL with events and logical time constraints dedicated to the specification of behavioral invariants (e.g. MoC) on metamodels. It enables the generation of CCSL specification for a specific model.
+   </description>
+   <feature url="features/org.gemoc.bcool.feature_1.0.0.qualifier.jar" id="org.gemoc.bcool.feature" version="1.0.0.qualifier">
+      <category name="BCOoL full"/>
+   </feature>
+   <category-def name="BCOoL full" label="BCOoL full">
+      <description>
+         Editor plus transfo
+      </description>
+   </category-def>
+</site>

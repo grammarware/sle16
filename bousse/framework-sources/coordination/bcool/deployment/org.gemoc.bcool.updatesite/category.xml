@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description name="Event Constraint Language Update site" url="http://timesquare.inria.fr/ecl/update_site/">
+      BCOoL (Behavioral Cooordination Operator Language) is a set of Eclipse plug-ins dedicated to explicit specification of the coordination between languages. It provides transformations to concurrency models in CCSL.
+   </description>
+   <feature url="features/org.gemoc.bcool.feature_1.0.0.qualifier.jar" id="org.gemoc.bcool.feature" version="1.0.0.qualifier">
+      <category name="BCOoL"/>
+   </feature>
+   <category-def name="BCOoL" label="BCOoL framework">
+      <description>
+         The whole BCOoL development framework
+      </description>
+   </category-def>
+</site>

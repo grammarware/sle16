@@ -1,0 +1,4 @@
+[INFO] Error stacktraces are turned on.
+[INFO] Scanning for projects...
+[INFO] Downloading: http://maven.inria.fr/artifactory/public-snapshot/fr/inria/diverse/image-tools/image-tools.mavenplugin/0.0.1-SNAPSHOT/maven-metadata.xml
+[INFO] Downloaded: http://maven.inria.fr/artifactory/public-snapshot/fr/inria/diverse/image-tools/image-tools.mavenplugin/0.0.1-SNAPSHOT/maven-metadata.xml (780 B at 2.7 KB/sec)

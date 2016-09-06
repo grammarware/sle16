@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Gemoc Event Scheduling Timeline Addon
+Bundle-SymbolicName: org.gemoc.concurrent_addons.eventscheduling.timeline;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-Activator: org.gemoc.concurrent_addons.eventscheduling.timeline.Activator
+Require-Bundle: org.gemoc.xdsmlframework.api,
+ fr.inria.aoste.timesquare.ccslkernel.model;bundle-version="1.0.0",
+ fr.obeo.timeline;bundle-version="1.0.0",
+ org.gemoc.executionframework.engine,
+ org.eclipse.emf.edit.ui,
+ org.eclipse.sirius.ui,
+ org.gemoc.commons.eclipse.ui;bundle-version="0.1.0",
+ org.eclipse.gef,
+ org.eclipse.emf.transaction,
+ org.gemoc.execution.concurrent.ccsljavaxdsml.api;bundle-version="1.0.0",
+ org.gemoc.execution.concurrent.ccsljavaengine,
+ org.gemoc.executionframework.ui,
+ org.gemoc.execution.concurrent.ccsljavaengine.ui;bundle-version="0.1.0",
+ org.eclipse.ui.ide;bundle-version="3.10.2",
+ fr.obeo.dsl.debug.ide.ui,
+ fr.obeo.dsl.debug.ide.sirius.ui,
+ org.gemoc.executionframework.reflectivetrace.model,
+ fr.inria.diverse.trace.commons;bundle-version="1.0.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: org.gemoc.concurrent_addons.eventscheduling.timeline,
+ org.gemoc.concurrent_addons.eventscheduling.timeline.ui.commands,
+ org.gemoc.concurrent_addons.eventscheduling.timeline.views.timeline
+

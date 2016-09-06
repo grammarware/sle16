@@ -1,0 +1,165 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>org.gemoc.mocc.transformations.ecl2mtl</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>eclipse-plugin</packaging>
+  <groupId>org.gemoc.concurrency.exploration</groupId>
+  <parent>
+  	<groupId>org.gemoc.concurrency.exploration</groupId>
+  	<artifactId>org.gemoc.concurrency.exploration.root</artifactId>
+  	<version>0.0.1-SNAPSHOT</version>
+  	<relativePath>../../</relativePath>
+  </parent>
+  
+  <pluginRepositories>
+     <pluginRepository>
+       <id>Eclipse - Acceleo Snapshots</id>
+       <url>https://repo.eclipse.org/content/repositories/acceleo-snapshots</url>
+     </pluginRepository>
+     <pluginRepository>
+       <id>Eclipse - Acceleo Release</id>
+       <url>https://repo.eclipse.org/content/repositories/acceleo-releases</url>
+     </pluginRepository>
+   </pluginRepositories>
+   
+   
+   <profiles>
+    <!-- Profiles are used for switching the repositories used for the build so they either use the CI update sites or local repositories -->
+    	<profile>
+	        <id>ignore_CI_repositories</id>
+	        <activation>
+	            <activeByDefault>false</activeByDefault>
+	        </activation>
+	        <repositories>
+		    </repositories>
+	    </profile>
+	    <profile>
+	        <id>use_CI_repositories</id>
+	        <activation>
+	            <activeByDefault>true</activeByDefault>
+	        </activation>
+  
+		  <repositories>
+ <repository>
+      <id>gemoc-studio_commons on CI</id>
+      <url>https://ci.inria.fr/gemoc/job/gemoc-studio_commons/lastSuccessfulBuild/artifact/commons/releng/org.gemoc.commons.repository/target/repository/</url>
+      <layout>p2</layout>
+    </repository>
+    <repository>
+      <id>gemoc-studio_gemoc_commons on CI</id>
+      <url>https://ci.inria.fr/gemoc/job/gemoc-studio_gemoc_commons/lastSuccessfulBuild/artifact/gemoc_commons/releng/org.gemoc.gemoc_commons.repository/target/repository/</url>
+      <layout>p2</layout>
+    </repository>
+    <repository>
+      <id>modeldebugging_trace_commons on CI</id>
+      <url>https://ci.inria.fr/gemoc/job/modeldebugging_trace_commons/lastSuccessfulBuild/artifact/trace/commons/releng/fr.inria.diverse.trace.commons.updatesite/target/repository/</url>
+      <layout>p2</layout>
+    </repository>
+    <repository>
+      <id>modeldebugging_trace_generator on CI</id>
+      <url>https://ci.inria.fr/gemoc/job/modeldebugging_trace_generator/lastSuccessfulBuild/artifact/trace/generator/releng/org.gemoc.modeldebugging.trace.generator.updatesite/target/repository/</url>
+      <layout>p2</layout>
+    </repository>
+    <repository>
+      <id>modeldebugging_framework_frameworkcommons on CI</id>
+      <url>https://ci.inria.fr/gemoc/job/modeldebugging_framework_framework_commons/lastSuccessfulBuild/artifact/framework/framework_commons/releng/org.gemoc.modeldebugging.framework.commons.repository/target/repository/</url>
+      <layout>p2</layout>
+    </repository>
+    <repository>
+      <id>modeldebugging_framework_xdsmlframework on CI</id>
+      <url>https://ci.inria.fr/gemoc/job/modeldebugging_framework_xdsmlframework/lastSuccessfulBuild/artifact/framework/xdsml_framework/releng/org.gemoc.modeldebugging.xdsmlframework.repository/target/repository/</url>
+      <layout>p2</layout>
+    </repository>
+    <repository>
+      <id>modeldebugging_framework_executionframework on CI</id>
+      <url>https://ci.inria.fr/gemoc/job/modeldebugging_framework_executionframework/lastSuccessfulBuild/artifact/framework/execution_framework/releng/org.gemoc.modeldebugging.executionframework.repository/target/repository/</url>
+      <layout>p2</layout>
+    </repository>
+    	
+		      <!-- 
+		        <repository>
+		            <id>modelanimation_siriusmodelanimation on CI</id>
+		            <layout>p2</layout>
+		            <url>http://obeo-siriuslab-nightly.s3-website-eu-west-1.amazonaws.com/SiriusAnimator/master/repository/</url>
+		        </repository>
+		        -->
+		       
+</repositories>
+		</profile>
+    	
+    </profiles>
+
+  
+  <!--  <dependencies>
+     <dependency>
+       <groupId>org.eclipse.acceleo</groupId>
+       <artifactId>org.eclipse.acceleo.maven</artifactId>
+       <version>3.5.0-SNAPSHOT</version>
+     </dependency>
+   </dependencies>
+   
+   -->
+  
+  <build>    
+     <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+          <source/>
+          <target/>
+        </configuration>
+      </plugin>
+      <plugin>
+       <groupId>org.eclipse.acceleo</groupId>
+       <artifactId>org.eclipse.acceleo.maven</artifactId>
+       <version>3.5.2</version>
+       <executions>
+         <execution>
+           <phase>compile</phase>
+           <goals>
+              <goal>acceleo-compile</goal>
+            </goals>
+         </execution>
+       </executions>
+       <configuration>
+         <useBinaryResources>false</useBinaryResources>
+         <usePlatformResourcePath>true</usePlatformResourcePath>
+         <acceleoProject>
+           <root>${project.basedir}</root>
+           <entries>
+             <entry>
+               <input>src</input>
+               <output>target/classes</output>
+             </entry>
+           </entries>
+         </acceleoProject>
+         <packagesToRegister>
+         	<packageToRegister>org.eclipse.emf.ecore.EcorePackage</packageToRegister>
+         	<packageToRegister>org.eclipse.xtend.core.xtend.XtendPackage</packageToRegister>  
+         	<packageToRegister>fr.inria.aoste.timesquare.ECL.ECLPackage</packageToRegister>
+         	<packageToRegister>fr.inria.aoste.timesquare.ccslkernel.model.TimeModel.CCSLModel.ClockExpressionAndRelation.ClockExpressionAndRelationPackage</packageToRegister>
+		 	<packageToRegister>org.eclipse.ocl.examples.xtext.completeocl.completeoclcs.CompleteOCLCSPackage</packageToRegister>
+		 	<packageToRegister>org.eclipse.ocl.examples.pivot.PivotPackage</packageToRegister>
+			<packageToRegister>org.eclipse.ocl.examples.xtext.base.basecs.BaseCSPackage</packageToRegister>
+           	<packageToRegister>org.eclipse.ocl.examples.xtext.essentialocl.essentialoclcs.EssentialOCLCSPackage</packageToRegister>
+           	<packageToRegister>fr.inria.aoste.timesquare.ccslkernel.model.TimeModel.TimeModelPackage</packageToRegister>
+           	<packageToRegister>org.eclipse.xtext.xbase.XbasePackage</packageToRegister>  
+           	<packageToRegister>org.gemoc.mocc.ccslmoc.model.moccml.CcslmoccPackage</packageToRegister> 
+           	<packageToRegister>org.gemoc.mocc.fsmkernel.model.FSMModel.FSMModelPackage</packageToRegister>
+            <packageToRegister>org.eclipse.xtend.core.xtend.XtendPackage</packageToRegister>
+           <!--<packageToRegister>fr.inria.aoste.timesquare.ccslkernel.model.TimeModel.BasicType.BasicTypePackage</packageToRegister>  -->	
+           <!-- <packageToRegister>fr.inria.aoste.timesquare.ccslkernel.model.TimeModel.CCSLModel.ClockExpressionAndRelation.ClockExpressionAndRelationPackage</packageToRegister>
+			
+			
+           	
+              -->	
+           	      	
+         </packagesToRegister>
+       </configuration>
+     </plugin>
+    </plugins>
+    
+  </build>
+  
+</project>

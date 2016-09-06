@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.modelexecution.xmof.gemoc.feature_1.0.0.201609061551.jar" id="org.modelexecution.xmof.gemoc.feature" version="1.0.0.201609061551">
+      <category name="org.modelexecution.xmof.gemoc"/>
+   </feature>
+   <category-def name="org.modelexecution.xmof.gemoc" label="xMOF GEMOC Integration"/>
+</site>

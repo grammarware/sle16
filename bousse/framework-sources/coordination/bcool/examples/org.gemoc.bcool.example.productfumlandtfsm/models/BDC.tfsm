@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.gemoc.sample.tfsm:TimedSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.gemoc.sample.tfsm="http://www.gemoc.org/sample/tfsm" name="BarrierControl">
+  <tfsms name="BDC" initialState="//@tfsms.0/@ownedStates.0">
+    <ownedStates name="init" outgoingTransitions="//@tfsms.0/@ownedTransitions.0"/>
+    <ownedStates name="Open" outgoingTransitions="//@tfsms.0/@ownedTransitions.1" incomingTransitions="//@tfsms.0/@ownedTransitions.0 //@tfsms.0/@ownedTransitions.2"/>
+    <ownedStates name="Close" outgoingTransitions="//@tfsms.0/@ownedTransitions.2" incomingTransitions="//@tfsms.0/@ownedTransitions.1"/>
+    <localClock name="localclk"/>
+    <ownedTransitions name="inittoopen" source="//@tfsms.0/@ownedStates.0" target="//@tfsms.0/@ownedStates.1" action="">
+      <ownedGuard xsi:type="org.gemoc.sample.tfsm:TemporalGuard" name="guardinitotopen" onClock="//@globalClocks.0" afterDuration="2"/>
+    </ownedTransitions>
+    <ownedTransitions name="opentoclose" source="//@tfsms.0/@ownedStates.1" target="//@tfsms.0/@ownedStates.2">
+      <ownedGuard xsi:type="org.gemoc.sample.tfsm:TemporalGuard" name="guardopentoclose" onClock="//@globalClocks.0" afterDuration="3"/>
+    </ownedTransitions>
+    <ownedTransitions name="closetotopen" source="//@tfsms.0/@ownedStates.2" target="//@tfsms.0/@ownedStates.1">
+      <ownedGuard xsi:type="org.gemoc.sample.tfsm:EventGuard" name="guardclosetoopen" triggeringEvent="//@globalEvents.1"/>
+    </ownedTransitions>
+  </tfsms>
+  <globalClocks name="globalclk"/>
+  <globalEvents name="doClose" sollicitingTransitions="//@tfsms.0/@ownedTransitions.1"/>
+  <globalEvents name="closed"/>
+</org.gemoc.sample.tfsm:TimedSystem>

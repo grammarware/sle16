@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.gemoc.bcool.feature"
+      label="BCOoL editor and transfo"
+      version="1.0.0.qualifier"
+      provider-name="Aoste INRIA / I3S"
+      plugin="fr.inria.aoste.timesquare.branding"
+      license-feature-version="1.0.0.qualifier">
+
+   <description url="http://timesquare.inria.fr/BCOoL">
+      The feature contains the BCOoL grammar and transfo to generate the coordination
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <url>
+      <update label="BCOoL update site"/>
+      <discovery label="Juno" url="http://download.eclipse.org/releases/juno/"/>
+      <discovery label="The Eclipse Project Updates" url="http://download.eclipse.org/eclipse/updates/4.2"/>
+      <discovery label="Acceleo" url="http://download.eclipse.org/modeling/m2t/acceleo/updates/releases/3.2"/>
+      <discovery label="Xtext All In One - Releases" url="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/"/>
+      <discovery label="TimeSquare" url="http://timesquare.inria.fr/update_site"/>
+   </url>
+
+   <requires>
+      <import feature="fr.inria.aoste.timesquare.feature" version="1.0.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.ocl.examples" version="3.2.1.v20120919-0602" match="compatible"/>
+      <import feature="org.eclipse.xtext.runtime" version="2.3.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.xtext.ui" version="2.3.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.xtext.xtext.ui" version="2.3.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.m2m.qvt.oml" version="3.2.0.v20120918-0827" match="compatible"/>
+      <import feature="org.eclipse.m2m.qvt.oml.debug" version="1.2.0.v20120918-0827" match="compatible"/>
+      <import feature="org.eclipse.m2m.qvt.oml.editor" version="3.2.0.v20120918-0827" match="compatible"/>
+      <import feature="org.eclipse.m2m.qvt.oml.runtime" version="3.2.0.v20120918-0827" match="compatible"/>
+      <import feature="org.eclipse.m2m.qvt.oml.sdk" version="3.2.1.v20120918-0827" match="compatible"/>
+      <import feature="org.eclipse.ocl.all" version="5.0.0.v20140528-1458"/>
+      <import feature="org.eclipse.ocl.uml" version="5.0.0.v20140524-1436"/>
+   </requires>
+
+   <plugin
+         id="org.gemoc.bcool.model"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.gemoc.bcool.model.xtext"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.gemoc.bcool.model.xtext.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.gemoc.bcool.bcoollib"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.gemoc.bcool.bcoollib.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.gemoc.gexpressions"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.gemoc.gexpressions.xtext"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.gemoc.gexpressions.xtext.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.gemoc.bcool.transformation.qvto2ccsl.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.gemoc.bcool.transformation.bcool2qvto.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.gemoc.bcool.transformation.bcool2qvto"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.gemoc.bflow.grammar"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.gemoc.bflow.grammar.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

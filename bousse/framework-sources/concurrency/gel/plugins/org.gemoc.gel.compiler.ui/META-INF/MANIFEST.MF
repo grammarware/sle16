@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ui
+Bundle-SymbolicName: org.gemoc.gel.compiler.ui;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-Activator: org.gemoc.gel.compiler.ui.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.resources,
+ org.gemoc.gel.compiler,
+ org.gemoc.gel,
+ org.gemoc.gel.microgel,
+ org.gemoc.commons.eclipse,
+ fr.inria.diverse.commons.eclipse,
+ fr.inria.diverse.commons.eclipse.messagingsystem.api,
+ org.gemoc.gel.xtext.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy

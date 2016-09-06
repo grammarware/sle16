@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+    <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.clocksystem"
+            id="org.gemoc.mocc.clocksystem.common.ui.actions.ClockSystemOutput.IFile">
+         <menu
+               icon="icons/clocksystem_logo_16x16.png"
+               id="org.gemoc.mocc.clocksystem"
+               label="ClockSystem"
+               path="exhaustiveExplorationGroup">
+               <groupMarker name="exhaustiveExploration"/> 
+         </menu>
+         <action
+                class="org.gemoc.mocc.clocksystem.common.ui.actions.ClockSystemFileGenHandler"
+               enablesFor="1"
+               id="org.gemoc.mocc.clocksystem.common.ui.actions.ClockSystemOutputID"
+               icon="icons/clocksystem_logo_16x16.png"
+               label="Execute Clocksystem"
+               menubarPath="org.gemoc.mocc.clocksystem/exhaustiveExploration"/>
+      </objectContribution>
+   </extension>
+</plugin>

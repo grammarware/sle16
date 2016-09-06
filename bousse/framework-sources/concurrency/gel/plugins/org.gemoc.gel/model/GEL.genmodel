@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.gemoc.gel/src" modelPluginID="org.gemoc.gel"
+    modelName="GEL" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    usedGenPackages="../../org.eclipse.ocl.examples.xtext.base/model/BaseCS.genmodel#//basecs ../../org.eclipse.ocl.examples.xtext.completeocl/model/CompleteOCLCS.genmodel#//completeoclcs ../../fr.inria.aoste.timesquare.ecl/model/ecl.genmodel#//ECL ../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eclipse.ocl.examples.xtext.essentialocl/model/EssentialOCLCS.genmodel#//essentialoclcs ../../org.gemoc.gexpressions/model/gexpressions.genmodel#//gexpressions ../../org.eclipse.ocl.examples.pivot/model/Pivot.merged.genmodel#//pivot ../../fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.genmodel#//TimeModel"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>GEL.ecore</foreignModel>
+  <genPackages prefix="Gel" basePackage="org.gemoc" disposableProviderFactory="true"
+      ecorePackage="GEL.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="GEL.ecore#//Visibility">
+      <genEnumLiterals ecoreEnumLiteral="GEL.ecore#//Visibility/public"/>
+      <genEnumLiterals ecoreEnumLiteral="GEL.ecore#//Visibility/private"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="GEL.ecore#//ExecutionKind">
+      <genEnumLiterals ecoreEnumLiteral="GEL.ecore#//ExecutionKind/submission"/>
+      <genEnumLiterals ecoreEnumLiteral="GEL.ecore#//ExecutionKind/interruption"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="GEL.ecore#//CallKind">
+      <genEnumLiterals ecoreEnumLiteral="GEL.ecore#//CallKind/nonBlocking"/>
+      <genEnumLiterals ecoreEnumLiteral="GEL.ecore#//CallKind/blocking"/>
+    </genEnums>
+    <genClasses ecoreClass="GEL.ecore#//DomainSpecificEventsSpecification">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GEL.ecore#//DomainSpecificEventsSpecification/events"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GEL.ecore#//DomainSpecificEventsSpecification/imports"/>
+    </genClasses>
+    <genClasses ecoreClass="GEL.ecore#//ImportStatement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GEL.ecore#//ImportStatement/importURI"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="GEL.ecore#//DomainSpecificEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GEL.ecore#//DomainSpecificEvent/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GEL.ecore#//DomainSpecificEvent/visibility"/>
+    </genClasses>
+    <genClasses ecoreClass="GEL.ecore#//AtomicDomainSpecificEvent">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GEL.ecore#//AtomicDomainSpecificEvent/uponMoccEvent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GEL.ecore#//AtomicDomainSpecificEvent/executionFunction"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GEL.ecore#//AtomicDomainSpecificEvent/feedbackPolicy"/>
+      <genFeatures property="None" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference GEL.ecore#//AtomicDomainSpecificEvent/raisedMoccEvent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GEL.ecore#//AtomicDomainSpecificEvent/executionKind"/>
+    </genClasses>
+    <genClasses ecoreClass="GEL.ecore#//CompositeDomainSpecificEvent">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GEL.ecore#//CompositeDomainSpecificEvent/body"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GEL.ecore#//CompositeDomainSpecificEvent/unfoldingStrategy"/>
+    </genClasses>
+    <genClasses ecoreClass="GEL.ecore#//UnfoldingStrategy">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GEL.ecore#//UnfoldingStrategy/localVariables"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GEL.ecore#//UnfoldingStrategy/instantiationPredicates"/>
+    </genClasses>
+    <genClasses ecoreClass="GEL.ecore#//LocalVariable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GEL.ecore#//LocalVariable/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GEL.ecore#//LocalVariable/type"/>
+    </genClasses>
+    <genClasses ecoreClass="GEL.ecore#//InstantiationPredicate">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GEL.ecore#//InstantiationPredicate/body"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="GEL.ecore#//DomainSpecificEventsPattern"/>
+    <genClasses image="false" ecoreClass="GEL.ecore#//UnaryPattern">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GEL.ecore#//UnaryPattern/operand"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="GEL.ecore#//BinaryPattern">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GEL.ecore#//BinaryPattern/leftOperand"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GEL.ecore#//BinaryPattern/rightOperand"/>
+    </genClasses>
+    <genClasses ecoreClass="GEL.ecore#//CoincidencePattern"/>
+    <genClasses ecoreClass="GEL.ecore#//LogicalSequence"/>
+    <genClasses ecoreClass="GEL.ecore#//OrPattern"/>
+    <genClasses ecoreClass="GEL.ecore#//XorPattern"/>
+    <genClasses ecoreClass="GEL.ecore#//PlusPattern"/>
+    <genClasses ecoreClass="GEL.ecore#//IterationPattern">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GEL.ecore#//IterationPattern/numberOfIterations"/>
+    </genClasses>
+    <genClasses ecoreClass="GEL.ecore#//DomainSpecificEventReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GEL.ecore#//DomainSpecificEventReference/referencedDse"/>
+    </genClasses>
+    <genClasses ecoreClass="GEL.ecore#//DomainSpecificEventReferenceWithArguments">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GEL.ecore#//DomainSpecificEventReferenceWithArguments/arguments"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="GEL.ecore#//ListOfArguments"/>
+    <genClasses ecoreClass="GEL.ecore#//SingleArgument">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GEL.ecore#//SingleArgument/argument"/>
+    </genClasses>
+    <genClasses ecoreClass="GEL.ecore#//MultipleArguments">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GEL.ecore#//MultipleArguments/head"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GEL.ecore#//MultipleArguments/tail"/>
+    </genClasses>
+    <genClasses ecoreClass="GEL.ecore#//FeedbackPolicy">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GEL.ecore#//FeedbackPolicy/rules"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GEL.ecore#//FeedbackPolicy/defaultRule"/>
+    </genClasses>
+    <genClasses ecoreClass="GEL.ecore#//FeedbackRule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GEL.ecore#//FeedbackRule/filter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GEL.ecore#//FeedbackRule/consequence"/>
+    </genClasses>
+    <genClasses ecoreClass="GEL.ecore#//FeedbackFilter">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GEL.ecore#//FeedbackFilter/body"/>
+    </genClasses>
+    <genClasses ecoreClass="GEL.ecore#//FeedbackConsequence">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GEL.ecore#//FeedbackConsequence/navigationPathToMoccEvent"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="GEL.ecore#//MoccEvent"/>
+    <genClasses ecoreClass="GEL.ecore#//EclEvent">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GEL.ecore#//EclEvent/eventReference"/>
+    </genClasses>
+    <genClasses ecoreClass="GEL.ecore#//ExecutionFunctionResult">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GEL.ecore#//ExecutionFunctionResult/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="GEL.ecore#//ExecutionFunction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GEL.ecore#//ExecutionFunction/result"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GEL.ecore#//ExecutionFunction/callKind"/>
+    </genClasses>
+    <genClasses ecoreClass="GEL.ecore#//Kermeta3ExecutionFunction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GEL.ecore#//Kermeta3ExecutionFunction/navigationPathToOperation"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

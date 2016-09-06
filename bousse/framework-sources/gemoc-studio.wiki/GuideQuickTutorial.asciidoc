@@ -1,0 +1,123 @@
+////
+ifeval::[{docname}=='PlanTuto']
+:toc:
+:numbered:
+:tabsize=4:
+endif::[]
+////
+
+:toc:
+
+= GEMOC xDSML tutorial
+
+
+// name="../../../..//home/svn/SVN/gemoc/trunk/deliverables/WP1/D1.2.1/icons/IconeGemocStudio_48x48x32"
+
+WARNING: This tutorial is a work in progress and is not yet finished.
+It still contains TODO and must be polished.
+
+
+== Introduction
+
+The purpose of this tutorial is to explain on two simple examples with different features, how to
+define an eXecutable Domain Specific Modeling Language (xDSML). From an existing DSML definition (abstract and concrete syntaxes), we add the definition of a concurrent semantics with its associated mapping on the abstract syntax.  
+
+The tutorial is structured as follows.  First, we give an overview of
+xref:sec-GEMOC-approach[GEMOC approach] to show the focus of our tutorial, then we illustrate on two differents DSMLs the creation of an xDMSL from a DSML definition based on a Ecore metamodel. 
+
+For each example, the first section presents the abstract and the concrete syntaxes of the DSMLs.
+After we define the **extended metamodels** to add data and functions relative to the execution features. 
+In the next step, we define the **concurrent semantics** of our DSMLs and map this definition to the extended metamodel. At this step the xDSML is created and can be deployed in a modeling workbench.
+A first improvement of the **mapping definition** is also presented to enhance the capacity of the relation between the concurrent semantics and the extended metamodel.    
+
+
+
+**Conventions used in this tutorial**
+
+Normal text is used to explain the process and  give some rationals
+and the proposed solutions.
+
+// [icon="images/icons/IconeGemocStudio_48x48x32.png"]
+// [NOTE]
+
+==========================
+This kind of paragraph corresponds to manipulation to be performed of the GEMOC studio, either the Language Workbench or the Modeling Workbench.
+==========================
+
+
+
+
+[[sec-GEMOC-approach]]
+== The GEMOC Approach for defining eXecutable DSML
+
+
+//[[sec-GEMOC-architecture]]
+
+////
+NOTE: We consider that the Abstract Syntax (AS) of the DSML is already
+defined and thus that its design is not part of the GEMOC xDSML process.
+Nevertheless, the process could easily be extended with a new step
+which consists in defining the AS and its Concrete Syntaxes (CS).
+////
+
+The focus of this tutorial is to describe the Gemoc approach to add execution semantics on an existing DSML definition.
+So in our tutorial, the abstract syntax is defined with the Ecore metalanguage and the concrete syntax is a graphical one defined with the Sirius component. To obtain an xDSML we include several definitions to our DSML definition:
+
+* the **DSA** --Domain Specific Actions-- defines the data dedicated to the runtime updates (Execution Data -- ED) and the functions to handle these datas (Execution Functions -- EF). DSA and DSML abstract syntax define the extended sbstract syntax. 
+
+* the **MOCC** (Model of Concurrency and Communication) which includes the mapping definition on the extended abstract syntax and the schedule constraints of the semantics definition. 
+
+* the **DSE** (Domain Specific Event) is a definition to improve the mapping definition between the DSA and MOCC.
+
+* the **animator** which provides views to control and monitor the execution of the models conforming to the xDSML.
+
+The next figure gives an overview of the requested definitions to obtain an xDSML.
+
+// à garder mais à aligner sur celle de Benoit
+[[Focus-Tutorial]]
+.Gemoc overview and tutorial focus
+image:SigPML/images/gemoc_bigPicture_tutorial.jpg[Focus of the tutorial]
+
+
+During the tutorial we describe these different definitions in a fixed order to illustrate the languages included in the Gemoc studio but all these definitions are all related to, so an iterative approach is often recommended.    
+
+The described examples are based on the xref:sec-MarkedGraph[Marked Graph] DSML and a xref:sec-SigPML[SigPML] DSML.
+
+
+== Dashboard of a GEMOC approach
+
+//View of the xDSML
+
+
+== Architecture of a GEMOC xDSML
+
+//View of the xDSML
+[[xDSML-View]]
+.xDSML view of a Gemoc Language workbench 
+image:SigPML/images/SigPMLxDSMLView.png[xDSML View]
+
+
+
+[[sec-MarkedGraph]]
+== The Marked Graph DSML example
+
+//include::markedGraph.asciidoc[]
+
+
+[[sec-SigPML]]
+== The SigPML DSML example
+
+
+include::tutorial_sigpml.asciidoc[]
+
+
+////
+
+1. <<sec-increment1,First implementation>> of the deterministic
+Automata xDSML with a focus on the DSA.
+
+2. <<sec-otherIncrements,Other increments>>:
+	- Composite DSE
+	- Composition operators
+	- Traces
+////

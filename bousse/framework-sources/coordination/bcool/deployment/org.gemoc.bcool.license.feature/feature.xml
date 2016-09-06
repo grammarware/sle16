@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.gemoc.bcool.license.feature"
+      label="Timesquare ECL License"
+      version="1.0.0.qualifier"
+      provider-name="Aoste INRIA/I3S">
+
+   <description>
+      Timesquare ECL license feature plugin
+   </description>
+
+   <copyright>
+      Aoste INRIA/I3S
+   </copyright>
+
+   <license>
+      The Aoste team-project (INRIA/I3S) makes available all content in this plug-in (&quot;Content&quot;).
+Unless otherwise indicated below, the Content is provided to you under the terms and conditions of
+the Eclipse Public License Version 1.0 (&quot;EPL&quot;).
+A copy of the EPL is available at http://www.eclipse.org/legal/epl-v10.html.
+For purposes of the EPL, &quot;Program&quot; will mean the Content.
+If you did not receive this Content directly from the Aoste team-project, the Content is being redistributed
+by another party (&quot;Redistributor&quot;) and different terms and conditions may apply to your use of any
+object code in the Content. Check the Redistributor&apos;s license that was provided with the Content. If no
+such license exists, contact the Redistributor.
+Unless otherwise indicated below, the terms and conditions of the EPL still apply to any source code in
+the Content and such source code may be obtained at http://www.inria.fr/sophia/aoste.
+   </license>
+
+   <url>
+      <update label="Behavioral Coordination Operator Language" url="http://timesquare.inria.fr/ecl/update_site/"/>
+   </url>
+
+</feature>

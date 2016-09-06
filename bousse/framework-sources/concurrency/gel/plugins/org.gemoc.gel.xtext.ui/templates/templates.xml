@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<templates>
+	<template id="0" autoinsert="true"
+		context="org.gemoc.gel.GEL.CompositeDomainSpecificEvent" deleted="false"
+		description="Composite DSE Any Logical Sequence" enabled="true" id="9"
+		name="Any Logical Sequence">${visibility} Composite ${name}:
+		${myDSE}+
+		end</template>
+
+	<template id="1" autoinsert="true"
+		context="org.gemoc.gel.GEL.AtomicDomainSpecificEvent" deleted="false"
+		description="Atomic DSE without Feedback" enabled="true" id="2" name="DSE">${visibility}
+		DSE ${name}:
+		upon ${moccEvent}
+		triggers ${executionFunction}
+		end</template>
+
+	<template id="2" autoinsert="true"
+		context="org.gemoc.gel.GEL.AtomicDomainSpecificEvent" deleted="false"
+		description="Atomic DSE with Feedback" enabled="true" id="3"
+		name="DSE w/ Feedback">${visibility} DSE ${name}:
+		upon ${moccEvent}
+		triggers ${executionFunction} which returns ${value}
+		feedback:
+		[ ${value} ] =&gt; allow ${moccEventConsequence}
+		default =&gt; allow
+		${moccEventDefaultConsequence}
+		end
+		end</template>
+
+	<template id="3" autoinsert="true"
+		context="org.gemoc.gel.GEL.CompositeDomainSpecificEvent" deleted="false"
+		description="Composite DSE Finite Logical Sequence" enabled="true" id="8"
+		name="Finite Logical Sequence">${visibility} Composite ${name}:
+		${myDSE}[${numberOfIteration}]
+		end</template>
+
+	<template id="4" autoinsert="true"
+		context="org.gemoc.gel.GEL.ImportStatement" deleted="false"
+		description="Import Deployed Resource" enabled="true" id="1"
+		name="Import Plugin Resource">import "platform:/plugin/${projectName}/${path}/${filename}"</template>
+
+	<template id="5" autoinsert="true"
+		context="org.gemoc.gel.GEL.ImportStatement" deleted="false"
+		description="Import Resource from the Current Workspace" enabled="true"
+		id="0" name="Import Resource">import
+		"platform:/resource/${projectName}/${path}/${filename}"</template>
+
+	<template id="6" autoinsert="true"
+		context="org.gemoc.gel.GEL.CompositeDomainSpecificEvent" deleted="false"
+		description="Composite DSE Logical Coincidence" enabled="true" id="5"
+		name="Logical Coincidence">${visibility} Composite ${name}:
+		${firstDSE} &amp; ${secondDSE}
+		end</template>
+
+	<template autoinsert="true"
+		context="org.gemoc.gel.GEL.CompositeDomainSpecificEvent" deleted="false"
+		description="Composite DSE Logical Disjonction" enabled="true" id="6"
+		name="Logical Disjonction">${visibility} Composite ${name}:
+		${firstDSE} &gt;&lt; ${secondDSE}
+		end</template>
+
+	<template autoinsert="true"
+		context="org.gemoc.gel.GEL.CompositeDomainSpecificEvent" deleted="false"
+		description="Composite DSE Logical Sequence" enabled="true" id="4"
+		name="Logical Sequence">${visibility} Composite ${name}:
+		${firstDSE} -&gt; ${secondDSE}
+		end</template>
+
+	<template autoinsert="true"
+		context="org.gemoc.gel.GEL.CompositeDomainSpecificEvent" deleted="false"
+		description="Composite DSE Logical Union" enabled="true" id="7"
+		name="Logical Union">${visibility} Composite ${name}:
+		${firstDSE} | ${secondDSE}
+		end</template>
+</templates>

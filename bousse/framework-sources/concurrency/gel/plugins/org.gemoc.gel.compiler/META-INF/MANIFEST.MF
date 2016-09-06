@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Compiler
+Bundle-SymbolicName: org.gemoc.gel.compiler
+Bundle-Version: 0.1.0.qualifier
+Require-Bundle: org.gemoc.gel;bundle-version="0.1.0",
+ org.gemoc.gel.microgel;bundle-version="0.1.0",
+ org.eclipse.emf.transaction,
+ org.eclipse.jface,
+ org.eclipse.ui;bundle-version="3.106.1",
+ org.gemoc.gexpressions
+Export-Package: org.gemoc.gel.compiler
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
