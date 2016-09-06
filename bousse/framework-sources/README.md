@@ -130,11 +130,11 @@ Similarly to the concurrent omniscient debugger, the sequential omniscient debug
 - The step manager addon can be found in `concurrency/ccsljava_execution/ccsljava_engine/plugins/org.gemoc.execution.concurrent.ccsljavaengine.ui/src/main/java/org/gemoc/execution/concurrent/ccsljavaengine/ui/views/stimulimanager/StimuliManagerView.java`. It allows the user to see all possible steps, and to enforce some of them (eg. to simulate the environment).
 - The step decider addon can be found in `concurrency/ccsljava_execution/ccsljava_engine/plugins/org.gemoc.execution.concurrent.ccsljavaengine.ui/src/main/java/org/gemoc/execution/concurrent/ccsljavaengine/ui/views/step/LogicalStepsView.java`. It provides an UI to decide which next step should occur.
 
-## Compiling the studio (optional)
+## Compiling the studio 
 
 ### Obtaining a base studio without xMOF
 
-Even if a compiled studio is available as the second part of our artifact submission, to compile the studio, run the following command using maven:
+To compile the studio, run the following command using maven:
 
 ~~~
 mvn package -Dmaven.repo.local=$PWD/localm2 -P 'ignore_CI_repositories,!use_CI_repositories'
