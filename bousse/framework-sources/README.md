@@ -10,7 +10,7 @@ The source folders are the following:
 
 	- the complete **execution framework** of the GEMOC Studio.
 	- the Java engine, which is the main and reference implementation of the engine API.
-	- a set of dedugging and generic execution trace addons that implement the addon API. 
+	- a set of debugging and generic execution trace addons that implement the addon API. 
 
 Its content is directly taken from https://github.com/SiriusLab/ModelDebugging.
 - `concurrency` contains the Java+Moccml execution engine, along with some addons that are only relevant for this engine. Its content is directly taken from https://github.com/gemoc/concurrency.
