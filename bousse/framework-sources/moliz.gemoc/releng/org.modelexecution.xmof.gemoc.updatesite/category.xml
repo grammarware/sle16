@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/org.modelexecution.xmof.gemoc.feature_1.0.0.201609061551.jar" id="org.modelexecution.xmof.gemoc.feature" version="1.0.0.201609061551">
+   <feature url="features/org.modelexecution.xmof.gemoc.feature_0.1.0.qualifier.jar" id="org.modelexecution.xmof.gemoc.feature" version="0.1.0.qualifier">
       <category name="org.modelexecution.xmof.gemoc"/>
    </feature>
    <category-def name="org.modelexecution.xmof.gemoc" label="xMOF GEMOC Integration"/>
