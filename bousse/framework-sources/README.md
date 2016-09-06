@@ -15,7 +15,7 @@ The source folders are the following:
 Its content is directly taken from https://github.com/SiriusLab/ModelDebugging.
 - `concurrency` contains the Java+Moccml execution engine, along with some addons that are only relevant for this engine. Its content is directly taken from https://github.com/gemoc/concurrency.
 - `coordination` contains the coordination engine. Its content is directly taken from https://github.com/gemoc/coordination.
-- `moliz.gemoc` contains the xMOF engine.
+- `moliz.gemoc` contains the xMOF engine. Its content is directly taken from https://github.com/moliz/moliz.gemoc.
 - `gemoc-studio` contains code common to the complete GEMOC Studio, and some examples. Its content is directly taken from https://github.com/gemoc/gemoc-studio.
 - `gemoc-studio.wiki` contains the documentation of the GEMOC Studio. Its content is directly taken from  https://github.com/gemoc/gemoc-studio.wiki.git.
 
