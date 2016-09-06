@@ -19,21 +19,21 @@ Thereafter, we present simplified tutorials to play with each execution engine o
 	b. Right click on *Eclipse Application* and choose *New*.
 	c. Click on *Run*.
 3. Import the example model of the considered engine by using the same procedure as for importing the language, but by choosing the folder `modeling-workbench`.
-4. Execute the model in debug mode: TODO
+4. Execute the model in debug mode by right clicking on the provided `.launch` file, and choosing *Debug as* and choosing the first choice there. You can then click on *Run* to execute the model.
 
-### Java engine
-
-TODO
-
-### Java+MoCCML engine
+### Java engine example
 
 TODO
 
-### xMOF engine
+### Java+MoCCML engine example
 
 TODO
 
-### BCOoL engine
+### xMOF engine example
+
+TODO
+
+### BCOoL engine example
 
 TODO
 
