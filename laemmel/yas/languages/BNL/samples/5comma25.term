@@ -1,0 +1,3 @@
+number(
+  many(one, many(zero, single(one))),
+  rational(many(zero, single(one))) ).

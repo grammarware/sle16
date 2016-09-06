@@ -1,0 +1,20 @@
+symbol sequ : trafo* -> trafo ;
+symbol renameT : terminal # terminal -> trafo ;
+symbol renameN : terminal # terminal -> trafo ;
+symbol generalize : rule # rule -> trafo ;
+symbol specialize : rule # rule -> trafo ;
+symbol add : rule -> trafo ;
+symbol remove : rule -> trafo ;
+
+// EGL constructs
+type rule = label? # nonterminal # symbols ;
+type symbols = symbol* ;
+symbol t : terminal -> symbol ;
+symbol n : nonterminal -> symbol ;
+symbol star : symbols -> symbol ;
+symbol plus : symbols -> symbol ;
+symbol option : symbols -> symbol ;
+symbol not : symbols -> symbol ;
+type label = string ;
+type terminal = string ;
+type nonterminal = string ;
