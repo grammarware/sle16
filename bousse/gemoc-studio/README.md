@@ -15,9 +15,9 @@ Thereafter, we present simplified tutorials to play with each execution engine o
 1. Start the GEMOC Studio in a fresh workspace.
 1. Import the example xDSML by doing *File, *Import..*, *Existing Projects into Workspace*, and choose the folder `language-workbench` of the considered engine. Select all the projects and click on *Finish*.
 2. Start a modeling workbench for the xDSML by creating a new eclipse run configuration:
-	a. Click on *Run*, *Run Configurations...*.
-	b. Right click on *Eclipse Application* and choose *New*.
-	c. Click on *Run*.
+	1. Click on *Run*, *Run Configurations...*.
+	2. Right click on *Eclipse Application* and choose *New*.
+	3. Click on *Run*.
 3. Import the example model of the considered engine by using the same procedure as for importing the language, but by choosing the folder `modeling-workbench`.
 4. Execute the model in debug mode by right clicking on the provided `.launch` file, and choosing *Debug as* and choosing the first choice there. You can then click on *Run* to execute the model.
 
