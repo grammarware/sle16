@@ -1,0 +1,6 @@
+fsm : {state}* ;
+state : {'initial'}? 'state' stateid '{' {transition}* '}' ;
+transition : event {'/' action}? {'->' stateid}? ';' ;
+stateid : name ;
+event : name ;
+action : name ;

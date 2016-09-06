@@ -1,0 +1,35 @@
+[
+    % EL evaluation
+    macro(parseFile('no-vars.el')),  
+    elementOf('no-vars.value', term),
+    function(evaluate, [el(term)], [term], elEvaluate:evaluate, []),
+    mapsTo(evaluate, ['no-vars.term'], ['no-vars.value']),
+
+    % Samples for optimization
+    macro(parseFile('a.el')),  
+    macro(parseFile('top-unit.el')),  
+    macro(parseFile('needs-commute.el')),  
+    macro(parseFile('needs-fullbu.el')),
+    macro(parseFile('left-associated.el')),  
+    macro(parseFile('mix-associated.el')),  
+    macro(parseFile('right-associated.el')),
+
+    % Rewriting options
+    function(rewrite, [el(term)], [el(term)], elRewrite:rewrite, []),
+    function(try, [el(term)], [el(term)], elRewrite:try, []),
+    function(vtry, [el(term)], [el(term)], elRewrite:vtry, []),
+    function(fulltd, [el(term)], [el(term)], elRewrite:fulltd, []),
+    function(fullbu, [el(term)], [el(term)], elRewrite:fullbu, []),
+    function(innermost, [el(term)], [el(term)], elRewrite:innermost, []),
+
+    % Testing rewriting
+    mapsTo(rewrite, ['top-unit.term'], ['a.term']),
+    mapsTo(try, ['a.term'], ['a.term']),
+    mapsTo(try, ['needs-commute.term'], ['needs-commute.term']),
+    mapsTo(vtry, ['needs-commute.term'], ['a.term']),
+    mapsTo(fulltd, ['needs-fullbu.term'], ['top-unit.term']), 
+    mapsTo(fullbu, ['needs-fullbu.term'], ['a.term']),
+    mapsTo(fullbu, ['left-associated.term'], ['mix-associated.term']),
+    mapsTo(innermost, ['left-associated.term'], ['right-associated.term'])
+
+].

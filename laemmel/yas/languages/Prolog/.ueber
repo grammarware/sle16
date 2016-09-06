@@ -1,0 +1,5 @@
+[
+  language(prolog(text)),
+  membership(prolog(text), succeed, []),
+  function(applyIO, [term, term], [term], applyIO, [])
+].

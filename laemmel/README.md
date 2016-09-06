@@ -8,9 +8,7 @@ The artefacts are all maintained in the github repo softlang/yas.
 
 https://github.com/softlang/yas/
 
-A snapshot of the 4558ca27dc0a1658ae098a7b2b675541455a5892 version was added to this project:
-
-https://github.com/grammarware/sle16/blob/master/laemmel/yas-master.zip
+A snapshot of the 4558ca27dc0a1658ae098a7b2b675541455a5892 version was added to this project.
 
 The artefacts are consistently linked from the paper; just click the links in paper.
 
