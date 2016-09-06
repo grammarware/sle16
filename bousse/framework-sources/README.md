@@ -1,6 +1,6 @@
 # Sources of the GEMOC Execution Framework
 
-Since the paper is about a framework, it seemed important to provide the sources of this framework as part of the artifact submission. Thereby, we can show the concrete Java/Xtend interfaces and classes of the framework API that is described in the paper.
+Since the paper is about a framework, it seemed important to provide the sources of this framework as part of the artifact submission. This allows us to show the concrete Java/Xtend interfaces and classes of the framework API that is described in the paper, and briefly explain how they work.
 
 ## Content summary
 
