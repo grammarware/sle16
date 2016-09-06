@@ -107,7 +107,7 @@ This section is dedicated to users wishing to reconfigure the default settings o
 
 - After installing git properly, clone the  [repository](https://raw.githubusercontent.com/atlanmod/hadoop-cluster-docker) of the docker cluster, then  access its directory.
 ```sh
-$ git clone  git@github.com:atlanmod/hadoop-cluster-docker.git > The NeoEMF/HBase URI is composed of the protocol `neoemfhbase` :port number used in HBase is ":2181"
+$ git clone  git@github.com:atlanmod/hadoop-cluster-docker.git 
 $ cd hadoop-cluster-docker
 ```
 - Afterwards checkout the **sle16 branch**
@@ -154,10 +154,10 @@ usage: java -jar <this-file.jar> -c <path to the ePackage implementation>
  -g,--diagnose                                        Run diagnosis on the result model
 ```
     
- > The NeoEMF/HBase URI is composed of the protocol `neoemfhbase`,an IP address or hostname `HOST_ADDRESS`, and finally, ZooKeeper's port number `PORT`. By default thisport number corresponds to ":2181"
+
+ > The NeoEMF/HBase URI is composed of the protocol `neoemfhbase`,an IP address or hostname `HOST_ADDRESS`, and finally, ZooKeeper's port number `PORT`. By default, this port is ":2181"
  
 -  A script example to launch the generator can be found under ``` /root/dist/dist-trans/gen-class.sh```
-    > The NeoEMF/HBase URI is composed of the protocol `neoemfhbase`://HOST_IP_ADRRESS:PORT. By default the  number used in HBase is ":2181"
 
 4. **Running different transformation** 
 The transformation parameters are provided by the means of arguments. Below the usage:
@@ -185,8 +185,9 @@ usage: yarn jar <this-file.jar> -f <transformation.emftvm>
  -g,--greedy                                                Random data distribution mode.  Optional, disabled by default. Mutually exclusive with -r|--random.
  -c,--counters                                              Resource statistics mode. Optional, disabled by default
 ```
-- A script example to launch a single transformation can be found under
- ```/root/dist/dist-trans/run-class-single.sh```
+
+- A script example to launch a single transformation can be found under 
+```/root/dist/dist-trans/run-class-single.sh```
 
 
 ### Using the cluster in [AWS](https://console.aws.amazon.com)
