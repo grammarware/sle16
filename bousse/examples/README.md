@@ -1,5 +1,9 @@
 # Examples
 
+## Prerequisite
+
+Running the examples requires a working studio. You can either compile it yourself (see first part of the artifact submission), or download the lastest GEMOC Studio here: https://ci.inria.fr/gemoc/job/gemoc-studio_gemoc_studio/
+
 ## Presentation
 
 Each folder contains one example of xDSML and one example of model conforming to the xDSML.
