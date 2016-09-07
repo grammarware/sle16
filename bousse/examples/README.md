@@ -2,7 +2,7 @@
 
 ## Prerequisite
 
-Running the examples requires a working studio. You can either compile it yourself (see first part of the artifact submission), or download the lastest GEMOC Studio here: https://ci.inria.fr/gemoc/job/gemoc-studio_gemoc_studio/
+Running the examples requires a working studio. You can either compile it yourself (see first part of the artifact submission), or use a frozen GEMOC Studio provided here: http://gemoc.org/pub/studio/sle16/
 
 ## Presentation
 
