@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<activitydiagram:Activity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:activitydiagram="http://activitydiagram/1.0" name="test2">
+  <nodes xsi:type="activitydiagram:InitialNode" name="initialNode2" outgoing="//@edges.0"/>
+  <nodes xsi:type="activitydiagram:ForkNode" name="forkNode1" outgoing="//@edges.1 //@edges.2" incoming="//@edges.0"/>
+  <nodes xsi:type="activitydiagram:OpaqueAction" name="action2" outgoing="//@edges.3" incoming="//@edges.1"/>
+  <nodes xsi:type="activitydiagram:OpaqueAction" name="action3" outgoing="//@edges.4" incoming="//@edges.2"/>
+  <nodes xsi:type="activitydiagram:JoinNode" name="joinNode1" outgoing="//@edges.5" incoming="//@edges.3 //@edges.4"/>
+  <nodes xsi:type="activitydiagram:ActivityFinalNode" name="finalNode2" incoming="//@edges.5"/>
+  <edges xsi:type="activitydiagram:ControlFlow" name="edge3" source="//@nodes.0" target="//@nodes.1"/>
+  <edges xsi:type="activitydiagram:ControlFlow" name="edge4" source="//@nodes.1" target="//@nodes.2"/>
+  <edges xsi:type="activitydiagram:ControlFlow" name="edge5" source="//@nodes.1" target="//@nodes.3"/>
+  <edges xsi:type="activitydiagram:ControlFlow" name="edge6" source="//@nodes.2" target="//@nodes.4"/>
+  <edges xsi:type="activitydiagram:ControlFlow" name="edge7" source="//@nodes.3" target="//@nodes.4"/>
+  <edges xsi:type="activitydiagram:ControlFlow" name="edge8" source="//@nodes.4" target="//@nodes.5"/>
+</activitydiagram:Activity>
