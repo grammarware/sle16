@@ -1,0 +1,548 @@
+// This is the result of the compilation of a BCool spec
+import fr.inria.aoste.timesquare.ecl.EclQVToHelper;
+
+	
+modeltype Ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+//modeltype pivot uses 'http://www.eclipse.org/ocl/3.1.0/Pivot';
+
+	modeltype inMM1 uses 'http://www.gemoc.org/sample/tfsm';
+	modeltype inMM2 uses 'http://www.gemoc.org/sample/tfsm';
+modeltype ocl uses 'http://www.eclipse.org/ocl/3.1.0/CompleteOCLCST';
+
+modeltype QVT uses 'http://www.eclipse.org/QVT/1.0.0/Operational';//http://www.eclipse.org/m2m/qvt/oml/1.0.0/Stdlib';//http://www.eclipse.org/qvt/1.0/ImperativeOCL'; 
+modeltype TimeModel uses 'http://fr.inria.aoste.timemodel';
+
+	
+
+transformation doSyncProductTfsmwithTfsm_To_CCSL(
+inM1 : inMM1,
+inM2 : inMM2,
+ out TimeModel);
+
+
+
+property inM1MoCCPath : String = getModelPath(inM1.rootObjects()->asSequence()->first().oclAsType(EObject)).substring(1, getModelPath(inM1.rootObjects()->asSequence()->first().oclAsType(EObject)).lastIndexOf('.')-1)+'_MoCC.extendedCCSL';
+property inM1Clocks	:	Sequence(TimeModel::Clock) = Sequence{};
+query retrieveinM1MoCCClocks() {
+	inM1Clocks += getLibObjects(inM1MoCCPath)[TimeModel::Clock];
+	
+	return;
+}
+property inM2MoCCPath : String = getModelPath(inM2.rootObjects()->asSequence()->first().oclAsType(EObject)).substring(1, getModelPath(inM2.rootObjects()->asSequence()->first().oclAsType(EObject)).lastIndexOf('.')-1)+'_MoCC.extendedCCSL';
+property inM2Clocks	:	Sequence(TimeModel::Clock) = Sequence{};
+query retrieveinM2MoCCClocks() {
+	inM2Clocks += getLibObjects(inM2MoCCPath)[TimeModel::Clock];
+	
+	return;
+}
+
+
+property theCCSLSpec			:TimeModel::CCSLModel::ClockConstraintSystem = null;
+property theMainBlock			:TimeModel::CCSLModel::Block				 = null;
+
+property Kernel_Integer 	: TimeModel::BasicType::Type		= null;
+property Kernel_Clock_Type 	: TimeModel::BasicType::Type		= null;
+
+property seqOfRelationDeclaration :	Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::RelationDeclaration)    = Sequence{};
+property seqOfAbstractEntity :		Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)    = Sequence{};
+property seqOfExpressionDeclaration :	Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::ExpressionDeclaration)    = Sequence{};
+
+
+
+
+		property MM1_seqOfticksFSMClockContext :	Sequence(inMM1::FSMClock) = Sequence{};
+		property MM1_seqOfticksFSMClockReferedElement :	Sequence(EObject) = Sequence{};
+
+			query inMM1::FSMClock::getticksMSEofMM1() {
+			MM1_seqOfticksFSMClockContext += self.oclAsType(inMM1::FSMClock);
+			//warning here, at the end it will be an eoperation..., i.e. a DSA
+			MM1_seqOfticksFSMClockReferedElement += self.oclAsType(EObject); //before: evt.ownedType.oclAsType(EventType).referedElement
+			return;
+			}
+	
+
+
+
+		property MM1_seqOffireTransitionContext :	Sequence(inMM1::Transition) = Sequence{};
+		property MM1_seqOffireTransitionReferedElement :	Sequence(EObject) = Sequence{};
+
+			query inMM1::Transition::getfireMSEofMM1() {
+			MM1_seqOffireTransitionContext += self.oclAsType(inMM1::Transition);
+			//warning here, at the end it will be an eoperation..., i.e. a DSA
+			MM1_seqOffireTransitionReferedElement += self.oclAsType(EObject); //before: evt.ownedType.oclAsType(EventType).referedElement
+			return;
+			}
+	
+
+
+
+		property MM1_seqOfevaluateEvaluateGuardContext :	Sequence(inMM1::EvaluateGuard) = Sequence{};
+		property MM1_seqOfevaluateEvaluateGuardReferedElement :	Sequence(EObject) = Sequence{};
+
+			query inMM1::EvaluateGuard::getevaluateMSEofMM1() {
+			MM1_seqOfevaluateEvaluateGuardContext += self.oclAsType(inMM1::EvaluateGuard);
+			//warning here, at the end it will be an eoperation..., i.e. a DSA
+			MM1_seqOfevaluateEvaluateGuardReferedElement += self.oclAsType(EObject); //before: evt.ownedType.oclAsType(EventType).referedElement
+			return;
+			}
+	
+
+
+
+		property MM1_seqOfoccursFSMEventContext :	Sequence(inMM1::FSMEvent) = Sequence{};
+		property MM1_seqOfoccursFSMEventReferedElement :	Sequence(EObject) = Sequence{};
+
+			query inMM1::FSMEvent::getoccursMSEofMM1() {
+			MM1_seqOfoccursFSMEventContext += self.oclAsType(inMM1::FSMEvent);
+			//warning here, at the end it will be an eoperation..., i.e. a DSA
+			MM1_seqOfoccursFSMEventReferedElement += self.oclAsType(EObject); //before: evt.ownedType.oclAsType(EventType).referedElement
+			return;
+			}
+	
+
+
+
+		property MM1_seqOfenteringStateContext :	Sequence(inMM1::State) = Sequence{};
+		property MM1_seqOfenteringStateReferedElement :	Sequence(EObject) = Sequence{};
+
+			query inMM1::State::getenteringMSEofMM1() {
+			MM1_seqOfenteringStateContext += self.oclAsType(inMM1::State);
+			//warning here, at the end it will be an eoperation..., i.e. a DSA
+			MM1_seqOfenteringStateReferedElement += self.oclAsType(EObject); //before: evt.ownedType.oclAsType(EventType).referedElement
+			return;
+			}
+	
+
+
+
+		property MM1_seqOfleavingStateContext :	Sequence(inMM1::State) = Sequence{};
+		property MM1_seqOfleavingStateReferedElement :	Sequence(EObject) = Sequence{};
+
+			query inMM1::State::getleavingMSEofMM1() {
+			MM1_seqOfleavingStateContext += self.oclAsType(inMM1::State);
+			//warning here, at the end it will be an eoperation..., i.e. a DSA
+			MM1_seqOfleavingStateReferedElement += self.oclAsType(EObject); //before: evt.ownedType.oclAsType(EventType).referedElement
+			return;
+			}
+	
+
+
+
+		property MM1_seqOfevaluatedTrueEvaluateGuardContext :	Sequence(inMM1::EvaluateGuard) = Sequence{};
+		property MM1_seqOfevaluatedTrueEvaluateGuardReferedElement :	Sequence(EObject) = Sequence{};
+
+			query inMM1::EvaluateGuard::getevaluatedTrueMSEofMM1() {
+			MM1_seqOfevaluatedTrueEvaluateGuardContext += self.oclAsType(inMM1::EvaluateGuard);
+			//warning here, at the end it will be an eoperation..., i.e. a DSA
+			MM1_seqOfevaluatedTrueEvaluateGuardReferedElement += self.oclAsType(EObject); //before: evt.ownedType.oclAsType(EventType).referedElement
+			return;
+			}
+	
+
+
+
+		property MM1_seqOfevaluatedFalseEvaluateGuardContext :	Sequence(inMM1::EvaluateGuard) = Sequence{};
+		property MM1_seqOfevaluatedFalseEvaluateGuardReferedElement :	Sequence(EObject) = Sequence{};
+
+			query inMM1::EvaluateGuard::getevaluatedFalseMSEofMM1() {
+			MM1_seqOfevaluatedFalseEvaluateGuardContext += self.oclAsType(inMM1::EvaluateGuard);
+			//warning here, at the end it will be an eoperation..., i.e. a DSA
+			MM1_seqOfevaluatedFalseEvaluateGuardReferedElement += self.oclAsType(EObject); //before: evt.ownedType.oclAsType(EventType).referedElement
+			return;
+			}
+	
+
+
+
+		property MM1_seqOfstartTFSMContext :	Sequence(inMM1::TFSM) = Sequence{};
+		property MM1_seqOfstartTFSMReferedElement :	Sequence(EObject) = Sequence{};
+
+			query inMM1::TFSM::getstartMSEofMM1() {
+			MM1_seqOfstartTFSMContext += self.oclAsType(inMM1::TFSM);
+			//warning here, at the end it will be an eoperation..., i.e. a DSA
+			MM1_seqOfstartTFSMReferedElement += self.oclAsType(EObject); //before: evt.ownedType.oclAsType(EventType).referedElement
+			return;
+			}
+	
+
+
+
+		property MM1_seqOfstallTFSMContext :	Sequence(inMM1::TFSM) = Sequence{};
+		property MM1_seqOfstallTFSMReferedElement :	Sequence(EObject) = Sequence{};
+
+			query inMM1::TFSM::getstallMSEofMM1() {
+			MM1_seqOfstallTFSMContext += self.oclAsType(inMM1::TFSM);
+			//warning here, at the end it will be an eoperation..., i.e. a DSA
+			MM1_seqOfstallTFSMReferedElement += self.oclAsType(EObject); //before: evt.ownedType.oclAsType(EventType).referedElement
+			return;
+			}
+	
+
+
+
+		property MM2_seqOfticksFSMClockContext :	Sequence(inMM2::FSMClock) = Sequence{};
+		property MM2_seqOfticksFSMClockReferedElement :	Sequence(EObject) = Sequence{};
+
+			query inMM2::FSMClock::getticksMSEofMM2() {
+			MM2_seqOfticksFSMClockContext += self.oclAsType(inMM2::FSMClock);
+			//warning here, at the end it will be an eoperation..., i.e. a DSA
+			MM2_seqOfticksFSMClockReferedElement += self.oclAsType(EObject); //before: evt.ownedType.oclAsType(EventType).referedElement
+			return;
+			}
+	
+
+
+
+		property MM2_seqOffireTransitionContext :	Sequence(inMM2::Transition) = Sequence{};
+		property MM2_seqOffireTransitionReferedElement :	Sequence(EObject) = Sequence{};
+
+			query inMM2::Transition::getfireMSEofMM2() {
+			MM2_seqOffireTransitionContext += self.oclAsType(inMM2::Transition);
+			//warning here, at the end it will be an eoperation..., i.e. a DSA
+			MM2_seqOffireTransitionReferedElement += self.oclAsType(EObject); //before: evt.ownedType.oclAsType(EventType).referedElement
+			return;
+			}
+	
+
+
+
+		property MM2_seqOfevaluateEvaluateGuardContext :	Sequence(inMM2::EvaluateGuard) = Sequence{};
+		property MM2_seqOfevaluateEvaluateGuardReferedElement :	Sequence(EObject) = Sequence{};
+
+			query inMM2::EvaluateGuard::getevaluateMSEofMM2() {
+			MM2_seqOfevaluateEvaluateGuardContext += self.oclAsType(inMM2::EvaluateGuard);
+			//warning here, at the end it will be an eoperation..., i.e. a DSA
+			MM2_seqOfevaluateEvaluateGuardReferedElement += self.oclAsType(EObject); //before: evt.ownedType.oclAsType(EventType).referedElement
+			return;
+			}
+	
+
+
+
+		property MM2_seqOfoccursFSMEventContext :	Sequence(inMM2::FSMEvent) = Sequence{};
+		property MM2_seqOfoccursFSMEventReferedElement :	Sequence(EObject) = Sequence{};
+
+			query inMM2::FSMEvent::getoccursMSEofMM2() {
+			MM2_seqOfoccursFSMEventContext += self.oclAsType(inMM2::FSMEvent);
+			//warning here, at the end it will be an eoperation..., i.e. a DSA
+			MM2_seqOfoccursFSMEventReferedElement += self.oclAsType(EObject); //before: evt.ownedType.oclAsType(EventType).referedElement
+			return;
+			}
+	
+
+
+
+		property MM2_seqOfenteringStateContext :	Sequence(inMM2::State) = Sequence{};
+		property MM2_seqOfenteringStateReferedElement :	Sequence(EObject) = Sequence{};
+
+			query inMM2::State::getenteringMSEofMM2() {
+			MM2_seqOfenteringStateContext += self.oclAsType(inMM2::State);
+			//warning here, at the end it will be an eoperation..., i.e. a DSA
+			MM2_seqOfenteringStateReferedElement += self.oclAsType(EObject); //before: evt.ownedType.oclAsType(EventType).referedElement
+			return;
+			}
+	
+
+
+
+		property MM2_seqOfleavingStateContext :	Sequence(inMM2::State) = Sequence{};
+		property MM2_seqOfleavingStateReferedElement :	Sequence(EObject) = Sequence{};
+
+			query inMM2::State::getleavingMSEofMM2() {
+			MM2_seqOfleavingStateContext += self.oclAsType(inMM2::State);
+			//warning here, at the end it will be an eoperation..., i.e. a DSA
+			MM2_seqOfleavingStateReferedElement += self.oclAsType(EObject); //before: evt.ownedType.oclAsType(EventType).referedElement
+			return;
+			}
+	
+
+
+
+		property MM2_seqOfevaluatedTrueEvaluateGuardContext :	Sequence(inMM2::EvaluateGuard) = Sequence{};
+		property MM2_seqOfevaluatedTrueEvaluateGuardReferedElement :	Sequence(EObject) = Sequence{};
+
+			query inMM2::EvaluateGuard::getevaluatedTrueMSEofMM2() {
+			MM2_seqOfevaluatedTrueEvaluateGuardContext += self.oclAsType(inMM2::EvaluateGuard);
+			//warning here, at the end it will be an eoperation..., i.e. a DSA
+			MM2_seqOfevaluatedTrueEvaluateGuardReferedElement += self.oclAsType(EObject); //before: evt.ownedType.oclAsType(EventType).referedElement
+			return;
+			}
+	
+
+
+
+		property MM2_seqOfevaluatedFalseEvaluateGuardContext :	Sequence(inMM2::EvaluateGuard) = Sequence{};
+		property MM2_seqOfevaluatedFalseEvaluateGuardReferedElement :	Sequence(EObject) = Sequence{};
+
+			query inMM2::EvaluateGuard::getevaluatedFalseMSEofMM2() {
+			MM2_seqOfevaluatedFalseEvaluateGuardContext += self.oclAsType(inMM2::EvaluateGuard);
+			//warning here, at the end it will be an eoperation..., i.e. a DSA
+			MM2_seqOfevaluatedFalseEvaluateGuardReferedElement += self.oclAsType(EObject); //before: evt.ownedType.oclAsType(EventType).referedElement
+			return;
+			}
+	
+
+
+
+		property MM2_seqOfstartTFSMContext :	Sequence(inMM2::TFSM) = Sequence{};
+		property MM2_seqOfstartTFSMReferedElement :	Sequence(EObject) = Sequence{};
+
+			query inMM2::TFSM::getstartMSEofMM2() {
+			MM2_seqOfstartTFSMContext += self.oclAsType(inMM2::TFSM);
+			//warning here, at the end it will be an eoperation..., i.e. a DSA
+			MM2_seqOfstartTFSMReferedElement += self.oclAsType(EObject); //before: evt.ownedType.oclAsType(EventType).referedElement
+			return;
+			}
+	
+
+
+
+		property MM2_seqOfstallTFSMContext :	Sequence(inMM2::TFSM) = Sequence{};
+		property MM2_seqOfstallTFSMReferedElement :	Sequence(EObject) = Sequence{};
+
+			query inMM2::TFSM::getstallMSEofMM2() {
+			MM2_seqOfstallTFSMContext += self.oclAsType(inMM2::TFSM);
+			//warning here, at the end it will be an eoperation..., i.e. a DSA
+			MM2_seqOfstallTFSMReferedElement += self.oclAsType(EObject); //before: evt.ownedType.oclAsType(EventType).referedElement
+			return;
+			}
+	
+
+
+
+query identifyUserRelations() {
+	var kernelTypes :  	Sequence(TimeModel::BasicType::Type) := Sequence{};
+
+	seqOfRelationDeclaration		+= getLibObjects("platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::RelationDeclaration];
+	seqOfAbstractEntity				+= getLibObjects("platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity];
+	seqOfExpressionDeclaration		+= getLibObjects("platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::ExpressionDeclaration];
+	kernelTypes 					+= getLibObjects("platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib")[TimeModel::BasicType::Type];
+	seqOfRelationDeclaration		+= getLibObjects("platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::RelationDeclaration];
+	seqOfAbstractEntity				+= getLibObjects("platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity];
+	seqOfExpressionDeclaration		+= getLibObjects("platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::ExpressionDeclaration];
+	kernelTypes 					+= getLibObjects("platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib")[TimeModel::BasicType::Type];
+	seqOfRelationDeclaration		+= getLibObjects("platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/interfaces/TFSMMoC.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::RelationDeclaration];
+	seqOfAbstractEntity				+= getLibObjects("platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/interfaces/TFSMMoC.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity];
+	seqOfExpressionDeclaration		+= getLibObjects("platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/interfaces/TFSMMoC.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::ExpressionDeclaration];
+	kernelTypes 					+= getLibObjects("platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/interfaces/TFSMMoC.ccslLib")[TimeModel::BasicType::Type];
+	seqOfRelationDeclaration		+= getLibObjects("platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::RelationDeclaration];
+	seqOfAbstractEntity				+= getLibObjects("platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity];
+	seqOfExpressionDeclaration		+= getLibObjects("platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::ExpressionDeclaration];
+	kernelTypes 					+= getLibObjects("platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib")[TimeModel::BasicType::Type];
+	seqOfRelationDeclaration		+= getLibObjects("platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::RelationDeclaration];
+	seqOfAbstractEntity				+= getLibObjects("platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity];
+	seqOfExpressionDeclaration		+= getLibObjects("platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::ExpressionDeclaration];
+	kernelTypes 					+= getLibObjects("platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib")[TimeModel::BasicType::Type];
+	seqOfRelationDeclaration		+= getLibObjects("platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/interfaces/TFSMMoC.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::RelationDeclaration];
+	seqOfAbstractEntity				+= getLibObjects("platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/interfaces/TFSMMoC.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity];
+	seqOfExpressionDeclaration		+= getLibObjects("platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/interfaces/TFSMMoC.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::ExpressionDeclaration];
+	kernelTypes 					+= getLibObjects("platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/interfaces/TFSMMoC.ccslLib")[TimeModel::BasicType::Type];
+
+
+	seqOfRelationDeclaration		+= getLibObjects("platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/library/bcoollib.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::RelationDeclaration];
+	seqOfAbstractEntity				+= getLibObjects("platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/library/bcoollib.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity];
+	seqOfExpressionDeclaration		+= getLibObjects("platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/library/bcoollib.ccslLib")[TimeModel::CCSLModel::ClockExpressionAndRelation::ExpressionDeclaration];
+	kernelTypes 					+= getLibObjects("platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/library/bcoollib.ccslLib")[TimeModel::BasicType::Type];
+
+	Kernel_Integer 					:= kernelTypes[name='int']->asSequence()->first();
+	Kernel_Clock_Type				:= kernelTypes[name='clock']->asSequence()->first();	
+
+	return;
+}
+
+
+//usefull function :)
+	mapping Real::Real2Integer(n: String) :TimeModel::BasicType::IntegerElement {
+		name:= n;
+		type:= Kernel_Integer;
+		value := self.round();
+
+		end{
+			theMainBlock.elements += result;
+		}
+	}
+
+//really usefull function
+	mapping NewClock (n: String) :TimeModel::Clock{
+		name:= n;
+		type:= Kernel_Clock_Type;
+		end {
+			theMainBlock.elements += result;
+		}
+	}
+
+
+main() {
+	var tmp : Integer;
+
+	identifyUserRelations();
+		retrieveinM1MoCCClocks();
+		retrieveinM2MoCCClocks();
+
+
+			inM1.objectsOfType(inMM1::FSMClock).getticksMSEofMM1();
+			inM1.objectsOfType(inMM1::Transition).getfireMSEofMM1();
+			inM1.objectsOfType(inMM1::EvaluateGuard).getevaluateMSEofMM1();
+			inM1.objectsOfType(inMM1::FSMEvent).getoccursMSEofMM1();
+			inM1.objectsOfType(inMM1::State).getenteringMSEofMM1();
+			inM1.objectsOfType(inMM1::State).getleavingMSEofMM1();
+			inM1.objectsOfType(inMM1::EvaluateGuard).getevaluatedTrueMSEofMM1();
+			inM1.objectsOfType(inMM1::EvaluateGuard).getevaluatedFalseMSEofMM1();
+			inM1.objectsOfType(inMM1::TFSM).getstartMSEofMM1();
+			inM1.objectsOfType(inMM1::TFSM).getstallMSEofMM1();
+			inM2.objectsOfType(inMM2::FSMClock).getticksMSEofMM2();
+			inM2.objectsOfType(inMM2::Transition).getfireMSEofMM2();
+			inM2.objectsOfType(inMM2::EvaluateGuard).getevaluateMSEofMM2();
+			inM2.objectsOfType(inMM2::FSMEvent).getoccursMSEofMM2();
+			inM2.objectsOfType(inMM2::State).getenteringMSEofMM2();
+			inM2.objectsOfType(inMM2::State).getleavingMSEofMM2();
+			inM2.objectsOfType(inMM2::EvaluateGuard).getevaluatedTrueMSEofMM2();
+			inM2.objectsOfType(inMM2::EvaluateGuard).getevaluatedFalseMSEofMM2();
+			inM2.objectsOfType(inMM2::TFSM).getstartMSEofMM2();
+			inM2.objectsOfType(inMM2::TFSM).getstallMSEofMM2();
+	//just to create the ccsl model
+	map SyncProductTfsmwithTfsm2CCSL();
+
+
+			
+				 MM1_seqOfoccursFSMEventContext-> forEach (dse1){ 
+
+
+			
+			
+				 MM2_seqOfoccursFSMEventContext-> forEach (dse2){ 
+
+
+			
+
+		if (dse1.name=dse2.name) then {
+		
+			
+			map MatchingandCoordinationSharedEvents (
+						
+									inM1Clocks[name =  dse1.name + '_occurs']->first().oclAsType(TimeModel::Clock)
+
+			
+					,
+						
+									inM2Clocks[name =  dse2.name + '_occurs']->first().oclAsType(TimeModel::Clock)
+
+			
+			
+			);
+		} endif;
+
+		}
+		}
+
+}
+
+
+
+
+
+
+mapping MatchingandCoordinationSharedEvents (
+				dse1:TimeModel::CCSLModel::ClockExpressionAndRelation::BindableEntity
+					,
+				dse2:TimeModel::CCSLModel::ClockExpressionAndRelation::BindableEntity
+	) :TimeModel::CCSLModel::ClockExpressionAndRelation::Relation {
+			
+			name := 'MatchingandCoordinationSharedEvents';
+					name := name + dse1.name;
+					name := name + dse2.name;
+	
+			type := seqOfRelationDeclaration->select(rd | rd.name = "RendezVous")->first();
+			
+					bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+						bindable := dse1;
+						_abstract := seqOfRelationDeclaration->select(rd | rd.name = "RendezVous")->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::RelationDeclaration).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence()->at(1).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+					};
+					bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+						bindable := dse2;
+						_abstract := seqOfRelationDeclaration->select(rd | rd.name = "RendezVous")->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::RelationDeclaration).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence()->at(2).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+					};
+
+end{
+			theMainBlock.relations += result;
+		}	
+			
+}
+
+mapping DSEtoClock (iname: String) : TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+		if inM1Clocks[name = iname]->notEmpty() then 
+			bindable := inM1Clocks[name = iname]->first().oclAsType(TimeModel::Clock)
+		endif;
+		if inM2Clocks[name = iname]->notEmpty() then 
+			bindable := inM2Clocks[name = iname]->first().oclAsType(TimeModel::Clock)
+		endif;
+	if theMainBlock.expressions[name = iname]->notEmpty() then
+		bindable := theMainBlock.expressions[name = iname]->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::Expression)
+	endif;
+
+	if theMainBlock.elements[name = iname]->notEmpty() then
+		bindable := theMainBlock.elements[name = iname]->first().oclAsType(TimeModel::Clock)
+	endif;
+
+
+}
+
+
+
+
+
+
+
+	mapping SyncProductTfsmwithTfsm2CCSL() : TimeModel::CCSLModel::ClockConstraintSystem {
+	    theCCSLSpec := result;
+	    name := 'SyncProductTfsmwithTfsmCoordination';
+	    theMainBlock :=object TimeModel::CCSLModel::Block{
+	    	name := "mainBlock";
+	    };
+	    subBlock += theMainBlock;
+	    result.superBlock := theMainBlock;
+
+
+		imports+= object TimeModel::ImportStatement{
+				importURI := 'platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/library/bcoollib.ccslLib';
+				alias := 'lib_2';	
+				}; 
+
+	imports+= object TimeModel::ImportStatement{
+			importURI := 'platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib';
+			alias := 'model_1_1';	
+		}; 
+	imports+= object TimeModel::ImportStatement{
+			importURI := 'platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib';
+			alias := 'model_1_2';	
+		}; 
+	imports+= object TimeModel::ImportStatement{
+			importURI := 'platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/interfaces/TFSMMoC.ccslLib';
+			alias := 'model_1_3';	
+		}; 
+	imports+= object TimeModel::ImportStatement{
+			importURI := 'platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/kernel.ccslLib';
+			alias := 'model_2_1';	
+		}; 
+	imports+= object TimeModel::ImportStatement{
+			importURI := 'platform:/plugin/fr.inria.aoste.timesquare.ccslkernel.model/ccsllibrary/CCSL.ccslLib';
+			alias := 'model_2_2';	
+		}; 
+	imports+= object TimeModel::ImportStatement{
+			importURI := 'platform:/resource/org.gemoc.bcool.example.producttfsmandtfsm/interfaces/TFSMMoC.ccslLib';
+			alias := 'model_2_3';	
+		}; 
+
+	imports+= object TimeModel::ImportStatement{
+			importURI := inM1MoCCPath;
+			alias := 'inM1';	
+		}; 
+	imports+= object TimeModel::ImportStatement{
+			importURI := inM2MoCCPath;
+			alias := 'inM2';	
+		}; 
+
+}
+
+
+
