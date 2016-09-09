@@ -510,7 +510,7 @@
           </vsmElementCustomizations>
         </customization>
       </defaultLayer>
-      <additionalLayers name="HW_Simulator" label="Simulator" activeByDefault="true">
+      <additionalLayers name="Simulator" label="Simulator" activeByDefault="true">
         <customization>
           <vsmElementCustomizations xsi:type="description:VSMElementCustomization">
             <featureCustomizations xsi:type="description:EReferenceCustomization" applyOnAll="true" referenceName="strokeColor" value="//@userColorsPalettes[name='Arduino%20Palette']/@entries[name='level%20intensity']"/>
@@ -1495,7 +1495,7 @@
           </vsmElementCustomizations>
         </customization>
       </defaultLayer>
-      <additionalLayers name="SK_Simulator" label="Simulator" activeByDefault="true">
+      <additionalLayers name="Simulator" label="Simulator" activeByDefault="true">
         <toolSections name="Debug">
           <ownedTools xsi:type="tool_1:PopupMenu" name="Gemoc">
             <menuItemDescription xsi:type="tool_1:OperationAction" name="Toggle breakpoint" icon="/org.gemoc.gemoc_modeling_workbench.ui/icons/debug_exc.gif">
