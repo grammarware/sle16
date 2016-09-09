@@ -90,6 +90,9 @@
         <ecoreEnumLiteral href="ArduinoMT.ecore#//Color/white"/>
       </genEnumLiterals>
     </genEnums>
+    <genDataTypes>
+      <ecoreDataType href="ArduinoMT.ecore#//Object"/>
+    </genDataTypes>
     <genClasses image="false">
       <ecoreClass href="ArduinoMT.ecore#//Board"/>
       <genFeatures property="None" notify="false" createChild="false">
@@ -107,6 +110,9 @@
     </genClasses>
     <genClasses image="false">
       <ecoreClass href="ArduinoMT.ecore#//Pin"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ArduinoMT.ecore#//Pin/level"/>
+      </genFeatures>
     </genClasses>
     <genClasses>
       <ecoreClass href="ArduinoMT.ecore#//AnalogPin"/>
@@ -134,27 +140,63 @@
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="ArduinoMT.ecore#//Project/sketches"/>
       </genFeatures>
+      <genOperations>
+        <ecoreOperation href="ArduinoMT.ecore#//Project/execute"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="ArduinoMT.ecore#//Project/main"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="ArduinoMT.ecore#//Project/setup"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="ArduinoMT.ecore#//Project/initializeModel"/>
+        <genParameters>
+          <ecoreParameter href="ArduinoMT.ecore#//Project/initializeModel/args"/>
+        </genParameters>
+      </genOperations>
     </genClasses>
     <genClasses image="false">
       <ecoreClass href="ArduinoMT.ecore#//Instruction"/>
+      <genOperations>
+        <ecoreOperation href="ArduinoMT.ecore#//Instruction/execute"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="ArduinoMT.ecore#//Instruction/finalize"/>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="ArduinoMT.ecore#//ModuleAssignment"/>
+      <genOperations>
+        <ecoreOperation href="ArduinoMT.ecore#//ModuleAssignment/execute"/>
+      </genOperations>
     </genClasses>
     <genClasses image="false">
       <ecoreClass href="ArduinoMT.ecore#//ModuleInstruction"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true">
         <ecoreFeature xsi:type="ecore:EReference" href="ArduinoMT.ecore#//ModuleInstruction/module"/>
       </genFeatures>
+      <genOperations>
+        <ecoreOperation href="ArduinoMT.ecore#//ModuleInstruction/execute"/>
+      </genOperations>
     </genClasses>
     <genClasses image="false">
       <ecoreClass href="ArduinoMT.ecore#//Control"/>
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="ArduinoMT.ecore#//Control/block"/>
       </genFeatures>
+      <genOperations>
+        <ecoreOperation href="ArduinoMT.ecore#//Control/evaluate"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="ArduinoMT.ecore#//Control/execute"/>
+      </genOperations>
     </genClasses>
     <genClasses image="false">
       <ecoreClass href="ArduinoMT.ecore#//Utilities"/>
+      <genOperations>
+        <ecoreOperation href="ArduinoMT.ecore#//Utilities/execute"/>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="ArduinoMT.ecore#//Delay"/>
@@ -164,6 +206,9 @@
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="ArduinoMT.ecore#//Delay/value"/>
       </genFeatures>
+      <genOperations>
+        <ecoreOperation href="ArduinoMT.ecore#//Delay/execute"/>
+      </genOperations>
     </genClasses>
     <genClasses image="false">
       <ecoreClass href="ArduinoMT.ecore#//NamedElement"/>
@@ -176,6 +221,15 @@
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="ArduinoMT.ecore#//Repeat/iteration"/>
       </genFeatures>
+      <genOperations>
+        <ecoreOperation href="ArduinoMT.ecore#//Repeat/execute"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="ArduinoMT.ecore#//Repeat/evaluate"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="ArduinoMT.ecore#//Repeat/finalize"/>
+      </genOperations>
     </genClasses>
     <genClasses image="false">
       <ecoreClass href="ArduinoMT.ecore#//ModuleGet"/>
@@ -188,6 +242,12 @@
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="ArduinoMT.ecore#//While/condition"/>
       </genFeatures>
+      <genOperations>
+        <ecoreOperation href="ArduinoMT.ecore#//While/evaluate"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="ArduinoMT.ecore#//While/execute"/>
+      </genOperations>
     </genClasses>
     <genClasses image="false">
       <ecoreClass href="ArduinoMT.ecore#//BinaryExpression"/>
@@ -200,30 +260,48 @@
     </genClasses>
     <genClasses image="false">
       <ecoreClass href="ArduinoMT.ecore#//Variable"/>
+      <genOperations>
+        <ecoreOperation href="ArduinoMT.ecore#//Variable/evaluate"/>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="ArduinoMT.ecore#//VariableAssignment"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true">
         <ecoreFeature xsi:type="ecore:EReference" href="ArduinoMT.ecore#//VariableAssignment/variable"/>
       </genFeatures>
+      <genOperations>
+        <ecoreOperation href="ArduinoMT.ecore#//VariableAssignment/execute"/>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="ArduinoMT.ecore#//BinaryIntegerExpression"/>
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="ArduinoMT.ecore#//BinaryIntegerExpression/operator"/>
       </genFeatures>
+      <genOperations>
+        <ecoreOperation href="ArduinoMT.ecore#//BinaryIntegerExpression/evaluate"/>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="ArduinoMT.ecore#//BinaryBooleanExpression"/>
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="ArduinoMT.ecore#//BinaryBooleanExpression/operator"/>
       </genFeatures>
+      <genOperations>
+        <ecoreOperation href="ArduinoMT.ecore#//BinaryBooleanExpression/evaluate"/>
+      </genOperations>
     </genClasses>
     <genClasses image="false">
       <ecoreClass href="ArduinoMT.ecore#//Expression"/>
+      <genOperations>
+        <ecoreOperation href="ArduinoMT.ecore#//Expression/evaluate"/>
+      </genOperations>
     </genClasses>
     <genClasses image="false">
       <ecoreClass href="ArduinoMT.ecore#//Constant"/>
+      <genOperations>
+        <ecoreOperation href="ArduinoMT.ecore#//Constant/evaluate"/>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="ArduinoMT.ecore#//If"/>
@@ -233,18 +311,30 @@
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="ArduinoMT.ecore#//If/elseBlock"/>
       </genFeatures>
+      <genOperations>
+        <ecoreOperation href="ArduinoMT.ecore#//If/evaluate"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="ArduinoMT.ecore#//If/execute"/>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="ArduinoMT.ecore#//IntegerConstant"/>
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="ArduinoMT.ecore#//IntegerConstant/value"/>
       </genFeatures>
+      <genOperations>
+        <ecoreOperation href="ArduinoMT.ecore#//IntegerConstant/evaluate"/>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="ArduinoMT.ecore#//BooleanConstant"/>
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="ArduinoMT.ecore#//BooleanConstant/value"/>
       </genFeatures>
+      <genOperations>
+        <ecoreOperation href="ArduinoMT.ecore#//BooleanConstant/evaluate"/>
+      </genOperations>
     </genClasses>
     <genClasses image="false">
       <ecoreClass href="ArduinoMT.ecore#//BooleanExpression"/>
@@ -263,18 +353,36 @@
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="ArduinoMT.ecore#//IntegerVariable/initialValue"/>
       </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ArduinoMT.ecore#//IntegerVariable/value"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="ArduinoMT.ecore#//IntegerVariable/evaluate"/>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="ArduinoMT.ecore#//BooleanVariable"/>
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="ArduinoMT.ecore#//BooleanVariable/initialValue"/>
       </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ArduinoMT.ecore#//BooleanVariable/value"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="ArduinoMT.ecore#//BooleanVariable/evaluate"/>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="ArduinoMT.ecore#//BooleanModuleGet"/>
+      <genOperations>
+        <ecoreOperation href="ArduinoMT.ecore#//BooleanModuleGet/evaluate"/>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="ArduinoMT.ecore#//IntegerModuleGet"/>
+      <genOperations>
+        <ecoreOperation href="ArduinoMT.ecore#//IntegerModuleGet/evaluate"/>
+      </genOperations>
     </genClasses>
     <genClasses image="false">
       <ecoreClass href="ArduinoMT.ecore#//UnaryExpression"/>
@@ -299,9 +407,15 @@
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="ArduinoMT.ecore#//VariableDeclaration/variable"/>
       </genFeatures>
+      <genOperations>
+        <ecoreOperation href="ArduinoMT.ecore#//VariableDeclaration/execute"/>
+      </genOperations>
     </genClasses>
     <genClasses image="false">
       <ecoreClass href="ArduinoMT.ecore#//VariableRef"/>
+      <genOperations>
+        <ecoreOperation href="ArduinoMT.ecore#//VariableRef/evaluate"/>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="ArduinoMT.ecore#//IntegerVariableRef"/>
@@ -350,6 +464,9 @@
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="ArduinoMT.ecore#//Block/instructions"/>
       </genFeatures>
+      <genOperations>
+        <ecoreOperation href="ArduinoMT.ecore#//Block/execute"/>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="ArduinoMT.ecore#//ArduinoBoard"/>
@@ -374,12 +491,24 @@
     </genClasses>
     <genClasses image="false">
       <ecoreClass href="ArduinoMT.ecore#//ArduinoCommunicationModule"/>
+      <genOperations>
+        <ecoreOperation href="ArduinoMT.ecore#//ArduinoCommunicationModule/push"/>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="ArduinoMT.ecore#//BluetoothTransceiver"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true">
         <ecoreFeature xsi:type="ecore:EReference" href="ArduinoMT.ecore#//BluetoothTransceiver/connectedTransceiver"/>
       </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ArduinoMT.ecore#//BluetoothTransceiver/dataToSend"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ArduinoMT.ecore#//BluetoothTransceiver/dataReceived"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="ArduinoMT.ecore#//BluetoothTransceiver/push"/>
+      </genOperations>
     </genClasses>
   </genPackages>
   <usedGenPackages href="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"/>

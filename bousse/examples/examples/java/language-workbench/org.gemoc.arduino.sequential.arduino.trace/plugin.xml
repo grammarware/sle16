@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<!--
+-->
+<plugin>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated arduinoTrace -->
+    <package uri="arduinoTrace" class="arduinoTrace.ArduinoTracePackage" genModel="model/arduinoTrace.genmodel" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated arduinoTrace -->
+    <package uri="arduinoTrace_Steps" class="arduinoTrace.Steps.StepsPackage" genModel="model/arduinoTrace.genmodel" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated arduinoTrace -->
+    <package uri="arduinoTrace_States" class="arduinoTrace.States.StatesPackage" genModel="model/arduinoTrace.genmodel" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated arduinoTrace -->
+    <package uri="arduinoTrace_arduino" class="arduinoTrace.States.arduino.ArduinoPackage" genModel="model/arduinoTrace.genmodel" />
+  </extension>
+  <extension point="org.gemoc.gemoc_language_workbench.engine_addon">
+    <Addon Class="org.gemoc.arduino.sequential.arduino.trace.tracemanager.ArduinoTraceEngineAddon" Default="false" id="org.gemoc.arduino.sequential.arduino.trace" Name="arduino MultiDimensional Trace" ShortDescription="MultiDimensional Trace support dedicated to arduino language" openViewIds="org.gemoc.sequential_addons.multidimensional.timeline.views.timeline.MultidimensionalTimeLineView" />
+  </extension>
+</plugin>

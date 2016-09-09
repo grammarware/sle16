@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="arduino" nsURI="http://arduinomt/" nsPrefix="arduino">
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="arduino" nsURI="http://arduinomt/arduino/" nsPrefix="arduino">
   <eClassifiers xsi:type="ecore:EClass" name="Board" abstract="true" eSuperTypes="//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="project" lowerBound="1" eType="//Project" eOpposite="//Project/boards"/>
   </eClassifiers>
@@ -7,7 +7,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="DigitalPin" eSuperTypes="//Pin">
     <eStructuralFeatures xsi:type="ecore:EReference" name="module" eType="//ArduinoDigitalModule" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Pin" abstract="true" eSuperTypes="//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Pin" abstract="true" eSuperTypes="//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="level">
+      <eAnnotations source="aspect"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+    </eStructuralFeatures>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnalogPin" eSuperTypes="//Pin">
     <eStructuralFeatures xsi:type="ecore:EReference" name="module" eType="//ArduinoAnalogModule" containment="true"/>
   </eClassifiers>
@@ -17,19 +22,62 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="board" eType="//Board"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Project">
+    <eOperations name="execute">
+      <eAnnotations source="aspect"/>
+    </eOperations>
+    <eOperations name="main">
+      <eAnnotations source="aspect"/>
+    </eOperations>
+    <eOperations name="setup">
+      <eAnnotations source="aspect"/>
+    </eOperations>
+    <eOperations name="initializeModel">
+      <eAnnotations source="aspect"/>
+      <eParameters name="args" upperBound="-1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eParameters>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="boards" upperBound="-1" eType="//Board" containment="true" eOpposite="//Board/project"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sketches" upperBound="-1" eType="//Sketch" containment="true" eOpposite="//Sketch/project"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Instruction" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ModuleAssignment" eSuperTypes="//ModuleInstruction //Assignment"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Instruction" abstract="true">
+    <eOperations name="execute">
+      <eAnnotations source="aspect"/>
+    </eOperations>
+    <eOperations name="finalize">
+      <eAnnotations source="aspect"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModuleAssignment" eSuperTypes="//ModuleInstruction //Assignment">
+    <eOperations name="execute">
+      <eAnnotations source="aspect"/>
+    </eOperations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ModuleInstruction" abstract="true" eSuperTypes="//Instruction">
+    <eOperations name="execute">
+      <eAnnotations source="aspect"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="module" lowerBound="1" eType="//Module"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Control" abstract="true" eSuperTypes="//Instruction">
+    <eOperations name="evaluate">
+      <eAnnotations source="aspect"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
+    </eOperations>
+    <eOperations name="execute">
+      <eAnnotations source="aspect"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="block" lowerBound="1" eType="//Block" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Utilities" abstract="true" eSuperTypes="//Instruction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Utilities" abstract="true" eSuperTypes="//Instruction">
+    <eOperations name="execute">
+      <eAnnotations source="aspect"/>
+    </eOperations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Delay" eSuperTypes="//Utilities">
+    <eOperations name="execute">
+      <eAnnotations source="aspect"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="//Time"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value">
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -45,6 +93,16 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Repeat" eSuperTypes="//Control">
+    <eOperations name="execute">
+      <eAnnotations source="aspect"/>
+    </eOperations>
+    <eOperations name="evaluate">
+      <eAnnotations source="aspect"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
+    </eOperations>
+    <eOperations name="finalize">
+      <eAnnotations source="aspect"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="iteration" defaultValueLiteral="5">
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </eStructuralFeatures>
@@ -53,6 +111,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="module" lowerBound="1" eType="//Module"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="While" eSuperTypes="//Control">
+    <eOperations name="evaluate">
+      <eAnnotations source="aspect"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
+    </eOperations>
+    <eOperations name="execute">
+      <eAnnotations source="aspect"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="condition" lowerBound="1" eType="//BooleanExpression" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BinaryExpression" abstract="true" eSuperTypes="//Expression">
@@ -68,28 +133,62 @@
     <eLiterals name="max" value="5"/>
     <eLiterals name="pourcent" value="6"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Variable" abstract="true" eSuperTypes="//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Variable" abstract="true" eSuperTypes="//NamedElement">
+    <eOperations name="evaluate" eType="//Object">
+      <eAnnotations source="aspect"/>
+    </eOperations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VariableAssignment" eSuperTypes="//Instruction //Assignment">
+    <eOperations name="execute">
+      <eAnnotations source="aspect"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1" eType="//Variable"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BinaryIntegerExpression" eSuperTypes="//BinaryExpression //IntegerExpression">
+    <eOperations name="evaluate" eType="//Object">
+      <eAnnotations source="aspect"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="//BinaryIntegerOperatorKind"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BinaryBooleanExpression" eSuperTypes="//BinaryExpression //BooleanExpression">
+    <eOperations name="evaluate" eType="//Object">
+      <eAnnotations source="aspect"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="//BinaryBooleanOperatorKind"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Constant" abstract="true" eSuperTypes="//Expression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true">
+    <eOperations name="evaluate" eType="//Object">
+      <eAnnotations source="aspect"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Constant" abstract="true" eSuperTypes="//Expression">
+    <eOperations name="evaluate" eType="//Object">
+      <eAnnotations source="aspect"/>
+    </eOperations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="If" eSuperTypes="//Control">
+    <eOperations name="evaluate">
+      <eAnnotations source="aspect"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
+    </eOperations>
+    <eOperations name="execute">
+      <eAnnotations source="aspect"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="condition" lowerBound="1" eType="//BooleanExpression" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elseBlock" eType="//Block" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IntegerConstant" eSuperTypes="//Constant //IntegerExpression">
+    <eOperations name="evaluate" eType="//Object">
+      <eAnnotations source="aspect"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" defaultValueLiteral="0">
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BooleanConstant" eSuperTypes="//Constant //BooleanExpression">
+    <eOperations name="evaluate" eType="//Object">
+      <eAnnotations source="aspect"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" defaultValueLiteral="false">
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </eStructuralFeatures>
@@ -100,17 +199,39 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="operand" lowerBound="1" eType="//Expression" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IntegerVariable" eSuperTypes="//Variable">
+    <eOperations name="evaluate" eType="//Object">
+      <eAnnotations source="aspect"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialValue" defaultValueLiteral="0">
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value">
+      <eAnnotations source="aspect"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BooleanVariable" eSuperTypes="//Variable">
+    <eOperations name="evaluate" eType="//Object">
+      <eAnnotations source="aspect"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialValue" defaultValueLiteral="false">
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value">
+      <eAnnotations source="aspect"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
+    </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BooleanModuleGet" eSuperTypes="//ModuleGet //BooleanExpression"/>
-  <eClassifiers xsi:type="ecore:EClass" name="IntegerModuleGet" eSuperTypes="//ModuleGet //IntegerExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BooleanModuleGet" eSuperTypes="//ModuleGet //BooleanExpression">
+    <eOperations name="evaluate" eType="//Object">
+      <eAnnotations source="aspect"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntegerModuleGet" eSuperTypes="//ModuleGet //IntegerExpression">
+    <eOperations name="evaluate" eType="//Object">
+      <eAnnotations source="aspect"/>
+    </eOperations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="BinaryBooleanOperatorKind">
     <eLiterals name="inf" literal="inf"/>
     <eLiterals name="sup" value="1" literal="sup"/>
@@ -138,9 +259,16 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="//UnaryIntegerOperatorKind"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VariableDeclaration" eSuperTypes="//Instruction">
+    <eOperations name="execute">
+      <eAnnotations source="aspect"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1" eType="//Variable" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="VariableRef" abstract="true" eSuperTypes="//Expression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="VariableRef" abstract="true" eSuperTypes="//Expression">
+    <eOperations name="evaluate" eType="//Object">
+      <eAnnotations source="aspect"/>
+    </eOperations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IntegerVariableRef" eSuperTypes="//VariableRef //IntegerExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1" eType="//IntegerVariable"/>
   </eClassifiers>
@@ -158,6 +286,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="MusicPlayer" eSuperTypes="//ArduinoAnalogModule"/>
   <eClassifiers xsi:type="ecore:EClass" name="ArduinoModule" abstract="true" eSuperTypes="//Module"/>
   <eClassifiers xsi:type="ecore:EClass" name="Block">
+    <eOperations name="execute">
+      <eAnnotations source="aspect"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="instructions" upperBound="-1" eType="//Instruction" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ArduinoBoard" eSuperTypes="//Board">
@@ -174,8 +305,26 @@
     <eLiterals name="red" value="1"/>
     <eLiterals name="white" value="2"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ArduinoCommunicationModule" abstract="true" eSuperTypes="//ArduinoDigitalModule"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ArduinoCommunicationModule" abstract="true" eSuperTypes="//ArduinoDigitalModule">
+    <eOperations name="push">
+      <eAnnotations source="aspect"/>
+    </eOperations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BluetoothTransceiver" eSuperTypes="//ArduinoAnalogModule">
+    <eOperations name="push">
+      <eAnnotations source="aspect"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="connectedTransceiver" upperBound="-1" eType="//BluetoothTransceiver"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataToSend" upperBound="-1">
+      <eAnnotations source="aspect"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataReceived" upperBound="-1">
+      <eAnnotations source="aspect"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Object" instanceClassName="java.lang.Object">
+    <eAnnotations source="aspect"/>
   </eClassifiers>
 </ecore:EPackage>

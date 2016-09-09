@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated Arduino -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.gemoc.arduino.sequential.arduino.arduino.presentation.ArduinoModelWizardID"
+            name="%_UI_ArduinoModelWizard_label"
+            class="org.gemoc.arduino.sequential.arduino.arduino.presentation.ArduinoModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ArduinoModelFile.gif">
+         <description>%_UI_ArduinoModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated Arduino -->
+      <editor
+            id="org.gemoc.arduino.sequential.arduino.arduino.presentation.ArduinoEditorID"
+            name="%_UI_ArduinoEditor_label"
+            icon="icons/full/obj16/ArduinoModelFile.gif"
+            extensions="arduino"
+            class="org.gemoc.arduino.sequential.arduino.arduino.presentation.ArduinoEditor"
+            contributorClass="org.gemoc.arduino.sequential.arduino.arduino.presentation.ArduinoActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

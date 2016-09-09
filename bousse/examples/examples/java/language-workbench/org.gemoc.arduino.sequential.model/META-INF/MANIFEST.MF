@@ -7,9 +7,9 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: org.gemoc.arduino.sequential.model.arduino,
- org.gemoc.arduino.sequential.model.arduino.impl,
- org.gemoc.arduino.sequential.model.arduino.util
+Export-Package: org.gemoc.sequential.model.arduino,
+ org.gemoc.sequential.model.arduino.impl,
+ org.gemoc.sequential.model.arduino.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy

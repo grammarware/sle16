@@ -1,24 +1,39 @@
 package org.gemoc.arduino.sequential
 
 language Arduino {
-	
-	/*
-	 * Declare abstract syntax
-	 */
 	syntax "platform:/resource/org.gemoc.arduino.sequential.model/model/arduino.ecore"
-	
-	/*
-	 * Declare DSE
-	 */
-//	with org.gemoc.arduino.operationalsemantics.*
-	
-	/*
-	 * Set name of the ModelType (ie: the type of this language)
-	 */
-	exactType ArduinoMT
-}
+	with org.gemoc.arduino.sequential.operationalsemantics.IntegerModuleGet_ExecutableAspect
+	with org.gemoc.arduino.sequential.operationalsemantics.Delay_ExecutableAspect
+	with  org.gemoc.arduino.sequential.operationalsemantics.Instruction_ExecutableAspect
+	with org.gemoc.arduino.sequential.operationalsemantics.BooleanVariable_EvaluableAspect
+	with org.gemoc.arduino.sequential.operationalsemantics.BinaryIntegerExpression_EvaluableAspect
+	with org.gemoc.arduino.sequential.operationalsemantics.Project_ExecutableAspect
+	with org.gemoc.arduino.sequential.operationalsemantics.While_EvaluableAspect
+	with org.gemoc.arduino.sequential.operationalsemantics.ModuleAssignment_ExecutableAspect
+	with org.gemoc.arduino.sequential.operationalsemantics.IntegerVariable_EvaluableAspect
+	with org.gemoc.arduino.sequential.operationalsemantics.If_EvaluableAspect
+	with org.gemoc.arduino.sequential.operationalsemantics.ArduinoCommunicationModule_PushAspect
+	with org.gemoc.arduino.sequential.operationalsemantics.Instruction_UtilitesAspect
+	with org.gemoc.arduino.sequential.operationalsemantics.VariableAssignment_ExecutableAspect
+	with  org.gemoc.arduino.sequential.operationalsemantics.If_ExecutableAspect
+	with org.gemoc.arduino.sequential.operationalsemantics.Pin_EvaluableAspect
+	with  org.gemoc.arduino.sequential.operationalsemantics.While_ExecutableAspect
+	with org.gemoc.arduino.sequential.operationalsemantics.BooleanModuleGet_ExecutableAspect
+	with  org.gemoc.arduino.sequential.operationalsemantics.Control_EvaluableAspect
+	with org.gemoc.arduino.sequential.operationalsemantics.IntegerConstant_ExecutableAspect
+	with org.gemoc.arduino.sequential.operationalsemantics.ModuleInstruction_ExecutableAspect
+	with  org.gemoc.arduino.sequential.operationalsemantics.Repeat_ExecutableAspect
+	with org.gemoc.arduino.sequential.operationalsemantics.BluetoothTransceiver_PushAspect
+	with org.gemoc.arduino.sequential.operationalsemantics.VariableDeclaration_ExecutableAspect
+	with org.gemoc.arduino.sequential.operationalsemantics.VariableRef_EvaluableAspect
+	with org.gemoc.arduino.sequential.operationalsemantics.BooleanConstant_ExecutableAspect
+	with org.gemoc.arduino.sequential.operationalsemantics.Block_ExecutableAspect
+	with org.gemoc.arduino.sequential.operationalsemantics.Constant_EvaluableAspect
+	with org.gemoc.arduino.sequential.operationalsemantics.Repeat_EvaluableAspect
+	with org.gemoc.arduino.sequential.operationalsemantics.Variable_EvaluableAspect
+	with org.gemoc.arduino.sequential.operationalsemantics.Expression_EvaluableAspect
+	with org.gemoc.arduino.sequential.operationalsemantics.BinaryBooleanExpression_EvaluableAspect
+	with org.gemoc.arduino.sequential.operationalsemantics.Utilities_ExecutableAspect
+	with org.gemoc.arduino.sequential.operationalsemantics.Control_ExecutableAspect
 
-language ExecArduino inherits Arduino {
-	with org.gemoc.arduino.sequential.operationalsemantics.*
-	exactType ExecArduinoMT
 }

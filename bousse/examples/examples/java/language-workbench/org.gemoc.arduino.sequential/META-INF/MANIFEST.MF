@@ -16,8 +16,6 @@ Require-Bundle: fr.inria.diverse.k3.al.annotationprocessor.plugin,
  
  org.gemoc.executionframework.extensions.sirius;bundle-version="0.0.0";visibility:=reexport,
  
- org.gemoc.arduino.operationalsemantics;bundle-version="0.0.0";visibility:="reexport",
- 
  org.gemoc.execution.sequential.javaengine;bundle-version="0.0.0",
  
  org.gemoc.execution.sequential.javaxdsml.api;bundle-version="0.0.0",
@@ -36,6 +34,8 @@ Require-Bundle: fr.inria.diverse.k3.al.annotationprocessor.plugin,
  
  org.gemoc.arduino.sequential.design;bundle-version="1.0.0",
  
- org.gemoc.arduino.sequential.execarduino
+ org.gemoc.arduino.sequential.operationalsemantics;bundle-version="0.0.0";visibility:="reexport",
+ 
+ org.gemoc.arduino.sequential.arduino
 Bundle-ManifestVersion: 2
 Manifest-Version: 1.0

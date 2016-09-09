@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Operationalsemantics
-Bundle-SymbolicName: org.gemoc.arduino.operationalsemantics
+Bundle-SymbolicName: org.gemoc.arduino.sequential.operationalsemantics
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.xtend.lib;bundle-version="2.6.0";visibility:=private,

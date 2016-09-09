@@ -17,7 +17,7 @@
       <!-- @generated arduino -->
       <package
             uri="http://www.obeo.fr/arduino"
-            class="org.gemoc.arduino.sequential.model.arduino.ArduinoPackage"
+            class="org.gemoc.sequential.model.arduino.ArduinoPackage"
             genModel="model/arduino.genmodel"/>
    </extension>
 

@@ -3,9 +3,9 @@
 <intAttribute key="GEMOC_ANIMATE_DELAY" value="0"/>
 <booleanAttribute key="GEMOC_LAUNCH_BREAK_START" value="true"/>
 <stringAttribute key="GEMOC_LAUNCH_INITIALIZATION_ARGUMENTS" value=""/>
-<stringAttribute key="GEMOC_LAUNCH_INITIALIZATION_METHOD" value="org.gemoc.arduino.sequential.execarduino.aspects.Project_ExecutableAspect.initializeModel"/>
-<stringAttribute key="GEMOC_LAUNCH_SELECTED_LANGUAGE" value="org.gemoc.arduino.sequential.ExecArduino"/>
-<stringAttribute key="LAUNCH_METHOD_ENTRY_POINT" value="public static void org.gemoc.arduino.sequential.execarduino.aspects.Project_ExecutableAspect.main(org.gemoc.arduino.sequential.execarduino.arduino.Project)"/>
+<stringAttribute key="GEMOC_LAUNCH_INITIALIZATION_METHOD" value="org.gemoc.arduino.sequential.arduino.aspects.Project_ExecutableAspect.initializeModel"/>
+<stringAttribute key="GEMOC_LAUNCH_SELECTED_LANGUAGE" value="org.gemoc.arduino.sequential.Arduino"/>
+<stringAttribute key="LAUNCH_METHOD_ENTRY_POINT" value="public static void org.gemoc.arduino.sequential.arduino.aspects.Project_ExecutableAspect.main(org.gemoc.arduino.sequential.arduino.arduino.Project)"/>
 <stringAttribute key="LAUNCH_MODEL_ENTRY_POINT" value="/"/>
 <booleanAttribute key="MultiBranch Reflective Trace" value="false"/>
 <stringAttribute key="Resource" value="/org.gemoc.sample.arduino.sequential.broadcastexample/model.arduino"/>
