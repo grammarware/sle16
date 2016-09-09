@@ -4,3 +4,4 @@ target
 src-gen
 xtend-gen
 *.class
+bin
