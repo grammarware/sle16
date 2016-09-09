@@ -24,10 +24,15 @@
 
 	<repositories>
 
-		<repository>
+		<!-- <repository>
 			<id>Local moliz update site</id>
 			<layout>p2</layout>
 			<url>${project.baseUri}/../../moliz-updatesite</url>
+		</repository>-->
+		<repository>
+			<id>SLE16 Moliz update site</id>
+			<layout>p2</layout>
+			<url>http://gemoc.org/pub/studio/sle16/xmof-update-site/</url>
 		</repository>
 
 		<repository>
