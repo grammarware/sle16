@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ASCII"?>
+<activitydiagram:Activity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:activitydiagram="http://activitydiagram/1.0" name="test6">
+  <nodes xsi:type="activitydiagram:InitialNode" name="initialNode6" outgoing="//@edges.0"/>
+  <nodes xsi:type="activitydiagram:OpaqueAction" name="register" outgoing="//@edges.1" incoming="//@edges.0">
+    <expressions xsi:type="activitydiagram:BooleanUnaryExpression" assignee="//@locals.0" operand="//@inputs.0"/>
+  </nodes>
+  <nodes xsi:type="activitydiagram:DecisionNode" name="decisionInternal" outgoing="//@edges.2 //@edges.3" incoming="//@edges.1"/>
+  <nodes xsi:type="activitydiagram:OpaqueAction" name="assignToProjectExternal" outgoing="//@edges.14" incoming="//@edges.2"/>
+  <nodes xsi:type="activitydiagram:OpaqueAction" name="getWelcomePackage" outgoing="//@edges.4" incoming="//@edges.3"/>
+  <nodes xsi:type="activitydiagram:ForkNode" name="forkGetWelcomePackage" outgoing="//@edges.5 //@edges.6" incoming="//@edges.4"/>
+  <nodes xsi:type="activitydiagram:OpaqueAction" name="assignToProject" outgoing="//@edges.7" incoming="//@edges.5"/>
+  <nodes xsi:type="activitydiagram:OpaqueAction" name="addToWebsite" outgoing="//@edges.8" incoming="//@edges.6"/>
+  <nodes xsi:type="activitydiagram:JoinNode" name="joinManagerInterview" outgoing="//@edges.9" incoming="//@edges.7 //@edges.8"/>
+  <nodes xsi:type="activitydiagram:OpaqueAction" name="managerInterview" outgoing="//@edges.10" incoming="//@edges.9"/>
+  <nodes xsi:type="activitydiagram:OpaqueAction" name="managerReport" outgoing="//@edges.11" incoming="//@edges.10"/>
+  <nodes xsi:type="activitydiagram:MergeNode" name="mergeAuthorizePayment" outgoing="//@edges.12" incoming="//@edges.11 //@edges.14"/>
+  <nodes xsi:type="activitydiagram:OpaqueAction" name="authorizePayment" outgoing="//@edges.13" incoming="//@edges.12"/>
+  <nodes xsi:type="activitydiagram:ActivityFinalNode" name="finalNode6" incoming="//@edges.13"/>
+  <edges xsi:type="activitydiagram:ControlFlow" name="edge42" source="//@nodes.0" target="//@nodes.1"/>
+  <edges xsi:type="activitydiagram:ControlFlow" name="edge43" source="//@nodes.1" target="//@nodes.2"/>
+  <edges xsi:type="activitydiagram:ControlFlow" name="edge44" source="//@nodes.2" target="//@nodes.3" guard="//@locals.0"/>
+  <edges xsi:type="activitydiagram:ControlFlow" name="edge45" source="//@nodes.2" target="//@nodes.4" guard="//@inputs.0"/>
+  <edges xsi:type="activitydiagram:ControlFlow" name="edge46" source="//@nodes.4" target="//@nodes.5"/>
+  <edges xsi:type="activitydiagram:ControlFlow" name="edge47" source="//@nodes.5" target="//@nodes.6"/>
+  <edges xsi:type="activitydiagram:ControlFlow" name="edge48" source="//@nodes.5" target="//@nodes.7"/>
+  <edges xsi:type="activitydiagram:ControlFlow" name="edge49" source="//@nodes.6" target="//@nodes.8"/>
+  <edges xsi:type="activitydiagram:ControlFlow" name="edge50" source="//@nodes.7" target="//@nodes.8"/>
+  <edges xsi:type="activitydiagram:ControlFlow" name="edge51" source="//@nodes.8" target="//@nodes.9"/>
+  <edges xsi:type="activitydiagram:ControlFlow" name="edge52" source="//@nodes.9" target="//@nodes.10"/>
+  <edges xsi:type="activitydiagram:ControlFlow" name="edge53" source="//@nodes.10" target="//@nodes.11"/>
+  <edges xsi:type="activitydiagram:ControlFlow" name="edge54" source="//@nodes.11" target="//@nodes.12"/>
+  <edges xsi:type="activitydiagram:ControlFlow" name="edge55" source="//@nodes.12" target="//@nodes.13"/>
+  <edges xsi:type="activitydiagram:ControlFlow" name="edge56" source="//@nodes.3" target="//@nodes.11"/>
+  <locals xsi:type="activitydiagram:BooleanVariable" name="notinternal">
+    <initialValue xsi:type="activitydiagram:BooleanValue"/>
+  </locals>
+  <inputs xsi:type="activitydiagram:BooleanVariable" name="internal"/>
+</activitydiagram:Activity>

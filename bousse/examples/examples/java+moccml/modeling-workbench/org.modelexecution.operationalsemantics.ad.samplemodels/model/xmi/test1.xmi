@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ASCII"?>
+<activitydiagram:Activity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:activitydiagram="http://activitydiagram/1.0" name="test1">
+  <nodes xsi:type="activitydiagram:InitialNode" name="initialNode1" outgoing="//@edges.0"/>
+  <nodes xsi:type="activitydiagram:OpaqueAction" name="action1" outgoing="//@edges.1" incoming="//@edges.0"/>
+  <nodes xsi:type="activitydiagram:ActivityFinalNode" name="finalNode1" incoming="//@edges.1"/>
+  <edges xsi:type="activitydiagram:ControlFlow" name="edge1" source="//@nodes.0" target="//@nodes.1"/>
+  <edges xsi:type="activitydiagram:ControlFlow" name="edge2" source="//@nodes.1" target="//@nodes.2"/>
+</activitydiagram:Activity>

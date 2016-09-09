@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ASCII"?>
+<activitydiagram:Activity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:activitydiagram="http://activitydiagram/1.0" name="test4">
+  <nodes xsi:type="activitydiagram:InitialNode" name="initialNode4" outgoing="//@edges.0"/>
+  <nodes xsi:type="activitydiagram:OpaqueAction" name="action6" outgoing="//@edges.1" incoming="//@edges.0">
+    <expressions xsi:type="activitydiagram:IntegerCalculationExpression" operand2="//@locals.1" operand1="//@locals.0" assignee="//@locals.0"/>
+    <expressions xsi:type="activitydiagram:IntegerCalculationExpression" operand2="//@locals.2" operand1="//@locals.0" assignee="//@locals.0"/>
+  </nodes>
+  <nodes xsi:type="activitydiagram:OpaqueAction" name="action7" outgoing="//@edges.2" incoming="//@edges.1">
+    <expressions xsi:type="activitydiagram:IntegerComparisonExpression" operand2="//@locals.2" operand1="//@locals.1" assignee="//@locals.3"/>
+  </nodes>
+  <nodes xsi:type="activitydiagram:OpaqueAction" name="action8" outgoing="//@edges.3" incoming="//@edges.2">
+    <expressions xsi:type="activitydiagram:BooleanUnaryExpression" assignee="//@locals.4" operand="//@locals.3"/>
+  </nodes>
+  <nodes xsi:type="activitydiagram:OpaqueAction" name="action9" outgoing="//@edges.4" incoming="//@edges.3">
+    <expressions xsi:type="activitydiagram:BooleanBinaryExpression" assignee="//@locals.5" operand1="//@locals.3" operand2="//@locals.4" operator="||"/>
+  </nodes>
+  <nodes xsi:type="activitydiagram:ActivityFinalNode" name="finalNode4" incoming="//@edges.4"/>
+  <edges xsi:type="activitydiagram:ControlFlow" name="edge15" source="//@nodes.0" target="//@nodes.1"/>
+  <edges xsi:type="activitydiagram:ControlFlow" name="edge16" source="//@nodes.1" target="//@nodes.2"/>
+  <edges xsi:type="activitydiagram:ControlFlow" name="edge17" source="//@nodes.2" target="//@nodes.3"/>
+  <edges xsi:type="activitydiagram:ControlFlow" name="edge18" source="//@nodes.3" target="//@nodes.4"/>
+  <edges xsi:type="activitydiagram:ControlFlow" name="edge19" source="//@nodes.4" target="//@nodes.5"/>
+  <locals xsi:type="activitydiagram:IntegerVariable" name="var3">
+    <initialValue xsi:type="activitydiagram:IntegerValue"/>
+  </locals>
+  <locals xsi:type="activitydiagram:IntegerVariable" name="var4">
+    <initialValue xsi:type="activitydiagram:IntegerValue" value="1"/>
+  </locals>
+  <locals xsi:type="activitydiagram:IntegerVariable" name="var5">
+    <initialValue xsi:type="activitydiagram:IntegerValue" value="2"/>
+  </locals>
+  <locals xsi:type="activitydiagram:BooleanVariable" name="var6">
+    <initialValue xsi:type="activitydiagram:BooleanValue"/>
+  </locals>
+  <locals xsi:type="activitydiagram:BooleanVariable" name="var7">
+    <initialValue xsi:type="activitydiagram:BooleanValue" value="true"/>
+  </locals>
+  <locals xsi:type="activitydiagram:BooleanVariable" name="var8">
+    <initialValue xsi:type="activitydiagram:BooleanValue"/>
+  </locals>
+</activitydiagram:Activity>
