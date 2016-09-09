@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ASCII"?>
+<activitydiagram:Input
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:activitydiagram="http://activitydiagram/1.0">
+  <inputValues>
+    <value xsi:type="activitydiagram:IntegerValue"
+        value="1"/>
+    <variable
+        xsi:type="activitydiagram:IntegerVariable"
+        href="testperformance_variant3_2.xmi#//@inputs.0"/>
+  </inputValues>
+</activitydiagram:Input>

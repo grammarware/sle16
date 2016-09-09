@@ -5,14 +5,12 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.gemoc.arduino.sequential.arduino.arduino.Board;
+import org.gemoc.arduino.sequential.arduino.arduino.Module;
+import org.gemoc.arduino.sequential.arduino.arduino.Pin;
+import org.gemoc.arduino.sequential.arduino.arduino.Project;
 import org.gemoc.arduino.sequential.design.ArduinoDesignerUtils;
-import org.gemoc.arduino.sequential.execarduino.arduino.Board;
-import org.gemoc.arduino.sequential.execarduino.arduino.Module;
-import org.gemoc.arduino.sequential.execarduino.arduino.Pin;
-import org.gemoc.arduino.sequential.execarduino.arduino.Project;
-import org.gemoc.executionframework.engine.ui.launcher.AbstractGemocLauncher;
 import org.gemoc.executionframework.extensions.sirius.services.AbstractGemocDebuggerServices;
-
 
 public class ArduinoDebuggerServices extends AbstractGemocDebuggerServices{
 
