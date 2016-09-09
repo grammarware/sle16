@@ -95,18 +95,18 @@ public class ArduinoTraceConstructor implements ITraceConstructor {
 	private boolean addNewObjectToState(org.gemoc.arduino.sequential.arduino.arduino.ArduinoAnalogModule o_cast,
 			arduinoTrace.States.State newState) {
 		boolean added = false;
-		if (o_cast instanceof org.gemoc.arduino.sequential.arduino.arduino.AmbientLightSensor) {
-			added = addNewObjectToState((org.gemoc.arduino.sequential.arduino.arduino.AmbientLightSensor) o_cast,
-					newState);
+		if (o_cast instanceof org.gemoc.arduino.sequential.arduino.arduino.SoundSensor) {
+			added = addNewObjectToState((org.gemoc.arduino.sequential.arduino.arduino.SoundSensor) o_cast, newState);
 		} else if (o_cast instanceof org.gemoc.arduino.sequential.arduino.arduino.BluetoothTransceiver) {
 			added = addNewObjectToState((org.gemoc.arduino.sequential.arduino.arduino.BluetoothTransceiver) o_cast,
 					newState);
-		} else if (o_cast instanceof org.gemoc.arduino.sequential.arduino.arduino.MusicPlayer) {
-			added = addNewObjectToState((org.gemoc.arduino.sequential.arduino.arduino.MusicPlayer) o_cast, newState);
 		} else if (o_cast instanceof org.gemoc.arduino.sequential.arduino.arduino.RotationSensor) {
 			added = addNewObjectToState((org.gemoc.arduino.sequential.arduino.arduino.RotationSensor) o_cast, newState);
-		} else if (o_cast instanceof org.gemoc.arduino.sequential.arduino.arduino.SoundSensor) {
-			added = addNewObjectToState((org.gemoc.arduino.sequential.arduino.arduino.SoundSensor) o_cast, newState);
+		} else if (o_cast instanceof org.gemoc.arduino.sequential.arduino.arduino.MusicPlayer) {
+			added = addNewObjectToState((org.gemoc.arduino.sequential.arduino.arduino.MusicPlayer) o_cast, newState);
+		} else if (o_cast instanceof org.gemoc.arduino.sequential.arduino.arduino.AmbientLightSensor) {
+			added = addNewObjectToState((org.gemoc.arduino.sequential.arduino.arduino.AmbientLightSensor) o_cast,
+					newState);
 		}
 
 		return added;
@@ -130,18 +130,18 @@ public class ArduinoTraceConstructor implements ITraceConstructor {
 	private boolean addNewObjectToState(org.gemoc.arduino.sequential.arduino.arduino.ArduinoDigitalModule o_cast,
 			arduinoTrace.States.State newState) {
 		boolean added = false;
-		if (o_cast instanceof org.gemoc.arduino.sequential.arduino.arduino.InfraRedSensor) {
-			added = addNewObjectToState((org.gemoc.arduino.sequential.arduino.arduino.InfraRedSensor) o_cast, newState);
-		} else if (o_cast instanceof org.gemoc.arduino.sequential.arduino.arduino.MicroServo) {
+		if (o_cast instanceof org.gemoc.arduino.sequential.arduino.arduino.MicroServo) {
 			added = addNewObjectToState((org.gemoc.arduino.sequential.arduino.arduino.MicroServo) o_cast, newState);
 		} else if (o_cast instanceof org.gemoc.arduino.sequential.arduino.arduino.LED) {
 			added = addNewObjectToState((org.gemoc.arduino.sequential.arduino.arduino.LED) o_cast, newState);
-		} else if (o_cast instanceof org.gemoc.arduino.sequential.arduino.arduino.PushButton) {
-			added = addNewObjectToState((org.gemoc.arduino.sequential.arduino.arduino.PushButton) o_cast, newState);
 		} else if (o_cast instanceof org.gemoc.arduino.sequential.arduino.arduino.Fan) {
 			added = addNewObjectToState((org.gemoc.arduino.sequential.arduino.arduino.Fan) o_cast, newState);
+		} else if (o_cast instanceof org.gemoc.arduino.sequential.arduino.arduino.PushButton) {
+			added = addNewObjectToState((org.gemoc.arduino.sequential.arduino.arduino.PushButton) o_cast, newState);
 		} else if (o_cast instanceof org.gemoc.arduino.sequential.arduino.arduino.Buzzer) {
 			added = addNewObjectToState((org.gemoc.arduino.sequential.arduino.arduino.Buzzer) o_cast, newState);
+		} else if (o_cast instanceof org.gemoc.arduino.sequential.arduino.arduino.InfraRedSensor) {
+			added = addNewObjectToState((org.gemoc.arduino.sequential.arduino.arduino.InfraRedSensor) o_cast, newState);
 		}
 
 		return added;
@@ -150,11 +150,11 @@ public class ArduinoTraceConstructor implements ITraceConstructor {
 	private boolean addNewObjectToState(org.gemoc.arduino.sequential.arduino.arduino.ArduinoModule o_cast,
 			arduinoTrace.States.State newState) {
 		boolean added = false;
-		if (o_cast instanceof org.gemoc.arduino.sequential.arduino.arduino.ArduinoDigitalModule) {
-			added = addNewObjectToState((org.gemoc.arduino.sequential.arduino.arduino.ArduinoDigitalModule) o_cast,
-					newState);
-		} else if (o_cast instanceof org.gemoc.arduino.sequential.arduino.arduino.ArduinoAnalogModule) {
+		if (o_cast instanceof org.gemoc.arduino.sequential.arduino.arduino.ArduinoAnalogModule) {
 			added = addNewObjectToState((org.gemoc.arduino.sequential.arduino.arduino.ArduinoAnalogModule) o_cast,
+					newState);
+		} else if (o_cast instanceof org.gemoc.arduino.sequential.arduino.arduino.ArduinoDigitalModule) {
+			added = addNewObjectToState((org.gemoc.arduino.sequential.arduino.arduino.ArduinoDigitalModule) o_cast,
 					newState);
 		}
 
@@ -378,16 +378,16 @@ public class ArduinoTraceConstructor implements ITraceConstructor {
 	private boolean addNewObjectToState(org.gemoc.arduino.sequential.arduino.arduino.NamedElement o_cast,
 			arduinoTrace.States.State newState) {
 		boolean added = false;
-		if (o_cast instanceof org.gemoc.arduino.sequential.arduino.arduino.Sketch) {
-			added = addNewObjectToState((org.gemoc.arduino.sequential.arduino.arduino.Sketch) o_cast, newState);
-		} else if (o_cast instanceof org.gemoc.arduino.sequential.arduino.arduino.Module) {
+		if (o_cast instanceof org.gemoc.arduino.sequential.arduino.arduino.Module) {
 			added = addNewObjectToState((org.gemoc.arduino.sequential.arduino.arduino.Module) o_cast, newState);
-		} else if (o_cast instanceof org.gemoc.arduino.sequential.arduino.arduino.Pin) {
-			added = addNewObjectToState((org.gemoc.arduino.sequential.arduino.arduino.Pin) o_cast, newState);
 		} else if (o_cast instanceof org.gemoc.arduino.sequential.arduino.arduino.Board) {
 			added = addNewObjectToState((org.gemoc.arduino.sequential.arduino.arduino.Board) o_cast, newState);
+		} else if (o_cast instanceof org.gemoc.arduino.sequential.arduino.arduino.Sketch) {
+			added = addNewObjectToState((org.gemoc.arduino.sequential.arduino.arduino.Sketch) o_cast, newState);
 		} else if (o_cast instanceof org.gemoc.arduino.sequential.arduino.arduino.Variable) {
 			added = addNewObjectToState((org.gemoc.arduino.sequential.arduino.arduino.Variable) o_cast, newState);
+		} else if (o_cast instanceof org.gemoc.arduino.sequential.arduino.arduino.Pin) {
+			added = addNewObjectToState((org.gemoc.arduino.sequential.arduino.arduino.Pin) o_cast, newState);
 		}
 
 		return added;
@@ -468,11 +468,11 @@ public class ArduinoTraceConstructor implements ITraceConstructor {
 	private boolean addNewObjectToState(org.gemoc.arduino.sequential.arduino.arduino.Variable o_cast,
 			arduinoTrace.States.State newState) {
 		boolean added = false;
-		if (o_cast instanceof org.gemoc.arduino.sequential.arduino.arduino.BooleanVariable) {
-			added = addNewObjectToState((org.gemoc.arduino.sequential.arduino.arduino.BooleanVariable) o_cast,
-					newState);
-		} else if (o_cast instanceof org.gemoc.arduino.sequential.arduino.arduino.IntegerVariable) {
+		if (o_cast instanceof org.gemoc.arduino.sequential.arduino.arduino.IntegerVariable) {
 			added = addNewObjectToState((org.gemoc.arduino.sequential.arduino.arduino.IntegerVariable) o_cast,
+					newState);
+		} else if (o_cast instanceof org.gemoc.arduino.sequential.arduino.arduino.BooleanVariable) {
+			added = addNewObjectToState((org.gemoc.arduino.sequential.arduino.arduino.BooleanVariable) o_cast,
 					newState);
 		}
 
@@ -488,12 +488,13 @@ public class ArduinoTraceConstructor implements ITraceConstructor {
 		newState.getBluetoothTransceiver_dataToSend_Values()
 				.addAll(oldState.getBluetoothTransceiver_dataToSend_Values());
 		newState.getPin_level_Values().addAll(oldState.getPin_level_Values());
-		newState.getBooleanVariable_value_Values().addAll(oldState.getBooleanVariable_value_Values());
 		newState.getIntegerVariable_value_Values().addAll(oldState.getIntegerVariable_value_Values());
+		newState.getBooleanVariable_value_Values().addAll(oldState.getBooleanVariable_value_Values());
 		copiedState = true;
 		return newState;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void addState(List<org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.ModelChange> changes) {
 		if (lastState == null) {
@@ -515,29 +516,29 @@ public class ArduinoTraceConstructor implements ITraceConstructor {
 					org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.NonCollectionFieldModelChange modelChange_cast = (org.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.NonCollectionFieldModelChange) modelChange;
 					org.eclipse.emf.ecore.EStructuralFeature p = modelChange_cast.getChangedField();
 
-					if (o instanceof org.gemoc.arduino.sequential.arduino.arduino.Pin) {
-						org.gemoc.arduino.sequential.arduino.arduino.Pin o_cast = (org.gemoc.arduino.sequential.arduino.arduino.Pin) o;
+					if (o instanceof org.gemoc.arduino.sequential.arduino.arduino.IntegerVariable) {
+						org.gemoc.arduino.sequential.arduino.arduino.IntegerVariable o_cast = (org.gemoc.arduino.sequential.arduino.arduino.IntegerVariable) o;
 
 						if (p.getFeatureID() == org.gemoc.arduino.sequential.arduino.arduino.ArduinoPackage.eINSTANCE
-								.getPin_Level().getFeatureID()) {
+								.getIntegerVariable_Value().getFeatureID()) {
 
 							// Rollback: we remove the last value of this field from the new state
-							arduinoTrace.States.arduino.TracedPin traced = (arduinoTrace.States.arduino.TracedPin) exeToTraced
+							arduinoTrace.States.arduino.TracedIntegerVariable traced = (arduinoTrace.States.arduino.TracedIntegerVariable) exeToTraced
 									.get(o);
-							arduinoTrace.States.Pin_level_Value lastValue = traced.getLevelSequence()
-									.get(traced.getLevelSequence().size() - 1);
-							newState.getPin_level_Values().remove(lastValue);
+							arduinoTrace.States.IntegerVariable_value_Value lastValue = traced.getValueSequence()
+									.get(traced.getValueSequence().size() - 1);
+							newState.getIntegerVariable_value_Values().remove(lastValue);
 
 							// And we create a proper new value
-							arduinoTrace.States.Pin_level_Value newValue = arduinoTrace.States.StatesFactory.eINSTANCE
-									.createPin_level_Value();
+							arduinoTrace.States.IntegerVariable_value_Value newValue = arduinoTrace.States.StatesFactory.eINSTANCE
+									.createIntegerVariable_value_Value();
 
-							java.lang.Integer value = o_cast.getLevel();
+							java.lang.Integer value = o_cast.getValue();
 
-							newValue.setLevel((java.lang.Integer) value);
+							newValue.setValue((java.lang.Integer) value);
 
-							traced.getLevelSequence().add(newValue);
-							newState.getPin_level_Values().add(newValue);
+							traced.getValueSequence().add(newValue);
+							newState.getIntegerVariable_value_Values().add(newValue);
 						}
 					}
 
@@ -567,29 +568,29 @@ public class ArduinoTraceConstructor implements ITraceConstructor {
 						}
 					}
 
-					if (o instanceof org.gemoc.arduino.sequential.arduino.arduino.IntegerVariable) {
-						org.gemoc.arduino.sequential.arduino.arduino.IntegerVariable o_cast = (org.gemoc.arduino.sequential.arduino.arduino.IntegerVariable) o;
+					if (o instanceof org.gemoc.arduino.sequential.arduino.arduino.Pin) {
+						org.gemoc.arduino.sequential.arduino.arduino.Pin o_cast = (org.gemoc.arduino.sequential.arduino.arduino.Pin) o;
 
 						if (p.getFeatureID() == org.gemoc.arduino.sequential.arduino.arduino.ArduinoPackage.eINSTANCE
-								.getIntegerVariable_Value().getFeatureID()) {
+								.getPin_Level().getFeatureID()) {
 
 							// Rollback: we remove the last value of this field from the new state
-							arduinoTrace.States.arduino.TracedIntegerVariable traced = (arduinoTrace.States.arduino.TracedIntegerVariable) exeToTraced
+							arduinoTrace.States.arduino.TracedPin traced = (arduinoTrace.States.arduino.TracedPin) exeToTraced
 									.get(o);
-							arduinoTrace.States.IntegerVariable_value_Value lastValue = traced.getValueSequence()
-									.get(traced.getValueSequence().size() - 1);
-							newState.getIntegerVariable_value_Values().remove(lastValue);
+							arduinoTrace.States.Pin_level_Value lastValue = traced.getLevelSequence()
+									.get(traced.getLevelSequence().size() - 1);
+							newState.getPin_level_Values().remove(lastValue);
 
 							// And we create a proper new value
-							arduinoTrace.States.IntegerVariable_value_Value newValue = arduinoTrace.States.StatesFactory.eINSTANCE
-									.createIntegerVariable_value_Value();
+							arduinoTrace.States.Pin_level_Value newValue = arduinoTrace.States.StatesFactory.eINSTANCE
+									.createPin_level_Value();
 
-							java.lang.Integer value = o_cast.getValue();
+							java.lang.Integer value = o_cast.getLevel();
 
-							newValue.setValue((java.lang.Integer) value);
+							newValue.setLevel((java.lang.Integer) value);
 
-							traced.getValueSequence().add(newValue);
-							newState.getIntegerVariable_value_Values().add(newValue);
+							traced.getLevelSequence().add(newValue);
+							newState.getPin_level_Values().add(newValue);
 						}
 					}
 				}
@@ -604,7 +605,48 @@ public class ArduinoTraceConstructor implements ITraceConstructor {
 						arduinoTrace.States.arduino.TracedBluetoothTransceiver tracedObject = (arduinoTrace.States.arduino.TracedBluetoothTransceiver) exeToTraced
 								.get(o_cast);
 						if (p.getFeatureID() == org.gemoc.arduino.sequential.arduino.arduino.ArduinoPackage.eINSTANCE
-								.getBluetoothTransceiver_DataReceived().getFeatureID()) {
+								.getBluetoothTransceiver_DataToSend().getFeatureID()) {
+							// We compare the last collection in the value sequence, and the current one in the potentially changed object
+							List<arduinoTrace.States.BluetoothTransceiver_dataToSend_Value> valueSequence = tracedObject
+									.getDataToSendSequence();
+							arduinoTrace.States.BluetoothTransceiver_dataToSend_Value previousValue = null;
+							if (!valueSequence.isEmpty()) {
+								previousValue = valueSequence.get(valueSequence.size() - 1);
+							}
+							boolean change = false;
+							if (previousValue != null) {
+								if (previousValue.getDataToSend().size() == o_cast.getDataToSend().size()) {
+									java.util.Iterator<java.lang.Integer> it = o_cast.getDataToSend().iterator();
+									for (java.lang.Integer aPreviousValue : previousValue.getDataToSend()) {
+										java.lang.Integer aCurrentValue = it.next();
+										if (!aPreviousValue.equals(aCurrentValue)) {
+											change = true;
+											break;
+										}
+									}
+								} else {
+									change = true;
+								}
+							} else {
+								change = true;
+							}
+							if (change) {
+								stateChanged = true;
+								// Rollback: we remove the last value of this field from the new state
+								arduinoTrace.States.BluetoothTransceiver_dataToSend_Value lastValue = tracedObject
+										.getDataToSendSequence().get(tracedObject.getDataToSendSequence().size() - 1);
+								newState.getBluetoothTransceiver_dataToSend_Values().remove(lastValue);
+								// And we create a proper new value							
+								arduinoTrace.States.BluetoothTransceiver_dataToSend_Value newValue = arduinoTrace.States.StatesFactory.eINSTANCE
+										.createBluetoothTransceiver_dataToSend_Value();
+								newValue.getDataToSend()
+										.addAll((Collection<? extends java.lang.Integer>) o_cast.getDataToSend());
+								tracedObject.getDataToSendSequence().add(newValue);
+								newState.getBluetoothTransceiver_dataToSend_Values().add(newValue);
+							}
+						} else
+							if (p.getFeatureID() == org.gemoc.arduino.sequential.arduino.arduino.ArduinoPackage.eINSTANCE
+									.getBluetoothTransceiver_DataReceived().getFeatureID()) {
 							// We compare the last collection in the value sequence, and the current one in the potentially changed object
 							List<arduinoTrace.States.BluetoothTransceiver_dataReceived_Value> valueSequence = tracedObject
 									.getDataReceivedSequence();
@@ -644,47 +686,6 @@ public class ArduinoTraceConstructor implements ITraceConstructor {
 								tracedObject.getDataReceivedSequence().add(newValue);
 								newState.getBluetoothTransceiver_dataReceived_Values().add(newValue);
 							}
-						} else
-							if (p.getFeatureID() == org.gemoc.arduino.sequential.arduino.arduino.ArduinoPackage.eINSTANCE
-									.getBluetoothTransceiver_DataToSend().getFeatureID()) {
-							// We compare the last collection in the value sequence, and the current one in the potentially changed object
-							List<arduinoTrace.States.BluetoothTransceiver_dataToSend_Value> valueSequence = tracedObject
-									.getDataToSendSequence();
-							arduinoTrace.States.BluetoothTransceiver_dataToSend_Value previousValue = null;
-							if (!valueSequence.isEmpty()) {
-								previousValue = valueSequence.get(valueSequence.size() - 1);
-							}
-							boolean change = false;
-							if (previousValue != null) {
-								if (previousValue.getDataToSend().size() == o_cast.getDataToSend().size()) {
-									java.util.Iterator<java.lang.Integer> it = o_cast.getDataToSend().iterator();
-									for (java.lang.Integer aPreviousValue : previousValue.getDataToSend()) {
-										java.lang.Integer aCurrentValue = it.next();
-										if (!aPreviousValue.equals(aCurrentValue)) {
-											change = true;
-											break;
-										}
-									}
-								} else {
-									change = true;
-								}
-							} else {
-								change = true;
-							}
-							if (change) {
-								stateChanged = true;
-								// Rollback: we remove the last value of this field from the new state
-								arduinoTrace.States.BluetoothTransceiver_dataToSend_Value lastValue = tracedObject
-										.getDataToSendSequence().get(tracedObject.getDataToSendSequence().size() - 1);
-								newState.getBluetoothTransceiver_dataToSend_Values().remove(lastValue);
-								// And we create a proper new value							
-								arduinoTrace.States.BluetoothTransceiver_dataToSend_Value newValue = arduinoTrace.States.StatesFactory.eINSTANCE
-										.createBluetoothTransceiver_dataToSend_Value();
-								newValue.getDataToSend()
-										.addAll((Collection<? extends java.lang.Integer>) o_cast.getDataToSend());
-								tracedObject.getDataToSendSequence().add(newValue);
-								newState.getBluetoothTransceiver_dataToSend_Values().add(newValue);
-							}
 						}
 					}
 				}
@@ -702,8 +703,8 @@ public class ArduinoTraceConstructor implements ITraceConstructor {
 				newState.getBluetoothTransceiver_dataReceived_Values().clear();
 				newState.getBluetoothTransceiver_dataToSend_Values().clear();
 				newState.getPin_level_Values().clear();
-				newState.getBooleanVariable_value_Values().clear();
 				newState.getIntegerVariable_value_Values().clear();
+				newState.getBooleanVariable_value_Values().clear();
 			}
 			copiedState = false;
 		}

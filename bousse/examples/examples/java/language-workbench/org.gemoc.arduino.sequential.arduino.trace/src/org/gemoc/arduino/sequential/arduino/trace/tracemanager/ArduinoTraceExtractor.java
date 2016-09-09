@@ -256,51 +256,6 @@ public class ArduinoTraceExtractor implements ITraceExtractor {
 		}
 	}
 
-	public int[][] doStuff(List<? extends EObject> states1, List<? extends EObject> states2) {
-		final List<EObject> states = new ArrayList<>(states1);
-		states.addAll(states2);
-		final Collection<List<EObject>> classes = computeStateEquivalenceClasses(states);
-		final Map<EObject, List<EObject>> stateToEquivalentStates = new HashMap<>();
-		classes.forEach(l -> {
-			l.forEach(s -> {
-				final List<EObject> equivalentStates = new ArrayList<>(l);
-				equivalentStates.remove(s);
-				stateToEquivalentStates.put(s, equivalentStates);
-			});
-		});
-		
-		final int[][] m = new int[states1.size()+1][states2.size()+1];
-		
-		for (int i = 0; i < m.length; i++) {
-			m[i][0] = i;
-		}
-		for (int i = 1; i < m[0].length; i++) {
-			m[0][i] = i;
-		}
-		
-		final int[][] cost = new int[states1.size()][states2.size()];
-		for (int i = 0; i < cost.length; i++) {
-			for (int j = 0; j < cost[0].length; j++) {
-				if (stateToEquivalentStates.get(states1.get(i)).contains(states2.get(j))) {
-					cost[i][j] = 0;
-				} else {
-					cost[i][j] = 1;
-				}
-			}
-		}
-		
-		for (int i = 1; i < m.length; i++) {
-			for (int j = 1; j < m[1].length; j++) {
-				final int deletion = m[i-1][j] + 1;
-				final int insertion = m[i][j-1] + 1;
-				final int substitution = m[i-1][j-1] + cost[i-1][j-1];
-				m[i][j] = Math.min(Math.min(insertion, deletion), substitution);
-			}
-		}
-		
-		return m;
-	}
-
 	@Override
 	public Collection<List<EObject>> computeStateEquivalenceClasses() {
 		return computeStateEquivalenceClasses(statesTrace);
@@ -308,14 +263,11 @@ public class ArduinoTraceExtractor implements ITraceExtractor {
 
 	@Override
 	public Collection<List<EObject>> computeStateEquivalenceClasses(List<? extends EObject> states) {
-		long time = System.nanoTime();
 		final Map<Integer, List<arduinoTrace.States.State>> statesMap = new HashMap<>();
 		final Map<arduinoTrace.States.State, List<arduinoTrace.States.Value>> stateToValues = new HashMap<>();
-		final Map<arduinoTrace.States.State, Integer> stateToIndex = new HashMap<>();
 		// First we build the map of states, grouped by their number of dimensions
 		// and we associate to each state the list of its values
 		states.stream().distinct().map(e -> (arduinoTrace.States.State) e).forEach(s -> {
-			stateToIndex.put(s, stateToIndex.size());
 			final List<arduinoTrace.States.Value> values = getAllStateValues(s);
 			stateToValues.put(s, values);
 			final int size = values.size();
@@ -350,18 +302,9 @@ public class ArduinoTraceExtractor implements ITraceExtractor {
 					equivalentStates = new ArrayList<>();
 					accumulator.put(n, equivalentStates);
 				}
-				if (equivalentStates.isEmpty()) {
-					equivalentStates.add(state);
-				} else {
-					if (stateToIndex.get(state) < stateToIndex.get(equivalentStates.get(0))) {
-						equivalentStates.add(0, state);
-					} else {
-						equivalentStates.add(state);
-					}
-				}
+				equivalentStates.add(state);
 			}
 		});
-		System.out.println("Elapsed time = " + (System.nanoTime() - time) * .000000001 + "s");
 		return accumulator.values();
 	}
 
@@ -602,22 +545,10 @@ public class ArduinoTraceExtractor implements ITraceExtractor {
 	public StateWrapper getStateWrapper(int stateIndex) {
 		if (stateIndex > -1 && stateIndex < statesTrace.size()) {
 			final arduinoTrace.States.State state = statesTrace.get(stateIndex);
-			return new StateWrapper(state, stateIndex, isStateBreakable(state)/*, getStateDescription(stateIndex)*/);
+			return new StateWrapper(state, stateIndex, isStateBreakable(state));
 		}
 		return null;
 	}
-	
-//	@Override
-//	public StateWrapper getStateWrapper(EObject state) {
-//		if (state instanceof arduinoTrace.States.State) {
-//			final int idx = statesTrace.indexOf(state);
-//			if (idx != -1) {
-//				final arduinoTrace.States.State state_cast = (arduinoTrace.States.State) state;
-//				return new StateWrapper(state_cast, idx, isStateBreakable(state_cast), getStateDescription(idx));
-//			}
-//		}
-//		return null;
-//	}
 
 	@Override
 	public List<StateWrapper> getStateWrappers(int start, int end) {
@@ -627,7 +558,7 @@ public class ArduinoTraceExtractor implements ITraceExtractor {
 
 		for (int i = startStateIndex; i < endStateIndex + 1; i++) {
 			final arduinoTrace.States.State state = statesTrace.get(i);
-			result.add(new StateWrapper(state, i, isStateBreakable(state)/*, getStateDescription(i)*/));
+			result.add(new StateWrapper(state, i, isStateBreakable(state)));
 		}
 
 		return result;
@@ -726,7 +657,7 @@ public class ArduinoTraceExtractor implements ITraceExtractor {
 		String result = "";
 		for (int i = 0; i < valueTraces.size(); i++) {
 			if (!isValueTraceIgnored(i)) {
-				result += (result.length() == 0 ? "" : "\n") + getValueDescription(i, stateIndex);
+				result += (i == 0 ? "" : "\n") + getValueDescription(i, stateIndex);
 			}
 		}
 		return result;

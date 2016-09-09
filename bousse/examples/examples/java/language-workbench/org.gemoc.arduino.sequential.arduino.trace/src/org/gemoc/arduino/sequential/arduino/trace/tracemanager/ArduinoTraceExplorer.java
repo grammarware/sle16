@@ -21,7 +21,6 @@ import fr.inria.diverse.trace.gemoc.api.ITraceExplorer;
 import fr.inria.diverse.trace.gemoc.api.ITraceListener;
 
 public class ArduinoTraceExplorer implements ITraceExplorer {
-
 	private arduinoTrace.SpecificTrace traceRoot;
 	private Resource modelResource;
 	private final Map<EObject, EObject> tracedToExe;
@@ -380,19 +379,6 @@ public class ArduinoTraceExplorer implements ITraceExplorer {
 					}
 				}
 			}
-			for (arduinoTrace.States.BooleanVariable_value_Value value : stateToGo.getBooleanVariable_value_Values()) {
-				if (value.getParent() instanceof arduinoTrace.States.arduino.TracedBooleanVariable) {
-					arduinoTrace.States.arduino.TracedBooleanVariable parent_cast = (arduinoTrace.States.arduino.TracedBooleanVariable) value
-							.getParent();
-					java.lang.Boolean toset = value.getValue();
-					java.lang.Boolean current = ((org.gemoc.arduino.sequential.arduino.arduino.BooleanVariable) parent_cast
-							.getOriginalObject()).getValue();
-					if (current != toset) {
-						((org.gemoc.arduino.sequential.arduino.arduino.BooleanVariable) parent_cast.getOriginalObject())
-								.setValue((java.lang.Boolean) toset);
-					}
-				}
-			}
 			for (arduinoTrace.States.IntegerVariable_value_Value value : stateToGo.getIntegerVariable_value_Values()) {
 				if (value.getParent() instanceof arduinoTrace.States.arduino.TracedIntegerVariable) {
 					arduinoTrace.States.arduino.TracedIntegerVariable parent_cast = (arduinoTrace.States.arduino.TracedIntegerVariable) value
@@ -403,6 +389,19 @@ public class ArduinoTraceExplorer implements ITraceExplorer {
 					if (current != toset) {
 						((org.gemoc.arduino.sequential.arduino.arduino.IntegerVariable) parent_cast.getOriginalObject())
 								.setValue((java.lang.Integer) toset);
+					}
+				}
+			}
+			for (arduinoTrace.States.BooleanVariable_value_Value value : stateToGo.getBooleanVariable_value_Values()) {
+				if (value.getParent() instanceof arduinoTrace.States.arduino.TracedBooleanVariable) {
+					arduinoTrace.States.arduino.TracedBooleanVariable parent_cast = (arduinoTrace.States.arduino.TracedBooleanVariable) value
+							.getParent();
+					java.lang.Boolean toset = value.getValue();
+					java.lang.Boolean current = ((org.gemoc.arduino.sequential.arduino.arduino.BooleanVariable) parent_cast
+							.getOriginalObject()).getValue();
+					if (current != toset) {
+						((org.gemoc.arduino.sequential.arduino.arduino.BooleanVariable) parent_cast.getOriginalObject())
+								.setValue((java.lang.Boolean) toset);
 					}
 				}
 			}
