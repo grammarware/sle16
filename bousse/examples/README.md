@@ -2,7 +2,9 @@
 
 ## Prerequisite
 
-Running the examples requires a working studio. You can either compile it yourself (see first part of the artifact submission), or use a frozen GEMOC Studio provided here: http://gemoc.org/pub/studio/sle16/
+Running the examples requires a working studio. You can either compile it yourself (see first part of the artifact submission), or use a frozen GEMOC Studio provided here: http://gemoc.org/pub/studio/sle16/.
+
+The studio requires Java 8 and JavaFx in order to be fully functionnal (we recommand to use Oracle JDK as JavaFx is bundled in it).
 
 ## Presentation
 
