@@ -9,7 +9,7 @@ then
 	N=3
 fi
 
-if [ N > 11 ]
+if [ $N -ge 11 ]
 then
 	N=11
 fi

@@ -63,7 +63,19 @@ $ ./start-container.sh $cluster_size
     >If the channels are well set up, make sure you ```exit``` the slave and go back to the master container
 - From the root directory run the script ``` start-hadoop.sh```
 
+- Check if all Hadoop/Hbase daemons by running the command `jps`. It should output a similar result (but with differnet PIDs)
+```sh
+$ jps
 
+1307 HMaster
+414 SecondaryNameNode
+1490 Jps
+858 JobHistoryServer
+572 ResourceManager
+211 NameNode
+1183 HQuorumPeer
+
+```
 #### Checking Hadooop/Hbase Envs
 
 
@@ -77,6 +89,60 @@ $ docker inspect --format="{{.NetworkSettings.IPAddress}}" master
 - Go to you favorite internet browser and type the IP_ADDRESS resulting from the previous command appended with 'IP_ADDRESS:8088' for Hadoop UI and 'IP_ADDRESS:60010' for HBase UI
 - Make sur the total number of available slaves corresponds to ```$cluster_size```
 
+#### Checking Hadooop/Hbase Envs (alternative)
+
+Another way to check the Hadoop install is by running the the word-count example:
+
+```sh
+$ /root/run-word-count.example.sh
+```
+
+After running the example, you should see the followinig result: 
+
+```sh
+input file1.txt:
+Hello Hadoop
+
+input file2.txt:
+Hello Docker
+
+wordcount output:
+Docker  1
+Hadoop  1
+Hello   2
+
+```
+
+- You can test HBase thought the shell prompt, by creating a table, then listing it: 
+
+ - Launch Hbase shell
+ - 
+```sh
+$hbase shell
+
+2016-09-11 10:32:56,920 INFO  [main]
+HBase Shell; enter 'help<RETURN>' for list of supported commands.
+Type "exit<RETURN>" to leave the HBase Shell
+Version 0.98.13-hadoop2, r8f54f8daf8cf4d1a629f8ed62363be29141c1b6e, Wed Jun 10 23:01:33 PDT 2015
+
+hbase(main):001:0> 
+```
+ - Create a table:
+
+```sh
+hbase(main):001:0> create 'test', 'cf'
+0 row(s) in 0.4170 seconds
+```
+- List the table: 
+
+```sh
+hbase(main):002:0> list 'test'
+TABLE
+test
+1 row(s) in 0.0180 seconds
+
+=> ["test"]
+```
 
 #### Launch the experiments
 

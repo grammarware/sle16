@@ -6,6 +6,8 @@ Linux-like system (ubuntu, osx, etc.): the shell script and some parts of the im
 Glasgow Haskell Compiler (version >= 7.10.x):
 Our tools depend on some libraries which require that GHC >= 7.10.x
 
+Cabal (the version should be compatible with your GHC, and usually you do not have many choices :) )
+
 Skills necessary to operate it: none
 
 ### Files list
@@ -18,8 +20,12 @@ The shell for running the test on the testcases.tar.
 4. clean.sh  
 Called by fireTest.sh. It will do some cleaning work after tests.
 5. tiger_unambiguous_grammar.by  
-Grammar description of the Tiger language. You will use biyacc to compile this file later.
-6. README.md  
+Grammar description of the Tiger language. You may use biyacc to compile this file later.
+6. arith_expr.by  
+Grammar description of arithmetic expressions. You will use biyacc to compile this file later.
+7. webgui.zip  
+The web-GUI for demonstrating examples. You may host it on your own computer if you want.
+8. README.md  
 This file.
 
 ### Remote demo site we may use
@@ -28,7 +34,12 @@ This file.
 -----
 
 ### Installation
-1. Install GHC (Glasgow Haskell Compiler) or Haskell Platform. (We believe GHC with version >= 7.10.x will work)
+1. Install **GHC** (Glasgow Haskell Compiler) and **Cabal**, or ***Haskell Platform*** (Haskell Platform itself comes with Cabal).  
+For GHC, you can install it by using command `apt-get install ghc`, `brew install ghc`, etc...  
+Installation guide for **Cabal** can be found at the second part of the page: [https://wiki.haskell.org/Cabal-Install](https://wiki.haskell.org/Cabal-Install)  
+For **Haskell Platform**, the website is: [https://www.haskell.org/platform/](https://www.haskell.org/platform/)  
+We believe GHC with version >= 7.10.x will work
+
 2. Install **Happy**: run `cabal install happy` in the command line (usually happy goes with ghc)
 3. Install **BiGUL** package: run `cabal install BiGUL`.
 (now BiGUL can be found on hackage: [http://hackage.haskell.org/package/BiGUL](http://hackage.haskell.org/package/BiGUL))
@@ -39,7 +50,38 @@ change your directory to the root of biyacc where you can see the file `biyacc.c
    `/Users/AccountName/Library/Haskell/bin/biyacc`  
    In ubuntu, the location usually is:  
    `/home/AccountName/.cabal/bin/biyacc`  
-   It depends on the system as well as the *version of the cabal and GHC*. You can find the location information in the document of Cabal. Make sure the generated executables can be accessed from your terminal.
+   It depends on the system as well as the *version of the cabal and GHC*. You can find the location information in the document of Cabal.
+5. Make sure the generated executables (`biyacc` and `byStr2CST`) can be accessed by their **names** directly from your terminal. It is because that `biyacc` will invoke `byStr2CST` when it builds grammar files, while the absolute path of the `byStr2CST` differs in different OS (and can also be re-defined by the user.) So please make sure your $path includes these executable files.
+
+6. `chmod +x fireTest.sh` if the shell is not executable (protected by your os because the shell is from Internet).
+
+If the cabal tell you the following error messages:
+
+```
+BiYacc-0.1.0 XXX$ cabal configure
+Resolving dependencies...
+Warning: solver failed to find a solution:
+Could not resolve dependencies:
+trying: BiYacc-0.1.0 (user goal)
+next goal: natural-numbers (dependency of BiYacc-0.1.0)
+Dependency tree exhaustively searched.
+Trying configure anyway.
+Configuring BiYacc-0.1.0...
+cabal: Encountered missing dependencies:
+MissingH >=1.3.0.1,
+natural-numbers -any,
+parsec >=3.1,
+strict >=0.3.2
+...
+```
+Please either run `cabal install` directly which will try to automatically install all the dependencies, or run the following command to manually install the missing dependencies:
+
+```
+cabal install MissingH
+cabal install natural-numbers
+...
+... install other dependencies...
+```
 
 ----
 ###Usage###
@@ -58,22 +100,40 @@ If the argument `"OutputFile(updated code)"` is ommitted when running it as a pr
 
 ##Try the examples in our paper##
 
-###Arithmetic expressions
-This is the test case mentioned in the **Introduction** and **First look of BiYacc** (Section 2) of the paper
+You can either:
 
-Go to
-[http://www.prg.nii.ac.jp/project/biyacc.html](http://www.prg.nii.ac.jp/project/biyacc.html)
+1. Go to [http://www.prg.nii.ac.jp/project/biyacc.html](http://www.prg.nii.ac.jp/project/biyacc.html)
 and try the examples online.  
-(You can also host the demo website on your own computer.)
 
-In the test cases, choose **arithmetic expressions**, compile and test it.
+2. Instead, host the demo website on your own computer. The instruction for hosting the website can be find in the README file within the website zip file.
+
+3. Run `biyacc` command in the terminal for doing the transformations. (In fact it is not too complex and boring.)
+
+###Arithmetic expressions
+This is the test case mentioned in the **Introduction** and **First look of BiYacc** (Section 2) of the paper.  
+
+####Using WebGUI
+If you are using the webGUI, in the test cases, choose **arithmetic expressions**, compile and test it.
 You can first parse the program text into an AST, and change the subtree `(Add (Num 2) (Num 3)` to `Num 5` for the purpose of constant folding. Print the modified AST back to see the result. The layouts and comments in the unmodified part should be kept.
 
+####Using terminal
+If you are going to use terminal, please first follow the instructions to compile the grammar file. eg:
+`biyacc arith_expr.by arith`. Then create a new file called `code.txt`, and put the following input (same input as the one shown on website) in `code.txt`: 
+
+```
+// some comments
+(-2 /* more comments */ ) * ((2+3) /  (0 - 4))
+```
+parse the file to AST by `./arith get code.txt AST.txt`  
+change in the `AST.txt` the subtree `Add (Num 2) (Num 3)` to `Num 5`
+and run the printer by `./arith put code.txt AST.txt`  
+The layouts and comments in the unmodified part should be kept.
 
 ### Tiger
-This is the test case mentioned in the **Case study** (Section 5) of the paper.
+This is the test case mentioned in the **Case study** (Section 5) of the paper. The following instructions are for users using WebGUI. If you plan to use terminal, please refer to the instructions above to compile and run the transformations.
+Other parts are the same as using WebGUI, so please also refer to the following instructions for the inputs and desired outputs of the test.
 
-r
+
 In the test cases, select **The tiger language (unambiguous grammar)**. (Of course you can also try Tiger defined in ambiguous grammar + disambiguation rules, but the well-behavedness under certain situation is not guaranteed for certain cases.)
 
 #### Section 5.1: Syntactic sugar
