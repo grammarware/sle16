@@ -38,6 +38,7 @@ public abstract class AbstractUserDecider implements ILogicalStepDecider
 			return possibleLogicalSteps.get(0);
 
 		decisionView = ViewHelper.<LogicalStepsView>retrieveView(LogicalStepsView.ID);
+		decisionView.refresh();
 		
 		// add action into view menu
 		IMenuListener2 menuListener = new IMenuListener2() 
@@ -106,6 +107,7 @@ public abstract class AbstractUserDecider implements ILogicalStepDecider
 	public void dispose() {
 		if (_semaphore != null)
 			_semaphore.release();
+		decisionView.refresh();
 	}
 
 	private boolean _preemptionHappened = false;

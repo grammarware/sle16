@@ -404,10 +404,6 @@ public class EventSchedulingModelExecutionTracingAddon extends DefaultEngineAddo
 					_lastChoice.setSelectedNextChoice(choice);
 				}
 				choice.getPossibleLogicalSteps().addAll(possibleLogicalSteps);
-				// make sure to own the MSEOccurrences referenced by the LogicalSteps
-				for(Step ls :possibleLogicalSteps){
-					choice.getOwnedMSEOccurrences().addAll(StepHelper.collectAllMSEOccurrences(ls));
-				}
 				_lastChoice = choice;
 				storeCurrentContextState();
 			}

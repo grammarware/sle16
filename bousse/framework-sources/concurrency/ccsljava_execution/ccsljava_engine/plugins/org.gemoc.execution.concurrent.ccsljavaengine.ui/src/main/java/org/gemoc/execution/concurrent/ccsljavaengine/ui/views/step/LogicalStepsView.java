@@ -54,9 +54,7 @@ import fr.inria.diverse.trace.commons.model.trace.MSE;
 import fr.inria.diverse.trace.commons.model.trace.MSEOccurrence;
 import fr.inria.diverse.trace.commons.model.trace.Step;
 
-
-public class LogicalStepsView extends EngineSelectionDependentViewPart implements IMSEPresenter
-{
+public class LogicalStepsView extends EngineSelectionDependentViewPart implements IMSEPresenter {
 
 	public static final String ID = "org.gemoc.executionframework.engine.io.views.steps.LogicalStepsView";
 
@@ -70,8 +68,7 @@ public class LogicalStepsView extends EngineSelectionDependentViewPart implement
 
 	private List<URI> _eventsToPresent = new ArrayList<URI>();
 
-	public LogicalStepsView()
-	{
+	public LogicalStepsView() {
 	}
 
 	private LogicalStepsViewContentProvider _contentProvider;
@@ -79,8 +76,7 @@ public class LogicalStepsView extends EngineSelectionDependentViewPart implement
 	private MenuManager _menuManager;
 
 	@Override
-	public void createPartControl(Composite parent)
-	{
+	public void createPartControl(Composite parent) {
 		_representedEventColor = new Color(parent.getDisplay(), 255, 235, 174);
 		createTreeViewer(parent);
 		createMenuManager();
@@ -88,8 +84,13 @@ public class LogicalStepsView extends EngineSelectionDependentViewPart implement
 		org.gemoc.executionframework.ui.Activator.getDefault().getEventPresenters().add(this);
 	}
 
-	private void createTreeViewer(Composite parent)
-	{
+	public void refresh() {
+		runInDisplayThread(() -> {
+			_viewer.refresh();
+		});
+	}
+
+	private void createTreeViewer(Composite parent) {
 		_viewer = new TreeViewer(parent, SWT.FULL_SELECTION | SWT.SINGLE);
 		_viewer.setUseHashlookup(true);
 		_contentProvider = new LogicalStepsViewContentProvider();
@@ -99,22 +100,18 @@ public class LogicalStepsView extends EngineSelectionDependentViewPart implement
 		createColumns();
 	}
 
-	private void createColumns()
-	{
+	private void createColumns() {
 		TreeColumn column1 = new TreeColumn(_viewer.getTree(), SWT.LEFT);
 		column1.setText("Logical Steps");
 		TreeViewerColumn viewerColumn1 = new TreeViewerColumn(_viewer, column1);
 		_column1LabelProvider = new ColumnLabelProvider() {
 
 			@Override
-			public String getText(Object element)
-			{
-				if (element instanceof Step)
-				{
+			public String getText(Object element) {
+				if (element instanceof Step) {
 					Step ls = (Step) element;
 					return StepHelper.getStepName(ls);
-				} else if (element instanceof MSEOccurrence)
-				{
+				} else if (element instanceof MSEOccurrence) {
 					MSEOccurrence event = (MSEOccurrence) element;
 					if (event.getMse() != null)
 						return event.getMse().getName();
@@ -125,40 +122,32 @@ public class LogicalStepsView extends EngineSelectionDependentViewPart implement
 			}
 
 			@Override
-			public Image getImage(Object element)
-			{
-				if (element instanceof Step)
-				{
+			public Image getImage(Object element) {
+				if (element instanceof Step) {
 					Step ls = (Step) element;
-					if (_currentEngine != null && ls == _currentEngine.getSelectedLogicalStep())
-					{
+					if (_currentEngine != null && ls == _currentEngine.getSelectedLogicalStep()) {
 						return SharedIcons.getSharedImage(SharedIcons.LOGICALSTEP_RUNNING_ICON);
-					} else
-					{
+					} else {
 						return SharedIcons.getSharedImage(SharedIcons.LOGICALSTEP_ICON);
 					}
-				} else if (element instanceof MSEOccurrence)
-				{
+				} else if (element instanceof MSEOccurrence) {
 					return SharedIcons.getSharedImage(SharedIcons.VISIBLE_EVENT_ICON);
 				}
 				return null;
 			}
 
 			@Override
-			public Color getBackground(Object element)
-			{
+			public Color getBackground(Object element) {
 				final Color res;
 
-				if (element instanceof MSEOccurrence)
-				{
+				if (element instanceof MSEOccurrence) {
 					MSE mse = ((MSEOccurrence) element).getMse();
 					if (mse != null && _eventsToPresent.contains(EcoreUtil.getURI(mse)))
 						res = _representedEventColor;
 					else
 						res = super.getBackground(element);
 
-				} else
-				{
+				} else {
 					res = super.getBackground(element);
 				}
 
@@ -174,10 +163,8 @@ public class LogicalStepsView extends EngineSelectionDependentViewPart implement
 		_column2LabelProvider = new ColumnLabelProvider() {
 
 			@Override
-			public String getText(Object element)
-			{
-				if (element instanceof MSEOccurrence)
-				{
+			public String getText(Object element) {
+				if (element instanceof MSEOccurrence) {
 					MSE mse = ((MSEOccurrence) element).getMse();
 					if (mse != null)
 						return "   " + ViewUtils.eventToString(mse);
@@ -189,20 +176,17 @@ public class LogicalStepsView extends EngineSelectionDependentViewPart implement
 			}
 
 			@Override
-			public Color getBackground(Object element)
-			{
+			public Color getBackground(Object element) {
 				final Color res;
 
-				if (element instanceof MSEOccurrence)
-				{
+				if (element instanceof MSEOccurrence) {
 					MSE mse = ((MSEOccurrence) element).getMse();
 					if (mse != null && _eventsToPresent.contains(EcoreUtil.getURI(mse)))
 						res = _representedEventColor;
 					else
 						res = super.getBackground(element);
 
-				} else
-				{
+				} else {
 					res = super.getBackground(element);
 				}
 
@@ -213,14 +197,12 @@ public class LogicalStepsView extends EngineSelectionDependentViewPart implement
 		viewerColumn2.setLabelProvider(_column2LabelProvider);
 	}
 
-	private void createMenuManager()
-	{
+	private void createMenuManager() {
 		MenuManager menuManager = new MenuManager();
 		_menuManager = menuManager;
 		_menuManager.setRemoveAllWhenShown(true);
 		_menuManager.addMenuListener(new IMenuListener() {
-			public void menuAboutToShow(IMenuManager mgr)
-			{
+			public void menuAboutToShow(IMenuManager mgr) {
 				fillContextMenu(mgr);
 			}
 		});
@@ -231,74 +213,66 @@ public class LogicalStepsView extends EngineSelectionDependentViewPart implement
 		getSite().setSelectionProvider(_viewer);
 	}
 
-	private void fillContextMenu(IMenuManager mgr)
-	{
+	private void fillContextMenu(IMenuManager mgr) {
 		mgr.add(new GroupMarker(IWorkbenchActionConstants.MB_ADDITIONS));
-		//mgr.add(new SwitchDeciderAction());
+		// mgr.add(new SwitchDeciderAction());
 	}
 
-	private void buildActionToolbar()
-	{
+	private void buildActionToolbar() {
 		addActionToToolbar(new PauseResumeEngineDeciderAction());
 		addActionToToolbar(new StopEngineAction());
 		addSeparatorToToolbar();
 		addActionToToolbar(new SwitchDeciderAction());
 	}
-	private void addSeparatorToToolbar()
-	{
+
+	private void addSeparatorToToolbar() {
 		IActionBars actionBars = getViewSite().getActionBars();
 		IToolBarManager toolBar = actionBars.getToolBarManager();
-		toolBar.add(new Separator());		
+		toolBar.add(new Separator());
 	}
-	
-	private void addActionToToolbar(Action action)
-	{
+
+	private void addActionToToolbar(Action action) {
 		IActionBars actionBars = getViewSite().getActionBars();
 		IToolBarManager toolBar = actionBars.getToolBarManager();
-		toolBar.add(action);	
+		toolBar.add(action);
 	}
-	
+
 	@Override
-	public void setFocus()
-	{
+	public void setFocus() {
 		_viewer.getControl().setFocus();
 	}
 
 	private IConcurrentExecutionEngine _currentEngine;
 
 	@Override
-	public void engineSelectionChanged(IExecutionEngine engine)
-	{
-		if (engine != null && engine instanceof IConcurrentExecutionEngine && engine.getExecutionContext().getExecutionMode().equals(ExecutionMode.Animation))
-		{
-			_currentEngine = (IConcurrentExecutionEngine)engine;
+	public void engineSelectionChanged(IExecutionEngine engine) {
+		if (engine != null && engine instanceof IConcurrentExecutionEngine
+				&& engine.getExecutionContext().getExecutionMode().equals(ExecutionMode.Animation)) {
+			_currentEngine = (IConcurrentExecutionEngine) engine;
 			_viewer.setInput(_currentEngine);
-			if (_currentEngine != null && !_currentEngine.getRunningStatus().equals(RunStatus.Stopped))
-			{
+			if (_currentEngine != null && !_currentEngine.getRunningStatus().equals(RunStatus.Stopped)) {
 				_viewer.expandAll();
 				TreeViewerHelper.resizeColumns(_viewer);
-			} else
-			{
+			} else {
 				_viewer.setInput(null);
 			}
-			
+
 			// display engine full name in tooltip
-			GemocRunningEnginesRegistry registry = org.gemoc.executionframework.engine.Activator.getDefault().gemocRunningEngineRegistry;
-			for (Entry<String, IExecutionEngine> e : registry.getRunningEngines().entrySet())
-			{
-				if (e.getValue() == engine)
-				{
-					setTitleToolTip(e.getKey()); // the key is the full name for this engine 
+			GemocRunningEnginesRegistry registry = org.gemoc.executionframework.engine.Activator
+					.getDefault().gemocRunningEngineRegistry;
+			for (Entry<String, IExecutionEngine> e : registry.getRunningEngines().entrySet()) {
+				if (e.getValue() == engine) {
+					setTitleToolTip(e.getKey()); // the key is the full name for
+													// this engine
 					break;
-				}								
+				}
 			}
-			
+
 		}
 	}
 
 	@Override
-	public void dispose()
-	{
+	public void dispose() {
 		org.gemoc.executionframework.ui.Activator.getDefault().getEventPresenters().remove(this);
 		super.dispose();
 		_column1LabelProvider.dispose();
@@ -311,83 +285,71 @@ public class LogicalStepsView extends EngineSelectionDependentViewPart implement
 
 	private Step _lastSelectedLogicalStep;
 
-	public Step getSelectedLogicalStep()
-	{
-		try
-		{
-			Display.getDefault().syncExec(new Runnable() {
-				@Override
-				public void run()
-				{
-					TreeSelection selection = (TreeSelection) _viewer.getSelection();
-					if (selection.getPaths().length > 0)
-					{
-						TreePath path = selection.getPaths()[0];
-						_lastSelectedLogicalStep = null;
-						if (path.getLastSegment() instanceof Step)
-						{
-							_lastSelectedLogicalStep = (Step) path.getLastSegment();
-						} else if (path.getLastSegment() instanceof MSEOccurrence)
-						{
-							_lastSelectedLogicalStep = (Step) path.getFirstSegment();
-						}
-					}
-				}
-			});
-		} catch (Exception e)
-		{
+	private void runInDisplayThread(Runnable r) {
+		try {
+			Display.getDefault().syncExec(r);
+		} catch (Exception e) {
 			Activator.error(e.getMessage(), e);
 		}
+	}
+
+	public Step getSelectedLogicalStep() {
+		Runnable r = new Runnable() {
+			@Override
+			public void run() {
+				TreeSelection selection = (TreeSelection) _viewer.getSelection();
+				if (selection.getPaths().length > 0) {
+					TreePath path = selection.getPaths()[0];
+					_lastSelectedLogicalStep = null;
+					if (path.getLastSegment() instanceof Step) {
+						_lastSelectedLogicalStep = (Step) path.getLastSegment();
+					} else if (path.getLastSegment() instanceof MSEOccurrence) {
+						_lastSelectedLogicalStep = (Step) path.getFirstSegment();
+					}
+				}
+			}
+		};
+		runInDisplayThread(r);
+
 		return _lastSelectedLogicalStep;
 	}
 
-	public void addMenuListener(IMenuListener2 menuListener)
-	{
+	public void addMenuListener(IMenuListener2 menuListener) {
 		_menuManager.addMenuListener(menuListener);
 	}
 
-	public void addDoubleClickListener(IDoubleClickListener doubleClickListener)
-	{
+	public void addDoubleClickListener(IDoubleClickListener doubleClickListener) {
 		_viewer.addDoubleClickListener(doubleClickListener);
 	}
 
-	public void addSelectionChangedListener(ISelectionChangedListener listener)
-	{
+	public void addSelectionChangedListener(ISelectionChangedListener listener) {
 		_viewer.addSelectionChangedListener(listener);
 	}
 
-	public void removeSelectionChangedListener(ISelectionChangedListener listener)
-	{
+	public void removeSelectionChangedListener(ISelectionChangedListener listener) {
 		_viewer.removeSelectionChangedListener(listener);
 	}
 
-	public void removeMenuListener(IMenuListener2 menuListener)
-	{
+	public void removeMenuListener(IMenuListener2 menuListener) {
 		_menuManager.removeMenuListener(menuListener);
 	}
 
-	public void removeDoubleClickListener(IDoubleClickListener doubleClickListener)
-	{
+	public void removeDoubleClickListener(IDoubleClickListener doubleClickListener) {
 		_viewer.removeDoubleClickListener(doubleClickListener);
 	}
 
-	public TreeViewer getTreeViewer()
-	{
+	public TreeViewer getTreeViewer() {
 		return _viewer;
 	}
 
 	@Override
-	public void present(List<URI> events)
-	{
+	public void present(List<URI> events) {
 		_eventsToPresent = events;
-		if (_currentEngine != null)
-		{
+		if (_currentEngine != null) {
 			ResourceSet rs = _currentEngine.getExecutionContext().getResourceModel().getResourceSet();
-			for (URI uri : _eventsToPresent)
-			{
+			for (URI uri : _eventsToPresent) {
 				final EObject event = rs.getEObject(uri, false);
-				if (event != null)
-				{
+				if (event != null) {
 					_viewer.refresh(event);
 				}
 			}
