@@ -1,209 +1,10 @@
-#Artifact evaluation guide
-
-### Prerequisites
-Linux-like system (ubuntu, osx, etc.): the shell script and some parts of the implementation calling the shell command is not compatible with windows.
-
-Glasgow Haskell Compiler (version >= 7.10.x):
-Our tools depend on some libraries which require that GHC >= 7.10.x
-
-Cabal (the version should be compatible with your GHC, and usually you do not have many choices :) )
-
-Skills necessary to operate it: none
-
-### Files list
-1. testcases.tar  
-It contains 50 test cases.
-2. BiYacc-0.1.0.tar.gz  
-Source code of BiYacc.
-3. fireTest.sh  
-The shell for running the test on the testcases.tar.
-4. clean.sh  
-Called by fireTest.sh. It will do some cleaning work after tests.
-5. tiger_unambiguous_grammar.by  
-Grammar description of the Tiger language. You may use biyacc to compile this file later.
-6. arith_expr.by  
-Grammar description of arithmetic expressions. You will use biyacc to compile this file later.
-7. webgui.zip  
-The web-GUI for demonstrating examples. You may host it on your own computer if you want.
-8. README.md  
-This file.
-
-### Remote demo site we may use
-[http://www.prg.nii.ac.jp/project/biyacc.html](http://www.prg.nii.ac.jp/project/biyacc.html)
-
------
-
-### Installation
-1. Install **GHC** (Glasgow Haskell Compiler) and **Cabal**, or ***Haskell Platform*** (Haskell Platform itself comes with Cabal).  
-For GHC, you can install it by using command `apt-get install ghc`, `brew install ghc`, etc...  
-Installation guide for **Cabal** can be found at the second part of the page: [https://wiki.haskell.org/Cabal-Install](https://wiki.haskell.org/Cabal-Install)  
-For **Haskell Platform**, the website is: [https://www.haskell.org/platform/](https://www.haskell.org/platform/)  
-We believe GHC with version >= 7.10.x will work
-
-2. Install **Happy**: run `cabal install happy` in the command line (usually happy goes with ghc)
-3. Install **BiGUL** package: run `cabal install BiGUL`.
-(now BiGUL can be found on hackage: [http://hackage.haskell.org/package/BiGUL](http://hackage.haskell.org/package/BiGUL))
-4. Install **BiYacc**: unzip `BiYacc-0.1.0.tar.gz`,
-change your directory to the root of biyacc where you can see the file `biyacc.cabal`, and run `cabal configure && cabal install`.  
-   Cabal will install BiYacc and generate the executable files somewhere in your computer.
-   In mac, the location usually is:  
-   `/Users/AccountName/Library/Haskell/bin/biyacc`  
-   In ubuntu, the location usually is:  
-   `/home/AccountName/.cabal/bin/biyacc`  
-   It depends on the system as well as the *version of the cabal and GHC*. You can find the location information in the document of Cabal.
-5. Make sure the generated executables (`biyacc` and `byStr2CST`) can be accessed by their **names** directly from your terminal. It is because that `biyacc` will invoke `byStr2CST` when it builds grammar files, while the absolute path of the `byStr2CST` differs in different OS (and can also be re-defined by the user.) So please make sure your $path includes these executable files.
-
-6. `chmod +x fireTest.sh` if the shell is not executable (protected by your os because the shell is from Internet).
-
-If the cabal tell you the following error messages:
-
-```
-BiYacc-0.1.0 XXX$ cabal configure
-Resolving dependencies...
-Warning: solver failed to find a solution:
-Could not resolve dependencies:
-trying: BiYacc-0.1.0 (user goal)
-next goal: natural-numbers (dependency of BiYacc-0.1.0)
-Dependency tree exhaustively searched.
-Trying configure anyway.
-Configuring BiYacc-0.1.0...
-cabal: Encountered missing dependencies:
-MissingH >=1.3.0.1,
-natural-numbers -any,
-parsec >=3.1,
-strict >=0.3.2
-...
-```
-Please either run `cabal install` directly which will try to automatically install all the dependencies, or run the following command to manually install the missing dependencies:
-
-```
-cabal install MissingH
-cabal install natural-numbers
-...
-... install other dependencies...
-```
-
-----
-###Usage###
-(You can skip this and refer here later)
-
-1. generate the executable file (parser and printer) from a BiYacc file: run  
-"biyacc BiYaccFile OutputExecutableFile"  
-2. run the file as a parser:    
-"OutPutExecutableFile get InputFile(code) OutputFile(AST)"  
-3. run the file as a printer:  
-"OutPutExecutableFile put InputFile1(code) InputFile2(AST) OutputFile(updated code)"  
-
-If the argument `"OutputFile(updated code)"` is ommitted when running it as a printer, the `"InputFile1"` file will be updated (overwritten).
-
-----
-
-##Try the examples in our paper##
-
-You can either:
-
-1. Go to [http://www.prg.nii.ac.jp/project/biyacc.html](http://www.prg.nii.ac.jp/project/biyacc.html)
-and try the examples online.  
-
-2. Instead, host the demo website on your own computer. The instruction for hosting the website can be find in the README file within the website zip file.
-
-3. Run `biyacc` command in the terminal for doing the transformations. (In fact it is not too complex and boring.)
-
-###Arithmetic expressions
-This is the test case mentioned in the **Introduction** and **First look of BiYacc** (Section 2) of the paper.  
-
-####Using WebGUI
-If you are using the webGUI, in the test cases, choose **arithmetic expressions**, compile and test it.
-You can first parse the program text into an AST, and change the subtree `(Add (Num 2) (Num 3)` to `Num 5` for the purpose of constant folding. Print the modified AST back to see the result. The layouts and comments in the unmodified part should be kept.
-
-####Using terminal
-If you are going to use terminal, please first follow the instructions to compile the grammar file. eg:
-`biyacc arith_expr.by arith`. Then create a new file called `code.txt`, and put the following input (same input as the one shown on website) in `code.txt`: 
-
-```
-// some comments
-(-2 /* more comments */ ) * ((2+3) /  (0 - 4))
-```
-parse the file to AST by `./arith get code.txt AST.txt`  
-change in the `AST.txt` the subtree `Add (Num 2) (Num 3)` to `Num 5`
-and run the printer by `./arith put code.txt AST.txt`  
-The layouts and comments in the unmodified part should be kept.
-
-### Tiger
-This is the test case mentioned in the **Case study** (Section 5) of the paper. The following instructions are for users using WebGUI. If you plan to use terminal, please refer to the instructions above to compile and run the transformations.
-Other parts are the same as using WebGUI, so please also refer to the following instructions for the inputs and desired outputs of the test.
-
-
-In the test cases, select **The tiger language (unambiguous grammar)**. (Of course you can also try Tiger defined in ambiguous grammar + disambiguation rules, but the well-behavedness under certain situation is not guaranteed for certain cases.)
-
-#### Section 5.1: Syntactic sugar
-Input program text: `e1 | e2`, it will be parsed to  
-`TIfExp (TVarExp (TSimpleVar "e1")) (TIntExp 1) (Just (TVarExp (TSimpleVar "e2")))`  
-change the `(TVarExp (TSimpleVar "e2"))` to `TIntExp 3` and print the AST back. You can see the syntactic (`|`) is kept.
-
-#### Section 5.2: Resugaring
-Tiger does not have the `not` operation, instead, we use negation operator (`-`) to show the example. Basically, they are both unary operator and their priorities are higher than those of binary operators.
-Input program text: `-1 | - 0`,  
-it is parsed to  
-`TIfExp (TOpExp (TIntExp 0) TMinusOp (TIntExp 1)) (TIntExp 1) (Just (TOpExp (TIntExp 0) TMinusOp (TIntExp 0)))`  
-Then please follow the same instruction shown on the paper Section 5.2 (page  10).
-
-###Section 5.3: Language evolution
-The definition for `Guard` expression is located to the end of **Concrete syntax** window and **Updating strategies** windows. Please verify it. In this case, you immediately get the parser and the reflective printer for the evolved language. You can also try resugaring on this newly evolved language following the instructions written in this sub-section of the paper (page 11).
-
-
-## Test the well-behavedness##
-At the beginning of the Section **Case study** (Section 5) We said that we tested about 50 testcases provided at Appel's website: 
-[https://www.cs.princeton.edu/~appel/modern/testcases/](https://www.cs.princeton.edu/~appel/modern/testcases/)
-
-You can test them in the following way:
-
-(Please firstly make sure you put these test files in a **new folder** not containing any other files, especially Haskell files, text files (\*.txt). The files will be **removed** by the `clean.sh` shell after testing.)
-
-1. Generate the executable file for the Tiger grammar.  
-In the terminal input `biyacc BiYaccFileName OutputExecutableFile`  
-eg: `biyacc tiger_unambiguous_grammar.by s1`  
-Then you will have an executable file named "s1".  
-The process may take half a minute. The most time consuming job is GHC's compiling the `parser.hs` generated by Happy.
-
-2. Put the shell `fireTest.sh` and `testcases.tar` in the same directory.
-
-3. Run the shell `fireTest.sh`, it will prompt you to input the name of the executable file generated just now (eg: `s1`)
-
-4. The shell will unzip `testcases.tar`, run tests on the unzipped 50 files, and check the property **GetPut** and **PutGet** automatically.
-
-Ideally, only the test on "test49.tig" will throw the error message "Parse error" since its syntax is **invalid** as indicated in the comment of the file.
-
----
-
-##How we test the property
-####GetPut
-**GetPut** means that if **get s** evaluates to a value **Just v**, then **put s v** will yield the same value **s**:  
-```get s = Just v => put s v = s```  
-In our tests, each **test.tig** file will be first parsed to **testAST.txt**, and then be printed back to **testcode.txt**.
-We use the built-in **diff** function providede by the unix-like system to test whether testCode.txt is equal to the original **test.tig** file.
-
-
-####PutGet
-The definition of **PutGet** is:  
-```put s v = s' => get s' = v ```  
-We test the **PutGet** property in a similiar way. However, we do not have the slightly modified AST, and the **PutGet** is tested twice in the following way.
-#####PutGet1
-We test **PutGet** with the AST parsed from the program text. We first print the AST back to the program text, and then parse the generated program text back to a new AST and compare the two ASTs. eg:  
-`put test1.tig test1AST.txt test1code.txt`  
-`get test1code.txt test1AST2.txt`  
-`diff test1AST.txt test1AST2.txt`  
-where the first line will generate `test1code.txt`
-
-#####PutGet2
-We use the AST parsed from some other file to test the **PutGet**. eg:  
-`put test1.tig test2AST.txt test1code.txt`  
-`get test1code.txt test1AST.txt`  
-`diff test1AST.txt test2AST.txt`  
-That is, we use the AST generated from `test2.tig` to update `test1.tig`, and then parse the updated `test1.tig` to an AST and compare the two ASTs. Usually, ASTs parsed from different code snippet are very different, so we believe this could test the stability of the put (print) function.
-We do such test for the 50 files in a circular way.
-
-----
-#### The original test files at Appel's site?
-As mentioned in the paper, we modified the grammar of `if-then-else` sentence to solve the dangling-else problem and make Tiger an unambigous grammar. Many testcases contain `if-then-else` grammar and we make the same modification to these files. So if you run the test on the oringinal files provided at that website, many testcases will throw error.
-
+#Artifact evaluation guide### PrerequisitesLinux-like system (Ubuntu, OS X, etc.): the shell script and some parts of the implementation calling the shell command is not compatible with windows.Glasgow Haskell Compiler (version >= 7.10.x):Our tools depend on some libraries which require that GHC >= 7.10.xCabal (the version should be compatible with your GHC, and usually you do not have many choices :) )(**Installation instructions follow later**)### Skills necessary to operate it
+none### Files list1. testcases.tar  It contains 50 test cases.2. BiYacc-0.1.0.tar.gz  Source code of BiYacc.3. fireTest.sh  The shell for running the test on the testcases.tar.4. clean.sh  Called by fireTest.sh. It will do some cleaning work after tests.5. tiger_unambiguous_grammar.by  Grammar description of the Tiger language. You may use biyacc to compile this file later.6. arith_expr.by  Grammar description of arithmetic expressions. You will use biyacc to compile this file later.7. webgui.zip  The web-GUI for demonstrating examples. You may host it on your own computer if you want.8. README.md  This file.### Remote demo site we may use[http://www.prg.nii.ac.jp/project/biyacc.html](http://www.prg.nii.ac.jp/project/biyacc.html)-----### Installation1. Install **GHC** (Glasgow Haskell Compiler) and **Cabal**. Or **Haskell Platform**  
+We recommend **Haskell Platform** to people new to Haskell since the platform itself comes with the compatible Cabal and thus simplifies the process of installation.    1. For **Haskell Platform**, the website is: [https://www.haskell.org/platform/](https://www.haskell.org/platform/)  We believe GHC with version >= 7.10.x will work  2. For GHC, you can install it by commands such as `apt-get install ghc` for Ubuntu, or `brew install ghc` for OS X.  Installation guide for **Cabal** can be found at the second part of the page: [https://wiki.haskell.org/Cabal-Install](https://wiki.haskell.org/Cabal-Install)
+2. Install **Happy**: run `cabal install happy` in the command line (usually happy goes with ghc)
+3. Install **BiGUL** package: run `cabal install BiGUL`.(now BiGUL can be found on hackage: [http://hackage.haskell.org/package/BiGUL](http://hackage.haskell.org/package/BiGUL))4. Install **BiYacc**: unzip `BiYacc-0.1.0.tar.gz`,  1. change your directory to the root of biyacc where you can see the file `biyacc.cabal`, and run `cabal install`.  Cabal will install BiYacc and generate the executable files somewhere in your computer.  2. Make sure the generated executables (`biyacc` and `byStr2CST`) can be accessed by their **names** directly from your terminal.  
+Usually Cabal will handle this automatically (But you might need to restart the terminal after installing Cabal or Haskell Platform.) and you can check this by running `which biyacc` in the terminal. The command is supposed to print the location information.
+  3. If you cannot access them in terminals. You need to add them to your system environment ($path) manually.  
+You can refer [here](http://askubuntu.com/questions/60218/how-to-add-a-directory-to-my-path) to set the system environment.  
+In OS X, the location for Haskell executables usually is:  `/Users/AccountName/Library/Haskell/bin/`  In ubuntu, the location usually is:  `/home/AccountName/.cabal/bin/`  It depends on the system as well as the version of the cabal and GHC. You can find the location information for executables in the document of **Cabal**. (Hint: the executable directory usually is the same as **Happy**'s.)  
+(We need to do this because that `biyacc` will invoke `byStr2CST` when it builds grammar files, while the absolute path of the `byStr2CST` differs in different operating systems (and can also be re-defined by the user). So please make sure your $path includes the directory to these executable files.)6. `chmod +x fireTest.sh` if the shell is not executable. The shell may not have the right to run since it is from Internet.----###Usage###(You can skip this and refer here later)1. generate the executable file (parser and printer) from a BiYacc file: run  "biyacc BiYaccFile OutputExecutableFile"  2. run the file as a parser:    "OutPutExecutableFile get InputFile(code) OutputFile(AST)"  3. run the file as a printer:  "OutPutExecutableFile put InputFile1(code) InputFile2(AST) OutputFile(updated code)"  If the argument `"OutputFile(updated code)"` is omitted when running it as a printer, the `"InputFile1"` file will be updated (overwritten).----##Try the examples in our paper##You can either:1. Go to [http://www.prg.nii.ac.jp/project/biyacc.html](http://www.prg.nii.ac.jp/project/biyacc.html)and try the examples online.  2. Instead, host the demo website on your own computer. The instruction for hosting the website can be find in the README file within the website zip file.3. Run `biyacc` command in the terminal for doing the transformations. (In fact it is not too complex and boring.)###Arithmetic expressionsThis is the test case mentioned in the **Introduction** and **First look of BiYacc** (Section 2) of the paper.  ####Using WebGUIIf you are using the webGUI, in the test cases, choose **arithmetic expressions**, compile and test it.You can first parse the program text into an AST, and change the subtree `(Add (Num 2) (Num 3)` to `Num 5` for the purpose of constant folding. Print the modified AST back to see the result. The layouts and comments in the unmodified part should be kept.####Using terminalIf you are going to use terminal, please first follow the instructions to compile the grammar file. e.g.:`biyacc arith_expr.by arith`. Then create a new file called `code.txt`, and put the following input (same input as the one shown on website) in `code.txt`: ```// some comments(-2 /* more comments */ ) * ((2+3) /  (0 - 4))```parse the file to AST by `./arith get code.txt AST.txt`  change in the `AST.txt` the subtree `Add (Num 2) (Num 3)` to `Num 5`and run the printer by `./arith put code.txt AST.txt`  The layouts and comments in the unmodified part should be kept.### TigerThis is the test case mentioned in the **Case study** (Section 5) of the paper. The following instructions are for users using WebGUI. If you plan to use terminal, please refer to the instructions above to compile and run the transformations.Other parts are the same as using WebGUI, so please also refer to the following instructions for the inputs and desired outputs of the test.In the test cases, select **The tiger language (unambiguous grammar)**. (Of course you can also try Tiger defined in ambiguous grammar + disambiguation rules, but the well-behavedness under certain situation is not guaranteed for certain cases.)#### Section 5.1: Syntactic sugarInput program text: `e1 | e2`, it will be parsed to  `TIfExp (TVarExp (TSimpleVar "e1")) (TIntExp 1) (Just (TVarExp (TSimpleVar "e2")))`  change the `(TVarExp (TSimpleVar "e2"))` to `TIntExp 3` and print the AST back. You can see the syntactic (`|`) is kept.#### Section 5.2: ResugaringTiger does not have the `not` operation, instead, we use negation operator (`-`) to show the example. Basically, they are both unary operator and their priorities are higher than those of binary operators.Input program text: `-1 | - 0`,  it is parsed to  `TIfExp (TOpExp (TIntExp 0) TMinusOp (TIntExp 1)) (TIntExp 1) (Just (TOpExp (TIntExp 0) TMinusOp (TIntExp 0)))`  Then please follow the same instruction shown on the paper Section 5.2 (page 10).###Section 5.3: Language evolutionThe definition for `Guard` expression is located to the end of **Concrete syntax** window and **Updating strategies** windows. Please verify it. In this case, you immediately get the parser and the reflective printer for the evolved language. You can also try resugaring on this newly evolved language following the instructions written in this sub-section of the paper (page 11).## Test the well-behavedness##At the beginning of the Section **Case study** (Section 5) We said that we tested about 50 test cases provided at Appel's website: [https://www.cs.princeton.edu/~appel/modern/testcases/](https://www.cs.princeton.edu/~appel/modern/testcases/)You can test them in the following way:(Please firstly make sure you put these test files in a **new folder** not containing any other files, especially Haskell files, text files (\*.txt). The files will be **removed** by the `clean.sh` shell after testing.)1. Generate the executable file for the Tiger grammar.  In the terminal input `biyacc BiYaccFileName OutputExecutableFile`  e.g.: `biyacc tiger_unambiguous_grammar.by s1`  Then you will have an executable file named "s1".  The process may take half a minute. The most time consuming job is GHC's compiling the `parser.hs` generated by Happy.2. Put the shell `fireTest.sh` and `testcases.tar` in the same directory.3. Run the shell `fireTest.sh`, it will prompt you to input the name of the executable file generated just now (e.g.: `s1`)4. The shell will unzip `testcases.tar`, run tests on the unzipped 50 files, and check the property **GetPut** and **PutGet** automatically.Ideally, only the test on "test49.tig" will throw the error message "Parse error" since its syntax is **invalid** as indicated in the comment of the file.---##How we test the property####GetPut**GetPut** means that if **get s** evaluates to a value **Just v**, then **put s v** will yield the same value **s**:  ```get s = Just v => put s v = s```  In our tests, each **testing** file will be first parsed to **testAST.txt**, and then be printed back to **testcode.txt**.We use the built-in **diff** function provide by the Linux-like system to test whether testCode.txt is equal to the original **test.tig** file.####PutGetThe definition of **PutGet** is:  ```put s v = s' => get s' = v ```  We test the **PutGet** property in a similar way. However, we do not have the slightly modified AST, and the **PutGet** is tested twice in the following way.#####PutGet1We test **PutGet** with the AST parsed from the program text. We first print the AST back to the program text, and then parse the generated program text back to a new AST and compare the two ASTs. e.g.:  `put test1.tig test1AST.txt test1code.txt`  `get test1code.txt test1AST2.txt`  `diff test1AST.txt test1AST2.txt`  where the first line will generate `test1code.txt`#####PutGet2We use the AST parsed from some other file to test the **PutGet**. e.g.:  `put test1.tig test2AST.txt test1code.txt`  `get test1code.txt test1AST.txt`  `diff test1AST.txt test2AST.txt`  That is, we use the AST generated from `test2.tig` to update `test1.tig`, and then parse the updated `test1.tig` to an AST and compare the two ASTs. Usually, ASTs parsed from different code snippet are very different, so we believe this could test the stability of the put (print) function.We do such test for the 50 files in a circular way.----#### The original test files at Appel's site?As mentioned in the paper, we modified the grammar of `if-then-else` sentence to solve the dangling-else problem and make Tiger an unambiguous grammar. Many test cases contain `if-then-else` grammar and we make the same modification to these files. So if you run the test on the original files provided at that website, many test cases will throw error.
