@@ -1,0 +1,48 @@
+module completion
+
+imports
+  
+  runtime/completion/-
+  completion/MJCompletions-cp
+  pp/-
+  pp
+ 
+  
+rules
+  
+  get-proposals-empty-program-MJCompletions                         = ?(sort, _); 
+                                                                 get-proposals-empty-program(pp-partial-MJCompletions-string(|sort), parenthesize-MJCompletions, 
+                                                                                             MJCompletions-get-indent, MJCompletions-get-leading-ws, 
+                                                                                             MJCompletions-get-separator)
+  get-proposals-left-recursive-MJCompletions                        = ?(sort, _); 
+                                                                 get-proposals-left-recursive(pp-partial-MJCompletions-string, parenthesize-MJCompletions, 
+                                                                                             MJCompletions-get-indent, MJCompletions-get-leading-ws, 
+                                                                                             MJCompletions-get-separator)
+  get-proposals-right-recursive-MJCompletions                       = ?(sort, _); 
+                                                                 get-proposals-right-recursive(pp-partial-MJCompletions-string, parenthesize-MJCompletions, 
+                                                                                             MJCompletions-get-indent, MJCompletions-get-leading-ws, 
+                                                                                             MJCompletions-get-separator)
+  get-proposals-placeholder-MJCompletions                           = ?(sort, _, _, _);
+                                                                 get-proposals-placeholder(pp-partial-MJCompletions-string(|sort), parenthesize-MJCompletions, 
+                                                                                             MJCompletions-get-indent, MJCompletions-get-leading-ws, 
+                                                                                             MJCompletions-get-separator)
+  get-proposals-optional-MJCompletions                              = ?(sort, _, _);
+                                                                 get-proposals-optional(pp-partial-MJCompletions-string(|sort), parenthesize-MJCompletions, 
+                                                                                             MJCompletions-get-indent, MJCompletions-get-leading-ws, 
+                                                                                             MJCompletions-get-separator)
+  get-proposals-list-MJCompletions                                  = ?(sort, _, _, _);
+                                                                 get-proposals-list(pp-partial-MJCompletions-string(|sort), parenthesize-MJCompletions, 
+                                                                                             MJCompletions-get-indent, MJCompletions-get-leading-ws, 
+                                                                                             MJCompletions-get-separator)
+  get-proposals-incorrect-programs-MJCompletions                    = ?(sort, _, _, _, _);
+                                                                 get-proposals-incorrect-programs(pp-partial-MJCompletions-string(|sort), parenthesize-MJCompletions, 
+                                                                                             MJCompletions-get-indent, MJCompletions-get-leading-ws, 
+                                                                                             MJCompletions-get-separator)
+  get-proposals-incorrect-programs-nested-MJCompletions             = ?(sort, _, _, _, _, _);
+                                                                 get-proposals-incorrect-programs-nested(pp-partial-MJCompletions-string(|sort), parenthesize-MJCompletions, 
+                                                                                             MJCompletions-get-indent, MJCompletions-get-leading-ws, 
+                                                                                             MJCompletions-get-separator)
+  get-proposals-incorrect-programs-single-placeholder-MJCompletions = ?(sort, _, _, _, _, _, _);
+                                                                 get-proposals-incorrect-programs-single-placeholder(pp-partial-MJCompletions-string(|sort), parenthesize-MJCompletions, 
+                                                                                             MJCompletions-get-indent, MJCompletions-get-leading-ws, 
+                                                                                             MJCompletions-get-separator)

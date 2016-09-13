@@ -1,0 +1,48 @@
+module pp
+
+imports
+
+  libstratego-gpp
+  runtime/refactoring/-
+  pp/RubyCompletions-parenthesize
+  pp/RubyCompletions-pp
+
+rules
+
+  editor-format:
+    (node, _, ast, path, project-path) -> (filename, result)
+    with
+      ext      := <get-extension> path
+    ; filename := <guarantee-extension(|$[pp.[ext]])> path
+    ; result   := <pp-debug> node
+
+rules
+  
+  pp-RubyCompletions-string =
+    parenthesize-RubyCompletions
+    ; prettyprint-RubyCompletions-start-symbols
+    ; !V([], <id>)
+    ; box2text-string(|120)
+      
+  pp-partial-RubyCompletions-string =
+    parenthesize-RubyCompletions
+    ; prettyprint-RubyCompletions
+    ; !V([], <id>)
+    ; box2text-string(|120)
+    
+  pp-partial-RubyCompletions-string(|sort) =
+    parenthesize-RubyCompletions
+    ; prettyprint-RubyCompletions(|sort)
+    ; !V([], <id>)
+    ; box2text-string(|120)  
+      
+  pp-debug :
+    ast -> result
+    with
+       result := <pp-RubyCompletions-string> ast
+    <+ <bottomup(try(not(is-string); not(is-list); not(pp-RubyCompletions-string); debug(!"cannot pp ")))> ast
+    ;  result := ""
+
+rules
+  
+  construct-textual-change = construct-textual-change(pp-partial-RubyCompletions-string, parenthesize, override-reconstruction, resugar)

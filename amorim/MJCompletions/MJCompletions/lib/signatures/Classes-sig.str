@@ -7,9 +7,6 @@ imports
 
 
 signature
-  sorts
-    ClassDecl ParentDecl FieldDecl MethodDecl VarDecl ParamDecl Type ID INT
-
   constructors
     Class                : ID * ParentDecl * List(FieldDecl) * List(MethodDecl) -> ClassDecl
     None                 : ParentDecl

@@ -8,7 +8,5 @@ model
 data
 
   : ~EntityRef~ {
-    
+    ~MemberRef~ = ~Value~
   }
-  
-

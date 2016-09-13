@@ -39,47 +39,6 @@ strategies
 
 
 strategies
-  prettyprint-MJCompletions-start-symbols =
-    prettyprint-MJCompletions-Start
-
-  prettyprint-MJCompletions-start-symbols =
-    prettyprint-MJCompletions-Program
-
-  prettyprint-MJCompletions-start-symbols =
-    prettyprint-MJCompletions-ClassDecl
-
-  prettyprint-MJCompletions-start-symbols =
-    prettyprint-MJCompletions-Exp
-
-  prettyprint-MJCompletions-start-symbols =
-    prettyprint-MJCompletions-FieldDecl
-
-  prettyprint-MJCompletions-start-symbols =
-    prettyprint-MJCompletions-MainClass
-
-  prettyprint-MJCompletions-start-symbols =
-    prettyprint-MJCompletions-MethodDecl
-
-  prettyprint-MJCompletions-start-symbols =
-    prettyprint-MJCompletions-Statement
-
-  prettyprint-MJCompletions-start-symbols =
-    prettyprint-MJCompletions-Type
-
-  prettyprint-MJCompletions-start-symbols =
-    prettyprint-MJCompletions-VarDecl
-
-  prettyprint-MJCompletions-start-symbols =
-    prettyprint-MJCompletions-ParamDecl
-
-  prettyprint-MJCompletions-start-symbols =
-    prettyprint-MJCompletions-ID
-
-  prettyprint-MJCompletions-start-symbols =
-    prettyprint-MJCompletions-INT
-
-
-strategies
   prettyprint-MJCompletions =
     prettyprint-MJCompletions-Start
 

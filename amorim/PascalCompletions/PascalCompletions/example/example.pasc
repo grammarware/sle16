@@ -7,6 +7,6 @@ var
 
 
 begin
-  $Variable := $Expression
-  
+  $Variable := $Identifier;
+  x := $Identifier 
 end.

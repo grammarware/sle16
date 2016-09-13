@@ -1,0 +1,316 @@
+module RubyCompletions
+
+imports
+  
+  lexical-syntax
+  keywords
+
+context-free start-symbols
+  
+  Start
+
+context-free syntax
+  
+  // Ruby expressions are always separated by a semicolon
+  // Not layout-sensitive
+  Start.Program = <
+  <{Stmt ";\n"}*>
+  <Term>>
+  
+  Term.Term = ";"
+  Term.NoTerm = 
+  
+context-free syntax
+  
+  Stmt.Call = <
+    <Call> 
+    do <BlockVar>
+      <{Stmt ";\n"}*>
+    end
+  >
+  Stmt.Undef  = <undef <FName>>
+  Stmt.Alias  = <alias <FName> <FName>>
+  Stmt.If     = <if <Expr>>
+  Stmt.While  = <while <Expr>>
+  Stmt.Unless = <unless <Expr>>
+  Stmt.Until  = <until <Expr>>
+  Stmt.Begin  = <
+  BEGIN {   
+    <{Stmt ";\n"}*>
+  }>
+  Stmt.End    = <
+  END {   
+    <{Stmt ";\n"}*>
+  }>
+  Stmt.AssignStmt = <
+  <Lhs> = <Command> 
+  do <BlockVar>
+    <{Stmt ";\n"}*>
+  end
+  >
+  Stmt.Expr = Expr
+  
+
+context-free syntax
+  
+  Expr.AssignExpr = <<Mlhs> = <MRhs>>
+  Expr.Return  = <return <CallArgs>>
+  Expr.Yield   = <yield <CallArgs>>
+  Expr.And     = <<Expr> and <Expr>> {left}
+  Expr.Or      = <<Expr> or <Expr>> {left}
+  Expr.Not     = <not <Expr>>
+  Expr.Command = Command
+  Expr.Negate = <!<Command>>
+  Expr.Arg = Arg
+  
+context-free priorities
+  
+  Expr.Not > 
+  {left: Expr.And Expr.Or}
+
+context-free syntax 
+  
+  Call.Function = Function
+  Call.Command = Command
+
+context-free syntax
+  
+  Command.IDCall = <<Operation> <CallArgs>>
+  Command.PrimaryDotQualCall = <<Primary>.<Operation> <CallArgs>>
+  Command.PrimaryColonQualCall = <<Primary>::<Operation> <CallArgs>>
+  Command.Super = <super <CallArgs>>
+  
+context-free syntax
+
+  Function.Call  = <<Operation>(<CallArgs>)>  
+  Function.CallNoArgs = <<Operation>()>
+  Function.CallEmpty  = <<Operation>>
+  
+  Function.DotQualCall       =  <<Primary>.<Operation>(<CallArgs>)> 
+  Function.DotQualCallNoArgs =  <<Primary>.<Operation>()>   
+  Function.DotQualCallEmpty  =  <<Primary>.<Operation>>  
+  
+  Function.ColonQualCall       =  <<Primary>::<Operation>(<CallArgs>)> 
+  Function.ColonQualCallNoArgs =  <<Primary>::<Operation>()>  
+  Function.DotQualCallEmtpy    =  <<Primary>.<Operation>>  
+  
+  Function.SuperEmpty  =  <super>  
+  Function.SuperArgs   =  <super(<CallArgs>)>
+  Function.SuperNoArgs =  <super()>
+  
+context-free syntax
+
+  Arg.Asgn = <<Lhs> = <Arg>> {right}
+  Arg.OpAsgn = <<Lhs> <OpAsgn> <Arg>> {right}
+  Arg.InclRange = <<Arg> .. <Arg>> {left}
+  Arg.ExclRange = <<Arg> ... <Arg>> {left}
+  Arg.Add = <<Arg> + <Arg>> {left} 
+  Arg.Sub = <<Arg> - <Arg>> {left} 
+  Arg.Mul = <<Arg> * <Arg>> {left} 
+  Arg.Div = <<Arg> / <Arg>> {left} 
+  Arg.Mod = <<Arg> % <Arg>> {left} 
+  Arg.Pow = <<Arg> ** <Arg>> {right} 
+  Arg.Pos = <+<Arg>> {left} 
+  Arg.Neg = <-<Arg>> {left} 
+  Arg.Or = <<Arg> | <Arg>> {left} 
+  Arg.Xor = <<Arg> ^ <Arg>> {left} 
+  Arg.And = <<Arg> & <Arg>> {left} 
+  Arg.Cmp = [[Arg] <=> [Arg]] {left}
+  Arg.Gt = [[Arg] > [Arg]] {left} 
+  Arg.Geq = [[Arg] >= [Arg]] {left} 
+  Arg.Lt = [[Arg] < [Arg]] {left} 
+  Arg.Leq = [[Arg] <= [Arg]] {left} 
+  Arg.Eq = <<Arg> == <Arg>> {left}
+  Arg.Eqq = <<Arg> === <Arg>> {left}
+  Arg.Neq = <<Arg> != <Arg>> {left}
+  Arg.Match = <<Arg> =~ <Arg>> {left}
+  Arg.NotMatch = <<Arg> !~ <Arg>> {left}
+  Arg.Not = <!<Arg>> {right} 
+  Arg.OneComplement = <~<Arg>> {right} 
+  Arg.Lshft = [[Arg] << [Arg]] {left} 
+  Arg.Rshft = [[Arg] >> [Arg]] {left} 
+  Arg.AndOp = <<Arg> && <Arg>> {left} 
+  Arg.OrOp = <<Arg> || <Arg>> {left} 
+  Arg.Defined = <defined? <Arg>> {right}
+  Arg.Primary = <<Primary>>  
+  
+lexical syntax
+
+  OpAsgn.PlusEq = "+=" 
+  OpAsgn.MinusEq = "-=" 
+  OpAsgn.TimesEq = "*=" 
+  OpAsgn.DivEq = "/=" 
+  OpAsgn.ModEq = "%=" 
+  OpAsgn.PowEq = "**=" 
+  OpAsgn.BitAndEq = "&=" 
+  OpAsgn.BitOrEq = "|=" 
+  OpAsgn.BitXorEq = "^=" 
+  OpAsgn.BitShftLtEq = "<<=" 
+  OpAsgn.BitShftRtEq = ">>=" 
+  OpAsgn.CompAndEq = "&&=" 
+  OpAsgn.CompOrEq = "||="    
+  
+context-free priorities
+
+  {right:
+    Arg.Not
+    Arg.OneComplement
+    Arg.Pos
+  } >
+  {right:
+    Arg.Pow
+  } >
+  {right:
+    Arg.Neg
+  } >
+  {left:
+    Arg.Mul
+    Arg.Div
+    Arg.Mod
+  } >
+  {left:
+    Arg.Add
+    Arg.Sub
+  } >
+  {left:
+    Arg.Lshft
+    Arg.Rshft
+  } >
+  {left:
+    Arg.And
+  } >
+  {left:
+    Arg.Xor
+    Arg.Or
+  } >
+  {left:
+    Arg.Leq
+    Arg.Lt
+    Arg.Geq
+    Arg.Gt
+  } >
+  {non-assoc:
+    Arg.Cmp
+    Arg.Eq
+    Arg.Eqq
+    Arg.Neq
+    Arg.Match
+    Arg.NotMatch
+  } >
+  {left:
+    Arg.AndOp
+  } >
+  {left:
+    Arg.OrOp
+  } >
+  {non-assoc:
+    Arg.InclRange
+    Arg.ExclRange
+  } >
+  {right:
+   Arg.Asgn
+  }
+
+ 
+// Add extra Primary - sort options
+context-free syntax
+
+  Primary.Staments         = <(<{Stmt ";\n"}*>)>   
+  Primary.Literal          = Literal
+
+context-free syntax  
+
+  CallArgs.FullList = <<Args><CommaAssocs?><CommaStarArg?; hide><CommaAndArg?; hide>>
+  CallArgs.AssocStarAnd = <<Assocs><CommaStarArg?; hide><CommaAndArg?; hide>>
+  CallArgs.StarAnd = <*<Arg><CommaAndArg?>>
+  CallArgs.And     = <&<Arg>>
+  CallArgs.Command = Command
+  CommaAssocs.CommaAssocs = <, <Assocs>>
+  CommaStarArg.CommaStarArg = <, *<Arg>>
+  CommaAndArg.CommaAndArg = <, &<Arg>>
+  Assocs.Assocs = <<{Assoc ", "}+>>
+  Assoc.Assoc = [[Arg] => [Arg]]
+  
+  MRhs.MRhs = <<Args><CommaStarArg?>>
+  MRhs.StarArg = <*<Arg>>
+  
+
+//  
+  Args.Args = <<{Arg ", "}+>>
+  Args.ArgsParen = <(<{Arg ", "}+>)>
+
+context-free syntax
+  
+  BlockVar.BlockVar  = <| <BlockVar> |>
+  BlockVar.NoVars    = <| |>
+  BlockVar.Empty     = 
+
+  BlockVar = Lhs
+  Lhs.Var = Variable
+  Lhs.Array = <<Primary>[<Args>]>
+  Lhs.Call  = <<Primary>.ID>
+  
+  Mlhs.Group = <(<BlockVar>)>
+  
+  
+  Variable.Var = ID
+  Variable.Null = <nil>
+  Variable.Self = <self>
+  MultID.ID = ID
+  MultID.StarID = <*<ID>>
+  MultID.AndID  = <&<ID>>
+  Literal = INT
+  Literal = STRING
+  
+
+  
+
+template options
+  keyword -/- [a-zA-Z0-9\_]
+
+lexical syntax
+
+  Operation = ID
+  Operation = PredID
+  Operation = DestID
+  
+  PredID = ID "!"
+  DestID = ID "?"
+  
+  SelfVar   = "@" ID
+  GlobalVar = "$" ID
+  
+  
+  
+  
+  FName = ID
+  Fname = "|"
+  Fname = "^"
+  Fname = "&"
+  Fname = "<=>"
+  Fname = "=="
+  Fname = "==="
+  Fname = "=~"
+  Fname = ">"
+  Fname = ">="
+  Fname = "<"
+  Fname = "<="
+  Fname = "+"
+  Fname = "-"
+  Fname = "*"
+  Fname = "/"
+  Fname = "%"
+  Fname = "**"
+  Fname = "<<"
+  Fname = ">>"
+  Fname = "~"
+  Fname = "`"
+  Fname = "+@"
+  Fname = "-@"
+  Fname = "[]"
+  Fname = "[]="
+  
+  
+                     
+  
+  

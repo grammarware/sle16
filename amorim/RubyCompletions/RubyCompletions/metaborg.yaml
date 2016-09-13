@@ -1,6 +1,6 @@
 ---
-id: org.example:MJCompletions:0.1.0-SNAPSHOT
-name: MJCompletions
+id: org.example:RubyCompletions:0.1.0-SNAPSHOT
+name: RubyCompletions
 dependencies:
   compile:
   - org.metaborg:org.metaborg.meta.lang.esv:${metaborgVersion}
@@ -9,16 +9,14 @@ dependencies:
   - org.metaborg:org.metaborg.meta.lang.ts:${metaborgVersion}
   source:
   - org.metaborg:org.metaborg.meta.lib.analysis:${metaborgVersion}
-placeholder:
-  prefix: "$"  
 pardonedLanguages:
 - EditorService
 - Stratego-Sugar
 - SDF
+placeholder:
+  prefix: "<"
+  suffix: ">"
 language:
-  sdf:
-    parse-table: "lib/sdf.tbl"
-    completion-parse-table: "lib/sdf-completions.tbl"
   stratego:
     format: ctree
     args:

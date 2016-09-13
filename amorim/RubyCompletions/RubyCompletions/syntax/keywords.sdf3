@@ -1,0 +1,42 @@
+module keywords
+
+lexical syntax
+
+  ID = "BEGIN" {reject}
+  ID = "END" {reject}
+  ID = "alias" {reject}
+  ID = "and" {reject}
+  ID = "begin" {reject}
+  ID = "break" {reject}
+  ID = "case" {reject}
+  ID = "class" {reject}
+  ID = "def" {reject}
+  ID = "defined" {reject}
+  ID = "do" {reject}
+  ID = "else" {reject}
+  ID = "elsif" {reject}
+  ID = "end" {reject}
+  ID = "ensure" {reject}
+  ID = "false" {reject}
+  ID = "for" {reject}
+  ID = "if" {reject}
+  ID = "in" {reject}
+  ID = "module" {reject}
+  ID = "next" {reject}
+  ID = "nil" {reject}
+  ID = "not" {reject}
+  ID = "or" {reject}
+  ID = "redo" {reject}
+  ID = "rescue" {reject}
+  ID = "retry" {reject}
+  ID = "return" {reject}
+  ID = "self" {reject}
+  ID = "super" {reject}
+  ID = "then" {reject}
+  ID = "true" {reject}
+  ID = "undef" {reject}
+  ID = "unless" {reject}
+  ID = "until" {reject}
+  ID = "when" {reject}
+  ID = "while" {reject}
+  ID = "yield" {reject}
