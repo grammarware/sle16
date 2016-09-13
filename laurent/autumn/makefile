@@ -1,167 +1,222 @@
-NAME:=autumn
-VERSION:=0.1.0
-KOTLIN_VER:=1.0.3
-TESTNG_VER:=6.9.10
-JCOMMA_VER:=1.48
-DOKKA_VER:=0.9.8
-VIOLIN_VER:=0.1.0
+# ------------------------------------------------------------------------------
 
-TESTNG:="http://central.maven.org/maven2/org/testng/testng/$(TESTNG_VER)/testng-$(TESTNG_VER).jar"
-JCOMMA:="http://central.maven.org/maven2/com/beust/jcommander/$(JCOMMA_VER)/jcommander-$(JCOMMA_VER).jar"
-DOKKA:="https://github.com/Kotlin/dokka/releases/download/$(DOKKA_VER)/dokka-fatjar.jar"
-KOTLIN:="https://github.com/JetBrains/kotlin/releases/download/v$(KOTLIN_VER)/kotlin-compiler-$(KOTLIN_VER).zip"
-VIOLIN:="https://dl.bintray.com/norswap/maven/com/norswap/violin/$(VIOLIN_VER)/violin-$(VIOLIN_VER).jar"
-VIOLIN_SRC:="https://dl.bintray.com/norswap/maven/com/norswap/violin/$(VIOLIN_VER)/violin-$(VIOLIN_VER)-sources.jar"
+default: build
 
-ifeq ($(shell if [ -d kotlinc ]; then echo "yes"; fi),yes)
-	KOTLINC:=kotlinc/bin/kotlinc
+# ------------------------------------------------------------------------------
+# PATHS
+
+ifeq ($(OS) , Windows_NT)
+SEP := ;
 else
-	KOTLINC:=kotlinc
+SEP := :
 endif
 
-ifeq ($(OS),Windows_NT)
-	SEP:=;
+$(shell mkdir -p lib)
+
+output  := out/production/autumn
+space	:= $(eval) $(eval)
+
+jars	= $(subst $(space),$(SEP),$(shell find lib -name "*.jar"))
+#           (java supports "lib/*", but not kotlin)
+basecp	= $(output)$(SEP)$(jars)
+cp		= "$(basecp)"
+testcp	= "$(basecp)$(SEP)out/test"
+
+# ------------------------------------------------------------------------------
+# DEPS
+
+NAME		:= autumn
+VERSION		:= 0.1.0
+KOTLIN_VER	:= 1.0.3
+TESTNG_VER	:= 6.9.10
+DOKKA_VER	:= 0.9.8
+VIOLIN_VER	:= 0.1.0
+
+MAVEN		:= http://central.maven.org/maven2
+VIOLIN_P	:= https://dl.bintray.com/norswap/maven/com/norswap/violin
+COMPILER_P	:= https://github.com/JetBrains/kotlin/releases/download
+DOKKA_P		:= https://github.com/Kotlin/dokka/releases/download
+TESTNG_P	:= $(MAVEN)/org/testng/testng
+REFLECT_P	:= $(MAVEN)/org/jetbrains/kotlin/kotlin-reflect
+
+TESTNG		:= "$(TESTNG_P)/$(TESTNG_VER)/testng-$(TESTNG_VER).jar"
+DOKKA		:= "$(DOKKA_P)/$(DOKKA_VER)/dokka-fatjar.jar"
+COMPILER	:= "$(COMPILER_P)/v$(KOTLIN_VER)/kotlin-compiler-$(KOTLIN_VER).zip"
+REFLECT		:= "$(REFLECT_P)/$(KOTLIN_VER)/kotlin-reflect-$(KOTLIN_VER).jar"
+VIOLIN		:= "$(VIOLIN_P)/$(VIOLIN_VER)/violin-$(VIOLIN_VER).jar"
+VIOLIN_SRC	:= "$(VIOLIN_P)/$(VIOLIN_VER)/violin-$(VIOLIN_VER)-sources.jar"
+
+lib/violin.jar:
+	curl -L $(VIOLIN) > $@
+
+lib/violin-sources.jar:
+	curl -L $(VIOLIN_SRC) > $@
+
+lib/kotlin-reflect.jar:
+	curl -L $(REFLECT) > $@
+
+lib/dokka.jar:
+	curl -L $(DOKKA) > $@
+
+lib/testng.jar:
+	curl -L $(TESTNG) > $@
+
+DEPS 	:= kotlin lib/violin.jar lib/kotlin-reflect.jar
+TDEPS	:= $(DEPS) lib/testng.jar
+
+sources: lib/violin-sources.jar
+
+offline: $(TDEPS) lib/dokka.jar lib/violin-sources.jar
+
+# ------------------------------------------------------------------------------
+# KOTLIN
+
+kotlinc:
+	mkdir -p out
+	curl -L $(COMPILER) > out/compiler.zip
+	unzip out/compiler.zip -d .
+	rm out/compiler.zip
+
+KOTLINC_COMMAND		:= command -v kotlinc > /dev/null && kotlinc -version 2>&1
+KOTLINC_ACTUAL		:= $(shell $(KOTLINC_COMMAND))
+KOTLINC_EXPECTED	:= info: Kotlin Compiler version 1.0.3
+
+ifeq ($(KOTLINC_ACTUAL) , $(KOTLINC_EXPECTED))
+
+KOTLINC := kotlinc
+KOTLIN  := kotlin
+kotlin:;
+
 else
-	SEP:=:
+
+KOTLINC := kotlinc/bin/kotlinc
+KOTLIN  := kotlinc/bin/kotlin
+kotlin: kotlinc
+
 endif
 
-# defines BINTRAY_XXX and SONATYPE_XXX
--include local.mk
+# ------------------------------------------------------------------------------
+# CLEAN
 
-space:=$(eval) $(eval)
-# java supports "lib/*", but not kotlin
-jars:=$(subst $(space),$(SEP),$(shell find lib -name "*.jar"))
-basecp:=out/production$(SEP)$(jars)
-cp:="$(basecp)"
-testcp:="$(basecp)$(SEP)out/test"
+clean:
+	rm -rf out
 
-build:
-	mkdir -p out/production
-	javac -cp $(cp) -d out/production src/norswap/autumn/utils/JUtils.java
-	$(KOTLINC) -cp $(cp) src -d out/production
+clean-deps:
+#   leave the jars added by IntelliJ
+	find lib ! -name 'kotlin-*.jar' -type f -exec rm -f {} +
 
-build-examples:
-	mkdir -p out/examples
-	$(KOTLINC) -cp $(cp) example -d out/examples
+clean-kotlin:
+	rm -rf kotlinc
 
-run-examply:
-	java -cp "$(basecp)$(SEP)out/examples" examply.MainKt
+reset: clean clean-kotlin
+	rm -rf lib
 
-build-tests:
+# ------------------------------------------------------------------------------
+# BUILD & TEST
+
+build: $(DEPS)
+	mkdir -p $(output)
+	javac -cp $(cp) -d $(output) src/norswap/autumn/utils/JUtils.java
+	$(KOTLINC) -cp $(cp) src -d $(output)
+
+build-tests: $(TDEPS)
 	mkdir -p out/test
 	$(KOTLINC) -cp $(testcp) test -d out/test
 
 test:
 	java -cp $(testcp) org.testng.TestNG test/testng.xml -d out/test-output
 
-rebuild: build buildtests test
+# ------------------------------------------------------------------------------
+# JAR
 
-clean:
-	rm -rf out
-
-kotlin:
-	curl -L $(KOTLIN) > compiler.zip
-	unzip compiler.zip -d .
-	rm compiler.zip
-
-clean-kotlin:
-	rm -rf kotlinc
-
-deps:
-	mkdir -p lib
-	curl -L $(VIOLIN)     > lib/violin.jar
-	curl -L $(VIOLIN_SRC) > lib/violin-sources.jar
-	curl -L $(DOKKA)	  > lib/dokka.jar
-	curl -L $(TESTNG)	  > lib/testng.jar
-	curl -L $(JCOMMA)     > lib/jcommander.jar
-
-clean-deps:
-# leave the jars added by IntelliJ
-	find lib ! -name 'kotlin-*.jar' -type f -exec rm -f {} +
+STAGING	 := out/fatjar_staging
+META_INF := $(STAGING)/META-INF
 
 jar:
 	find out -name .DS_Store -type f -delete
-	jar cf out/$(NAME)-$(VERSION).jar -C out/production .
+	jar cf out/$(NAME)-$(VERSION).jar -C $(output) .
 
 fatjar:
 	find out -name .DS_Store -type f -delete
-	mkdir -p out/fatjar_staging
-	unzip lib/violin.jar -d out/fatjar_staging
-	mv out/fatjar_staging/META-INF/main.kotlin_module out/fatjar_staging/META-INF/violin.kotlin_module
-	cp -R out/production/* out/fatjar_staging
-	jar cf out/$(NAME)-$(VERSION)-fat.jar -C out/fatjar_staging .
-	rm -rf out/fatjar_staging
+	mkdir -p $(STAGING)
+	unzip lib/violin.jar -d $(STAGING)
+	mv $(META_INF)/main.kotlin_module $(META_INF)/violin.kotlin_module
+	cp -R $(output)/* $(STAGING)
+	jar cf out/$(NAME)-$(VERSION)-fat.jar -C $(STAGING) .
+	rm -rf $(STAGING)
 
 jars: jar
 	find src -name .DS_Store -type f -delete
 	jar cf out/$(NAME)-$(VERSION)-sources.jar -C src .
-	jar cf out/$(NAME)-$(VERSION)-javadoc.jar -C out/docs/java .
 	jar cf out/$(NAME)-$(VERSION)-kdoc.jar -C out/docs/kotlin .
 
-BINTRAY_PATH:=https://api.bintray.com/content/norswap/maven/$(NAME)/$(VERSION)
-BINTRAY_PATH:=$(BINTRAY_PATH)/com/norswap/$(NAME)/$(VERSION)
+#	To generate javadoc jar:
 
-binup = curl -T out/$(NAME)-$(VERSION)$(1) -u$(BINTRAY_USER):$(BINTRAY_API_KEY) \
-		"$(BINTRAY_PATH)/$(NAME)-$(VERSION)$(1);publish=1;override=1" ; echo "\n"
+#	jar cf out/$(NAME)-$(VERSION)-javadoc.jar -C out/docs/java .
 
-sign = gpg2 --yes -u 3BC67092 -ab out/$(NAME)-$(VERSION)$(1)
+# ------------------------------------------------------------------------------
+# DOCS
 
-publish:
-	sed "s/VERSION/$(VERSION)/g" $(NAME).pom > out/$(NAME)-$(VERSION).pom
-	$(call binup,.pom)
-	$(call binup,.jar)
-	$(call binup,-sources.jar)
-	$(call binup,-javadoc.jar)
-	$(call binup,-kdoc.jar)
-	$(call sign,.pom)
-	$(call sign,.jar)
-	$(call sign,-sources.jar)
-	$(call sign,-javadoc.jar)
-	$(call sign,-kdoc.jar)
-	$(call binup,.pom.asc)
-	$(call binup,.jar.asc)
-	$(call binup,-sources.jar.asc)
-	$(call binup,-javadoc.jar.asc)
-	$(call binup,-kdoc.jar.asc)
-	curl -d "username=$(SONATYPE_USER_TOKEN)&password=$(SONATYPE_PWD_TOKEN)" \
-		-u$(BINTRAY_USER):$(BINTRAY_API_KEY) \
-		https://api.bintray.com/maven_central_sync/content/norswap/maven/$(NAME)/$(VERSION)
-
-docs:
+docs: lib/dokka.jar
 	mkdir -p out/docs/java
 	mkdir -p out/docs/kotlin
-	java -jar lib/dokka.jar src -output out/docs/kotlin -classpath $(cp) \
+	java -jar lib/dokka.jar src \
+		-output out/docs/kotlin \
+		-classpath $(cp) \
 		-include src/norswap/$(NAME)/stream/package.md
-#	java -cp "$(JAVA_HOME)/lib/tools.jar$(SEP)lib/dokka.jar" org.jetbrains.dokka.MainKt src \
+
+#	To generate javadoc:
+
+#	java -cp "$(JAVA_HOME)/lib/tools.jar$(SEP)lib/dokka.jar" \
+#		org.jetbrains.dokka.MainKt src \
 #		-output out/docs/java -format javadoc -classpath $(cp)
 
-pubdocs:
-	rm -rf pages/*
-	cp $(NAME).html pages/index.html
-	cp -R out/docs/java pages/java
-	cp -R out/docs/kotlin pages/kotlin
-	cd pages ; git add -A . ; git commit -m "update" ; git push origin gh-pages
+# ------------------------------------------------------------------------------
+# TARGETED
+
+target ?= benchmark.benchmark.AutumnBenchKt
 
 trace:
-	java -cp $(classpath) -agentlib:hprof=cpu=samples,interval=1 $(target)
+	$(KOTLIN) -cp $(cp) -agentlib:hprof=cpu=samples,interval=1 $(target)
+
+run:
+	$(KOTLIN) -cp $(cp) $(target)
+
+# ------------------------------------------------------------------------------
+# ARTIFACTS
+
+build-examples:
+	mkdir -p out/examples
+	$(KOTLINC) -cp $(cp) example -d out/examples
+
+run-examply:
+	$(KOTLIN) -cp "$(basecp)$(SEP)out/examples" examply.MainKt
+
+examply: build build-examples run-examply
+
+# ------------------------------------------------------------------------------
 
 .PHONY: \
+  default \
+  deps \
+  kotlin \
+  clean \
+  clean-deps \
+  clean-kotlin \
+  reset \
   build \
-  build-examples \
-  run-examply \
   build-tests \
   test \
-  rebuild \
-  clean \
-  kotlin \
-  clean-kotlin \
-  deps \
-  clean-deps \
   jar \
   fatjar \
-  publish \
+  jars \
   docs \
-  pubdocs \
-  trace
+  trace \
+  run \
+  build-examples \
+  run-examply \
+  examply
 
-.SILENT:
+#.SILENT:
+
+# ------------------------------------------------------------------------------

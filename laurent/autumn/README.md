@@ -67,30 +67,22 @@ Building requires a traditional Unix toolchain: `bash`, `make`, `curl`, `find` a
 The build script also works fine on Windows with Cygwin/MSYS, provided you have installed the
 required packages for the above commands.
 
-If you don't have Kotlin (or the required 1.0.3 version) installed:
-
-    make kotlin
-    
-This will install a local copy of the Kotlin compiler (~25MB) inside the `kotlinc` directory
-of the repository.
-
-Then run:
-
-    make deps
     make build
-    
-The local compiler will take precedence, if present.
 
-This only generates class files, usually you want to build a jar:
+This command will build the library, pulling dependencies if necessary, and
+installing a repository-local copy of Kotlin 1.0.3 (~25MB) if required (i.e. if
+`kotlin -version` fails or indicates another version).
+
+The command only generates class files, usually you want to build a jar:
 
     make fatjar
     
-This must be run after `make build` and `make deps`.
+This must be run after `make build`.
 
-To build a jar that does not include the dependency on `violin.jar`, use `make jar` instead.
+All outputs are put in the `out` directory. `.class` files are in
+`out/production/autumn`, to be compatible with the IntelliJ IDEA default layout.
 
-All outputs are put in the `out` directory. `.class` files are in `out/production`, to be compatible
-with the IntelliJ IDEA default layout.
+Explore the [makefile](makefile) for more useful commands.
 
 ### With IntellIJ IDEA
 
@@ -109,7 +101,7 @@ file to your classpath.
 
 The best way to get started is to get a look at some examples:
 
-- [Java](/example/norswap/javag): A grammar for the language everybody loves to hate, complete
+- [Java](example/norswap/javag): A grammar for the language everybody loves to hate, complete
   with AST generation.
-- [Examply](/example/examply): The grammar for an imaginary language that features heavy use
+- [Examply](example/examply): The grammar for an imaginary language that features heavy use
   of parse state.
