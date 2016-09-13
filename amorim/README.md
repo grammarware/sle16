@@ -22,8 +22,27 @@ To test syntactic code completion for each project:
  
 An example file (empty) can be found at the directory `examples` in each project. 
 
-Triggering code completion (Control+Space) on such program should show all proposals available for the program at the cursor position, according to what has been described in the paper. A quick overview of the syntactic completion features we implemented can be found [here](http://spoofax.readthedocs.io/en/latest/source/release/migrate/new_completions_framework.html).
+Triggering code completion (Control+Space) on such program should show all proposals available for the program at the cursor position, according to what has been described in the paper. A quick overview of the syntactic completion features we implemented can be found [here](http://spoofax.readthedocs.io/en/latest/source/release/migrate/new_completions_framework.html). Please note that [completion for recursive structures](http://spoofax.readthedocs.io/en/latest/source/release/migrate/new_completions_framework.html#expanding-recursive-lists-and-nullable-structures) as described in the documentation is still under beta testing and was disabled in this artifact to keep it consistent with the paper.
 
+### Implementation
 
-### Important
-The syntax for MiniJava (at the MJCompletions project) is not exposed in the project, as we use the language in the Compiler Construction course at TU Delft. After each project build, it is necessary to copy the files `lib/sdf-completions.tbl` and `lib/sdf.tbl` replacing the ones in `target/metaborg`, and reload the language (right click in the project -> Spoofax (Meta) -> Load language) to properly edit MiniJava programs. 
+The implementation of the completion framework is separated into two parts:
+
+- [The Stratego part](https://github.com/metaborg/runtime-libraries/tree/d5634f57eaaa96528cc3648527073562019c7503/org.metaborg.meta.lib.analysis/trans/runtime/completion) - responsible for the transformations on the AST (such as expand a placeholder and pretty-print its expansions).
+
+- The Java part:
+	- [Integration with Eclipse](https://github.com/metaborg/spoofax/blob/adc3b16225aefa799c6a825154df354c34763109/org.metaborg.spoofax.core/src/main/java/org/metaborg/spoofax/core/completion/JSGLRCompletionService.java).
+	- [JSGLR](https://github.com/metaborg/jsglr/tree/1d68859d4c37cd21f44cf18f780e1afc01cab289).
+
+Note that these are the main files related with the implementation. There might be minor code fragments scattered in the implementation of Spoofax itself. 
+
+The Spoofax implementation used in this artifact is on the `new-completions` [branch](https://github.com/metaborg/spoofax-releng/tree/new-completions) of the Spoofax source code. Each submodule has the tag `completions-sle-artifact` containing the exact commit that was used for building the Spoofax version in this artifact.
+	
+
+### Troubleshooting
+
+- If you have any issues installing Spoofax, please check our documentation [here](https://spoofax.readthedocs.io/en/latest/source/langdev/start.html#installation).
+
+- In Spoofax, sometimes the editor does not recognize the language of a file open right after opening Eclipse. This implies that code completion (and other editor services) might not work for that file. Closing and reopening the file should solve the issue.
+
+- If you have problems building the projects, please try importing them into a new workspace.
