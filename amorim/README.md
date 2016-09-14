@@ -24,6 +24,10 @@ An example file (empty) can be found at the directory `examples` in each project
 
 Triggering code completion (Control+Space) on such program should show all proposals available for the program at the cursor position, according to what has been described in the paper. A quick overview of the syntactic completion features we implemented can be found [here](http://spoofax.readthedocs.io/en/latest/source/release/migrate/new_completions_framework.html). Please note that [completion for recursive structures](http://spoofax.readthedocs.io/en/latest/source/release/migrate/new_completions_framework.html#expanding-recursive-lists-and-nullable-structures) as described in the documentation is still under beta testing and was disabled in this artifact to keep it consistent with the paper.
 
+### Important
+
+The syntax of MiniJava is hidden for educational purposes. The syntax definition in the artifact follows from [here](http://www.cambridge.org/us/features/052182060X/mjreference/node3.html).  
+
 ### Implementation
 
 The implementation of the completion framework is separated into two parts:
