@@ -1,11 +1,12 @@
 @file:Suppress("UNCHECKED_CAST")
 package norswap.autumn
+import norswap.triemap.ImmutableMap
+import norswap.triemap.TrieMap
 import norswap.violin.Copyable
 import norswap.violin.stream.*
 import norswap.violin.link.*
 import norswap.violin.Stack
 import norswap.violin.utils.plusAssign
-import java.util.HashMap
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -121,24 +122,39 @@ open class MonotonicStack<T: Any>(private var stack: LinkList<T> = LinkList())
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/**
- * TODO To be replaced with an HAMT-based implementation, once I finish porting it.
- */
-open class MapState<K: Any, V: Any>(private var map: MutableMap<K, V> = HashMap())
-: State<Map<K, V>, Map<K, V>>, MutableMap<K, V> by map
+open class MapState<K: Any, V: Any>(private var map: TrieMap<K, V> = TrieMap())
+: State<TrieMap<K, V>, TrieMap<K, V>>, ImmutableMap<K, V>
 {
-    fun map() = map
-    override fun snapshot() = HashMap(map)
-    override fun restore(snap: Map<K, V>) { map = HashMap(map) }
-    override fun diff(snap: Map<K, V>) = HashMap(map)
-    override fun merge(delta: Map<K, V>) { map = HashMap(map) }
-    override fun equiv(pos: Int, snap: Map<K, V>) = map == snap
-    override fun snapshotString(snap: Map<K, V>, ctx: Context): String {
+    override fun get(k: K) = map.get(k)
+
+    override fun put(k: K, v: V): MapState<K, V> {
+        map = map.put(k, v)
+        return this
+    }
+
+    override fun remove(k: K): MapState<K, V> {
+        map = map.remove(k)
+        return this
+    }
+
+    override val size = map.size
+
+    override fun snapshot() = map
+
+    override fun restore(snap: TrieMap<K, V>) { map = snap }
+
+    override fun diff(snap: TrieMap<K, V>) = map
+
+    override fun merge(delta: TrieMap<K, V>) { map = delta }
+
+    override fun equiv(pos: Int, snap: TrieMap<K, V>) = map === snap
+
+    override fun snapshotString(snap: TrieMap<K, V>, ctx: Context): String {
         val b = StringBuilder()
         b += "{"
-        for (e in map.entries)
-            b += "\n    ${e.key} = ${e.value}"
-        if (!map.isEmpty()) b += "\n"
+        for ((k, v) in map)
+            b += "\n    $k = $v"
+        if (!map.empty) b += "\n"
         b += "}"
         return b.toString()
     }
